@@ -1,11 +1,14 @@
+// to load the variables file by self build 自建「變數」檔案
 @import "../../node_modules/bootstrap/scss/functions";
 @import './utils/variables';
 
+// to load all the scss files of bootstrap 載入所有bs5的scss
+@import "../../node_modules/bootstrap";
+
+@import "./components/button";
 
 @import './layout/header.scss';
 @import './layout/footer.scss';
 
 
 @import './pages/index.scss';
-
-@import "../../node_modules/bootstrap";

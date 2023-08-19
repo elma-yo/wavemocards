@@ -298,14 +298,27 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+$primary:        $blue;//#75B1BB;
+$secondary:      $gray-600;
+$success:        $green !default;
+$info:           $cyan !default;
+$warning:        $yellow !default;
+$danger:         $red !default;
+$light:          $gray-100 !default;
+$dark:           $gray-900 !default;
+$turquoise:      #3C9DAE;
+$turquoise-tint: #EAF2F4;
+$turquoise-dark: #417C88;
+$pink:           #C37979;
+$emo-happy:      #FFE589;
+$emo-expectation:#F8C18F;
+$emo-relived:    #CEE5AF;
+$emo-unstable:   #C39A94;
+$emo-amazed:     #B4B9E7;
+$emo-sadness:    #C5DDE8;
+$emo-hate:       #B9A796;
+$emo-anger:      #F07373;
+$emo-others:     #EBEBEB;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -317,7 +330,20 @@ $theme-colors: (
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  "dark":       $dark
+  "dark":       $dark,
+  "turquoise":       $turquoise,
+  "turquoise-tint":  $turquoise-tint,
+  "turquoise-dark":  $turquoise-dark,
+  "pink":            $pink,
+  "emo-happy":       $emo-happy,
+  "emo-expectation": $emo-expectation,
+  "emo-relived":     $emo-relived,
+  "emo-unstable":    $emo-unstable,
+  "emo-amazed":      $emo-amazed,
+  "emo-sadness":     $emo-sadness,
+  "emo-hate":        $emo-hate,
+  "emo-anger":       $emo-anger,
+  "emo-others":      $emo-others
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -335,7 +361,7 @@ $escaped-characters: (
 // Quickly modify global styling by enabling or disabling optional features.
 
 $enable-caret:                true !default;
-$enable-rounded:              true !default;
+$enable-rounded:              false !default;
 $enable-shadows:              false !default;
 $enable-gradients:            false !default;
 $enable-transitions:          true !default;
