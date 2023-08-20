@@ -307,7 +307,7 @@ $danger:         #DC4C64;//$red !default;
 $light:          #FBFBFB;//$gray-100 !default;
 $dark:           #332D2D;//$gray-900 !default;
 $main:      #3C9DAE;
-$main-tint: #EAF2F4;
+$main-tint: #9fcdd9;
 $main-dark: #417C88;
 $pink:           #C37979;
 $pink-dark:      #B17075;
@@ -401,11 +401,22 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  4: $spacer * .25,   // 4px
+  8: $spacer * .5,    // 8px
+  12: $spacer * .75,   // 12px
+  16: $spacer,         // 16px
+  20: $spacer * 1.25,  // 20px
+  24: $spacer * 1.5,   // 24px
+  28: $spacer * 1.75,  // 28px
+  32: $spacer * 2,     // 32px
+  36: $spacer * 2.25,  // 36px
+  40: $spacer * 2.5,   // 40px
+  44: $spacer * 2.75, // 44px
+  48: $spacer * 3,    // 48px
+  52: $spacer * 3.25,
+  56: $spacer * 3.5,
+  60: $spacer * 3.75,
+  64: $spacer * 4,
 ) !default;
 // scss-docs-end spacer-variables-maps
 
