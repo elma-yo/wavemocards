@@ -298,14 +298,14 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:        $blue;//#75B1BB;
-$secondary:      $gray-600;
-$success:        $green !default;
-$info:           $cyan !default;
-$warning:        $yellow !default;
-$danger:         $red !default;
-$light:          $gray-100 !default;
-$dark:           $gray-900 !default;
+$primary:        #3B71CA;//$blue;//#75B1BB;
+$secondary:      #9FA6B2;//$gray-600;
+$success:        #14A44D;//$green !default;
+$info:           #54B4D3;//$cyan !default;
+$warning:        #E4A11B;//$yellow !default;
+$danger:         #DC4C64;//$red !default;
+$light:          #FBFBFB;//$gray-100 !default;
+$dark:           #332D2D;//$gray-900 !default;
 $turquoise:      #3C9DAE;
 $turquoise-tint: #EAF2F4;
 $turquoise-dark: #417C88;
