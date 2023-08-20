@@ -306,9 +306,9 @@ $warning:        #E4A11B;//$yellow !default;
 $danger:         #DC4C64;//$red !default;
 $light:          #FBFBFB;//$gray-100 !default;
 $dark:           #332D2D;//$gray-900 !default;
-$turquoise:      #3C9DAE;
-$turquoise-tint: #EAF2F4;
-$turquoise-dark: #417C88;
+$main:      #3C9DAE;
+$main-tint: #EAF2F4;
+$main-dark: #417C88;
 $pink:           #C37979;
 $emo-happy:      #FFE589;
 $emo-expectation:#F8C18F;
@@ -331,9 +331,9 @@ $theme-colors: (
   "danger":     $danger,
   "light":      $light,
   "dark":       $dark,
-  "turquoise":       $turquoise,
-  "turquoise-tint":  $turquoise-tint,
-  "turquoise-dark":  $turquoise-dark,
+  "main":       $main,
+  "main-tint":  $main-tint,
+  "main-dark":  $main-dark,
   "pink":            $pink,
   "emo-happy":       $emo-happy,
   "emo-expectation": $emo-expectation,

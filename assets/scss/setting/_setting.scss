@@ -1,0 +1,21 @@
+body {
+    line-height: 1.5;
+}
+
+img {
+    vertical-align: middle;
+	max-width: 100%;
+	height: auto;
+}
+
+*, *:before, *:after { 
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ol, ul {
+	list-style: none;
+}

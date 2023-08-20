@@ -1,4 +1,11 @@
 .header{
-  background: #69F0AE;
-  font-size: 64px;
+  h1 a{
+    background-image: url(../images/logo_name.svg);
+    width: 200px;
+    height: 45px;
+    display: block;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }
