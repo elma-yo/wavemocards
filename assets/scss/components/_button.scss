@@ -36,4 +36,19 @@
 
 .c-btn-outline-main:hover {
     color: $white;
+    box-shadow: 2px 2px 4px rgba(112, 132, 136, 0.5);
+}
+
+.c-btn-outline-pink {
+    border: 2px solid $pink;
+    border-radius: 100px;
+    padding: 4px 16px;
+    color: $pink;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.c-btn-outline-pink:hover {
+    color: $white;
+    box-shadow: 2px 2px 4px rgba(112, 132, 136, 0.5);
 }

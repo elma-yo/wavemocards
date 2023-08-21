@@ -1,0 +1,26 @@
+.signup {
+    // date 文字的顏色透明度
+    input[type="date"]::-webkit-datetime-edit {
+        opacity: 0.8;
+    }
+    // date icon的顏色透明度
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        opacity: 0.6;
+    }
+    /* date 年月份「斜線」 */
+    input[type="date"]::-webkit-datetime-edit-text {
+        color: $gray-500; 
+        padding: 8px; 
+      } 
+
+    .clickMeToLogin {
+        color: $main-tint01;
+    }
+    .clickMeToLogin::before, .clickMeToLogin::after {
+        width: 28%;
+        background-color: $main-tint02;
+    }
+    .clickMeToLogin:hover {
+        color: $main;
+    }
+}

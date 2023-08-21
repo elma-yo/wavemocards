@@ -3,12 +3,15 @@
         img {
             display: block;
             min-width: 100%;
-            max-height: 100%;
+            min-height: 100%;
             object-fit: cover;
         }
     }
     .form {
         width: 80%;
+    }
+    .profile {
+        font-size: 88px;
     }
     h2 {
         font-size: 32px;
@@ -19,7 +22,7 @@
     }
     .or {
         position: relative;
-        color: $main-tint;
+        color: $gray-500;
         text-align: center;
         font-weight: bold;
     }
@@ -27,24 +30,55 @@
         position: absolute;
         content: "";
         width: 45%;
-        height: 2px;
+        height: 1px;
         top: 50%;
         left: 0;
-        background-color: $main-tint;
+        background-color: $gray-400;
     }
     .or::after {
         position: absolute;
         content: "";
         width: 45%;
-        height: 2px;
+        height: 1px;
         top: 50%;
         right: 0;
-        background-color: $main-tint;
+        background-color: $gray-400;
     }
     label {
-        color: $gray-600;
+        color: $gray-700;
+    }
+    .must {
+        color: $pink-tint02;
+        font-size: 14px;
     }
     input {
         border-radius: 100px;
+    }
+    .click-me {
+        position: relative;
+        color: $pink-tint01;
+        text-align: center;
+        font-weight: bold;
+    }
+    .click-me::before {
+        position: absolute;
+        content: "";
+        width: 38%;
+        height: 2px;
+        top: 50%;
+        left: 0;
+        background-color: $pink-tint02;
+    }
+    .click-me::after {
+        position: absolute;
+        content: "";
+        width: 38%;
+        height: 2px;
+        top: 50%;
+        right: 0;
+        background-color: $pink-tint02;
+    }
+    .click-me:hover {
+        color: $pink;
     }
 }
