@@ -12,6 +12,7 @@ $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
+$gray-550: #818181;
 $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
@@ -306,10 +307,10 @@ $warning:        #E4A11B;//$yellow !default;
 $danger:         #DC4C64;//$red !default;
 $light:          #FBFBFB;//$gray-100 !default;
 $dark:           #332D2D;//$gray-900 !default;
-$main:      #3C9DAE;
-$main-tint01: #85C5D6;
-$main-tint02: #B1DBE5;
-$main-dark: #417C88;
+$main:           #3C9DAE;
+$main-tint01:    #85C5D6;
+$main-tint02:    #B1DBE5;
+$main-dark:      #417C88;
 $pink:           #C37979;
 $pink-tint01:    #D89591;
 $pink-tint02:    #E8B0AC;
@@ -351,7 +352,18 @@ $theme-colors: (
   "emo-sadness":     $emo-sadness,
   "emo-hate":        $emo-hate,
   "emo-anger":       $emo-anger,
-  "emo-others":      $emo-others
+  "emo-others":      $emo-others,
+  "white":      $white,
+  "gray-100":   $gray-100,
+  "gray-200":   $gray-200,
+  "gray-300":   $gray-300,
+  "gray-400":   $gray-400,
+  "gray-500":   $gray-500,
+  "gray-550":   $gray-550,
+  "gray-600":   $gray-600,
+  "gray-700":   $gray-700,
+  "gray-800":   $gray-800,
+  "gray-900":   $gray-900,
 ) !default;
 // scss-docs-end theme-colors-map
 
