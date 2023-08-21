@@ -1,4 +1,26 @@
 .footer{
-  background: #69F0AE;
-  font-size: 64px;
+  background-color: $gray-700;
+  h3 {
+    margin-bottom: 8px;
+    padding: 4px 0 8px 0;
+    border-bottom: 1px solid $white;
+    font-size: 16px;
+    color: $white;
+  }
+  ul, span {
+    margin-right: 8px;
+    padding-left: 0;
+    color: $white;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  a:hover {
+    h3 {
+      color: $main-tint01;
+      border-bottom: 1px solid $main-tint01;
+    }
+    span {
+      color: $main-tint01;
+    }
+  }
 }
