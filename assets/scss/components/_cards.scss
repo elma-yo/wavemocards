@@ -41,29 +41,72 @@
 }
 
 .class-card-happy:hover {
-    border: 4px solid #D8BC5B;
+    border: 4px solid #EBD175;
 }
 .class-card-expectation:hover {
-    border: 4px solid #D9A778;
+    border: 4px solid #EAB27E;
 }
 .class-card-relived:hover {
-    border: 4px solid #94B070;
+    border: 4px solid #B0CC8B;
 }
 .class-card-unstable:hover {
-    border: 4px solid #9C746E;
+    border: 4px solid #AF8383;
 }
 .class-card-amazed:hover {
-    border: 4px solid #787DAA;
+    border: 4px solid #969DD7;
 }
 .class-card-sadness:hover {
-    border: 4px solid #88ADBE;
+    border: 4px solid #A2C5D6;
 }
 .class-card-hate:hover {
-    border: 4px solid #8D8073;
+    border: 4px solid #A99A8B;
 }
 .class-card-anger:hover {
-    border: 4px solid #C55B5B;
+    border: 4px solid #D87676;
 }
 .class-card-others:hover {
     border: 4px solid #CBCBCB;
+}
+
+
+.c-modal-xl-card {
+    max-width: 664px;
+    .modal-content {
+        margin: 0;
+        padding: 0;
+        border: none;
+        border-radius: 16px;
+    }
+    .modal-body {
+        padding: 40px 40px;
+    }
+    .text {
+        width: 50%;
+    }
+    .img {
+        width: 45%;
+    }
+    .title {
+        padding-bottom: 4px;
+        border-bottom: 2px solid $gray-700;
+    }
+    h2 {
+        font-size: 40px;
+        font-weight: bold;
+        color: $gray-900;
+    }
+    a {
+        font-size: 32px;
+        color: $gray-600;
+    }
+    a:hover {
+        color: $pink;
+    }
+    h3 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    p {
+        font-size: 20px;
+    }
 }

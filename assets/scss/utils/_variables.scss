@@ -316,15 +316,15 @@ $pink:           #C37979;
 $pink-tint01:    #D89591;
 $pink-tint02:    #E8B0AC;
 $pink-dark:      #B17075;
-$emo-happy:      #FFE589;
-$emo-expectation:#F8C18F;
-$emo-relived:    #CEE5AF;
-$emo-unstable:   #C39A94;
-$emo-amazed:     #B4B9E7;
-$emo-sadness:    #C5DDE8;
-$emo-hate:       #B9A796;
-$emo-anger:      #F07373;
-$emo-others:     #EBEBEB;
+$happy:          #FFE589;
+$expectation:    #F8C18F;
+$relived:        #CEE5AF;
+$unstable:       #C1A1A1;
+$amazed:         #B4B9E7;
+$sadness:        #C5DDE8;
+$hate:           #C0B3A6;
+$anger:          #E98D8D;
+$others:         #EBEBEB;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -346,15 +346,15 @@ $theme-colors: (
   "pink-tint01":     $pink-tint01,
   "pink-tint02":     $pink-tint02,
   "pink-dark":       $pink-dark,
-  "happy":       $emo-happy,
-  "expectation": $emo-expectation,
-  "relived":     $emo-relived,
-  "unstable":    $emo-unstable,
-  "amazed":      $emo-amazed,
-  "sadness":     $emo-sadness,
-  "hate":        $emo-hate,
-  "anger":       $emo-anger,
-  "others":      $emo-others,
+  "happy":       $happy,
+  "expectation": $expectation,
+  "relived":     $relived,
+  "unstable":    $unstable,
+  "amazed":      $amazed,
+  "sadness":     $sadness,
+  "hate":        $hate,
+  "anger":       $anger,
+  "others":      $others,
   "white":      $white,
   "gray-100":   $gray-100,
   "gray-200":   $gray-200,

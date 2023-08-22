@@ -1,4 +1,7 @@
 .homepage {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
   padding: 72px 0;
   background-image: url(../images/homepage.svg);
   background-repeat: no-repeat;
