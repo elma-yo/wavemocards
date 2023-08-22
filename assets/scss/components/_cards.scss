@@ -50,7 +50,7 @@
     border: 4px solid #B0CC8B;
 }
 .class-card-unstable:hover {
-    border: 4px solid #AF8383;
+    border: 4px solid #D7B3B3;
 }
 .class-card-amazed:hover {
     border: 4px solid #969DD7;
@@ -59,10 +59,10 @@
     border: 4px solid #A2C5D6;
 }
 .class-card-hate:hover {
-    border: 4px solid #A99A8B;
+    border: 4px solid #C1B1A4;
 }
 .class-card-anger:hover {
-    border: 4px solid #D87676;
+    border: 4px solid #D19292;
 }
 .class-card-others:hover {
     border: 4px solid #CBCBCB;
@@ -100,7 +100,7 @@
         color: $gray-600;
     }
     a:hover {
-        color: $pink;
+        color: $gray-900;
     }
     h3 {
         font-size: 24px;

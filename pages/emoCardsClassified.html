@@ -17,15 +17,15 @@
           <a class="btn btn-outline-main c-btn" href="aboutEmotions.html">關於情緒</a>
           <div class="ms-16 btn-disable">情緒卡</div>
         </div>
-
+        <!-- 導覽說明 -->
         <div class="guid px-24 py-16 bg-main-tint03">
           <p class="mb-8">你在情緒的世界裡迷航了嗎？</p>
           <p class="mb-8">沒關係，讓我們一起在浪潮情緒卡中，找尋自己的情緒。</p>
           <p class="mb-8">
             你可以藉由以下兩種方式「
-            <a class="px-4" href="">情緒卡</a>
+            <a class="px-4" href="#emoCardsTitle">情緒卡</a>
             」、「
-            <a class="px-4" href="">情緒表</a>
+            <a class="px-4" href="#emoTableTitle">情緒表</a>
             」，瀏覽與認識各種情緒。
           </p>
           <p>
@@ -35,6 +35,8 @@
           </p>
         </div>
 
+        <!-- 情緒卡 -->
+        <div id="emoCardsTitle" style="height: 56px;"></div>
         <div class="title d-flex justify-content-between align-items-center">
           <h2>情緒卡</h2>
           <div class="nav-btn d-flex justify-content-end">
@@ -42,7 +44,7 @@
             <a class="ms-16 btn btn-outline-main c-btn" href="emoCardsUnclassified.html">展開</a>
           </div>
         </div>
-        <!-- 分類卡片區 -->
+        <!-- 卡片分類 -->
         <div class="d-flex flex-wrap">
           <div class="class-card me-16 bg-happy class-card-happy">
             <p>快&nbsp;樂</p>
@@ -100,51 +102,145 @@
           </div>
         </div>
 
+        <!-- 情緒表 -->
+        <div id="emoTableTitle" style="height: 56px;"></div>
         <div class="title">
           <h2>情緒表</h2>
         </div>
-
-        <div class="mb-8 d-flex overflow-auto flex-nowrap">
-          <a href="emoCardsHappy.html" class="me-8 btn btn-emoTable btn-happy">快樂</a>
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-emoTable btn-happy opacity-happy" data-bs-toggle="modal" data-bs-target="#happy01">
-            滿足
-          </button>
+        <!-- 快樂類 -->
+        <div class="mb-8 d-flex flex-nowrap">
+          <a href="emoCardsHappy.html" class="emoTableHead me-8 btn btn-emoTable btn-happy fw-700 d-flex align-items-center text-nowrap">快樂</a>
+          <div class="d-flex overflow-auto">
+            <!-- Button trigger modal -->
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy01">滿足</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy02">快樂</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy03">幸福</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy04">自豪</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy05">興奮</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy06">痛快</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy07">狂喜</button>
+          </div>
         </div>
-      </div>
-    </div>
-    
-    <%- include('./layout/footer'); -%>
-
-    <!-- Modal -->
-    <div class="modal fade px-32" id="happy01" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
-        <div class="modal-content bg-happy">
-          <div class="modal-body d-flex justify-content-between align-items-center">
-            <div class="text">
-              <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">
-                <h2>滿足</h2>
-                <a href="addEmoCard.html" role="button">
-                  <i class="bi bi-pencil-square"></i>
-                </a>
-              </div>
-              <div class="mb-16">
-                <h3 class="mb-4">意思：</h3>
-                <p>一種心理或情感上的滿意狀態。</p>
-              </div>
-              <div>
-                <h3 class="mb-4">例句：</h3>
-                <p>我完成了自己今天的讀書目標，讓我感到很滿足。</p>
-              </div>
-            </div>
-
-            <div class="img">
-              <img class="w-100" src="../assets/images/happy/happy.svg" alt="滿足">
-            </div>
+        <!-- 期待類 -->
+        <div class="mb-8 d-flex flex-nowrap">
+          <a href="emoCardsExpectation.html" class="emoTableHead me-8 btn btn-emoTable btn-expectation fw-700 d-flex align-items-center text-nowrap">期待</a>
+          <div class="d-flex overflow-auto">
+            <!-- Button trigger modal -->
+            <button type="button" class="me-8 btn btn-emoTable btn-expectation opacity-expectation text-nowrap" data-bs-toggle="modal" data-bs-target="#expectation01">期待</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-expectation opacity-expectation text-nowrap" data-bs-toggle="modal" data-bs-target="#expectation02">有信心</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-expectation opacity-expectation text-nowrap" data-bs-toggle="modal" data-bs-target="#expectation03">充滿興趣</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-expectation opacity-expectation text-nowrap" data-bs-toggle="modal" data-bs-target="#expectation04">渴望</button>
+          </div>
+        </div>
+        <!-- 安心類 -->
+        <div class="mb-8 d-flex flex-nowrap">
+          <a href="emoCardsRelived.html" class="emoTableHead me-8 btn btn-emoTable btn-relived fw-700 d-flex align-items-center text-nowrap">安心</a>
+          <div class="d-flex overflow-auto">
+            <!-- Button trigger modal -->
+            <button type="button" class="me-8 btn btn-emoTable btn-relived opacity-relived text-nowrap" data-bs-toggle="modal" data-bs-target="#relived01">舒服</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-relived opacity-relived text-nowrap" data-bs-toggle="modal" data-bs-target="#relived02">放鬆</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-relived opacity-relived text-nowrap" data-bs-toggle="modal" data-bs-target="#relived03">平靜</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-relived opacity-relived text-nowrap" data-bs-toggle="modal" data-bs-target="#relived04">安心</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-relived opacity-relived text-nowrap" data-bs-toggle="modal" data-bs-target="#relived05">自在</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-relived opacity-relived text-nowrap" data-bs-toggle="modal" data-bs-target="#relived06">信任</button>
+          </div>
+        </div>
+        <!-- 不安類 -->
+        <div class="mb-8 d-flex flex-nowrap">
+          <a href="emoCardsUnstable.html" class="emoTableHead me-8 btn btn-emoTable btn-unstable fw-700 d-flex align-items-center text-nowrap">不安</a>
+          <div class="d-flex overflow-auto">
+            <!-- Button trigger modal -->
+            <button type="button" class="me-8 btn btn-emoTable btn-unstable opacity-unstable text-nowrap" data-bs-toggle="modal" data-bs-target="#unstable01">害羞</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-unstable opacity-unstable text-nowrap" data-bs-toggle="modal" data-bs-target="#unstable02">擔心</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-unstable opacity-unstable text-nowrap" data-bs-toggle="modal" data-bs-target="#unstable03">迷惘</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-unstable opacity-unstable text-nowrap" data-bs-toggle="modal" data-bs-target="#unstable04">不安</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-unstable opacity-unstable text-nowrap" data-bs-toggle="modal" data-bs-target="#unstable05">害怕</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-unstable opacity-unstable text-nowrap" data-bs-toggle="modal" data-bs-target="#unstable06">緊張</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-unstable opacity-unstable text-nowrap" data-bs-toggle="modal" data-bs-target="#unstable07">焦慮</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-unstable opacity-unstable text-nowrap" data-bs-toggle="modal" data-bs-target="#unstable08">恐懼</button>
+          </div>
+        </div>
+        <!-- 驚訝類 -->
+        <div class="mb-8 d-flex flex-nowrap">
+          <a href="emoCardsAmazed.html" class="emoTableHead me-8 btn btn-emoTable btn-amazed fw-700 d-flex align-items-center text-nowrap">驚訝</a>
+          <div class="d-flex overflow-auto">
+            <!-- Button trigger modal -->
+            <button type="button" class="me-8 btn btn-emoTable btn-amazed opacity-amazed text-nowrap" data-bs-toggle="modal" data-bs-target="#amazed01">錯愕</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-amazed opacity-amazed text-nowrap" data-bs-toggle="modal" data-bs-target="#amazed02">驚訝</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-amazed opacity-amazed text-nowrap" data-bs-toggle="modal" data-bs-target="#amazed03">驚喜</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-amazed opacity-amazed text-nowrap" data-bs-toggle="modal" data-bs-target="#amazed04">震驚</button>
+          </div>
+        </div>
+        <!-- 低落類 -->
+        <div class="mb-8 d-flex flex-nowrap">
+          <a href="emoCardsSadness.html" class="emoTableHead me-8 btn btn-emoTable btn-sadness fw-700 d-flex align-items-center text-nowrap">低落</a>
+          <div class="d-flex overflow-auto">
+            <!-- Button trigger modal -->
+            <button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#sadness01">無奈</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#sadness02">挫折</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#sadness03">失望</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#sadness04">無力</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#sadness05">沮喪</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#sadness06">難過</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#sadness07">無助</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#sadness08">悲傷</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#sadness09">心痛</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#sadness10">憂鬱</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#sadness11">崩潰</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#sadness12">絕望</button>
+          </div>
+        </div>
+        <!-- 討厭類 -->
+        <div class="mb-8 d-flex flex-nowrap">
+          <a href="emoCardsHate.html" class="emoTableHead me-8 btn btn-emoTable btn-hate fw-700 d-flex align-items-center text-nowrap">討厭</a>
+          <div class="d-flex overflow-auto">
+            <!-- Button trigger modal -->
+            <button type="button" class="me-8 btn btn-emoTable btn-hate opacity-hate text-nowrap" data-bs-toggle="modal" data-bs-target="#hate01">無聊</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-hate opacity-hate text-nowrap" data-bs-toggle="modal" data-bs-target="#hate02">厭倦</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-hate opacity-hate text-nowrap" data-bs-toggle="modal" data-bs-target="#hate03">自卑</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-hate opacity-hate text-nowrap" data-bs-toggle="modal" data-bs-target="#hate04">討厭</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-hate opacity-hate text-nowrap" data-bs-toggle="modal" data-bs-target="#hate05">嫉妒</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-hate opacity-hate text-nowrap" data-bs-toggle="modal" data-bs-target="#hate06">厭惡</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-hate opacity-hate text-nowrap" data-bs-toggle="modal" data-bs-target="#hate07">噁心</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-hate opacity-hate text-nowrap" data-bs-toggle="modal" data-bs-target="#hate08">怨恨</button>
+          </div>
+        </div>
+        <!-- 生氣類 -->
+        <div class="mb-8 d-flex flex-nowrap">
+          <a href="emoCardsAnger.html" class="emoTableHead me-8 btn btn-emoTable btn-anger fw-700 d-flex align-items-center text-nowrap">生氣</a>
+          <div class="d-flex overflow-auto">
+            <!-- Button trigger modal -->
+            <button type="button" class="me-8 btn btn-emoTable btn-anger opacity-anger text-nowrap" data-bs-toggle="modal" data-bs-target="#anger01">不滿</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-anger opacity-anger text-nowrap" data-bs-toggle="modal" data-bs-target="#anger02">煩躁</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-anger opacity-anger text-nowrap" data-bs-toggle="modal" data-bs-target="#anger03">生氣</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-anger opacity-anger text-nowrap" data-bs-toggle="modal" data-bs-target="#anger04">憤怒</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-anger opacity-anger text-nowrap" data-bs-toggle="modal" data-bs-target="#anger05">暴怒</button>
+          </div>
+        </div>
+        <!-- 其他類 -->
+        <div class="mb-72 d-flex flex-nowrap">
+          <a href="emoCardsOthers.html" class="emoTableHead me-8 btn btn-emoTable btn-others fw-700 d-flex align-items-center text-nowrap">其他</a>
+          <div class="d-flex overflow-auto">
+            <!-- Button trigger modal -->
+            <button type="button" class="me-8 btn btn-emoTable btn-others opacity-others text-nowrap" data-bs-toggle="modal" data-bs-target="#others01">釋懷</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-others opacity-others text-nowrap" data-bs-toggle="modal" data-bs-target="#others02">尷尬</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-others opacity-others text-nowrap" data-bs-toggle="modal" data-bs-target="#others03">羨慕</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-others opacity-others text-nowrap" data-bs-toggle="modal" data-bs-target="#others04">愧疚</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-others opacity-others text-nowrap" data-bs-toggle="modal" data-bs-target="#others05">矛盾</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-others opacity-others text-nowrap" data-bs-toggle="modal" data-bs-target="#others06">後悔</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-others opacity-others text-nowrap" data-bs-toggle="modal" data-bs-target="#others07">委屈</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-others opacity-others text-nowrap" data-bs-toggle="modal" data-bs-target="#others08">寂寞</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-others opacity-others text-nowrap" data-bs-toggle="modal" data-bs-target="#others09">羞恥</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-others opacity-others text-nowrap" data-bs-toggle="modal" data-bs-target="#others10">感動</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-others opacity-others text-nowrap" data-bs-toggle="modal" data-bs-target="#others11">激動</button>
           </div>
         </div>
       </div>
     </div>
+
+    <%- include('./layout/modalEmoCards'); -%>
+    
+    <%- include('./layout/footer'); -%>
 
     <script type="module" src="../main.js"></script>
     <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
