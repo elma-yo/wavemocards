@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>浪潮情緒卡｜不安</title>
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <%- include('./layout/headerLogined'); -%>
+
+    <div class="classifiedPage" style="min-height: 80vh;">
+        <div class="container py-16">
+            <div class="titleBar d-flex justify-content-between align-items-center">
+                <h2>不安</h2>
+                <div class="nav-btn d-flex justify-content-end">
+                    <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
+                </div>
+            </div>
+            <div class="d-flex flex-wrap mb-72">
+                <button type="button" class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable01">
+                    <p>害&nbsp;羞</p>
+                    <div class="img-box">
+                      <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                    </div>
+                </button>
+                <button type="button" class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable02">
+                    <p>擔&nbsp;心</p>
+                    <div class="img-box">
+                      <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                    </div>
+                </button>
+                <button type="button" class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable03">
+                    <p>迷&nbsp;惘</p>
+                    <div class="img-box">
+                      <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                    </div>
+                </button>
+                <button type="button" class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable04">
+                    <p>不&nbsp;安</p>
+                    <div class="img-box">
+                      <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                    </div>
+                </button>
+                <button type="button" class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable05">
+                    <p>害&nbsp;怕</p>
+                    <div class="img-box">
+                      <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                    </div>
+                </button>
+                <button type="button" class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable06">
+                    <p>緊&nbsp;張</p>
+                    <div class="img-box">
+                      <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                    </div>
+                </button>
+                <button type="button" class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable07">
+                    <p>焦&nbsp;慮</p>
+                    <div class="img-box">
+                      <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                    </div>
+                </button>
+                <button type="button" class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable08">
+                    <p>恐&nbsp;懼</p>
+                    <div class="img-box">
+                      <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <%- include('./layout/modalEmoCards'); -%>
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+    <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
+  </body>
+</html>
