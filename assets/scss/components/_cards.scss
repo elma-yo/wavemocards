@@ -1,0 +1,69 @@
+.class-card {
+    width: 236px;
+    height: 140px;
+    display: flex;
+    margin-bottom: 16px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12px;
+    p {
+        width: 50%;
+        padding: 0 8px;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .img-box {
+        width: 50%;
+        border-radius: 50%;
+        overflow:hidden;
+    }
+    img {
+        width: 100%;
+        transform:scale(1,1);
+        transition: all .25s ease-out;
+    }
+}
+
+.class-card:hover {
+    padding: 8px;
+    p {
+        width: 40%;
+        font-size: 32px;
+        padding: 0;
+    }
+    .img-box {
+        width: 55%;
+    }
+    img {
+        transform:scale(1.2,1.2);
+    }
+}
+
+.class-card-happy:hover {
+    border: 4px solid #D8BC5B;
+}
+.class-card-expectation:hover {
+    border: 4px solid #D9A778;
+}
+.class-card-relived:hover {
+    border: 4px solid #94B070;
+}
+.class-card-unstable:hover {
+    border: 4px solid #9C746E;
+}
+.class-card-amazed:hover {
+    border: 4px solid #787DAA;
+}
+.class-card-sadness:hover {
+    border: 4px solid #88ADBE;
+}
+.class-card-hate:hover {
+    border: 4px solid #8D8073;
+}
+.class-card-anger:hover {
+    border: 4px solid #C55B5B;
+}
+.class-card-others:hover {
+    border: 4px solid #CBCBCB;
+}

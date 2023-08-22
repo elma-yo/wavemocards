@@ -52,3 +52,29 @@
     color: $white;
     box-shadow: 2px 2px 4px rgba(112, 132, 136, 0.5);
 }
+
+// Be used in aboutEmotions, emotionCardsClassified
+.nav-btn {
+    .btn-disable {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: not-allowed;
+        border-radius: 100px;
+        padding: 4px 16px;
+        background-color: $gray-300;
+        color: $gray-500;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .btn-gray-500:hover {
+        background-color: $gray-400;
+    }
+    .btn-outline-main {
+        border: 2px solid $main;
+        color: $main;
+    }
+    .btn-outline-main:hover {
+        color: $white;
+    }
+}

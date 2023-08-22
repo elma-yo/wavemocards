@@ -5,9 +5,12 @@
 // to load all the scss files of bootstrap 載入所有bs5的scss
 @import "../../node_modules/bootstrap";
 
-@import "./components/button";
+@import "./setting/reset";
+@import "./setting/base";
 
-@import "./setting/setting";
+@import "./components/button";
+@import "./components/cards";
+@import "./components/emoTable";
 
 @import './layout/header.scss';
 @import './layout/headerLogined';
@@ -18,3 +21,4 @@
 @import './pages/login';
 @import './pages/signup';
 @import './pages/aboutEmotions';
+@import './pages/emoCardsClassified';

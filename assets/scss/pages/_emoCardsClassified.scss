@@ -1,0 +1,17 @@
+.emoCardsClassified {
+    .guid {
+        border-radius: 8px;
+        a {
+            color: $main;
+            font-size: 20px;
+        }
+        a:hover {
+            color: $main-dark;
+        }
+    }
+    .title {
+        padding: 32px 0 8px 0;
+        margin-bottom: 32px;
+        border-bottom: 2px solid $main-tint02;
+    }
+}

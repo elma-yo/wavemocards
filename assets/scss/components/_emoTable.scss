@@ -1,0 +1,14 @@
+.btn-emoTable {
+    padding: 8px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+.opacity-happy {
+    background-color: rgba(255, 229, 127, .2);
+    border: 3px solid rgba(255, 229, 127, .05);
+}
+.opacity-happy:hover {
+    background-color: rgba(255, 229, 127, .5);
+    border: 3px solid #D8BC5B;
+}

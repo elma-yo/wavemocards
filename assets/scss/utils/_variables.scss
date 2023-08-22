@@ -310,6 +310,7 @@ $dark:           #332D2D;//$gray-900 !default;
 $main:           #3C9DAE;
 $main-tint01:    #85C5D6;
 $main-tint02:    #B1DBE5;
+$main-tint03:    #E6F6FA;
 $main-dark:      #417C88;
 $pink:           #C37979;
 $pink-tint01:    #D89591;
@@ -337,22 +338,23 @@ $theme-colors: (
   "light":      $light,
   "dark":       $dark,
   "main":       $main,
-  "main-tint01": $main-tint01,
-  "main-tint02":  $main-tint02,
-  "main-dark":  $main-dark,
+  "main-tint01":     $main-tint01,
+  "main-tint02":     $main-tint02,
+  "main-tint03":     $main-tint03,
+  "main-dark":       $main-dark,
   "pink":            $pink,
   "pink-tint01":     $pink-tint01,
   "pink-tint02":     $pink-tint02,
   "pink-dark":       $pink-dark,
-  "emo-happy":       $emo-happy,
-  "emo-expectation": $emo-expectation,
-  "emo-relived":     $emo-relived,
-  "emo-unstable":    $emo-unstable,
-  "emo-amazed":      $emo-amazed,
-  "emo-sadness":     $emo-sadness,
-  "emo-hate":        $emo-hate,
-  "emo-anger":       $emo-anger,
-  "emo-others":      $emo-others,
+  "happy":       $emo-happy,
+  "expectation": $emo-expectation,
+  "relived":     $emo-relived,
+  "unstable":    $emo-unstable,
+  "amazed":      $emo-amazed,
+  "sadness":     $emo-sadness,
+  "hate":        $emo-hate,
+  "anger":       $emo-anger,
+  "others":      $emo-others,
   "white":      $white,
   "gray-100":   $gray-100,
   "gray-200":   $gray-200,

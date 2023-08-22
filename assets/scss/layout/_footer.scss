@@ -1,5 +1,5 @@
 .footer{
-  background-color: $gray-700;
+  background-color: $gray-550;
   h3 {
     margin-bottom: 8px;
     padding: 4px 0 8px 0;
@@ -16,11 +16,11 @@
   }
   a:hover {
     h3 {
-      color: $main-tint01;
-      border-bottom: 1px solid $main-tint01;
+      color: $main-tint02;
+      border-bottom: 1px solid $main-tint02;
     }
     span {
-      color: $main-tint01;
+      color: $main-tint02;
     }
   }
 }
