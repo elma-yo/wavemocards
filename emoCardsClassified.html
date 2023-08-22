@@ -7,8 +7,8 @@
     <title>浪潮情緒卡｜找尋我的情緒</title>
     <!-- Bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <script type="module" crossorigin src="/wavemocards/assets/main-e17f8e2c.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-1b28fc69.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-82a8a957.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-7daa8204.css">
   </head>
   <body>
     <header class="header h-logined sticky-top">
@@ -139,7 +139,10 @@
 
         <div class="mb-8 d-flex overflow-auto flex-nowrap">
           <a href="emoCardsHappy.html" class="me-8 btn btn-emoTable btn-happy">快樂</a>
-          <a href="emoCardsHappy.html" class="me-8 btn btn-emoTable btn-happy opacity-happy">快樂</a>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-emoTable btn-happy opacity-happy" data-bs-toggle="modal" data-bs-target="#happy01">
+            滿足
+          </button>
         </div>
       </div>
     </div>
@@ -169,6 +172,36 @@
         </div>
     </div>
 </footer>
+    <!-- Modal -->
+    <div class="modal fade px-32" id="happy01" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+        <div class="modal-content bg-happy">
+          <div class="modal-body d-flex justify-content-between align-items-center">
+            <div class="text">
+              <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">
+                <h2>滿足</h2>
+                <a href="addEmoCard.html" role="button">
+                  <i class="bi bi-pencil-square"></i>
+                </a>
+              </div>
+              <div class="mb-16">
+                <h3 class="mb-4">意思：</h3>
+                <p>一種心理或情感上的滿意狀態。</p>
+              </div>
+              <div>
+                <h3 class="mb-4">例句：</h3>
+                <p>我完成了自己今天的讀書目標，讓我感到很滿足。</p>
+              </div>
+            </div>
+
+            <div class="img">
+              <img class="w-100" src="/wavemocards/assets/happy-15fff68b.svg" alt="滿足">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     
     <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
   </body>
