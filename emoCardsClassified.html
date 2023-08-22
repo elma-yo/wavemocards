@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>浪潮情緒卡｜找尋我的情緒</title>
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-e17f8e2c.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-1b28fc69.css">
+  </head>
+  <body>
+    <header class="header h-logined sticky-top">
+    <div class="container py-16 d-flex justify-content-between align-items-center">
+        <h1>
+            <a href="home.html" id="home">浪潮情緒卡</a>
+        </h1>
+        <ul class="d-flex justify-content-between align-items-center mb-0 ps-0">
+            <li>
+                <a href="aboutEmotions.html" class="px-4 py-8" id="aboutEmotions">認識情緒</a>
+            </li>
+            <li class="ms-16">
+                <a href="findMyEmotions.html" class="px-4 py-8" id="findMyEmotions">找尋我的情緒</a>
+            </li>
+            <li class="ms-16">
+                <a href="myRecords.html" class="px-4 py-8" id="myRecords">我的紀錄</a>
+            </li>
+            <li class="ms-16">
+                <a href="shared.html" class="px-4 py-8" id="shared">共享紀錄</a>
+            </li>
+            <li class="ms-16">
+                <a href="account.html" class="profile" id="profile">
+                    <i class="bi bi-person-fill"></i>
+                    <i class="bi bi-person-fill-gear"></i>
+                </a>
+            </li>
+            <li class="ms-16">
+                <a href="logout.html" class="logout" id="logout">
+                    <i class="bi bi-door-closed-fill"></i>
+                    <i class="bi bi-door-open-fill"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+    <div class="emoCardsClassified">
+      <div class="container  py-16">
+        <div class="nav-btn py-16 d-flex justify-content-end">
+          <a class="btn btn-outline-main c-btn" href="aboutEmotions.html">關於情緒</a>
+          <div class="ms-16 btn-disable">情緒卡</div>
+        </div>
+
+        <div class="guid px-24 py-16 bg-main-tint03">
+          <p class="mb-8">你在情緒的世界裡迷航了嗎？</p>
+          <p class="mb-8">沒關係，讓我們一起在浪潮情緒卡中，找尋自己的情緒。</p>
+          <p class="mb-8">
+            你可以藉由以下兩種方式「
+            <a class="px-4" href="">情緒卡</a>
+            」、「
+            <a class="px-4" href="">情緒表</a>
+            」，瀏覽與認識各種情緒。
+          </p>
+          <p>
+            此外，若您想增加新的情緒卡・詞彙，可以點選「
+            <a class="px-4" href="addEmoCard">新增情緒卡</a>
+            」，新增情緒卡。
+          </p>
+        </div>
+
+        <div class="title d-flex justify-content-between align-items-center">
+          <h2>情緒卡</h2>
+          <div class="nav-btn d-flex justify-content-end">
+            <div class="btn-disable">分類</div>
+            <a class="ms-16 btn btn-outline-main c-btn" href="emoCardsUnclassified.html">展開</a>
+          </div>
+        </div>
+        <!-- 分類卡片區 -->
+        <div class="d-flex flex-wrap">
+          <div class="class-card me-16 bg-happy class-card-happy">
+            <p>快&nbsp;樂</p>
+            <div class="img-box">
+              <img src="/wavemocards/assets/happy-15fff68b.svg" alt="happy">
+            </div>
+          </div>
+          <div class="class-card me-16 bg-expectation class-card-expectation">
+            <p>期&nbsp;待</p>
+            <div class="img-box">
+              <img src="/wavemocards/assets/expectation-5303e497.svg" alt="happy">
+            </div>
+          </div>
+          <div class="class-card me-16 bg-relived class-card-relived">
+            <p>安&nbsp;心</p>
+            <div class="img-box">
+              <img src="/wavemocards/assets/relived-a2a34c50.svg" alt="happy">
+            </div>
+          </div>
+          <div class="class-card me-16 bg-unstable class-card-unstable">
+            <p>不&nbsp;安</p>
+            <div class="img-box">
+              <img src="/wavemocards/assets/unstable-acd86cde.svg" alt="happy">
+            </div>
+          </div>
+          <div class="class-card me-16 bg-amazed class-card-amazed">
+            <p>驚&nbsp;訝</p>
+            <div class="img-box">
+              <img src="/wavemocards/assets/amazed-e6d9101a.svg" alt="happy">
+            </div>
+          </div>
+          <div class="class-card me-16 bg-sadness class-card-sadness">
+            <p>低&nbsp;落</p>
+            <div class="img-box">
+              <img src="/wavemocards/assets/sadness-c0224255.svg" alt="happy">
+            </div>
+          </div>
+          <div class="class-card me-16 bg-hate class-card-hate">
+            <p>討&nbsp;厭</p>
+            <div class="img-box">
+              <img src="/wavemocards/assets/hate-d0497db6.svg" alt="happy">
+            </div>
+          </div>
+          <div class="class-card me-16 bg-anger class-card-anger">
+            <p>生&nbsp;氣</p>
+            <div class="img-box">
+              <img src="/wavemocards/assets/happy-15fff68b.svg" alt="happy">
+            </div>
+          </div>
+          <div class="class-card me-16 bg-others class-card-others">
+            <p>其&nbsp;他</p>
+            <div class="img-box">
+              <img src="/wavemocards/assets/happy-15fff68b.svg" alt="happy">
+            </div>
+          </div>
+        </div>
+
+        <div class="title">
+          <h2>情緒表</h2>
+        </div>
+
+        <div class="mb-8 d-flex overflow-auto flex-nowrap">
+          <a href="emoCardsHappy.html" class="me-8 btn btn-emoTable btn-happy">快樂</a>
+          <a href="emoCardsHappy.html" class="me-8 btn btn-emoTable btn-happy opacity-happy">快樂</a>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="footer py-48">
+    <div class="container d-flex">
+        <div class="logo me-96">
+            <a href="home.html">
+                <img src="/wavemocards/assets/logo_footer-2fe4aa72.svg" alt="logo">
+            </a>
+        </div>
+        <div class="d-flex pt-24">
+            <div class="me-72">
+                <h3>開發群</h3>
+                <ul class="d-flex">
+                    <li class="me-16">Elma Yu</li>
+                    <li class="me-16">Leon Wu</li>
+                    <li>Espoir Fang</li>
+                </ul>
+            </div>
+            <div class="me-72">
+                <a href="mailto:wave_emocards@gmail.cooom">
+                    <h3>聯絡我們</h3>
+                    <span>wave_emocards@gmail.cooom</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
+  </body>
+</html>
