@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>浪潮情緒卡｜放鬆</title>
+    <title>浪潮情緒卡｜找尋我的情緒｜分類探索｜低落</title>
     <!-- Bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script type="module" crossorigin src="/wavemocards/assets/main-20a89196.js"></script>
@@ -46,49 +46,133 @@
 </header>
     <div class="classifiedPage" style="min-height: 80vh;">
         <div class="container py-16">
+            <!-- title bar -->
             <div class="titleBar d-flex justify-content-between align-items-center">
-                <h2>放鬆</h2>
+                <h2>低落</h2>
                 <div class="nav-btn d-flex justify-content-end">
-                    <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
+                    <a class="btn btn-outline-main c-btn" href="findEmoClassified.html">返回</a>
+                    <a class="ms-16 btn btn-main c-btn btn-goToMyCards" href="AddedEmoCards.html">
+                        <i class="bi bi-folder2"></i>
+                        <i class="bi bi-folder2-open"></i>
+                        <span class="ms-4">我的情緒卡夾</span>
+                    </a>
                 </div>
             </div>
+
+            <p class="mb-44 text-gray-550">
+                🔎 透過點擊 <i class="bi bi-plus-lg"></i>，將情緒新增進「我的情緒卡夾」中。
+            </p>
+
+            <!-- cards -->
             <div class="d-flex flex-wrap mb-72">
-                <button type="button" class="class-card me-16 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#relived01">
-                    <p>舒&nbsp;服</p>
-                    <div class="img-box">
-                      <img src="/wavemocards/assets/relived-a2a34c50.svg" alt="relived">
-                    </div>
-                </button>
-                <button type="button" class="class-card me-16 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#relived02">
-                    <p>放&nbsp;鬆</p>
-                    <div class="img-box">
-                      <img src="/wavemocards/assets/relived-a2a34c50.svg" alt="relived">
-                    </div>
-                </button>
-                <button type="button" class="class-card me-16 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#relived03">
-                    <p>平&nbsp;靜</p>
-                    <div class="img-box">
-                      <img src="/wavemocards/assets/relived-a2a34c50.svg" alt="relived">
-                    </div>
-                </button>
-                <button type="button" class="class-card me-16 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#relived04">
-                    <p>安&nbsp;心</p>
-                    <div class="img-box">
-                      <img src="/wavemocards/assets/relived-a2a34c50.svg" alt="relived">
-                    </div>
-                </button>
-                <button type="button" class="class-card me-16 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#relived05">
-                    <p>自&nbsp;在</p>
-                    <div class="img-box">
-                      <img src="/wavemocards/assets/relived-a2a34c50.svg" alt="relived">
-                    </div>
-                </button>
-                <button type="button" class="class-card me-16 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#relived06">
-                    <p>信&nbsp;任</p>
-                    <div class="img-box">
-                      <img src="/wavemocards/assets/relived-a2a34c50.svg" alt="relived">
-                    </div>
-                </button>
+                <div class="position-relative me-36 mb-20">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness01">
+                        <p>無&nbsp;奈</p>
+                        <div class="img-box">
+                        <img src="/wavemocards/assets/sadness-4f96b742.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-36 mb-20">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness02">
+                        <p>挫&nbsp;折</p>
+                        <div class="img-box">
+                        <img src="/wavemocards/assets/sadness-4f96b742.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-36 mb-20">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness03">
+                        <p>失&nbsp;望</p>
+                        <div class="img-box">
+                        <img src="/wavemocards/assets/sadness-4f96b742.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-36 mb-20">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness04">
+                        <p>無&nbsp;力</p>
+                        <div class="img-box">
+                        <img src="/wavemocards/assets/sadness-4f96b742.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-36 mb-20">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness05">
+                        <p>沮&nbsp;喪</p>
+                        <div class="img-box">
+                        <img src="/wavemocards/assets/sadness-4f96b742.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-36 mb-20">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness06">
+                        <p>難&nbsp;過</p>
+                        <div class="img-box">
+                        <img src="/wavemocards/assets/sadness-4f96b742.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-36 mb-20">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness07">
+                        <p>無&nbsp;助</p>
+                        <div class="img-box">
+                        <img src="/wavemocards/assets/sadness-4f96b742.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-36 mb-20">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness08">
+                        <p>悲&nbsp;傷</p>
+                        <div class="img-box">
+                        <img src="/wavemocards/assets/sadness-4f96b742.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-36 mb-20">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness09">
+                        <p>心&nbsp;痛</p>
+                        <div class="img-box">
+                        <img src="/wavemocards/assets/sadness-4f96b742.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-36 mb-20">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness10">
+                        <p>憂&nbsp;鬱</p>
+                        <div class="img-box">
+                        <img src="/wavemocards/assets/sadness-4f96b742.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-36 mb-20">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness11">
+                        <p>崩&nbsp;潰</p>
+                        <div class="img-box">
+                        <img src="/wavemocards/assets/sadness-4f96b742.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-36 mb-20">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness12">
+                        <p>絕&nbsp;望</p>
+                        <div class="img-box">
+                        <img src="/wavemocards/assets/sadness-4f96b742.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
