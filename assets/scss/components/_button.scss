@@ -114,3 +114,20 @@
         transform:scale(1.2,1.2);
     }
 }
+
+// 我的情緒卡夾
+.btn-goToMyCards {
+    display: flex;
+    align-items: center;
+    .bi-folder2-open {
+        display: none;
+    }
+}
+.btn-goToMyCards:hover {
+    .bi-folder2 {
+        display: none;
+    }
+    .bi-folder2-open {
+        display: block;
+    }
+}
