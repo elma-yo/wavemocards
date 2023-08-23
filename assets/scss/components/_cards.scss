@@ -112,19 +112,29 @@
     p {
         font-size: 20px;
     }
-    .btn-add {
-        display: block;
-        width: 64px;
-        height: 64px;
-        background-image: url(../images/plus-btn-100.svg);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;
-    }
-    .btn-add:hover {
-        background-image: url(../images/plus-btn-hover.svg);
-    }
+}
+.btn-add-card-m {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-image: url(../images/plus-btn.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.btn-add-card-xl {
+    display: block;
+    width: 64px;
+    height: 64px;
+    background-image: url(../images/plus-btn-100.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.btn-add-card-m:hover, .btn-add-card-xl:hover {
+    background-image: url(../images/plus-btn-hover.svg);
 }
 
 

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>浪潮情緒卡｜情緒卡-展開</title>
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <%- include('./layout/headerLogined'); -%>
+
+    <div class="container py-16">
+        <div class="titleBar d-flex justify-content-between align-items-center">
+            <h2>情緒卡</h2>
+            <div class="nav-btn d-flex justify-content-end">
+                <a class="btn btn-outline-main c-btn" href="findEmoClassified.html">分類</a>
+                <div class="ms-16 btn-disable">展開</div>
+            </div>
+        </div>
+
+        <!-- 快樂類 -->
+        <div class="mb-20 d-flex flex-nowrap">
+            <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadHappy" href="emoCardsHappy.html">
+                <span>快</span><span>樂</span>
+            </a>
+            <div class="d-flex overflow-auto pt-20">
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy01">
+                        <p>滿&nbsp;足</p>
+                        <div class="img-box">
+                          <img src="../assets/images/happy/happy.svg" alt="happy">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy02">
+                        <p>快&nbsp;樂</p>
+                        <div class="img-box">
+                        <img src="../assets/images/happy/happy.svg" alt="happy">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy03">
+                        <p>幸&nbsp;福</p>
+                        <div class="img-box">
+                        <img src="../assets/images/happy/happy.svg" alt="happy">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy04">
+                        <p>自&nbsp;豪</p>
+                        <div class="img-box">
+                        <img src="../assets/images/happy/happy.svg" alt="happy">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy05">
+                        <p>興&nbsp;奮</p>
+                        <div class="img-box">
+                        <img src="../assets/images/happy/happy.svg" alt="happy">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy06">
+                        <p>痛&nbsp;快</p>
+                        <div class="img-box">
+                        <img src="../assets/images/happy/happy.svg" alt="happy">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy07">
+                        <p>狂&nbsp;喜</p>
+                        <div class="img-box">
+                        <img src="../assets/images/happy/happy.svg" alt="happy">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 期待類 -->
+        <div class="mb-20 d-flex flex-nowrap">
+            <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadExpectation" href="emoCardsExpectation.html">
+                <span>期</span><span>待</span>
+            </a>
+            <div class="d-flex overflow-auto pt-20">
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#addExpectation01">
+                        <p>期&nbsp;待</p>
+                        <div class="img-box">
+                        <img src="../assets/images/expectation/expectation.svg" alt="expectation">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-expectation link-gray-900 class-card-expectation " data-bs-toggle="modal" data-bs-target="#addExpectation02">
+                        <p class="px-0">有信心</p>
+                        <div class="img-box">
+                        <img src="../assets/images/expectation/expectation.svg" alt="expectation">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#addExpectation03">
+                        <p>充滿興趣</p>
+                        <div class="img-box">
+                        <img src="../assets/images/expectation/expectation.svg" alt="expectation">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#addExpectation04">
+                        <p>渴望</p>
+                        <div class="img-box">
+                        <img src="../assets/images/expectation/expectation.svg" alt="expectation">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 放鬆類 -->
+        <div class="mb-20 d-flex flex-nowrap">
+            <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadRelived" href="emoCardsRelived.html">
+                <span>放</span><span>鬆</span>
+            </a>
+            <div class="d-flex overflow-auto pt-20">
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#addRelived01">
+                        <p>舒&nbsp;服</p>
+                        <div class="img-box">
+                        <img src="../assets/images/relived/relived.svg" alt="relived">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#addRelived02">
+                        <p>放&nbsp;鬆</p>
+                        <div class="img-box">
+                        <img src="../assets/images/relived/relived.svg" alt="relived">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#addRelived03">
+                        <p>平&nbsp;靜</p>
+                        <div class="img-box">
+                        <img src="../assets/images/relived/relived.svg" alt="relived">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#addRelived04">
+                        <p>安&nbsp;心</p>
+                        <div class="img-box">
+                        <img src="../assets/images/relived/relived.svg" alt="relived">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#addRelived05">
+                        <p>自&nbsp;在</p>
+                        <div class="img-box">
+                        <img src="../assets/images/relived/relived.svg" alt="relived">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#addRelived06">
+                        <p>信&nbsp;任</p>
+                        <div class="img-box">
+                        <img src="../assets/images/relived/relived.svg" alt="relived">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 不安類 -->
+        <div class="mb-20 d-flex flex-nowrap">
+            <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadUnstable" href="emoCardsUnstable.html">
+                <span>不</span><span>安</span>
+            </a>
+            <div class="d-flex overflow-auto pt-20">
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#addUnstable01">
+                        <p>害&nbsp;羞</p>
+                        <div class="img-box">
+                        <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#addUnstable02">
+                        <p>擔&nbsp;心</p>
+                        <div class="img-box">
+                        <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#addUnstable03">
+                        <p>迷&nbsp;惘</p>
+                        <div class="img-box">
+                        <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#addUnstable04">
+                        <p>不&nbsp;安</p>
+                        <div class="img-box">
+                        <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#addUnstable05">
+                        <p>害&nbsp;怕</p>
+                        <div class="img-box">
+                        <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#addUnstable06">
+                        <p>緊&nbsp;張</p>
+                        <div class="img-box">
+                        <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#addUnstable07">
+                        <p>焦&nbsp;慮</p>
+                        <div class="img-box">
+                        <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#addUnstable08">
+                        <p>恐&nbsp;懼</p>
+                        <div class="img-box">
+                        <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 驚訝類 -->
+        <div class="mb-20 d-flex flex-nowrap">
+            <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadAmazed" href="emoCardsAmazed.html">
+                <span>驚</span><span>訝</span>
+            </a>
+            <div class="d-flex overflow-auto pt-20">
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-amazed link-gray-900 class-card-amazed" data-bs-toggle="modal" data-bs-target="#addAmazed01">
+                        <p>錯&nbsp;愕</p>
+                        <div class="img-box">
+                        <img src="../assets/images/amazed/amazed.svg" alt="amazed">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-amazed link-gray-900 class-card-amazed" data-bs-toggle="modal" data-bs-target="#addAmazed02">
+                        <p>驚&nbsp;訝</p>
+                        <div class="img-box">
+                        <img src="../assets/images/amazed/amazed.svg" alt="amazed">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-amazed link-gray-900 class-card-amazed" data-bs-toggle="modal" data-bs-target="#addAmazed03">
+                        <p>驚&nbsp;喜</p>
+                        <div class="img-box">
+                        <img src="../assets/images/amazed/amazed.svg" alt="amazed">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-amazed link-gray-900 class-card-amazed" data-bs-toggle="modal" data-bs-target="#addAmazed04">
+                        <p>震&nbsp;驚</p>
+                        <div class="img-box">
+                        <img src="../assets/images/amazed/amazed.svg" alt="amazed">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 低落類 -->
+        <div class="mb-20 d-flex flex-nowrap">
+            <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadSadness" href="emoCardsSadness.html">
+                <span>低</span><span>落</span>
+            </a>
+            <div class="d-flex overflow-auto pt-20">
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness01">
+                        <p>無&nbsp;奈</p>
+                        <div class="img-box">
+                        <img src="../assets/images/sadness/sadness.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness02">
+                        <p>挫&nbsp;折</p>
+                        <div class="img-box">
+                        <img src="../assets/images/sadness/sadness.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness03">
+                        <p>失&nbsp;望</p>
+                        <div class="img-box">
+                        <img src="../assets/images/sadness/sadness.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness04">
+                        <p>無&nbsp;力</p>
+                        <div class="img-box">
+                        <img src="../assets/images/sadness/sadness.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness05">
+                        <p>沮&nbsp;喪</p>
+                        <div class="img-box">
+                        <img src="../assets/images/sadness/sadness.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness06">
+                        <p>難&nbsp;過</p>
+                        <div class="img-box">
+                        <img src="../assets/images/sadness/sadness.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness07">
+                        <p>無&nbsp;助</p>
+                        <div class="img-box">
+                        <img src="../assets/images/sadness/sadness.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness08">
+                        <p>悲&nbsp;傷</p>
+                        <div class="img-box">
+                        <img src="../assets/images/sadness/sadness.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness09">
+                        <p>心&nbsp;痛</p>
+                        <div class="img-box">
+                        <img src="../assets/images/sadness/sadness.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness10">
+                        <p>憂&nbsp;鬱</p>
+                        <div class="img-box">
+                        <img src="../assets/images/sadness/sadness.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness11">
+                        <p>崩&nbsp;潰</p>
+                        <div class="img-box">
+                        <img src="../assets/images/sadness/sadness.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness12">
+                        <p>絕&nbsp;望</p>
+                        <div class="img-box">
+                        <img src="../assets/images/sadness/sadness.svg" alt="sadness">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 討厭類 -->
+        <div class="mb-20 d-flex flex-nowrap">
+            <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadHate" href="emoCardsHate.html">
+                <span>討</span><span>厭</span>
+            </a>
+            <div class="d-flex overflow-auto pt-20">
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#addHate01">
+                        <p>無&nbsp;聊</p>
+                        <div class="img-box">
+                        <img src="../assets/images/hate/hate.svg" alt="hate">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#addHate02">
+                        <p>厭&nbsp;倦</p>
+                        <div class="img-box">
+                        <img src="../assets/images/hate/hate.svg" alt="hate">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#addHate03">
+                        <p>自&nbsp;卑</p>
+                        <div class="img-box">
+                        <img src="../assets/images/hate/hate.svg" alt="hate">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#addHate04">
+                        <p>討&nbsp;厭</p>
+                        <div class="img-box">
+                        <img src="../assets/images/hate/hate.svg" alt="hate">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#addHate05">
+                        <p>嫉&nbsp;妒</p>
+                        <div class="img-box">
+                        <img src="../assets/images/hate/hate.svg" alt="hate">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#addHate06">
+                        <p>厭&nbsp;惡</p>
+                        <div class="img-box">
+                        <img src="../assets/images/hate/hate.svg" alt="hate">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#addHate07">
+                        <p>噁&nbsp;心</p>
+                        <div class="img-box">
+                        <img src="../assets/images/hate/hate.svg" alt="hate">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#addHate08">
+                        <p>怨&nbsp;恨</p>
+                        <div class="img-box">
+                        <img src="../assets/images/hate/hate.svg" alt="hate">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 生氣類 -->
+        <div class="mb-20 d-flex flex-nowrap">
+            <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadAnger" href="emoCardsAnger.html">
+                <span>生</span><span>氣</span>
+            </a>
+            <div class="d-flex overflow-auto pt-20">
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-anger link-gray-900 class-card-anger" data-bs-toggle="modal" data-bs-target="#addAnger01">
+                        <p>不&nbsp;滿</p>
+                        <div class="img-box">
+                        <img src="../assets/images/anger/anger.svg" alt="anger">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-anger link-gray-900 class-card-anger" data-bs-toggle="modal" data-bs-target="#addAnger02">
+                        <p>煩&nbsp;躁</p>
+                        <div class="img-box">
+                        <img src="../assets/images/anger/anger.svg" alt="anger">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-anger link-gray-900 class-card-anger" data-bs-toggle="modal" data-bs-target="#addAnger03">
+                        <p>生&nbsp;氣</p>
+                        <div class="img-box">
+                        <img src="../assets/images/anger/anger.svg" alt="anger">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-anger link-gray-900 class-card-anger" data-bs-toggle="modal" data-bs-target="#addAnger04">
+                        <p>憤&nbsp;怒</p>
+                        <div class="img-box">
+                        <img src="../assets/images/anger/anger.svg" alt="anger">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-anger link-gray-900 class-card-anger" data-bs-toggle="modal" data-bs-target="#addAnger05">
+                        <p>暴&nbsp;怒</p>
+                        <div class="img-box">
+                        <img src="../assets/images/anger/anger.svg" alt="anger">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 其他類 -->
+        <div class="mb-20 d-flex flex-nowrap">
+            <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadOthers" href="emoCardsOthers.html">
+                <span>其</span><span>他</span>
+            </a>
+            <div class="d-flex overflow-auto pt-20">
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers01">
+                        <p>釋&nbsp;懷</p>
+                        <div class="img-box">
+                        <img src="../assets/images/others/others.svg" alt="others">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers02">
+                        <p>尷&nbsp;尬</p>
+                        <div class="img-box">
+                        <img src="../assets/images/others/others.svg" alt="others">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers03">
+                        <p>羨&nbsp;慕</p>
+                        <div class="img-box">
+                        <img src="../assets/images/others/others.svg" alt="others">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers04">
+                        <p>愧&nbsp;疚</p>
+                        <div class="img-box">
+                        <img src="../assets/images/others/others.svg" alt="others">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers05">
+                        <p>矛&nbsp;盾</p>
+                        <div class="img-box">
+                        <img src="../assets/images/others/others.svg" alt="others">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers06">
+                        <p>後&nbsp;悔</p>
+                        <div class="img-box">
+                        <img src="../assets/images/others/others.svg" alt="others">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers07">
+                        <p>委&nbsp;屈</p>
+                        <div class="img-box">
+                        <img src="../assets/images/others/others.svg" alt="others">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers08">
+                        <p>寂&nbsp;寞</p>
+                        <div class="img-box">
+                        <img src="../assets/images/others/others.svg" alt="others">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers09">
+                        <p>羞&nbsp;恥</p>
+                        <div class="img-box">
+                        <img src="../assets/images/others/others.svg" alt="others">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers10">
+                        <p>感&nbsp;動</p>
+                        <div class="img-box">
+                        <img src="../assets/images/others/others.svg" alt="others">
+                        </div>
+                    </button>
+                </div>
+                <div class="position-relative me-24">
+                    <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
+                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers11">
+                        <p>激&nbsp;動</p>
+                        <div class="img-box">
+                        <img src="../assets/images/others/others.svg" alt="others">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('./layout/modalEmoCards'); -%>
+    
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+    <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
+  </body>
+</html>
