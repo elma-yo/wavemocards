@@ -1,5 +1,6 @@
+// 分類卡 & 小卡
 .class-card {
-    width: 236px;
+    min-width: 236px;
     height: 140px;
     display: flex;
     margin-bottom: 16px;
@@ -24,7 +25,6 @@
         transition: all .25s ease-out;
     }
 }
-
 .class-card:hover {
     padding: 8px;
     p {
@@ -39,7 +39,7 @@
         transform:scale(1.2,1.2);
     }
 }
-
+// 分類卡 & 小卡 在各類情緒被hover的border變色
 .class-card-happy, .class-card-expectation, .class-card-relived, .class-card-unstable, .class-card-amazed, .class-card-sadness, .class-card-hate, .class-card-anger, .class-card-others {
     border: 0;
 }
@@ -71,7 +71,7 @@
     border: 4px solid #CBCBCB;
 }
 
-
+// 大卡
 .c-modal-xl-card {
     max-width: 664px;
     .modal-content {
@@ -112,4 +112,74 @@
     p {
         font-size: 20px;
     }
+}
+
+// 展開頁 各類情緒的表頭
+.emoCardsHead {
+    max-height: 140px;
+    margin-right: 8px;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    color: $gray-900;
+    span {
+        font-size: 20px;
+    }
+}
+.emoCardHeadHappy {
+    background-color: rgba(255, 229, 137, .5);
+}
+.emoCardHeadHappy:hover {
+    background-color: rgba(255, 229, 137, .8);
+}
+.emoCardHeadExpectation {
+    background-color: rgba(248, 193, 143, .5);
+}
+.emoCardHeadExpectation:hover {
+    background-color: rgba(248, 193, 143, .8);
+}
+.emoCardHeadRelived {
+    background-color: rgba(206, 229, 175, .5);
+}
+.emoCardHeadRelived:hover {
+    background-color: rgba(206, 229, 175, .8);
+}
+.emoCardHeadUnstable {
+    background-color: rgba(224, 202, 202, .5);
+}
+.emoCardHeadUnstable:hover {
+    background-color: rgba(224, 202, 202, .8);
+}
+.emoCardHeadAmazed {
+    background-color: rgba(180, 185, 231, .5);
+}
+.emoCardHeadAmazed:hover {
+    background-color: rgba(180, 185, 231, .8);
+}
+.emoCardHeadSadness {
+    background-color: rgba(207, 225, 233, .5);
+}
+.emoCardHeadSadness:hover {
+    background-color: rgba(207, 225, 233, .8);
+}
+.emoCardHeadHate {
+    background-color: rgba(214, 202, 192, .5);
+}
+.emoCardHeadHate:hover {
+    background-color: rgba(214, 202, 192, .8);
+}
+.emoCardHeadAnger {
+    background-color: rgba(224, 174, 174, .5);
+}
+.emoCardHeadAnger:hover {
+    background-color: rgba(224, 174, 174, .8);
+}
+.emoCardHeadOthers {
+    background-color: rgba(235, 235, 235, .5);
+}
+.emoCardHeadOthers:hover {
+    background-color: rgba(235, 235, 235, .8);
 }
