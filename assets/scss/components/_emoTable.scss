@@ -1,10 +1,26 @@
 .emoTableHead {
+    min-height: 52px;
     max-height: 52px;
 }
 .btn-emoTable {
     padding: 8px 20px;
     font-size: 20px;
     border-radius: 4px;
+}
+.emoTableAdd {
+    a {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-image: url(../images/plus-btn.svg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+    a:hover {
+        background-image: url(../images/plus-btn-hover.svg);
+    }
 }
 .opacity-happy {
     background-color: rgba(255, 229, 127, .2);

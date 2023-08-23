@@ -112,7 +112,21 @@
     p {
         font-size: 20px;
     }
+    .btn-add {
+        display: block;
+        width: 64px;
+        height: 64px;
+        background-image: url(../images/plus-btn-100.svg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+    .btn-add:hover {
+        background-image: url(../images/plus-btn-hover.svg);
+    }
 }
+
 
 // 展開頁 各類情緒的表頭
 .emoCardsHead {
