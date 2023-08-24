@@ -11,6 +11,7 @@ $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
+$gray-450: #c5c9cd;
 $gray-500: #adb5bd !default;
 $gray-550: #818181;
 $gray-600: #6c757d !default;
@@ -360,6 +361,7 @@ $theme-colors: (
   "gray-200":   $gray-200,
   "gray-300":   $gray-300,
   "gray-400":   $gray-400,
+  "gray-450":   $gray-450,
   "gray-500":   $gray-500,
   "gray-550":   $gray-550,
   "gray-600":   $gray-600,

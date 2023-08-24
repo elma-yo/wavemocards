@@ -1,0 +1,40 @@
+.progressBar {
+    width: 35%;
+    .p-num {
+        margin-bottom: 2px;
+        width: 24px;
+        height: 24px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: auto;
+    }
+    .start-20 {
+        left: 20%;
+    }
+    .start-40 {
+        left: 40%;
+    }
+    .start-60 {
+        left: 60%;
+    }
+    .start-80 {
+        left: 80%;
+    }
+    .start-100 {
+        left: 100%;
+    }
+    .btn-outline-main-tint01 {
+        color: $main-tint01;
+        border: 1.5px solid $main-tint01;
+        background-color: $white;
+    }
+    .btn-outline-gray-450 {
+        color: $gray-450;
+        border: 1px solid $gray-450;
+        background-color: $white;
+    }
+    .p-text {
+        font-size: 14px;
+        font-weight: 400;
+    }
+}

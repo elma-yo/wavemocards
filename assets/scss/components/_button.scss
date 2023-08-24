@@ -6,7 +6,6 @@
     font-size: 16px;
     font-weight: bold;
 }
-
 .c-btn:hover {
     color: $white;
     box-shadow: 2px 2px 4px rgba(112, 132, 136, 0.5);
@@ -17,7 +16,6 @@
     border: 4px solid $white;
     font-size: 32px;
 }
-
 .c-btn-xl:hover {
     background-color: #cc8d8d;
     border: 6px solid $white;
@@ -33,7 +31,6 @@
     font-size: 16px;
     font-weight: bold;
 }
-
 .c-btn-outline-main:hover {
     color: $white;
     box-shadow: 2px 2px 4px rgba(112, 132, 136, 0.5);
@@ -47,7 +44,6 @@
     font-size: 16px;
     font-weight: bold;
 }
-
 .c-btn-outline-pink:hover {
     color: $white;
     box-shadow: 2px 2px 4px rgba(112, 132, 136, 0.5);
@@ -130,4 +126,54 @@
     .bi-folder2-open {
         display: block;
     }
+}
+
+// 卡片的新增按鈕
+.btn-add-card-m {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-image: url(../images/plus-btn.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.btn-add-card-xl {
+    display: block;
+    width: 64px;
+    height: 64px;
+    background-image: url(../images/plus-btn-100.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.btn-add-card-m:hover, .btn-add-card-xl:hover {
+    background-image: url(../images/plus-btn-hover.svg);
+}
+
+// 移除卡片 的按鈕
+.btn-delete-card-m {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-image: url(../images/cross-btn.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.btn-delete-card-xl {
+    display: block;
+    width: 64px;
+    height: 64px;
+    background-image: url(../images/cross-btn.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.btn-delete-card-m:hover, .btn-delete-card-xl:hover {
+    background-image: url(../images/cross-btn-hover.svg);
 }
