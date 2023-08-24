@@ -30,3 +30,35 @@ label {
 .btn-add:hover {
     color: $pink;
 }
+
+// 情緒強度 表單
+.box-strength {
+    width: 35%;
+}
+.btn-strength {
+    display: none;
+}
+.text-strength {
+    // top: 50%;
+    // left: 50%;
+    // position: relative;
+    // display: block;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 56px;
+    height: 56px;
+    border: 2px solid $main-tint01;
+    border-radius: 50%;
+    background-color: $white;
+    font-size: 24px;
+    color: $main-tint01;
+}
+input[type="radio"]:checked+label{ 
+    font-weight: bold; 
+    color: $white;
+    background-color: $main;
+    border: 2px solid $main;
+}

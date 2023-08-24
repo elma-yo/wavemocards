@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>浪潮情緒卡｜找尋我的情緒｜我的情緒強度</title>
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <%- include('./layout/headerLogined'); -%>
+
+    <div class="classifiedPage" style="min-height: 80vh;">
+        <div class="container py-16">
+            <!-- process bar -->
+            <div class="d-flex justify-content-end">
+                <div class="progressBar mt-16 mb-8 px-12">
+                    <div class="position-relative m-4">
+                        <div class="progress" style="height: 2px;">
+                            <div class="progress-bar bg-main-tint01" role="progressbar" style="width: 20%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="p-num position-absolute top-0 start-0 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                            <span class="d-block">1</span>
+                        </div>
+                        <div class="p-num position-absolute top-0 start-20 translate-middle btn btn-sm btn-outline-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                            <span class="d-block">2</span>
+                        </div>
+                        <div class="p-num position-absolute top-0 start-40 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                            <span class="d-block">3</span>
+                        </div>
+                        <div class="p-num position-absolute top-0 start-60 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                            <span class="d-block">4</span>
+                        </div>
+                        <div class="p-num position-absolute top-0 start-80 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                            <span class="d-block">5</span>
+                        </div>
+                        <div class="p-num position-absolute top-0 start-100 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                            <span class="d-block">6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- title bar -->
+            <div class="titleBar d-lg-flex justify-content-between align-items-center">
+                <h2>我的情緒強度</h2>
+                <div class="nav-btn d-lg-flex justify-content-end">
+                    <a class="btn btn-outline-main c-btn" href="myEmoCardsHolder.html">上一步</a>
+                    <a class="ms-16 btn btn-main c-btn" href="findEmoBackground.html"><span class="ms-4">下一步</span></a>
+                </div>
+            </div>
+
+            <p class="mb-4 text-gray-550">
+                謝謝親愛的ＯＯ努力的尋找到屬於自己的情緒卡。
+            </p>
+            <p class="mb-4 text-gray-550">
+                在進入下一步前，想邀請ＯＯ，先 <span class="text-pink fw-500">閉上眼睛，深呼吸～吐氣～</span>
+            </p>
+            <p class="mb-40 text-gray-550">
+                並在深呼吸的過程中，問問心中的自己，<span class="text-pink fw-500">剛剛挑選的情緒，其強度各為如何呢？</span>（1分代表最為微弱，5分代表最為強烈）
+            </p>
+
+            <!-- 尚未設定form action內濃 -->
+            <form action="#">
+                <!-- 1 card & point -->
+                <div class="mb-24 d-flex justify-content-between">
+                    <!-- card -->
+                    <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation01">
+                        <p>期&nbsp;待</p>
+                        <div class="img-box">
+                          <img src="../assets/images/expectation/expectation.svg" alt="expectation">
+                        </div>
+                    </button>
+                    <!-- point -->
+                    <div class="box-strength d-flex justify-content-between align-items-center">
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength01" id="emo01Point01" value="1">
+                            <label for="emo01Point01" class="form-label text-strength ">
+                                1
+                            </label>
+                        </div>
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength01" id="emo01Point02" value="2">
+                            <label for="emo01Point02" class="form-label text-strength ">
+                                2
+                            </label>
+                        </div>
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength01" id="emo01Point03" value="3">
+                            <label for="emo01Point03" class="form-label text-strength ">
+                                3
+                            </label>
+                        </div>
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength01" id="emo01Point04" value="4">
+                            <label for="emo01Point04" class="form-label text-strength ">
+                                4
+                            </label>
+                        </div>
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength01" id="emo01Point05" value="5">
+                            <label for="emo01Point05" class="form-label text-strength ">
+                                5
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2 card & point -->
+                <div class="mb-24 d-flex justify-content-between">
+                    <!-- card -->
+                    <button type="button" class="class-card me-16 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy05">
+                        <p>興&nbsp;奮</p>
+                        <div class="img-box">
+                          <img src="../assets/images/happy/happy.svg" alt="happy">
+                        </div>
+                    </button>
+                    <!-- point -->
+                    <div class="box-strength d-flex justify-content-between align-items-center">
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength02" id="emo02Point01" value="1">
+                            <label for="emo02Point01" class="form-label text-strength ">
+                                1
+                            </label>
+                        </div>
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength02" id="emo02Point02" value="2">
+                            <label for="emo02Point02" class="form-label text-strength ">
+                                2
+                            </label>
+                        </div>
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength02" id="emo02Point03" value="3">
+                            <label for="emo02Point03" class="form-label text-strength ">
+                                3
+                            </label>
+                        </div>
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength02" id="emo02Point04" value="4">
+                            <label for="emo02Point04" class="form-label text-strength ">
+                                4
+                            </label>
+                        </div>
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength02" id="emo02Point05" value="5">
+                            <label for="emo02Point05" class="form-label text-strength ">
+                                5
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3 card & point -->
+                <div class="mb-24 d-flex justify-content-between">
+                    <!-- card -->
+                    <button type="button" class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable02">
+                        <p>擔&nbsp;心</p>
+                        <div class="img-box">
+                          <img src="../assets/images/unstable/unstable.svg" alt="unstable">
+                        </div>
+                    </button>
+                    <!-- point -->
+                    <div class="box-strength d-flex justify-content-between align-items-center">
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength03" id="emo03Point01" value="1">
+                            <label for="emo03Point01" class="form-label text-strength ">
+                                1
+                            </label>
+                        </div>
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength03" id="emo03Point02" value="2">
+                            <label for="emo03Point02" class="form-label text-strength ">
+                                2
+                            </label>
+                        </div>
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength03" id="emo03Point03" value="3">
+                            <label for="emo03Point03" class="form-label text-strength ">
+                                3
+                            </label>
+                        </div>
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength03" id="emo03Point04" value="4">
+                            <label for="emo03Point04" class="form-label text-strength ">
+                                4
+                            </label>
+                        </div>
+                        <div class="box-point">
+                            <input type="radio" class="btn-strength" name="emoStrength03" id="emo03Point05" value="5">
+                            <label for="emo03Point05" class="form-label text-strength ">
+                                5
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        
+        </div>
+    </div>
+    
+    <%- include('./layout/modalEmoCards'); -%>
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+    <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
+  </body>
+</html>

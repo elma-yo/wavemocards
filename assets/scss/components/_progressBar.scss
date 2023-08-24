@@ -33,6 +33,14 @@
         border: 1px solid $gray-450;
         background-color: $white;
     }
+    .btn-main-tint01 {
+        color: $main-dark;
+        border: 1.5px solid $main-tint01;
+        cursor: auto;
+    }
+    .btn-main-tint01:hover {
+        background-color: $main-tint01;
+    }
     .p-text {
         font-size: 14px;
         font-weight: 400;
