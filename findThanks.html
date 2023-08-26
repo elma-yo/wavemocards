@@ -51,7 +51,7 @@
                 <div class="progressBar mt-16 mb-8 px-12">
                     <div class="position-relative m-4">
                         <div class="progress" style="height: 2px;">
-                            <div class="progress-bar bg-main-tint01" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-main-tint01" role="progressbar" style="width: 100%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <div class="p-num position-absolute top-0 start-0 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
                             <span class="d-block">1</span>
@@ -65,10 +65,10 @@
                         <div class="p-num position-absolute top-0 start-60 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
                             <span class="d-block">4</span>
                         </div>
-                        <div class="p-num position-absolute top-0 start-80 translate-middle btn btn-sm btn-outline-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                        <div class="p-num position-absolute top-0 start-80 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
                             <span class="d-block">5</span>
                         </div>
-                        <div class="p-num position-absolute top-0 start-100 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                        <div class="p-num position-absolute top-0 start-100 translate-middle btn btn-sm btn-outline-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
                             <span class="d-block">6</span>
                         </div>
                     </div>
@@ -77,152 +77,30 @@
 
             <!-- title bar -->
             <div class="titleBar d-lg-flex justify-content-between align-items-center">
-                <h2>我的情緒強度｜第二次</h2>
+                <h2>謝謝自己與情緒浪潮同在</h2>
                 <div class="nav-btn d-lg-flex justify-content-end">
-                    <a class="btn btn-outline-main c-btn" href="findEmoAction.html">上一步</a>
-                    <a class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="findThanks.html"><span class="ms-4">下一步</span></a>
+                    <a class="btn btn-outline-main c-btn" href="findEmoStrength2nd.html">上一步</a>
+                    <a class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="myRecords.html"><span class="ms-4">完成</span></a>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-9">
+                    <p class="mb-8 text-gray-550 fs-7">
+                        親愛的ＯＯ，謝謝你為了自己花了時間與心思做覺察、紀錄與省思。
+                    </p>
+                    <p class="mb-8 text-gray-550 fs-7">
+                        想邀請你一起為自己說：
+                    </p>
+                    <p  class="text-main fs-6 fw-500">
+                        「我願意謝謝自己，我有情緒，我願意覺察、擁抱情緒與我自己，這樣的我已經很棒了！」
+                    </p>
+                </div>
+                <div class="col-3 d-flex justify-content-end align-items-center">
+                    <img src="/wavemocards/assets/lime-thanks-243bb175.svg" alt="thanks myself">
                 </div>
             </div>
 
-            <p class="mb-4 text-gray-550 fs-7">
-                親愛的ＯＯ，在靜下來覺察與記錄自己的情緒故事後，不知道你現在的情緒還好嗎？
-            </p>
-            <p  class="mb-40 text-main fs-7 fw-500">
-                邀請你再次深呼吸，並問問心中的自己，現在的情緒強度分別如何呢？<span class="text-gray-550 fs-8 fw-400">（ 1分代表最為微弱，5分代表最為強烈 ）</span>
-            </p>
-
-            <!-- 尚未設定form action內容 -->
-            <form action="#">
-                <!-- 1 card & point -->
-                <div class="mb-24 d-flex justify-content-between">
-                    <!-- card -->
-                    <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation01">
-                        <p>期&nbsp;待</p>
-                        <div class="img-box">
-                          <img src="/wavemocards/assets/expectation-5303e497.svg" alt="expectation">
-                        </div>
-                    </button>
-                    <!-- point -->
-                    <div class="box-strength d-flex justify-content-between align-items-center">
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd01" id="2ndEmo01Point01" value="1">
-                            <label for="2ndEmo01Point01" class="form-label text-strength ">
-                                1
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd01" id="2ndEmo01Point02" value="2">
-                            <label for="2ndEmo01Point02" class="form-label text-strength ">
-                                2
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd01" id="2ndEmo01Point03" value="3">
-                            <label for="2ndEmo01Point03" class="form-label text-strength ">
-                                3
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd01" id="2ndEmo01Point04" value="4">
-                            <label for="2ndEmo01Point04" class="form-label text-strength ">
-                                4
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd01" id="2ndEmo01Point05" value="5">
-                            <label for="2ndEmo01Point05" class="form-label text-strength ">
-                                5
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <!-- 2 card & point -->
-                <div class="mb-24 d-flex justify-content-between">
-                    <!-- card -->
-                    <button type="button" class="class-card me-16 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy05">
-                        <p>興&nbsp;奮</p>
-                        <div class="img-box">
-                          <img src="/wavemocards/assets/happy-15fff68b.svg" alt="happy">
-                        </div>
-                    </button>
-                    <!-- point -->
-                    <div class="box-strength d-flex justify-content-between align-items-center">
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd02" id="2ndEmo02Point01" value="1">
-                            <label for="2ndEmo02Point01" class="form-label text-strength ">
-                                1
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd02" id="2ndEmo02Point02" value="2">
-                            <label for="2ndEmo02Point02" class="form-label text-strength ">
-                                2
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd02" id="2ndEmo02Point03" value="3">
-                            <label for="2ndEmo02Point03" class="form-label text-strength ">
-                                3
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd02" id="2ndEmo02Point04" value="4">
-                            <label for="2ndEmo02Point04" class="form-label text-strength ">
-                                4
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd02" id="2ndEmo02Point05" value="5">
-                            <label for="2ndEmo02Point05" class="form-label text-strength ">
-                                5
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <!-- 3 card & point -->
-                <div class="mb-24 d-flex justify-content-between">
-                    <!-- card -->
-                    <button type="button" class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable02">
-                        <p>擔&nbsp;心</p>
-                        <div class="img-box">
-                          <img src="/wavemocards/assets/unstable-acd86cde.svg" alt="unstable">
-                        </div>
-                    </button>
-                    <!-- point -->
-                    <div class="box-strength d-flex justify-content-between align-items-center">
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd03" id="2ndEmo03Point01" value="1">
-                            <label for="2ndEmo03Point01" class="form-label text-strength ">
-                                1
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd03" id="2ndEmo03Point02" value="2">
-                            <label for="2ndEmo03Point02" class="form-label text-strength ">
-                                2
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd03" id="2ndEmo03Point03" value="3">
-                            <label for="2ndEmo03Point03" class="form-label text-strength ">
-                                3
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd03" id="2ndEmo03Point04" value="4">
-                            <label for="2ndEmo03Point04" class="form-label text-strength ">
-                                4
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength2nd03" id="2ndEmo03Point05" value="5">
-                            <label for="2ndEmo03Point05" class="form-label text-strength ">
-                                5
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </form>
         
         </div>
     </div>
