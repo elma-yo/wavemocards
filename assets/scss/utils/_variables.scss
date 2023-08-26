@@ -639,12 +639,18 @@ $h6-font-size:                $font-size-base !default;
 
 // scss-docs-start font-sizes
 $font-sizes: (
-  1: $h1-font-size,
-  2: $h2-font-size,
-  3: $h3-font-size,
-  4: $h4-font-size,
-  5: $h5-font-size,
-  6: $h6-font-size
+  1: $h1-font-size,  // 40px
+  2: $font-size-base * 2.25, //36px
+  3: $h2-font-size,  // 32px
+  4: $h3-font-size,  // 28px
+  5: $h4-font-size,  // 24px
+  6: $h5-font-size,  // 20px
+  7: $font-size-base * 1.125, // $h6-font-size, // 18px
+  8: $h6-font-size,  // 16px
+  9: $font-size-base * 0.875, // 14px
+  10: $font-size-base * 0.75, // 12px
+  11: $font-size-base * 0.625 //10px
+
 ) !default;
 // scss-docs-end font-sizes
 
