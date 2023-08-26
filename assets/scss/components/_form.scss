@@ -55,3 +55,12 @@ input[type="radio"]:checked+label{
     background-color: $main;
     border: 2px solid $main;
 }
+// 情緒故事 是否/好不好 radio btn 的 label
+.EmoStoryLabel {
+    padding: 8px 24px;
+    border: 2px solid $gray-500;
+    border-radius: 50px;
+    background-color: $white;
+    color: $gray-500;
+    font-weight: bold;
+}

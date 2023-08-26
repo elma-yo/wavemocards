@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>浪潮情緒卡｜找尋我的情緒｜我的情緒故事-行動篇</title>
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <%- include('./layout/headerLogined'); -%>
+
+    <div class="classifiedPage" style="min-height: 80vh;">
+        <div class="container py-16">
+            <!-- process bar -->
+            <div class="d-flex justify-content-end">
+                <div class="progressBar mt-16 mb-8 px-12">
+                    <div class="position-relative m-4">
+                        <div class="progress" style="height: 2px;">
+                            <div class="progress-bar bg-main-tint01" role="progressbar" style="width: 60%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="p-num position-absolute top-0 start-0 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                            <span class="d-block">1</span>
+                        </div>
+                        <div class="p-num position-absolute top-0 start-20 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                            <span class="d-block">2</span>
+                        </div>
+                        <div class="p-num position-absolute top-0 start-40 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                            <span class="d-block">3</span>
+                        </div>
+                        <div class="p-num position-absolute top-0 start-60 translate-middle btn btn-sm btn-outline-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                            <span class="d-block">4</span>
+                        </div>
+                        <div class="p-num position-absolute top-0 start-80 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                            <span class="d-block">5</span>
+                        </div>
+                        <div class="p-num position-absolute top-0 start-100 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                            <span class="d-block">6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- title bar -->
+            <div class="titleBar d-lg-flex justify-content-between align-items-center">
+                <h2>我的情緒故事｜行動篇</h2>
+                <div class="nav-btn d-lg-flex justify-content-end">
+                    <a class="btn btn-outline-main c-btn" href="findEmoBackground.html">上一步</a>
+                    <a class="ms-16 btn btn-main c-btn" href="findEmoStrength2nd.html"><span class="ms-4">下一步</span></a>
+                </div>
+            </div>
+
+            <p class="mb-24 text-gray-550 fs-7">
+                謝謝親愛的ＯＯ，回想了情緒發生的背景原因。
+            </p>
+
+            <form action="#" method="post">
+                <!-- 第一題 -->
+                <div class="container mb-48">
+                    <div class="mb-24 row align-items-stretch">
+                        <div class="col-9 bg-main-tint03 rounded">
+                            <label for="whatHappened" class="d-block py-12">
+                                <p class="mb-4 text-main fw-500  fs-7">
+                                    接下來，想邀請ＯＯ回想在感受到「ＸＸ、ＸＸ、ＸＸ」情緒後，做了什麼事情呢？
+                                </p>
+                            </label>
+                            <textarea class="w-100 mb-12 p-12 border rounded border-gray-500 text-gray-900" id="whatHappened" name="whatHappened"></textarea>
+                        </div>
+                        <div class="col-3 d-flex justify-content-end align-items-center">
+                            <img class="d-block" src="../assets/images/emoStory/lime-action.svg" alt="a man is diving" id="img">
+                        </div>
+                    </div>
+                </div>
+                <!-- 第二題 -->
+                <div class="container mb-48">
+                    <div class="mb-24 row align-items-stretch">
+                        <div class="col-9 order-2 bg-main-tint03 rounded">
+                            <label for="whatHappened" class="d-block py-12">
+                                <p class="mb-4 text-gray-550 fs-8">謝謝你願意寫下自己的故事。</p>
+                                <p class="mb-4 text-main fw-500  fs-7">
+                                    想請親愛的ＯＯ，寫下關於上述所做的事情後，發生了什麼樣的結果？
+                                </p>
+                            </label>
+                            <textarea class="w-100 mb-12 p-12 border rounded border-gray-500 text-gray-900" id="whatHappened" name="whatHappened"></textarea>
+                        </div>
+                        <div class="col-3 order-1 d-flex justify-content-end align-items-center">
+                            <img class="d-block" src="../assets/images/emoStory/lime-happened.svg" alt="a man is diving" id="img">
+                        </div>
+                    </div>
+                </div>
+                <!-- 第三題 -->
+                <div class="container mb-48">
+                    <div class="mb-24 row align-items-stretch">
+                        <div class="col-9 order-1 bg-main-tint03 rounded">
+                            <label for="whatHappened" class="d-block py-12">
+                                <p class="mb-4 text-main fw-500  fs-7">
+                                    對於上述發生的結果，你有什麼樣的感受呢？
+                                </p>
+                            </label>
+                            <textarea class="w-100 mb-12 p-12 border rounded border-gray-500 text-gray-900" id="whatHappened" name="whatHappened"></textarea>
+                        </div>
+                        <div class="col-3 order-2 d-flex justify-content-end align-items-center">
+                            <img class="d-block" src="../assets/images/emoStory/lime-feel.svg" alt="a man is diving" id="img">
+                        </div>
+                    </div>
+                </div>
+                <!-- 第四～五題 -->
+                <div class="container mb-48">
+                    <div class="mb-24 row align-items-stretch">
+                        <div class="col-9 order-2 bg-main-tint03 rounded">
+                            <!-- 第四題 -->
+                            <label class="d-block py-12">
+                                <p class="mb-4 text-main fw-500  fs-7">
+                                    親愛的ＯＯ，你在做了上述的事情後，你覺得你得到了好的結果？還是不好的結果呢？
+                                </p>
+                            </label>
+                            <div class="mb-16 d-flex align-items-center">
+                                <div>
+                                    <input type="radio" class="d-none" name="isGoodResult" id="isGoodResultYes" value="Good">
+                                    <label for="isGoodResultYes" class="form-label EmoStoryLabel me-16">
+                                        好
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" class="d-none" name="isGoodResult" id="isGoodResultNo" value="Bad">
+                                    <label for="isGoodResultNo" class="form-label EmoStoryLabel">
+                                        不好
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- 第五題 -->
+                            <label class="d-block py-12">
+                                <p class="mb-4 text-main fw-500  fs-7">
+                                    親愛的ＯＯ，現在的你對於上述所做的事情，是否有感到後悔呢？
+                                </p>
+                            </label>
+                            <div class="mb-16 d-flex align-items-center">
+                                <div>
+                                    <input type="radio" class="d-none" name="isRegret" id="isRegretYes" value="Yes">
+                                    <label for="isRegretYes" class="form-label EmoStoryLabel me-16">
+                                        是
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" class="d-none" name="isRegret" id="isRegretNo" value="No">
+                                    <label for="isRegretNo" class="form-label EmoStoryLabel">
+                                        否
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 order-1 d-flex justify-content-end align-items-center">
+                            <img class="d-block" src="../assets/images/emoStory/lime-goodOrBad.svg" alt="a man is diving" id="img">
+                        </div>
+                    </div>
+                </div>
+                <!-- 第六題 -->
+                <div class="container mb-24">
+                    <div class="mb-24 row align-items-stretch">
+                        <div class="col-9 order-1 bg-main-tint03 rounded">
+                            <label for="whatHappened" class="d-block py-12">
+                                <p class="mb-4 text-gray-550 fs-8">如果這次所做的事情/行為，所帶來的結果不太好的話。</p>
+                                <p class="mb-4 text-main fw-500  fs-7">
+                                    想邀請ＯＯ，想一想下一次發生類似的事情和感受時，
+                                </p>
+                                <p class="mb-4 text-main fw-500  fs-7">
+                                    可以做什麼樣的反應或是行為/行動，而可以得到比較好的結果呢？
+                                </p>
+                            </label>
+                            <textarea class="w-100 mb-12 p-12 border rounded border-gray-500 text-gray-900" id="whatHappened" name="whatHappened"></textarea>
+                        </div>
+                        <div class="col-3 order-2 d-flex justify-content-end align-items-center">
+                            <img class="d-block" src="../assets/images/emoStory/lime-nextActionPlan.svg" alt="a man is diving" id="img">
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- 圖片引用來源 -->
+            <div class="text-end mb-64">
+                <span class="text-gray-500 fs-11">
+                    Illustration by <a class="link-gray-500" href="https://icons8.com/illustrations/author/iAdLsFJOKDrk" target="_blank">Tanya Krasutska</a> from <a class="link-gray-500" href="https://icons8.com/illustrations" target="_blank">Ouch!</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+    <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
+    <script type="text/javascript" src="../assets/js/textarea.js"></script>
+  </body>
+</html>
