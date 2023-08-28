@@ -64,3 +64,20 @@ input[type="radio"]:checked+label{
     color: $gray-500;
     font-weight: bold;
 }
+
+// 搜尋列
+.input-date {
+    width: 180px;
+}
+.search-bar {
+    width: 480px;
+    padding-left: 48px;
+    height: 40px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 2 6 rgba(0, 0, 0, .8);
+    background: $white url('../images/Icon/Search.svg') no-repeat 16px 6px;
+}
+::placeholder {
+    color: $main-tint01;
+}

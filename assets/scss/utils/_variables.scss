@@ -425,6 +425,7 @@ $spacer: 1rem !default;
 $spacers: (
   0: 0,
   4: $spacer * .25,   // 4px
+  6: 6px,
   8: $spacer * .5,    // 8px
   12: $spacer * .75,   // 12px
   16: $spacer,         // 16px
@@ -748,8 +749,8 @@ $table-active-bg-factor:      .1 !default;
 $table-active-bg:             rgba($black, $table-active-bg-factor) !default;
 
 $table-hover-color:           $table-color !default;
-$table-hover-bg-factor:       .075 !default;
-$table-hover-bg:              rgba($black, $table-hover-bg-factor) !default;
+$table-hover-bg-factor:       .05;//.075 !default;
+$table-hover-bg:              rgba($gray-900, $table-hover-bg-factor) !default;
 
 $table-border-factor:         .1 !default;
 $table-border-width:          $border-width !default;
@@ -762,7 +763,7 @@ $table-group-separator-color: currentcolor !default;
 
 $table-caption-color:         $text-muted !default;
 
-$table-bg-scale:              -80% !default;
+$table-bg-scale:              -50%;//-80% !default;
 // scss-docs-end table-variables
 
 // scss-docs-start table-loop
@@ -775,6 +776,10 @@ $table-variants: (
   "danger":     shift-color($danger, $table-bg-scale),
   "light":      $light,
   "dark":       $dark,
+  "main": shift-color($main, $table-bg-scale),
+  "main-tint01": shift-color($main-tint01, $table-bg-scale),
+  "main-tint02": shift-color($main-tint02, $table-bg-scale),
+  "main-tint03": shift-color($main-tint03, $table-bg-scale),
 ) !default;
 // scss-docs-end table-loop
 
@@ -1260,10 +1265,10 @@ $pagination-padding-x-lg:           1.5rem !default;
 
 $pagination-font-size:              $font-size-base !default;
 
-$pagination-color:                  var(--#{$prefix}link-color) !default;
+$pagination-color:                  $main;//var(--#{$prefix}link-color) !default;
 $pagination-bg:                     $white !default;
 $pagination-border-radius:          $border-radius !default;
-$pagination-border-width:           $border-width !default;
+$pagination-border-width:           0;//$border-width !default;
 $pagination-margin-start:           ($pagination-border-width * -1) !default;
 $pagination-border-color:           $gray-300 !default;
 
@@ -1273,11 +1278,11 @@ $pagination-focus-box-shadow:       $input-btn-focus-box-shadow !default;
 $pagination-focus-outline:          0 !default;
 
 $pagination-hover-color:            var(--#{$prefix}link-hover-color) !default;
-$pagination-hover-bg:               $gray-200 !default;
-$pagination-hover-border-color:     $gray-300 !default;
+$pagination-hover-bg:               rgba($main-tint02, .5 );//$gray-200 !default;
+$pagination-hover-border-color:     0;//$gray-300 !default;
 
 $pagination-active-color:           $component-active-color !default;
-$pagination-active-bg:              $component-active-bg !default;
+$pagination-active-bg:              $main;//$component-active-bg !default;
 $pagination-active-border-color:    $pagination-active-bg !default;
 
 $pagination-disabled-color:         $gray-600 !default;
