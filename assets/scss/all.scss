@@ -8,7 +8,9 @@
 @import "./setting/reset";
 @import "./setting/base";
 
-@import "./components/font";
+@import "./utils/font";
+@import "./utils/position";
+
 @import "./components/button";
 @import "./components/guid";
 @import "./components/titleBar";

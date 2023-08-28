@@ -177,3 +177,31 @@
 .btn-delete-card-m:hover, .btn-delete-card-xl:hover {
     background-image: url(../images/cross-btn-hover.svg);
 }
+
+// 自由探索 ＯＸ按鈕
+.btn-free {
+    background-color: rgba($white, 0);
+    border: none;
+}
+.btn-free-cross-hover {
+    display: none;
+}
+.btn-free-cross:hover {
+    .btn-free-cross-default {
+        display: none;
+    }
+    .btn-free-cross-hover {
+        display: block;
+    }
+}
+.btn-free-circle-hover {
+    display: none;
+}
+.btn-free-circle:hover {
+    .btn-free-circle-default {
+        display: none;
+    }
+    .btn-free-circle-hover {
+        display: block;
+    }
+}

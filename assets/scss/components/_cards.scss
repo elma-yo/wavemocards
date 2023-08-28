@@ -183,3 +183,29 @@
 .emoCardHeadOthers:hover {
     background-color: rgba(235, 235, 235, .8);
 }
+
+// 找尋我的情緒｜未分類大卡
+.free-cards {
+    height: 272px;
+}
+.free-card {
+    min-width: 480px;
+    padding: 36px;
+    border-radius: 12px;
+    p {
+        width: 50%;
+        margin-right: 16px;
+        font-size: 64px;
+        font-weight: bold;
+    }
+    .img-box {
+        width: 50%;
+        border-radius: 50%;
+        overflow:hidden;
+    }
+    img {
+        width: 100%;
+        transform:scale(1,1);
+        transition: all .25s ease-out;
+    }
+}
