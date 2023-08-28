@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>浪潮情緒卡｜討厭</title>
-    <!-- Bootstrap icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <script type="module" crossorigin src="/wavemocards/assets/main-da634b5f.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-f16c70dc.css">
-  </head>
-  <body>
-    <header class="header h-logined sticky-top">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>浪潮情緒卡｜找尋我的情緒｜自由探索</title>
+        <!-- Bootstrap icon -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+      <script type="module" crossorigin src="/wavemocards/assets/main-da634b5f.js"></script>
+      <link rel="stylesheet" href="/wavemocards/assets/main-f16c70dc.css">
+    </head>
+    <body>
+        <header class="header h-logined sticky-top">
     <div class="container py-16 d-flex justify-content-between align-items-center">
         <h1>
             <a href="home.html" id="home">浪潮情緒卡</a>
@@ -44,68 +44,56 @@
         </ul>
     </div>
 </header>
-    <div class="classifiedPage" style="min-height: 80vh;">
         <div class="container py-16">
+            <!-- 標題 -->
             <div class="titleBar d-flex justify-content-between align-items-center">
-                <h2>討厭</h2>
-                <div class="nav-btn d-flex justify-content-end">
-                    <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
-                </div>
+                <h2>找尋我的情緒｜自由探索</h2>
+                <a class="ms-16 btn btn-main c-btn btn-goToMyCards" href="myEmoCardsHolder.html">
+                    <i class="bi bi-folder2"></i>
+                    <i class="bi bi-folder2-open"></i>
+                    <span class="ms-4">我的情緒卡夾</span>
+                </a>
             </div>
-            <div class="d-flex flex-wrap mb-72">
-                <button type="button" class="class-card me-16 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#hate01">
-                    <p>無&nbsp;聊</p>
+            <!-- 導覽說明 -->
+            <div class="guid mb-36 px-24 py-12 bg-main-tint03">
+                <p class="mb-4 d-flex align-items-center">
+                    🔎 若畫面中的情緒卡與你現在的情緒相符的話，請點擊下方的&nbsp;<span class="text-main fs-6 fw-bolder">Ｏ</span>&nbsp;按鈕；反之，若不符合你現在的情緒的話，請點擊&nbsp;<span class="text-pink fs-7 fw-bolder">X</span>&nbsp;。
+                </p>
+                <p class="d-flex align-items-center">
+                    🔎 當選擇完所有的情緒卡後，請點擊右上方的「&nbsp;<span class="text-main fw-bolder">我的情緒卡夾</span>&nbsp;」，以進行下一步的內容。
+                </p>
+            </div>
+
+            <!-- Card & Buttons -->
+            <!-- Card -->
+            <div class="free-cards mb-24 position-relative overflow-hidden">
+                <div class="position-absolute top-0 start--15 free-card d-flex justify-content-center align-items-center bg-expectation link-gray-900 border-0 opacity-25">
+                    <p>期&nbsp;待</p>
                     <div class="img-box">
-                      <img src="/wavemocards/assets/hate-d0497db6.svg" alt="hate">
+                        <img src="/wavemocards/assets/expectation-5303e497.svg" alt="happy">
+                    </div>
+                </div>
+                <button type="button" class="position-absolute top-0 start-50 translate-x-middle free-card d-flex justify-content-center align-items-center bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy05">
+                    <p>興&nbsp;奮</p>
+                    <div class="img-box">
+                        <img src="/wavemocards/assets/happy-15fff68b.svg" alt="happy">
                     </div>
                 </button>
-                <button type="button" class="class-card me-16 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#hate02">
-                    <p>厭&nbsp;倦</p>
-                    <div class="img-box">
-                      <img src="/wavemocards/assets/hate-d0497db6.svg" alt="hate">
-                    </div>
+            </div>
+            <!-- Buttons -->
+            <div class="d-flex justify-content-center">
+                <button type="button" class="me-28 btn-free btn-free-cross">
+                    <img class="btn-free-cross-default" src="/wavemocards/assets/cross-xl-068bac43.svg" alt="cross">
+                    <img class="btn-free-cross-hover" src="/wavemocards/assets/cross-hover-2a28e541.svg" alt="cross hover">
                 </button>
-                <button type="button" class="class-card me-16 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#hate03">
-                    <p>自&nbsp;卑</p>
-                    <div class="img-box">
-                      <img src="/wavemocards/assets/hate-d0497db6.svg" alt="hate">
-                    </div>
-                </button>
-                <button type="button" class="class-card me-16 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#hate04">
-                    <p>討&nbsp;厭</p>
-                    <div class="img-box">
-                      <img src="/wavemocards/assets/hate-d0497db6.svg" alt="hate">
-                    </div>
-                </button>
-                <button type="button" class="class-card me-16 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#hate05">
-                    <p>嫉&nbsp;妒</p>
-                    <div class="img-box">
-                      <img src="/wavemocards/assets/hate-d0497db6.svg" alt="hate">
-                    </div>
-                </button>
-                <button type="button" class="class-card me-16 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#hate06">
-                    <p>厭&nbsp;惡</p>
-                    <div class="img-box">
-                      <img src="/wavemocards/assets/hate-d0497db6.svg" alt="hate">
-                    </div>
-                </button>
-                <button type="button" class="class-card me-16 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#hate07">
-                    <p>噁&nbsp;心</p>
-                    <div class="img-box">
-                      <img src="/wavemocards/assets/hate-d0497db6.svg" alt="hate">
-                    </div>
-                </button>
-                <button type="button" class="class-card me-16 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#hate08">
-                    <p>怨&nbsp;恨</p>
-                    <div class="img-box">
-                      <img src="/wavemocards/assets/hate-d0497db6.svg" alt="hate">
-                    </div>
+                <button type="button" class="btn-free btn-free-circle">
+                    <img class="btn-free-circle-default" src="/wavemocards/assets/circle-xl-aa58fc30.svg" alt="cross">
+                    <img class="btn-free-circle-hover" src="/wavemocards/assets/circle-xl-hover-1c2669be.svg" alt="cross hover">
                 </button>
             </div>
         </div>
-    </div>
-    
-    <!-- Modal -->
+
+        <!-- Modal -->
 <!-- 快樂類 -->
 <!-- 滿足 -->
 <div class="modal fade px-32" id="happy01" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -3878,7 +3866,8 @@
             </div>
         </div>
     </div>
-</div>    <footer class="footer py-48">
+</div>    
+        <footer class="footer py-48">
     <div class="container d-flex">
         <div class="logo me-96">
             <a href="home.html">
@@ -3903,7 +3892,7 @@
         </div>
     </div>
 </footer>
-    
-    <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
-  </body>
+        
+        <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
+    </body>
 </html>
