@@ -11,8 +11,8 @@
   <body>
     <%- include('./layout/headerLogined'); -%>
 
-    <div class="classifiedPage" style="min-height: 80vh;">
-        <div class="container py-16">
+    <main>
+        <div class="container py-16 mb-48">
             <!-- process bar -->
             <div class="d-flex justify-content-end">
                 <div class="progressBar mt-16 mb-8 px-12">
@@ -59,7 +59,7 @@
             </p>
 
             <!-- 尚未設定form action內容 -->
-            <form action="#">
+            <form action="#" method="">
                 <!-- 1 card & point -->
                 <div class="mb-24 d-flex justify-content-between">
                     <!-- card -->
@@ -190,12 +190,11 @@
                     </div>
                 </div>
             </form>
-        
         </div>
-    </div>
+    </main>
     
-    <%- include('./layout/modalEmoCards'); -%>
     <%- include('./layout/footer'); -%>
+    <%- include('./layout/modalEmoCards'); -%>
 
     <script type="module" src="../main.js"></script>
     <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>

@@ -10,8 +10,8 @@
   </head>
   <body>
     <%- include('./layout/headerLogined'); -%>
-
-    <div class="container py-16">
+    <main>
+      <div class="container py-16">
         <!-- 標題 -->
         <div class="titleBar d-flex justify-content-between align-items-center">
             <h2>我的紀錄</h2>
@@ -43,7 +43,7 @@
             </button>
           </div>
         </div>
-
+  
         <!-- Table -->
         <table class="mb-24 table table-hover c-table-border">
           <thead>
@@ -61,7 +61,7 @@
               </th>
               <td>2023/03/14</td>
               <td>快樂 5・幸福 4・安心 3</td>
-              <td><a class="link-main" href="myEmoStory.html">由此進入</a></td>
+              <td><a class="link-main" href="myRecordsEmoStory.html">由此進入</a></td>
             </tr>
             <tr class="text-center table-main-tint03">
               <th scope="row">
@@ -69,7 +69,7 @@
               </th>
               <td>2023/03/14</td>
               <td>快樂 5・幸福 4・安心 3</td>
-              <td><a class="link-main" href="myEmoStory.html">由此進入</a></td>
+              <td><a class="link-main" href="myRecordsEmoStory.html">由此進入</a></td>
             </tr>
             <tr class="text-center">
               <th scope="row">
@@ -77,7 +77,7 @@
               </th>
               <td>2023/03/14</td>
               <td>快樂 5・幸福 4・安心 3</td>
-              <td><a class="link-main" href="myEmoStory.html">由此進入</a></td>
+              <td><a class="link-main" href="myRecordsEmoStory.html">由此進入</a></td>
             </tr>
             <tr class="text-center table-main-tint03">
               <th scope="row">
@@ -85,11 +85,11 @@
               </th>
               <td>2023/03/14</td>
               <td>快樂 5・幸福 4・安心 3</td>
-              <td><a class="link-main" href="myEmoStory.html">由此進入</a></td>
+              <td><a class="link-main" href="myRecordsEmoStory.html">由此進入</a></td>
             </tr>
           </tbody>
         </table>
-
+  
         <!-- 分頁 -->
         <div class="mb-64 d-flex justify-content-end">
           <nav aria-label="Page navigation example">
@@ -110,7 +110,8 @@
             </ul>
           </nav>
         </div>
-    </div>
+      </div>
+    </main>
 
     <%- include('./layout/footer'); -%>
 

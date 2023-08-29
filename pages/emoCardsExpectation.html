@@ -11,42 +11,42 @@
   <body>
     <%- include('./layout/headerLogined'); -%>
 
-    <div class="classifiedPage" style="min-height: 80vh;">
-        <div class="container py-16">
-            <div class="titleBar d-flex justify-content-between align-items-center">
-                <h2>期待</h2>
-                <div class="nav-btn d-flex justify-content-end">
-                    <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
-                </div>
-            </div>
-            <div class="d-flex flex-wrap mb-72">
-                <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation01">
-                    <p>期&nbsp;待</p>
-                    <div class="img-box">
-                      <img src="../assets/images/expectation/expectation.svg" alt="expectation">
-                    </div>
-                </button>
-                <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation " data-bs-toggle="modal" data-bs-target="#expectation02">
-                    <p class="px-0">有信心</p>
-                    <div class="img-box">
-                      <img src="../assets/images/expectation/expectation.svg" alt="expectation">
-                    </div>
-                </button>
-                <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation03">
-                    <p>充滿興趣</p>
-                    <div class="img-box">
-                      <img src="../assets/images/expectation/expectation.svg" alt="expectation">
-                    </div>
-                </button>
-                <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation04">
-                    <p>渴望</p>
-                    <div class="img-box">
-                      <img src="../assets/images/expectation/expectation.svg" alt="expectation">
-                    </div>
-                </button>
-            </div>
+    <main>
+      <div class="container py-16">
+        <div class="titleBar d-flex justify-content-between align-items-center">
+          <h2>期待</h2>
+          <div class="nav-btn d-flex justify-content-end">
+              <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
+          </div>
         </div>
-    </div>
+        <div class="d-flex flex-wrap mb-72">
+          <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation01">
+              <p>期&nbsp;待</p>
+              <div class="img-box">
+                <img src="../assets/images/expectation/expectation.svg" alt="expectation">
+              </div>
+          </button>
+          <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation " data-bs-toggle="modal" data-bs-target="#expectation02">
+              <p class="px-0">有信心</p>
+              <div class="img-box">
+                <img src="../assets/images/expectation/expectation.svg" alt="expectation">
+              </div>
+          </button>
+          <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation03">
+              <p>充滿興趣</p>
+              <div class="img-box">
+                <img src="../assets/images/expectation/expectation.svg" alt="expectation">
+              </div>
+          </button>
+          <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation04">
+              <p>渴望</p>
+              <div class="img-box">
+                <img src="../assets/images/expectation/expectation.svg" alt="expectation">
+              </div>
+          </button>
+        </div>
+      </div>
+    </main>
     
     <%- include('./layout/modalEmoCards'); -%>
     <%- include('./layout/footer'); -%>

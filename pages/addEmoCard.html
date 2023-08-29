@@ -11,74 +11,76 @@
   <body>
     <%- include('./layout/headerLogined'); -%>
 
-    <div class="container py-16">
-        <!-- 標題欄 -->
-        <div class="titleBar d-flex justify-content-between align-items-center">
-            <h2>新增情緒卡</h2>
-            <div class="nav-btn d-flex justify-content-end">
-                <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
+    <main>
+        <div class="container py-16">
+            <!-- 標題欄 -->
+            <div class="titleBar d-flex justify-content-between align-items-center">
+                <h2>新增情緒卡</h2>
+                <div class="nav-btn d-flex justify-content-end">
+                    <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
+                </div>
+            </div>
+    
+            <!-- 表單區 -->
+            <div class="emoForm">
+                <form action="" method="post" class="needs-validation" novalidate>
+                    <!-- 上傳圖片 -->
+                    <div class="w-100 d-flex justify-content-center align-items-end">
+                        <div class="mb-16 appImg">
+                            <i class="bi bi-plus-circle-fill btn-add"></i>
+                        </div>
+                    </div>
+                    <!-- 情緒詞彙 -->
+                    <div class="mb-16">
+                        <label for="addEmoName" class="form-label  d-flex justify-content-between">
+                            情緒詞彙
+                            <span class="must">*必填</span>
+                        </label>
+                        <input type="text" class="form-control px-20 rounded-pill" id="addEmoName" placeholder="開心" required>
+                        <div class="invalid-feedback">
+                            請輸入情緒詞彙，且該詞彙為非重複的情緒詞彙
+                        </div>
+                    </div>
+                    <!-- 意思 -->
+                    <div class="mb-16">
+                        <label for="addEmoDefinition" class="form-label  d-flex justify-content-between">
+                            意思
+                            <!-- <span class="must">*必填</span> -->
+                        </label>
+                        <input type="text" class="form-control px-20 rounded-pill" id="addEmoDefinition" placeholder="感到快樂、愉悅，內心充滿愉快。">
+                    </div>
+                    <!-- 例句 -->
+                    <div class="mb-16">
+                        <label for="addEmoExample" class="form-label d-flex justify-content-between">
+                            例句
+                            <!-- <span class="must">*必填</span> -->
+                        </label>
+                        <input type="text" class="form-control px-20 rounded-pill" id="addEmoExample" placeholder="和朋友一起玩遊戲，我覺得很開心。">
+                    </div>
+                    <!-- 分類 -->
+                    <div class="mb-32">
+                        <label for="addEmoClass" class="form-label d-flex justify-content-between">
+                            分類
+                            <span class="must">*必填</span>
+                        </label>
+                        <select class="form-select px-20 rounded-pill" aria-label="Default select example" id="addEmoClass" required>
+                            <option value="快樂">快樂</option>
+                            <option value="期待">期待</option>
+                            <option value="放鬆">放鬆</option>
+                            <option value="不安">不安</option>
+                            <option value="驚訝">驚訝</option>
+                            <option value="低落">低落</option>
+                            <option value="討厭">討厭</option>
+                            <option value="生氣">生氣</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                    <!-- 按鈕 -->
+                    <button class="w-100 mb-32 py-8 btn btn-main c-btn" type="submit">新增</button>
+                </form>
             </div>
         </div>
-
-        <!-- 表單區 -->
-        <div class="emoForm">
-            <form action="" method="post" class="needs-validation" novalidate>
-                <!-- 上傳圖片 -->
-                <div class="w-100 d-flex justify-content-center align-items-end">
-                    <div class="mb-16 appImg">
-                        <i class="bi bi-plus-circle-fill btn-add"></i>
-                    </div>
-                </div>
-                <!-- 情緒詞彙 -->
-                <div class="mb-16">
-                    <label for="addEmoName" class="form-label  d-flex justify-content-between">
-                        情緒詞彙
-                        <span class="must">*必填</span>
-                    </label>
-                    <input type="text" class="form-control px-20 rounded-pill" id="addEmoName" placeholder="開心" required>
-                    <div class="invalid-feedback">
-                        請輸入情緒詞彙，且該詞彙為非重複的情緒詞彙
-                    </div>
-                </div>
-                <!-- 意思 -->
-                <div class="mb-16">
-                    <label for="addEmoDefinition" class="form-label  d-flex justify-content-between">
-                        意思
-                        <!-- <span class="must">*必填</span> -->
-                    </label>
-                    <input type="text" class="form-control px-20 rounded-pill" id="addEmoDefinition" placeholder="感到快樂、愉悅，內心充滿愉快。">
-                </div>
-                <!-- 例句 -->
-                <div class="mb-16">
-                    <label for="addEmoExample" class="form-label d-flex justify-content-between">
-                        例句
-                        <!-- <span class="must">*必填</span> -->
-                    </label>
-                    <input type="text" class="form-control px-20 rounded-pill" id="addEmoExample" placeholder="和朋友一起玩遊戲，我覺得很開心。">
-                </div>
-                <!-- 分類 -->
-                <div class="mb-32">
-                    <label for="addEmoClass" class="form-label d-flex justify-content-between">
-                        分類
-                        <span class="must">*必填</span>
-                    </label>
-                    <select class="form-select px-20 rounded-pill" aria-label="Default select example" id="addEmoClass" required>
-                        <option value="快樂">快樂</option>
-                        <option value="期待">期待</option>
-                        <option value="放鬆">放鬆</option>
-                        <option value="不安">不安</option>
-                        <option value="驚訝">驚訝</option>
-                        <option value="低落">低落</option>
-                        <option value="討厭">討厭</option>
-                        <option value="生氣">生氣</option>
-                        <option value="其他">其他</option>
-                    </select>
-                </div>
-                <!-- 按鈕 -->
-                <button class="w-100 mb-32 py-8 btn btn-main c-btn" type="submit">新增</button>
-            </form>
-        </div>
-    </div>
+    </main>
     
     <%- include('./layout/footer'); -%>
 

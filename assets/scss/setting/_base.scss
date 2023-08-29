@@ -1,3 +1,17 @@
+// 1~14行 將高度不夠高的頁面撐開，避免底部留白
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
 body {
     line-height: 1.5;
 }

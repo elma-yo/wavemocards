@@ -11,99 +11,101 @@
   <body>
     <%- include('./layout/header'); -%>
 
-    <div class="login signup d-flex justify-content-center align-items-stretch">
-        <div class="img w-50">
-            <img src="../assets/images/login-bg.svg" alt="login page background">
-        </div>
-
-        <div class="w-50 py-32 px-24 d-flex flex-column align-items-center">
-            <div class="form">
-                <div class="mb-20 text-pink d-flex flex-column align-items-center">
-                    <i class="bi bi-person-circle profile"></i>
+    <main>
+        <div class="login signup d-flex justify-content-center align-items-stretch">
+            <div class="img w-50">
+                <img src="../assets/images/login-bg.svg" alt="login page background">
+            </div>
+    
+            <div class="w-50 py-32 px-24 d-flex flex-column align-items-center">
+                <div class="form">
+                    <div class="mb-20 text-pink d-flex flex-column align-items-center">
+                        <i class="bi bi-person-circle profile"></i>
+                    </div>
+                    <h2 class="mb-32 text-pink">註冊</h2>
+                    <!-- 尚未填入 a 連結 -->
+                    <a class="w-100 mb-32 py-8 btn btn-outline-pink c-btn-outline-pink d-flex justify-content-center align-items-center" href="#">
+                        連結 Google 帳號
+                        <i class="bi bi-google ms-8"></i>
+                    </a>
+                    <div class="or mb-32">或</div>
+    
+                    <!-- 尚未填入 action 內容 -->
+                    <form action="#" method="post" class="needs-validation" novalidate>
+                        <div class="mb-16">
+                            <label for="singupEmail" class="form-label  d-flex justify-content-between">
+                                E-mail
+                                <span class="must">*必填</span>
+                            </label>
+                            <input type="email" class="form-control rounded-pill px-20" id="singupEmail" placeholder="wavemocards@gmail.com" required>
+                            <div class="invalid-feedback">
+                                請輸入正確的 e-mail 帳號
+                            </div>
+                        </div>
+                        <div class="mb-20">
+                            <label for="singupPassword" class="form-label d-flex justify-content-between">
+                                密碼
+                                <span class="must">*必填</span>
+                            </label>
+                            <input type="password" class="form-control rounded-pill px-20" id="singupPassword" required aria-describedby="passwordHelp" placeholder="********" required>
+                            <div class="invalid-feedback">
+                                請輸入正確的密碼
+                            </div>
+                        </div>
+                        <div class="mb-20 row">
+                            <div class="col-6">
+                                <label for="singupLastName" class="form-label  d-flex justify-content-between">
+                                    姓
+                                    <span class="must">*必填</span>
+                                </label>
+                                <input type="text" class="form-control rounded-pill px-20" id="singupLastName" placeholder="王" required>
+                                <div class="invalid-feedback">
+                                    請輸入您的姓氏
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="singupFirstName" class="form-label  d-flex justify-content-between">
+                                    名
+                                    <span class="must">*必填</span>
+                                </label>
+                                <input type="text" class="form-control rounded-pill px-20" id="singupFirstName" placeholder="浪潮" required>
+                                <div class="invalid-feedback">
+                                    請輸入您的名字
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-20  row">
+                            <div class="col-6">
+                                <label for="singupBirthday" class="form-label d-flex justify-content-between">
+                                    生日
+                                    <span class="must">*必填</span>
+                                </label>
+                                <input type="date" class="form-control rounded-pill px-20" id="singupBirthday" required>
+                                <div class="invalid-feedback">
+                                    請輸入您的生日年月日
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="singupBirthday" class="form-label d-flex justify-content-between">
+                                    身份
+                                </label>
+                                <select class="form-select px-20 rounded-pill" aria-label="Default select example" id="singupBirthday">
+                                    <option value="學生">學生</option>
+                                    <option value="教師">教師</option>
+                                    <option value="諮商師">諮商師</option>
+                                    <option value="醫生">醫生</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="w-100 mb-32 py-8 btn btn-pink c-btn" type="submit">登入</button>
+                    </form>
+                    <a class="d-block 
+                    click-me clickMeToLogin" href="signup.html">已經有帳號了嗎？ 點我登入</a>
                 </div>
-                <h2 class="mb-32 text-pink">註冊</h2>
-                <!-- 尚未填入 a 連結 -->
-                <a class="w-100 mb-32 py-8 btn btn-outline-pink c-btn-outline-pink d-flex justify-content-center align-items-center" href="#">
-                    連結 Google 帳號
-                    <i class="bi bi-google ms-8"></i>
-                </a>
-                <div class="or mb-32">或</div>
-
-                <!-- 尚未填入 action 內容 -->
-                <form action="#" method="post" class="needs-validation" novalidate>
-                    <div class="mb-16">
-                        <label for="singupEmail" class="form-label  d-flex justify-content-between">
-                            E-mail
-                            <span class="must">*必填</span>
-                        </label>
-                        <input type="email" class="form-control rounded-pill px-20" id="singupEmail" placeholder="wavemocards@gmail.com" required>
-                        <div class="invalid-feedback">
-                            請輸入正確的 e-mail 帳號
-                        </div>
-                    </div>
-                    <div class="mb-20">
-                        <label for="singupPassword" class="form-label d-flex justify-content-between">
-                            密碼
-                            <span class="must">*必填</span>
-                        </label>
-                        <input type="password" class="form-control rounded-pill px-20" id="singupPassword" required aria-describedby="passwordHelp" placeholder="********" required>
-                        <div class="invalid-feedback">
-                            請輸入正確的密碼
-                        </div>
-                    </div>
-                    <div class="mb-20 row">
-                        <div class="col-6">
-                            <label for="singupLastName" class="form-label  d-flex justify-content-between">
-                                姓
-                                <span class="must">*必填</span>
-                            </label>
-                            <input type="text" class="form-control rounded-pill px-20" id="singupLastName" placeholder="王" required>
-                            <div class="invalid-feedback">
-                                請輸入您的姓氏
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <label for="singupFirstName" class="form-label  d-flex justify-content-between">
-                                名
-                                <span class="must">*必填</span>
-                            </label>
-                            <input type="text" class="form-control rounded-pill px-20" id="singupFirstName" placeholder="浪潮" required>
-                            <div class="invalid-feedback">
-                                請輸入您的名字
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-20  row">
-                        <div class="col-6">
-                            <label for="singupBirthday" class="form-label d-flex justify-content-between">
-                                生日
-                                <span class="must">*必填</span>
-                            </label>
-                            <input type="date" class="form-control rounded-pill px-20" id="singupBirthday" required>
-                            <div class="invalid-feedback">
-                                請輸入您的生日年月日
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <label for="singupBirthday" class="form-label d-flex justify-content-between">
-                                身份
-                            </label>
-                            <select class="form-select px-20 rounded-pill" aria-label="Default select example" id="singupBirthday">
-                                <option value="學生">學生</option>
-                                <option value="教師">教師</option>
-                                <option value="諮商師">諮商師</option>
-                                <option value="醫生">醫生</option>
-                                <option value="其他">其他</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button class="w-100 mb-32 py-8 btn btn-pink c-btn" type="submit">登入</button>
-                </form>
-                <a class="d-block 
-                click-me clickMeToLogin" href="signup.html">已經有帳號了嗎？ 點我登入</a>
             </div>
         </div>
-    </div>
+    </main>
 
     <script type="module" src="../main.js"></script>
     <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>

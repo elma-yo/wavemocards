@@ -11,53 +11,55 @@
   <body>
     <%- include('./layout/header'); -%>
 
-    <div class="login d-flex justify-content-center align-items-stretch">
-        <div class="img w-50">
-            <img src="../assets/images/login-bg.svg" alt="login page background">
-        </div>
-
-        <div class="w-50 py-32 px-24 d-flex flex-column align-items-center">
-            <div class="form">
-                <div class="mb-20 text-main d-flex flex-column align-items-center">
-                    <i class="bi bi-person-circle profile"></i>
+    <main>
+        <div class="login d-flex justify-content-center align-items-stretch">
+            <div class="img w-50">
+                <img src="../assets/images/login-bg.svg" alt="login page background">
+            </div>
+    
+            <div class="w-50 py-32 px-24 d-flex flex-column align-items-center">
+                <div class="form">
+                    <div class="mb-20 text-main d-flex flex-column align-items-center">
+                        <i class="bi bi-person-circle profile"></i>
+                    </div>
+                    <h2 class="mb-32">登入</h2>
+                    <!-- 尚未填入 a 連結 -->
+                    <a class="w-100 mb-32 py-8 btn btn-outline-main c-btn-outline-main d-flex justify-content-center align-items-center" href="#">
+                        透過 Google 帳號登入
+                        <i class="bi bi-google ms-8"></i>
+                    </a>
+                    <div class="or mb-32">或</div>
+    
+                    <!-- 尚未填入 action 內容 -->
+                    <form action="#" method="post" class="needs-validation" novalidate>
+                        <div class="mb-16">
+                            <label for="singupEmail" class="form-label  d-flex justify-content-between">
+                                E-mail
+                                <span class="must">*必填</span>
+                            </label>
+                            <input type="email" class="form-control rounded-pill px-20" id="singupEmail" placeholder="wavemocards@gmail.com" required>
+                            <div class="invalid-feedback">
+                                請輸入正確的 e-mail 帳號
+                            </div>
+                        </div>
+                        <div class="mb-20">
+                            <label for="singupPassword" class="form-label d-flex justify-content-between">
+                                密碼
+                                <span class="must">*必填</span>
+                            </label>
+                            <input type="password" class="form-control rounded-pill px-20" id="singupPassword" required aria-describedby="passwordHelp" placeholder="********" required>
+                            <div class="invalid-feedback">
+                                請輸入正確的密碼
+                            </div>
+                        </div>
+                        <button class="w-100 mb-32 py-8 btn btn-main c-btn" type="submit">登入</button>
+                    </form>
+                    <a class="d-block 
+                    click-me" href="signup.html">點我註冊</a>
                 </div>
-                <h2 class="mb-32">登入</h2>
-                <!-- 尚未填入 a 連結 -->
-                <a class="w-100 mb-32 py-8 btn btn-outline-main c-btn-outline-main d-flex justify-content-center align-items-center" href="#">
-                    透過 Google 帳號登入
-                    <i class="bi bi-google ms-8"></i>
-                </a>
-                <div class="or mb-32">或</div>
-
-                <!-- 尚未填入 action 內容 -->
-                <form action="#" method="post" class="needs-validation" novalidate>
-                    <div class="mb-16">
-                        <label for="singupEmail" class="form-label  d-flex justify-content-between">
-                            E-mail
-                            <span class="must">*必填</span>
-                        </label>
-                        <input type="email" class="form-control rounded-pill px-20" id="singupEmail" placeholder="wavemocards@gmail.com" required>
-                        <div class="invalid-feedback">
-                            請輸入正確的 e-mail 帳號
-                        </div>
-                    </div>
-                    <div class="mb-20">
-                        <label for="singupPassword" class="form-label d-flex justify-content-between">
-                            密碼
-                            <span class="must">*必填</span>
-                        </label>
-                        <input type="password" class="form-control rounded-pill px-20" id="singupPassword" required aria-describedby="passwordHelp" placeholder="********" required>
-                        <div class="invalid-feedback">
-                            請輸入正確的密碼
-                        </div>
-                    </div>
-                    <button class="w-100 mb-32 py-8 btn btn-main c-btn" type="submit">登入</button>
-                </form>
-                <a class="d-block 
-                click-me" href="signup.html">點我註冊</a>
             </div>
         </div>
-    </div>
+    </main>
 
     <script type="module" src="../main.js"></script>
     <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
