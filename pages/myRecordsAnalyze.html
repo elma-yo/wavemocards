@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>浪潮情緒卡｜我的紀錄｜分析</title>
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <%- include('./layout/headerLogined'); -%>
+    <main>
+        <div class="container py-16">
+            <!-- 標題 -->
+            <div class="titleBar d-flex justify-content-between align-items-center">
+                <h2>我的紀錄｜分析</h2>
+                <div class="nav-btn d-flex justify-content-end">
+                    <a class="btn btn-outline-main c-btn" href="myRecords.html">紀錄</a>
+                    <div class="ms-16 btn-disable">分析</div>
+                </div>
+            </div>
+            
+            <!-- 搜尋條 & 分享 -->
+            <div class="mb-24 d-flex justify-content-between align-items-center">
+            <!-- 搜尋條 -->
+                <form action="" method="get">
+                    <div class="d-flex align-items-center">
+                    <input type="date" class="d-block input-date me-8 px-16 py-6 border border-main-tint02 border-2 rounded-pill text-main-tint01">
+                    <span class="me-8 text-main-tint01">～</span>
+                    <input type="date" class="d-block input-date me-12 px-16 py-6 border border-main-tint02 border-2 rounded-pill text-main-tint01">
+                    <button type="submit" class="btn btn-main c-btn px-24 py-8 border-0">分析</button>
+                    </div>
+                </form>
+                <!-- 分享 -->
+                <button class="rounded-pill border-0 fs-5 c-btn-icon">
+                    <i class="bi bi-share"></i>
+                </button>
+            </div>
+
+            <!-- 圖表區 -->
+            <div class="container mb-48">
+                <div class="row align-items-stretch">
+                    <div class="col-6">
+                        <h3 class="mb-8 py-4 fs-5 fw-bold text-main border-bottom border-main-tint02">情緒類組次數</h3>
+                        <p class="mb-36 text-gray-550">下圖為您在此期間記錄的情緒卡，在以下分類中所出現的次數的長條圖。</p>
+                        <div class="py-8 d-flex justify-content-center align-items-center">
+                            <!-- 暫時用假資料 -->
+                            <img src="../assets/images/fakeCharts/BarChart.svg" alt="bar chart">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h3 class="mb-8 py-4 fs-5 fw-bold text-main border-bottom border-main-tint02">情緒類組比例</h3>
+                        <p class="mb-36 text-gray-550">下圖為您在此期間記錄的情緒卡，在以下分類中所出現的次數比例的圖餅圖。</p>
+                        <div class="py-8 d-flex justify-content-center align-items-center">
+                            <!-- 暫時用假資料 -->
+                            <img src="../assets/images/fakeCharts/PieChart.svg" alt="pie chart">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 插畫 -->
+            <div class="d-flex justify-content-end">
+                <img src="../assets/images/lime-analyze.svg" alt="analyze">
+            </div>
+            <!-- 圖片引用來源 -->
+            <div class="text-end mb-48">
+                <span class="text-gray-500 fs-11">
+                    Illustration by <a class="link-gray-500" href="https://icons8.com/illustrations/author/iAdLsFJOKDrk" target="_blank">Tanya Krasutska</a> from <a class="link-gray-500" href="https://icons8.com/illustrations" target="_blank">Ouch!</a>
+                </span>
+            </div>
+
+        </div>
+</main>
+
+<%- include('./layout/footer'); -%>
+
+<script type="module" src="../main.js"></script>
+<script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
+</body>
+</html>
