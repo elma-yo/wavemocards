@@ -78,6 +78,9 @@ input[type="radio"]:checked+label{
     box-shadow: 0 2 6 rgba(0, 0, 0, .8);
     background: $white url('../images/Icon/Search.svg') no-repeat 16px 6px;
 }
-::placeholder {
+input[type=search]::placeholder {
     color: $main-tint01;
+}
+input[type=text]::placeholder {
+    color: $gray-550;
 }
