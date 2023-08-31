@@ -218,3 +218,14 @@
     color: $white;
     box-shadow: 2px 2px 4px rgba(112, 132, 136, 0.5);
 }
+
+// 共享紀錄 他人的分享 情緒故事按鈕
+.btn-emoStory {
+    color: $gray-900;
+}
+.btn-emoStory:hover {
+    padding: 0 4%;
+    border-radius: 50rem;
+    background-color: $main-tint02;
+    color: $gray-900;
+}

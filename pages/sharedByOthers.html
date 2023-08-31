@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>浪潮情緒卡｜共享紀錄｜他人的分享</title>
+        <!-- Bootstrap icon -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <%- include('./layout/headerLogined'); -%>
+        <main>
+        <div class="container py-16">
+            <!-- 標題 -->
+            <div class="titleBar d-flex justify-content-between align-items-center">
+                <h2>共享紀錄｜他人的分享</h2>
+                <div class="nav-btn d-flex justify-content-end">
+                    <div class="btn-disable">他人的分享</div>
+                    <a class="ms-16 btn btn-outline-main c-btn" href="sharedByMyself.html">我的分享</a>
+                </div>
+            </div>
+            
+            <!-- 搜尋條 & 分享、刪除 -->
+            <div class="mb-24 d-flex justify-content-between align-items-center">
+                <!-- 搜尋條 -->
+                <form action="" method="get">
+                    <div class="d-flex align-items-center">
+                    <input type="date" class="d-block input-date me-8 px-16 py-6 border border-main-tint02 border-2 rounded-pill text-main-tint01">
+                    <span class="me-8 text-main-tint01">～</span>
+                    <input type="date" class="d-block input-date me-12 px-16 py-6 border border-main-tint02 border-2 rounded-pill text-main-tint01">
+                    <input type="search" class="search-bar me-8 py-12 border border-main-tint02 border-2 rounded-pill" placeholder="請輸入關鍵字">
+                    <button type="submit" class="btn btn-main c-btn px-24 py-8 border-0">搜尋</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+            <!-- Task List -->
+            <div class="container mb-64">
+                <div class="row  g-5">
+                    <!-- 未讀 -->
+                    <div class="col-4">
+                        <div class=" px-24 py-16 shadow rounded-3">
+                            <div class="mb-20 pb-8 d-flex justify-content-between align-items-center border-bottom border-4">
+                                <h3 class="fs-5 fw-bold">未讀</h3>
+                                <span class="fs-6 fw-bold">6</span>
+                            </div>
+                            <div class="overflow-auto" style="height: 496px;">
+                                <div class="mb-16 border border-gray-400 rounded-2 shadow-sm">
+                                    <div class="px-12 py-8 border-start border-4 border-gray-400 rounded-1">
+                                        <div class="mb-8 d-flex justify-content-between align-items-center">
+                                            <span class="fs-7 fw-bold">黃小翰</span>
+                                            <span class="fs-9 text-gray-550">2023 / 01 / 06</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>生氣 3・難過 4・討厭 5</span>
+                                            <a class="btn-emoStory" href="sharedByOthersEmoStory">情緒故事</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-16 border border-gray-400 rounded-2 shadow-sm">
+                                    <div class="px-12 py-8 border-start border-4 border-gray-400 rounded-1">
+                                        <div class="mb-8 d-flex justify-content-between align-items-center">
+                                            <span class="fs-7 fw-bold">黃小翰</span>
+                                            <span class="fs-9 text-gray-550">2023 / 01 / 06</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>生氣 3・難過 4・討厭 5</span>
+                                            <a class="btn-emoStory" href="sharedByOthersEmoStory">情緒故事</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-16 border border-gray-400 rounded-2 shadow-sm">
+                                    <div class="px-12 py-8 border-start border-4 border-gray-400 rounded-1">
+                                        <div class="mb-8 d-flex justify-content-between align-items-center">
+                                            <span class="fs-7 fw-bold">黃小翰</span>
+                                            <span class="fs-9 text-gray-550">2023 / 01 / 06</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>生氣 3・難過 4・討厭 5</span>
+                                            <a class="btn-emoStory" href="sharedByOthersEmoStory">情緒故事</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-16 border border-gray-400 rounded-2 shadow-sm">
+                                    <div class="px-12 py-8 border-start border-4 border-gray-400 rounded-1">
+                                        <div class="mb-8 d-flex justify-content-between align-items-center">
+                                            <span class="fs-7 fw-bold">黃小翰</span>
+                                            <span class="fs-9 text-gray-550">2023 / 01 / 06</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>生氣 3・難過 4・討厭 5</span>
+                                            <a class="btn-emoStory" href="sharedByOthersEmoStory">情緒故事</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-16 border border-gray-400 rounded-2 shadow-sm">
+                                    <div class="px-12 py-8 border-start border-4 border-gray-400 rounded-1">
+                                        <div class="mb-8 d-flex justify-content-between align-items-center">
+                                            <span class="fs-7 fw-bold">黃小翰</span>
+                                            <span class="fs-9 text-gray-550">2023 / 01 / 06</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>生氣 3・難過 4・討厭 5</span>
+                                            <a class="btn-emoStory" href="sharedByOthersEmoStory">情緒故事</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-16 border border-gray-400 rounded-2 shadow-sm">
+                                    <div class="px-12 py-8 border-start border-4 border-gray-400 rounded-1">
+                                        <div class="mb-8 d-flex justify-content-between align-items-center">
+                                            <span class="fs-7 fw-bold">黃小翰</span>
+                                            <span class="fs-9 text-gray-550">2023 / 01 / 06</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>生氣 3・難過 4・討厭 5</span>
+                                            <a class="btn-emoStory" href="sharedByOthersEmoStory">情緒故事</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 處理中 -->
+                    <div class="col-4">
+                        <div class=" px-24 py-16 shadow rounded-3">
+                            <div class="mb-20 pb-8 d-flex justify-content-between align-items-center border-bottom border-main-tint01 border-4">
+                                <h3 class="fs-5 fw-bold">處理中</h3>
+                                <span class="fs-6 fw-bold">3</span>
+                            </div>
+                            <div class="overflow-auto" style="height: 496px;">
+                                <div class="mb-16 border border-main-tint01 rounded-2 shadow-sm">
+                                    <div class="px-12 py-8 border-start border-4 border-main-tint01 rounded-1">
+                                        <div class="mb-8 d-flex justify-content-between align-items-center">
+                                            <span class="fs-7 fw-bold">黃小翰</span>
+                                            <span class="fs-9 text-gray-550">2023 / 01 / 06</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>生氣 3・難過 4・討厭 5</span>
+                                            <a class="btn-emoStory" href="sharedByOthersEmoStory">情緒故事</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-16 border border-main-tint01 rounded-2 shadow-sm">
+                                    <div class="px-12 py-8 border-start border-4 border-main-tint01 rounded-1">
+                                        <div class="mb-8 d-flex justify-content-between align-items-center">
+                                            <span class="fs-7 fw-bold">黃小翰</span>
+                                            <span class="fs-9 text-gray-550">2023 / 01 / 06</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>生氣 3・難過 4・討厭 5</span>
+                                            <a class="btn-emoStory" href="sharedByOthersEmoStory">情緒故事</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-16 border border-main-tint01 rounded-2 shadow-sm">
+                                    <div class="px-12 py-8 border-start border-4 border-main-tint01 rounded-1">
+                                        <div class="mb-8 d-flex justify-content-between align-items-center">
+                                            <span class="fs-7 fw-bold">黃小翰</span>
+                                            <span class="fs-9 text-gray-550">2023 / 01 / 06</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>生氣 3・難過 4・討厭 5</span>
+                                            <a class="btn-emoStory" href="sharedByOthersEmoStory">情緒故事</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 完成 -->
+                    <div class="col-4">
+                        <div class=" px-24 py-16 shadow rounded-3">
+                            <div class="mb-20 pb-8 d-flex justify-content-between align-items-center border-bottom border-gray-550 border-4">
+                                <h3 class="fs-5 fw-bold">完成</h3>
+                                <span class="fs-6 fw-bold"></span>1</span>
+                            </div>
+                            <div class="overflow-auto" style="height: 496px;">
+                                <div class="mb-16 border border-gray-550 rounded-2 bg-gray-200 shadow-sm">
+                                    <div class="px-12 py-8 border-start border-4 border-gray-550 rounded-1">
+                                        <div class="mb-8 d-flex justify-content-between align-items-center">
+                                            <span class="fs-7 fw-bold">黃小翰</span>
+                                            <span class="fs-9 text-gray-550">2023 / 01 / 06</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>生氣 3・難過 4・討厭 5</span>
+                                            <a class="btn-emoStory" href="sharedByOthersEmoStory">情緒故事</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+    <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
+  </body>
+</html>

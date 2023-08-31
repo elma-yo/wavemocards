@@ -5,8 +5,8 @@
 // to load all the scss files of bootstrap 載入所有bs5的scss
 @import "../../node_modules/bootstrap";
 
-@import "./setting/reset";
-@import "./setting/base";
+@import "./helper/reset";
+@import "./helper/base";
 
 @import "./utils/font";
 @import "./utils/position";
