@@ -11,7 +11,7 @@
   <body>
     <%- include('./layout/headerLoggedIn'); -%>
 
-    <main>
+    <main style="min-height: 90vh;">
       <div class="container py-16 mb-48">
           <!-- 標題欄 -->
           <div class="titleBar d-flex justify-content-between align-items-center">
@@ -19,30 +19,25 @@
           </div>
   
           <!-- 導覽說明 -->
-        <div class="guid px-24 py-16 bg-main-tint03">
-          <p class="mb-8">你在情緒的世界裡迷航了嗎？</p>
-          <p class="mb-8">沒關係，讓我們一起在浪潮情緒卡中，找尋自己的情緒。</p>
-          <p>
-            你可以藉由以下兩種方式「
-            <a class="px-4" href="">分類探索</a>
-            」、「
-            <a class="px-4" href="">自由探索</a>
-            」，挑選情緒卡。
-          </p>
-        </div>
-  
-        <!-- 兩大按鈕 -->
-        <div class="py-32 d-flex justify-content-center">
-          <a class="btn-find me-96 d-flex flex-column align-items-center" href="findEmoClassified.html">
-            <h2>分類探索</h2>
-            <img class="default" src="../assets/images/findEmoClassified.svg" alt="分類探索">
-            <img class="hover" src="../assets/images/findEmoClassifiedHover.svg" alt="分類探索">
-          </a>
-          <a class="btn-find d-flex flex-column align-items-center" href="findEmoFree.html">
-            <h2>自由探索</h2>
-            <img class="default" src="../assets/images/finEmoFree.svg" alt="自由探索">
-            <img class="hover" src="../assets/images/findEmoClassifiedHover.svg" alt="分類探索">
-          </a>
+          <div class="row justify-content-between align-items-center">
+            <div class="col-6">
+              <div class="h-100 px-24 py-24 rounded-3 bg-main-tint03 fs-7 text-gray-700">
+                <p class="mb-12">你在情緒的世界裡迷航了嗎？</p>
+                <p class="mb-12">沒關係，讓我們一起在浪潮情緒卡中，找尋自己的情緒。</p>
+                <p class="mb-12">邀請你先閉上眼睛，深呼吸，再慢慢地吐氣。</p>
+                <p class="mb-12">在吸氣與吐氣的過程，慢慢地感受自己的身體與心靈的狀態。</p>
+                <p>如果準備好了的話，請點擊右方「分類探索」，開始探索情緒浪潮吧！</p>
+              </div>
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+              <a class="w-75 btn-find d-flex justify-content-between align-items-center rounded-pill" href="findEmoClassified.html">
+                <h2 class="w-50 me-36 text-nowrap text-center text-main fs-2">分類探索</h2>
+                <div style="width: 50%;">
+                  <img src="../assets/images/findEmoClassified.svg" alt="分類探索">
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </main>

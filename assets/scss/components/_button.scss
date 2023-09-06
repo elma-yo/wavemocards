@@ -78,17 +78,8 @@
 
 // 找尋我的情緒頁 按鈕
 .btn-find {
-    width: 30%;
-    border-radius: 1000px;
     border: 4px solid $main;
-    padding: 32px 36px;
-    h2 {
-        width: 100%;
-        padding-bottom: 16px;
-        color: $main;
-        text-align: center;
-        font-size: 36px;
-    }
+    padding: 24px 28px;
     img {
         min-width: 80%;
         transform:scale(1,1);
