@@ -50,51 +50,63 @@
                 <div class="mb-36 pt-32 pb-8 d-flex justify-content-between align-items-center border-2 border-bottom border-main-tint02">
                     <h2 class="fs-3">我的帳號</h2>
                     <div class="nav-btn d-flex justify-content-end">
-                        <a class="ms-16 btn btn-outline-main c-btn" href="accountModify.html">編輯</a>
-                        <a class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="accountMyFriends.html">好友管理</a>
-                    </div>
+                        <a class="ms-16 btn btn-outline-main c-btn" href="account.html">取消</a>
+        <form action="" method="post">
+                    <button type="submit" class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="accountMyFriends.html">儲存</button>
                 </div>
+            </div>
 
-                <!-- content -->
-                <div class="row justify-content-between">
-                    <div class="col-4">
-                        <img class="mb-16" src="/wavemocards/assets/account_illu-9a12c639.svg" alt="account illustration">
-                        <!-- 圖片引用來源 -->
-                        <div class="mb-64">
-                            <span class="text-gray-500 fs-11">
-                                Illustration by <a class="link-gray-500" href="https://icons8.com/illustrations/author/iAdLsFJOKDrk" target="_blank">Tanya Krasutska</a> from <a class="link-gray-500" href="https://icons8.com/illustrations" target="_blank">Ouch!</a>
-                            </span>
+            <!-- content -->
+            <div class="row justify-content-between">
+                <div class="col-4">
+                    <img class="mb-16" src="/wavemocards/assets/account_illu-9a12c639.svg" alt="account illustration">
+                    <!-- 圖片引用來源 -->
+                    <div class="mb-64">
+                        <span class="text-gray-500 fs-11">
+                            Illustration by <a class="link-gray-500" href="https://icons8.com/illustrations/author/iAdLsFJOKDrk" target="_blank">Tanya Krasutska</a> from <a class="link-gray-500" href="https://icons8.com/illustrations" target="_blank">Ouch!</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <span class="mb-8 text-gray-700">Email</span>
+                    <p class="ms-4 mb-24 fs-6 fw-bold">wavemo@gmail.com</p>
+                    <div class="mb-8 d-flex justify-content-between align-items-center">
+                        <span class="text-gray-700">密碼</span>
+                        <button class="bg-white border-0 link-pink-dark fs-8 fw-bold">修改密碼</button>
+                    </div>
+                    <p class="ms-4 mb-24 fs-6 fw-bold">********</p>
+                    <label class="form-label w-100 mb-8 text-gray-700" for="accountName" required>用戶名稱</label>
+                    <input type="text" class="form-control w-100 mb-24 px-20 rounded-pill" id="accountName" value="wavemo">
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="form-label w-100 mb-8 text-gray-700" for="lastName">姓</label>
+                            <input type="text" class="form-control w-100 mb-24 px-20 rounded-pill" id="lastName" value="陳" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label w-100 mb-8 text-gray-700" for="firstName">名</label>
+                            <input type="text" class="form-control w-100 mb-24 px-20 rounded-pill" id="firstName" value="浪潮" required>
                         </div>
                     </div>
-                    <div class="col-7">
-                        <span class="mb-8 text-gray-700">Email</span>
-                        <p class="ms-4 mb-24 fs-6 fw-bold">wavemo@gmail.com</p>
-                        <span class="mb-8 text-gray-700">密碼</span>
-                        <p class="ms-4 mb-24 fs-6 fw-bold">********</p>
-                        <span class="mb-8 text-gray-700">用戶名稱</span>
-                        <p class="ms-4 mb-24 fs-6 fw-bold">wavemo</p>
-                        <div class="row">
-                            <div class="col-6">
-                                <span class="mb-8 text-gray-700">姓</span>
-                                <p class="ms-4 mb-24 fs-6 fw-bold">陳</p>
-                            </div>
-                            <div class="col-6">
-                                <span class="mb-8 text-gray-700">名</span>
-                                <p class="ms-4 mb-24 fs-6 fw-bold">浪潮</p>
-                            </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="form-label w-100 mb-8 text-gray-700" for="birthday">生日</label>
+                            <input type="date" class="form-control w-100 mb-24 px-20 rounded-pill" id="birthday" value="2023-01-15" required>
                         </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <span class="mb-8 text-gray-700">生日</span>
-                                <p class="ms-4 mb-24 fs-6 fw-bold">2023 / 01 / 15</p>
-                            </div>
-                            <div class="col-6">
-                                <span class="mb-8 text-gray-700">身份</span>
-                                <p class="ms-4 mb-24 fs-6 fw-bold">學生</p>
-                            </div>
+                        <div class="col-6">
+                            <label class="form-label w-100 mb-8 text-gray-700" for="title">身份</label>
+                            <select class="form-select px-20 rounded-pill" aria-label="Default select example" id="title">
+                                <option value="學生">學生</option>
+                                <option value="教師">教師</option>
+                                <option value="教師">輔導教師</option>
+                                <option value="諮商師">諮商師</option>
+                                <option value="醫生">醫生</option>
+                                <option value="其他">其他</option>
+                            </select>
                         </div>
                     </div>
                 </div>
+            </div>
+        </form>
             </div>
         </main>
         
