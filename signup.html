@@ -7,8 +7,8 @@
     <title>浪潮情緒卡｜註冊</title>
     <!-- Bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <script type="module" crossorigin src="/wavemocards/assets/main-1de23126.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-e80f7c9a.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-9dd6cfba.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-2b0357a3.css">
   </head>
   <body>
     <header class="header sticky-top">
@@ -53,7 +53,7 @@
                         <div class="mb-16">
                             <label for="singupEmail" class="form-label  d-flex justify-content-between">
                                 E-mail
-                                <span class="must">*必填</span>
+                                <span class="text-pink-tint02 fs-9">*必填</span>
                             </label>
                             <input type="email" class="form-control rounded-pill px-20" id="singupEmail" placeholder="wavemocards@gmail.com" required>
                             <div class="invalid-feedback">
@@ -63,7 +63,7 @@
                         <div class="mb-20">
                             <label for="singupPassword" class="form-label d-flex justify-content-between">
                                 密碼
-                                <span class="must">*必填</span>
+                                <span class="text-pink-tint02 fs-9">*必填</span>
                             </label>
                             <input type="password" class="form-control mb-8 rounded-pill px-20" id="singupPassword" required aria-describedby="passwordHelp" placeholder="********" required>
                             <button class="px-16 fs-9 link-gray-550 bg-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -90,9 +90,9 @@
                             <div class="col-6">
                                 <label for="singupLastName" class="form-label  d-flex justify-content-between">
                                     姓
-                                    <span class="must">*必填</span>
+                                    <span class="text-pink-tint02 fs-9">*必填</span>
                                 </label>
-                                <input type="text" class="form-control rounded-pill px-20" id="singupLastName" placeholder="王" required>
+                                <input type="text" class="form-control rounded-pill px-20" id="singupLastName" placeholder="陳" required>
                                 <div class="invalid-feedback">
                                     請輸入您的姓氏
                                 </div>
@@ -100,7 +100,7 @@
                             <div class="col-6">
                                 <label for="singupFirstName" class="form-label  d-flex justify-content-between">
                                     名
-                                    <span class="must">*必填</span>
+                                    <span class="text-pink-tint02 fs-9">*必填</span>
                                 </label>
                                 <input type="text" class="form-control rounded-pill px-20" id="singupFirstName" placeholder="浪潮" required>
                                 <div class="invalid-feedback">
@@ -108,11 +108,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-32  row">
+                        <div class="mb-24 row">
                             <div class="col-6">
                                 <label for="singupBirthday" class="form-label d-flex justify-content-between">
                                     生日
-                                    <span class="must">*必填</span>
+                                    <span class="text-pink-tint02 fs-9">*必填</span>
                                 </label>
                                 <input type="date" class="form-control rounded-pill px-20" id="singupBirthday" required>
                                 <div class="invalid-feedback">
@@ -131,6 +131,16 @@
                                     <option value="醫生">醫生</option>
                                     <option value="其他">其他</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="mb-32">
+                            <input type="checkbox" required>
+                                    <span class="ms-4">
+                                        我已經詳讀並同意 <a href="#" class="link-main fw-normal">隱私權保護政策</a>
+                                    </span>
+                            <!-- error msg -->
+                            <div class="invalid-feedback">
+                                勾選後才能註冊
                             </div>
                         </div>
                         <button class="w-100 mb-32 py-8 btn btn-pink c-btn" type="submit">註冊</button>
