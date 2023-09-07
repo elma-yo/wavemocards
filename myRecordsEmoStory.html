@@ -47,37 +47,37 @@
         <main>
             <div class="container py-16 mb-48">
                 <!-- title bar -->
-                <div class="titleBar d-flex justify-content-between align-items-center">
-                    <h2>我的紀錄｜情緒故事</h2>
+                <div class="mb-8 pt-32 pb-8 d-flex justify-content-between align-items-center border-2 border-bottom border-main-tint02">
+                    <h2 class="fs-3">我的紀錄｜情緒故事</h2>
                     <div class="nav-btn d-flex justify-content-end">
                         <a class="btn btn-outline-main c-btn" href="myRecords.html">返回</a>
-                        <a class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="myRecordsEmoStoryModify.html">修改</a>
+                        <a class="ms-16 btn btn-outline-main c-btn" href="#shared">分享清單</a>
+                        <a class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="myRecordsEmoStoryModify.html">編輯</a>
                     </div>
                 </div>
+                <!-- 分享、刪除 -->
+                <div class="d-flex justify-content-end align-items-center">
+                    <button class="me-16 rounded-pill border-0 fs-5 c-btn-icon">
+                    <i class="bi bi-trash3"></i>
+                    </button>
+                    <button class="rounded-pill border-0 fs-5 c-btn-icon">
+                    <i class="bi bi-share"></i>
+                    </button>
+                </div>
 
-                <!-- 第 1 區 日期與情緒 -->
                 <div class="container">
+                    <!-- 第 1 區 日期與情緒 -->
                     <div class="row mb-8">
-                        <div class="col-6">
-                            <div class="row">
-                                <div class="col-4 px-12 py-8 bg-main text-white fw-bold rounded-1">日期</div>
-                                <div class="col-8 px-12 py-8">2023 / 01 / 06</div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="row">
-                                <div class="col-4 px-12 py-8 bg-main text-white fw-bold rounded-1">情緒（強度）｜第一次</div>
-                                <div class="col-8 px-12 py-8">快樂 5・幸福 4・安心 3</div>
-                            </div>
-                        </div>
+                        <div class="col-2 px-12 py-8 bg-main text-white fw-bold rounded-1">日期</div>
+                        <div class="col-10 px-12 py-8">2023 / 03 / 14</div>
+                    </div>
+                    <div class="row mb-8">
+                        <div class="col-2 px-12 py-8 bg-main text-white fw-bold rounded-1">情緒強度｜第一次</div>
+                        <div class="col-10 px-12 py-8">快樂 5・幸福 4・安心 3</div>
                     </div>
                     <div class="row mb-24 justify-content-end">
-                        <div class="col-6">
-                            <div class="row">
-                                <div class="col-4 px-12 py-8 bg-main text-white fw-bold rounded-1">情緒（強度）｜第二次</div>
-                                <div class="col-8 px-12 py-8">快樂 5・幸福 4・安心 3</div>
-                            </div>
-                        </div>
+                        <div class="col-2 px-12 py-8 bg-main text-white fw-bold rounded-1">情緒強度｜第二次</div>
+                        <div class="col-10 px-12 py-8">快樂 5・幸福 4・安心 3</div>
                     </div>
                     <!-- 第 2 區 情緒故事｜背景篇 -->
                     <div class="row mb-16">
@@ -111,10 +111,45 @@
                         <div class="col-2 px-12 py-8 d-flex align-items-center bg-main-tint02 fw-500 rounded-1">是否感到後悔</div>
                         <div class="col-10 px-12 py-8">否</div>
                     </div>
-                    <div class="row">
+                    <div class="row mb-32">
                         <div class="col-2 px-12 py-8 d-flex align-items-center bg-main-tint02 fw-500 rounded-1">下次怎麼做會更好呢？</div>
                         <div class="col-10 px-12 py-8 bg-gray-200 rounded-1"></div>
                     </div>
+                    <!-- 第 4 區 分享清單 -->
+                    <div class="mb-24 pt-32 pb-8 d-flex justify-content-between align-items-center border-2 border-bottom border-main-tint02" id="shared">
+                        <h2 class="fs-3">我的紀錄｜分享清單</h2> 
+                        <button class="me-16 rounded-pill border-0 fs-5 c-btn-icon">
+                            <i class="bi bi-trash3"></i>
+                        </button>
+                    </div>
+                    <table class="mb-24 table table-hover c-table-border">
+                        <thead>
+                            <tr class="table-main-tint01 text-center">
+                                <th scope="col"></th>
+                                <th scope="col">日期</th>
+                                <th scope="col">對象</th>
+                                <th scope="col">身份</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <th scope="row">
+                                <input type="checkbox" id="">
+                                </th>
+                                <td>2023 / 03 / 14</td>
+                                <td>陳鳳香</td>
+                                <td>教師</td>
+                            </tr>
+                            <tr class="text-center table-main-tint03">
+                                <th scope="row">
+                                <input type="checkbox" id="">
+                                </th>
+                                <td>2023 / 03 / 15</td>
+                                <td>林凱翔</td>
+                                <td>學生</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </main>
@@ -130,7 +165,7 @@
             </div>
             <!-- Developers -->
             <div class="col-3">
-                <h3>開發群</h3>
+                <h3>開發團隊</h3>
                 <ul>
                     <li class="mb-4">
                         <a class="d-flex justify-content-between" href="https://www.linkedin.com/in/shu-ping-yu-238655268/"  target="_blank">
