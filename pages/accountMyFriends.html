@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>浪潮情緒卡｜我的帳號</title>
+        <!-- Bootstrap icon -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <%- include('./layout/headerLoggedIn'); -%>
+
+        <main>
+            <div class="container py-16 mb-48">
+                <!-- title bar -->
+                <div class="mb-36 pt-32 pb-8 d-flex justify-content-between align-items-center border-2 border-bottom border-main-tint02">
+                    <h2 class="fs-3">我的帳戶｜好友管理</h2>
+                    <div class="nav-btn d-flex justify-content-end">
+                        <a class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="account.html">帳戶管理</a>
+                    </div>
+                </div>
+
+                <!-- content -->
+                <div class="my-72 d-flex justify-content-center">
+                    <img class="me-40 mb-16" src="../assets/images/rocket.svg" alt="rocket">
+                    <div class="d-flex flex-column justify-content-center text-gray-700">
+                        <p class="mb-16 fs-2 fw-bold">此功能尚未開放......Sorry！</p>
+                        <p class="mb-40 fs-2 fw-bold">正在火速開發中！敬請期待！</p>
+                        <div class="text-end">
+                            <span class="text-gray-500 fs-11">
+                                Illustration by <a class="link-gray-500" href="https://icons8.com/illustrations/author/iAdLsFJOKDrk" target="_blank">Tanya Krasutska</a> from <a class="link-gray-500" href="https://icons8.com/illustrations" target="_blank">Ouch!</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        
+        <%- include('./layout/footer'); -%>
+
+        <script type="module" src="../main.js"></script>
+        <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
+    </body>
+</html>
