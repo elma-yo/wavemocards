@@ -7,8 +7,8 @@
     <title>浪潮情緒卡｜註冊</title>
     <!-- Bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <script type="module" crossorigin src="/wavemocards/assets/main-97905320.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-658293ab.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-1de23126.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-e80f7c9a.css">
   </head>
   <body>
     <header class="header sticky-top">
@@ -42,11 +42,11 @@
                     </div>
                     <h2 class="mb-32 text-pink">註冊</h2>
                     <!-- 尚未填入 a 連結 -->
-                    <a class="w-100 mb-32 py-8 btn btn-outline-pink c-btn-outline-pink d-flex justify-content-center align-items-center" href="#">
+                    <!-- <a class="w-100 mb-32 py-8 btn btn-outline-pink c-btn-outline-pink d-flex justify-content-center align-items-center" href="#">
                         連結 Google 帳號
                         <i class="bi bi-google ms-8"></i>
                     </a>
-                    <div class="or mb-32">或</div>
+                    <div class="or mb-32">或</div> -->
     
                     <!-- 尚未填入 action 內容 -->
                     <form action="#" method="post" class="needs-validation" novalidate>
@@ -65,9 +65,25 @@
                                 密碼
                                 <span class="must">*必填</span>
                             </label>
-                            <input type="password" class="form-control rounded-pill px-20" id="singupPassword" required aria-describedby="passwordHelp" placeholder="********" required>
+                            <input type="password" class="form-control mb-8 rounded-pill px-20" id="singupPassword" required aria-describedby="passwordHelp" placeholder="********" required>
+                            <button class="px-16 fs-9 link-gray-550 bg-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                點我看 設定密碼規則
+                            </button>
+                            <!-- collapse 卡片內容 -->
+                            <div class="collapse mx-12" id="collapseExample">
+                                <div class="card card-body py-8 bg-main-tint03 border-0 rounded-2">
+                                    <ol class="fs-9">
+                                        <li class="ms-16">至少包含<span class="fw-bold"> 8 </span>個字符。</li>
+                                        <li class="ms-16">至少包含<span class="fw-bold"> 1 個大寫 </span>字母（A-Z）。</li>
+                                        <li class="ms-16">至少包含<span class="fw-bold"> 1 個小寫 </span>字母（a-z）。</li>
+                                        <li class="ms-16">至少包含<span class="fw-bold"> 1 個數字 </span>（0-9）。</li>
+                                        <li class="ms-16">至少包含<span class="fw-bold"> 1 個特殊字符 </span>（例如！、@、#、$、%等）。</li>
+                                    </ol>
+                                </div>
+                              </div>
+                            <!-- error msg -->
                             <div class="invalid-feedback">
-                                請輸入正確的密碼
+                                請設定符合密碼規則的密碼
                             </div>
                         </div>
                         <div class="mb-20 row">
@@ -92,7 +108,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-20  row">
+                        <div class="mb-32  row">
                             <div class="col-6">
                                 <label for="singupBirthday" class="form-label d-flex justify-content-between">
                                     生日
@@ -110,16 +126,17 @@
                                 <select class="form-select px-20 rounded-pill" aria-label="Default select example" id="singupBirthday">
                                     <option value="學生">學生</option>
                                     <option value="教師">教師</option>
+                                    <option value="教師">輔導教師</option>
                                     <option value="諮商師">諮商師</option>
                                     <option value="醫生">醫生</option>
                                     <option value="其他">其他</option>
                                 </select>
                             </div>
                         </div>
-                        <button class="w-100 mb-32 py-8 btn btn-pink c-btn" type="submit">登入</button>
+                        <button class="w-100 mb-32 py-8 btn btn-pink c-btn" type="submit">註冊</button>
                     </form>
                     <a class="d-block 
-                    click-me clickMeToLogin" href="signup.html">已經有帳號了嗎？ 點我登入</a>
+                    click-me clickMeToLogin" href="login.html">已經有帳號了嗎？ 點我登入</a>
                 </div>
             </div>
         </div>
