@@ -11,7 +11,7 @@
   <body>
     <%- include('./layout/headerLoggedIn'); -%>
 
-    <div class="aboutEmotions">
+    <div class="aboutEmotions pt-72" id="top">
         <div class="container py-16">
             <!-- 標題 -->
             <div class="titleBar d-flex justify-content-between align-items-center">
@@ -73,10 +73,14 @@
             </div>
         </div>
     </main>
+    
+    <%- include('./layout/floatButton') -%>
 
     <%- include('./layout/footer'); -%>
 
     <script type="module" src="../main.js"></script>
     <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

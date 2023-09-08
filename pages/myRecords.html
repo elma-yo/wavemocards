@@ -11,7 +11,7 @@
   <body>
     <%- include('./layout/headerLoggedIn'); -%>
     <main>
-      <div class="container py-16">
+      <div class="container py-16 pt-72" id="top">
         <!-- 標題 -->
         <div class="titleBar d-flex justify-content-between align-items-center">
             <h2>我的紀錄</h2>
@@ -96,7 +96,7 @@
         </table>
   
         <!-- 分頁 -->
-        <div class="mb-64 d-flex justify-content-end">
+        <div class="mb-64 d-flex justify-content-end pt-72" id="top">
           <nav aria-label="Page navigation example">
             <ul class="pagination">
               <li class="page-item disabled">
@@ -117,7 +117,7 @@
         </div>
       </div>
     </main>
-
+    <%- include('./layout/floatButton') -%>
     <%- include('./layout/footer'); -%>
 
     <script type="module" src="../main.js"></script>
