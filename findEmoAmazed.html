@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/wavemocards/assets/main-80634b30.css">
   </head>
   <body>
-    <header class="header h-logined sticky-top">
+    <header class="header h-logined fixed-top">
     <div class="container py-16 d-flex justify-content-between align-items-center">
         <h1>
             <a href="home.html" id="home">浪潮情緒卡</a>
@@ -45,7 +45,7 @@
     </div>
 </header>
     <main>
-        <div class="container py-16">
+        <div class="container py-16 pt-72" id="top">
             <!-- title bar -->
             <div class="titleBar d-flex justify-content-between align-items-center">
                 <h2>驚訝</h2>
@@ -104,7 +104,17 @@
             </div>
         </div>
     </main>
-    
+
+    <!-- 浮動按鈕 -->
+<div class="fixed-bottom">
+    <div class="me-8 mb-12 d-flex justify-content-end">
+        <a href="#top" type="button" class="btn btn-main-tint01 rounded-circle shadow d-flex flex-column justify-content-center align-items-center"
+        style="width: 60px; height: 60px;">
+                <img src="/wavemocards/assets/backToTop-1ea21c73.svg" alt="top">
+                <span class="text-white fs-10 fw-bold">TOP</span>
+        </a>
+    </div>
+</div>    
     <footer class="footer py-48">
     <div class="container">
         <div class="row gap-40">

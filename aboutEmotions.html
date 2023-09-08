@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/wavemocards/assets/main-80634b30.css">
   </head>
   <body>
-    <header class="header h-logined sticky-top">
+    <header class="header h-logined fixed-top">
     <div class="container py-16 d-flex justify-content-between align-items-center">
         <h1>
             <a href="home.html" id="home">浪潮情緒卡</a>
@@ -44,7 +44,7 @@
         </ul>
     </div>
 </header>
-    <div class="aboutEmotions">
+    <div class="aboutEmotions pt-72" id="top">
         <div class="container py-16">
             <!-- 標題 -->
             <div class="titleBar d-flex justify-content-between align-items-center">
@@ -106,7 +106,17 @@
             </div>
         </div>
     </main>
-
+    
+    <!-- 浮動按鈕 -->
+<div class="fixed-bottom">
+    <div class="me-8 mb-12 d-flex justify-content-end">
+        <a href="#top" type="button" class="btn btn-main-tint01 rounded-circle shadow d-flex flex-column justify-content-center align-items-center"
+        style="width: 60px; height: 60px;">
+                <img src="/wavemocards/assets/backToTop-1ea21c73.svg" alt="top">
+                <span class="text-white fs-10 fw-bold">TOP</span>
+        </a>
+    </div>
+</div>
     <footer class="footer py-48">
     <div class="container">
         <div class="row gap-40">
@@ -170,5 +180,7 @@
 </footer>
     
     <script type="text/javascript" src="../assets/js/mouseoverTitle.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
