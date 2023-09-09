@@ -7,6 +7,7 @@
     <title>浪潮情緒卡｜新增情緒卡</title>
     <!-- Bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="/assets/js/pages/addEmoCard.js" defer></script>
   </head>
   <body>
     <%- include('./layout/headerLoggedIn'); -%>
@@ -27,36 +28,40 @@
                     <!-- 上傳圖片 -->
                     <div class="w-100 d-flex justify-content-center align-items-end">
                         <div class="mb-16 addImg">
-                            <img class="w-100 h-100 rounded-circle" src="" alt="">
-                            <i class="bi bi-plus-circle-fill btn-add"></i>
+                            <img class="w-100 h-100 rounded-circle" src="" alt="" id="emoImage">
+                            <i class="bi bi-plus-circle-fill btn-add" id="forAddEmoImage"></i>
+                            <input type="file" class="d-none" accept="image/*" id="addEmoImage">
                         </div>
                     </div>
                     <!-- 情緒詞彙 -->
-                    <div class="mb-16">
-                        <label for="addEmoName" class="form-label  d-flex justify-content-between">
+                    <div class="mb-16 position-relative">
+                        <label for="addEmoName" class="form-label d-flex justify-content-between">
                             情緒詞彙
                             <span class="must">*必填</span>
                         </label>
                         <input type="text" class="form-control px-20 rounded-pill" id="addEmoName" placeholder="開心" required>
-                        <div class="invalid-feedback">
+                        <div class="invalid-tooltip bg-transparent text-pink-dark mt-0 pt-0">
                             請輸入情緒詞彙，且該詞彙為非重複的情緒詞彙
                         </div>
+                        <div class="position-absolute end-0 | limitation__name"><span>0</span>/5</div>
                     </div>
                     <!-- 意思 -->
-                    <div class="mb-16">
+                    <div class="mb-16 position-relative">
                         <label for="addEmoDefinition" class="form-label  d-flex justify-content-between">
                             意思
                             <!-- <span class="must">*必填</span> -->
                         </label>
                         <input type="text" class="form-control px-20 rounded-pill" id="addEmoDefinition" placeholder="感到快樂、愉悅，內心充滿愉快。">
+                        <div class="position-absolute end-0 | limitation__definition"><span>0</span>/30</div>
                     </div>
                     <!-- 例句 -->
-                    <div class="mb-16">
+                    <div class="mb-16 position-relative">
                         <label for="addEmoExample" class="form-label d-flex justify-content-between">
                             例句
                             <!-- <span class="must">*必填</span> -->
                         </label>
                         <input type="text" class="form-control px-20 rounded-pill" id="addEmoExample" placeholder="和朋友一起玩遊戲，我覺得很開心。">
+                        <div class="position-absolute end-0 | limitation__example"><span>0</span>/30</div>
                     </div>
                     <!-- 分類 -->
                     <div class="mb-32">
