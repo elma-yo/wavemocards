@@ -32,22 +32,29 @@
     
                     <!-- 尚未填入 action 內容 -->
                     <form action="#" method="post" class="needs-validation" novalidate>
-                        <div class="mb-16">
-                            <label for="singupEmail" class="form-label  d-flex justify-content-between">
+                        <!-- <div class="mb-16">
+                            <label for="loginEmail" class="form-label  d-flex justify-content-between">
                                 E-mail
                                 <span class="text-pink-tint02 fs-9">*必填</span>
                             </label>
-                            <input type="email" class="form-control rounded-pill px-20" id="singupEmail" placeholder="wavemocards@gmail.com" required>
+                            <input type="text" class="form-control rounded-pill px-20" id="loginEmail" placeholder="wavemocards@gmail.com" required>
+                        </div> -->
+                        <div class="mb-16">
+                            <label for="loginAcount" class="form-label  d-flex justify-content-between">
+                                用戶名稱
+                                <span class="text-pink-tint02 fs-9">*必填</span>
+                            </label>
+                            <input type="text" class="form-control rounded-pill px-20" id="loginAcount" placeholder="wavemocards" required>
                             <div class="invalid-feedback">
                                 請輸入正確的 e-mail 帳號
                             </div>
                         </div>
                         <div class="mb-32">
-                            <label for="singupPassword" class="form-label d-flex justify-content-between">
+                            <label for="loginPassword" class="form-label d-flex justify-content-between">
                                 密碼
                                 <span class="text-pink-tint02 fs-9">*必填</span>
                             </label>
-                            <input type="password" class="form-control rounded-pill px-20" id="singupPassword" required aria-describedby="passwordHelp" placeholder="********" required>
+                            <input type="password" class="form-control rounded-pill px-20" id="loginPassword" required aria-describedby="passwordHelp" placeholder="********" required>
                             <div class="invalid-feedback">
                                 請輸入正確的密碼
                             </div>
