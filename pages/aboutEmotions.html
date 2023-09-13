@@ -27,7 +27,7 @@
             <div class="introduction py-16">
                 <div class="mb-56">
                     <h2 class="mb-12">什麼是情緒？</h2>
-                    <p>情緒英文是emotion，代表流動在我們身體的能量。當我們受到刺激，引發出內心感受、身體反應、想法與行動，就是情緒。例如某人踏進後巷時，遇到一隻看來很兇惡的狗（刺激），覺得十分害怕，擔心自己被咬傷（內心感受和想法），不禁心跳加速和顫抖（身體反應），最終決定急步繞路離開（行動）。</p>
+                    <p id="whatIsEmotion"></p>
                 </div>
                 <div class="mb-56">
                     <h2 class="mb-12">6大基本情緒</h2>
@@ -57,15 +57,15 @@
                             <span>驚訝</span>
                         </div>
                     </div>
-                    <p>博物學家達爾文提及過人類有六種基本情緒，包括快樂（happiness）、悲傷（sadness）、恐懼（fear）、厭惡（disgust）、憤怒（anger）和驚訝（surprise），屬於有助人類提高生存機會的本能情緒。其他複雜情緒如興奮、委屈、自卑、妒忌、內疚、寂寞等，則是由基本情緒混合衍生而成，並且經過學習與社會化之後產生。</p>
+                    <p id="sixBasicEmotions"></p>
                 </div>
                 <div class="mb-56">
                     <h2 class="mb-12">情緒無分好與壞</h2>
-                    <p>一般人習慣將情緒分為正負面，覺得快樂屬於正面情緒，悲傷、憤怒、恐懼則對人有害。其實情緒無分好與壞，每一種情緒都有其獨特意義。例如對於陌生環境感到恐懼不安，反映著對安全感的渴求，提醒我們遠離危險。悲傷時脆弱流淚，則可吸引關顧與扶持，促進人際聯繫。</p>
+                    <p id="goodOrBad"></p>
                 </div>
                 <div class="mb-56">
                     <h2 class="mb-12">情緒的健康之道</h2>
-                    <p>假如對情緒存在偏見，否定和壓抑自己的真正感覺，明明傷心卻扮開心，明明生氣卻默默忍受，很容易令身心健康出現問題。所謂情緒健康，不代表要時刻保持愉快心情，而是要有能力覺察自己的不同情緒，了解內心需要，並以健康恰當的方式去表達和調適，讓心靈回復平靜。</p>
+                    <p id="healthyEmotion"></p>
                 </div>
                 <div class="text-end mb-64">
                     <a class="quote" href="https://wmc.hkfyg.org.hk/emo1" target="_blank">
@@ -81,5 +81,20 @@
     <%- include('./layout/footer'); -%>
 
     <%- include('./layout/baseJs'); -%>
+    <!-- get data -->
+    <script>
+        let whatIsEmotion = document.querySelector('#whatIsEmotion');
+        let sixBasicEmotions = document.querySelector('#sixBasicEmotions');
+        let goodOrBad = document.querySelector('#goodOrBad');
+        let healthyEmotion = document.querySelector('#healthyEmotion');
+        
+        axios.get("http://api.wavemocards.com/emotions?requirement=about")
+        .then(function(response){
+            whatIsEmotion.textContent = response.data.whatIsEmotion;
+            sixBasicEmotions.textContent = response.data['6BisicEmotions'];
+            goodOrBad.textContent = response.data.goodOrBad;
+            healthyEmotion.textContent = response.data.healthyEmotion;
+        })
+    </script>
   </body>
 </html>
