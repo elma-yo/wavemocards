@@ -4,14 +4,31 @@
             <a href="index.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="回到首頁">浪潮情緒卡</a>
         </h1>
         <ul class="d-flex justify-content-between align-items-center mb-0 ps-0">
-            <li data-bs-toggle="tooltip" data-bs-placement="bottom" title="認識情緒與情緒卡">
+            <li class="d-none d-md-block " data-bs-toggle="tooltip" data-bs-placement="bottom" title="認識情緒與情緒卡">
                 <a href="aboutEmotions.html" class="px-4 py-8 link-gray-550">關於情緒</a>
             </li>
-            <li class="ms-20" data-bs-toggle="tooltip" data-bs-placement="bottom" title="登入">
+            <li class="ms-20 text-nowrap" data-bs-toggle="tooltip" data-bs-placement="bottom" title="登入">
                 <a href="login.html" class="btn btn-main c-btn">登入</a>
             </li>
-            <li class="ms-16" data-bs-toggle="tooltip" data-bs-placement="bottom" title="註冊">
-                <a href="signup.html" class="btn btn-pink c-btn">註冊</a>
+            <li class="d-none d-md-block ms-16" data-bs-toggle="tooltip" data-bs-placement="bottom" title="註冊">
+                <a href="signUp.html" class="btn btn-pink c-btn">註冊</a>
+            </li>
+            <li class="d-md-none ms-16 position-relative">
+                <button class="px-8 py-4 btn btn-white btn-hamburger border border-main-tint01 rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div class="collapse" style="position: absolute; right: 0; top: 40px;" id="collapseExample">
+                    <div class="p-0 card card-body rounded-2 border-0 bg-main-tint03" style="width: 120px;">
+                        <ul>
+                            <li>
+                                <a class="d-block px-16 py-12 link-gray-700 btn-hover-main-tint02 rounded-2" href="signup.himl">註冊</a>
+                            </li>
+                            <li>
+                                <a class="d-block px-16 py-12 link-gray-700 btn-hover-main-tint02 rounded-2" href="aboutEmotions.html">認識情緒</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
