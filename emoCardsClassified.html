@@ -309,122 +309,122 @@
       const listModal = document.querySelector('.list');
 
       axios.get("http://api.wavemocards.com/emotions?requirement=cards")
-          .then(function(response){
-            let aryData = Object.values(response.data); // 轉成「陣列」
-            // 情緒表 各個情緒的按鈕
-            initEmlTable();
-            function initEmlTable() {
-              let strHappy = "";
-              let strExpectation = "";
-              let strRelived = "";
-              let strUnstable = "";
-              let strAmazed = "";
-              let strSadness = "";
-              let strHate = "";
-              let strAnger = "";
-              let strOthers = "";
-              aryData.forEach(function(data, i) {
-                let category = aryData[i].Category;
-                let emoName = aryData[i].Name;
-                if (category == "快樂") {
-                  let content = `<button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
-                  strHappy+=content;
-                } else if (category == "期待") {
-                  let content = `<button type="button" class="me-8 btn btn-emoTable btn-expectation opacity-expectation text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
-                  strExpectation+=content;
-                } else if (category == "安心") {
-                  let content = `<button type="button" class="me-8 btn btn-emoTable btn-relived opacity-relived text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
-                  strRelived+=content;
-                } else if (category == "不安") {
-                  let content = `<button type="button" class="me-8 btn btn-emoTable btn-unstable opacity-unstable text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
-                  strUnstable+=content;
-                } else if (category == "驚訝") {
-                  let content = `<button type="button" class="me-8 btn btn-emoTable btn-amazed opacity-amazed text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
-                  strAmazed+=content;
-                } else if (category == "低落") {
-                  let content = `<button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
-                  strSadness+=content;
-                } else if (category == "討厭") {
-                  let content = `<button type="button" class="me-8 btn btn-emoTable btn-hate opacity-hate text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
-                  strHate+=content;
-                } else if (category == "生氣") {
-                  let content = `<button type="button" class="me-8 btn btn-emoTable btn-anger opacity-anger text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
-                  strAnger+=content;
-                } else if (category == "其他") {
-                  let content = `<button type="button" class="me-8 btn btn-emoTable btn-others opacity-others text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
-                  strOthers+=content;
-                }
-                buttonsHappy.innerHTML = strHappy;
-                buttonsExpectation.innerHTML = strExpectation;
-                buttonsRelived.innerHTML = strRelived;
-                buttonsUnstable.innerHTML = strUnstable;
-                buttonsAmazed.innerHTML = strAmazed;
-                buttonsSadness.innerHTML = strSadness;
-                buttonsHate.innerHTML = strHate;
-                buttonsAnger.innerHTML = strAnger;
-                buttonsOthers.innerHTML = strOthers;
-              })
+      .then(function(response){
+        let aryData = Object.values(response.data); // 轉成「陣列」
+        // 情緒表 各個情緒的按鈕
+        initEmlTable();
+        function initEmlTable() {
+          let strHappy = "";
+          let strExpectation = "";
+          let strRelived = "";
+          let strUnstable = "";
+          let strAmazed = "";
+          let strSadness = "";
+          let strHate = "";
+          let strAnger = "";
+          let strOthers = "";
+          aryData.forEach(function(data, i) {
+            let category = aryData[i].Category;
+            let emoName = aryData[i].Name;
+            if (category == "快樂") {
+              let content = `<button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
+              strHappy+=content;
+            } else if (category == "期待") {
+              let content = `<button type="button" class="me-8 btn btn-emoTable btn-expectation opacity-expectation text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
+              strExpectation+=content;
+            } else if (category == "安心") {
+              let content = `<button type="button" class="me-8 btn btn-emoTable btn-relived opacity-relived text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
+              strRelived+=content;
+            } else if (category == "不安") {
+              let content = `<button type="button" class="me-8 btn btn-emoTable btn-unstable opacity-unstable text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
+              strUnstable+=content;
+            } else if (category == "驚訝") {
+              let content = `<button type="button" class="me-8 btn btn-emoTable btn-amazed opacity-amazed text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
+              strAmazed+=content;
+            } else if (category == "低落") {
+              let content = `<button type="button" class="me-8 btn btn-emoTable btn-sadness opacity-sadness text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
+              strSadness+=content;
+            } else if (category == "討厭") {
+              let content = `<button type="button" class="me-8 btn btn-emoTable btn-hate opacity-hate text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
+              strHate+=content;
+            } else if (category == "生氣") {
+              let content = `<button type="button" class="me-8 btn btn-emoTable btn-anger opacity-anger text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
+              strAnger+=content;
+            } else if (category == "其他") {
+              let content = `<button type="button" class="me-8 btn btn-emoTable btn-others opacity-others text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>`;
+              strOthers+=content;
             }
-            // 大情緒卡 Modal
-            initModal();
-            function initModal() {
-              let strModal = "";
-              let bgColor;
-              aryData.forEach(function(data, i){
-                if(data.Category == "快樂") {
-                  bgColor = "bg-happy";
-                } else if (data.Category == "期待") {
-                  bgColor = "bg-expectation";
-                } else if (data.Category == "安心") {
-                  bgColor = "bg-relived";
-                } else if (data.Category == "不安") {
-                  bgColor = "bg-unstable";
-                } else if (data.Category == "驚訝") {
-                  bgColor = "bg-amazed";
-                } else if (data.Category == "低落") {
-                  bgColor = "bg-sadness";
-                } else if (data.Category == "討厭") {
-                  bgColor = "bg-hate";
-                } else if (data.Category == "生氣") {
-                  bgColor = "bg-anger";
-                } else if (data.Category == "其他") {
-                  bgColor = "bg-others";
-                }
-                let content = `
-                  <li>
-                    <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
-                        <div class="modal-content ${bgColor}" id="cardBgColor">
-                          <div class="modal-body d-flex justify-content-between align-items-center">
-                            <div class="text">
-                              <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">
-                                <h2>${data.Name}</h2>
-                                <a href="modifyEmoCard.html" role="button">
-                                    <i class="bi bi-pencil-square"></i>
-                                </a>
-                              </div>
-                              <div class="mb-16">
-                                <h3 class="mb-4">意思：</h3>
-                                <p>${data.Description}</p>
-                              </div>
-                              <div>
-                                <h3 class="mb-4">例句：</h3>
-                                <p>${data.Example}</p>
-                              </div>
-                            </div>
-                            <div class="img">
-                              <img class="w-100" src="https://wavemocards.com/frontend/upload/01-happy/happy01-statisfy.svg" alt="${data.Name}">
-                            </div>
+            buttonsHappy.innerHTML = strHappy;
+            buttonsExpectation.innerHTML = strExpectation;
+            buttonsRelived.innerHTML = strRelived;
+            buttonsUnstable.innerHTML = strUnstable;
+            buttonsAmazed.innerHTML = strAmazed;
+            buttonsSadness.innerHTML = strSadness;
+            buttonsHate.innerHTML = strHate;
+            buttonsAnger.innerHTML = strAnger;
+            buttonsOthers.innerHTML = strOthers;
+          })
+        }
+        // 大情緒卡 Modal
+        initModal();
+        function initModal() {
+          let strModal = "";
+          let emo;
+          aryData.forEach(function(data, i){
+            if(data.Category == "快樂") {
+              emo = "bg-happy";
+            } else if (data.Category == "期待") {
+              emo = "bg-expectation";
+            } else if (data.Category == "安心") {
+              emo = "bg-relived";
+            } else if (data.Category == "不安") {
+              emo = "bg-unstable";
+            } else if (data.Category == "驚訝") {
+              emo = "bg-amazed";
+            } else if (data.Category == "低落") {
+              emo = "bg-sadness";
+            } else if (data.Category == "討厭") {
+              emo = "bg-hate";
+            } else if (data.Category == "生氣") {
+              emo = "bg-anger";
+            } else if (data.Category == "其他") {
+              emo = "bg-others";
+            }
+            let content = `
+              <li>
+                <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                    <div class="modal-content bg-${emo}" id="cardBgColor">
+                      <div class="modal-body d-flex justify-content-between align-items-center">
+                        <div class="text">
+                          <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">
+                            <h2>${data.Name}</h2>
+                            <a href="modifyEmoCard.html" role="button">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
                           </div>
+                          <div class="mb-16">
+                            <h3 class="mb-4">意思：</h3>
+                            <p>${data.Description}</p>
+                          </div>
+                          <div>
+                            <h3 class="mb-4">例句：</h3>
+                            <p>${data.Example}</p>
+                          </div>
+                        </div>
+                        <div class="img">
+                          <img class="w-100" src="https://wavemocards.com/frontend/upload/01-happy/happy01-statisfy.svg" alt="${data.Name}">
                         </div>
                       </div>
                     </div>
-                  </li>`;
-                  strModal+=content;
-                })
-              listModal.innerHTML = strModal;
-            }
-          })
+                  </div>
+                </div>
+              </li>`;
+              strModal+=content;
+            })
+          listModal.innerHTML = strModal;
+        }
+      })
     </script>
   </body>
 </html>
