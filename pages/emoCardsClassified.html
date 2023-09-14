@@ -121,13 +121,13 @@
           <a href="emoCardsHappy.html" class="emoTableHead me-8 btn btn-emoTable btn-happy fw-700 d-flex align-items-center text-nowrap">快樂</a>
           <div class="d-flex overflow-auto">
             <!-- Button trigger modal -->
-            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy01">滿足</button>
-            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy02">快樂</button>
-            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy03">幸福</button>
-            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy04">自豪</button>
-            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy05">興奮</button>
-            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy06">痛快</button>
-            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#happy07">狂喜</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#emo0">滿足</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#emo1">快樂</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#emo2">幸福</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#emo3">自豪</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#emo4">興奮</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#emo5">痛快</button>
+            <button type="button" class="me-8 btn btn-emoTable btn-happy opacity-happy text-nowrap" data-bs-toggle="modal" data-bs-target="#emo6">狂喜</button>
           </div>
         </div>
         <!-- 期待類 -->
@@ -249,10 +249,81 @@
 
     <%- include('./layout/floatButton') -%>
 
-    <%- include('./layout/modalEmoCards'); -%>
+    <!-- modalEmoCards -->
+    <ul class="list">
+      <li></li>
+    </ul>
     
     <%- include('./layout/footer'); -%>
 
     <%- include('./layout/baseJs'); -%>
+    <script>
+      let cardBgColor = document.querySelector('#cardBgColor');
+
+      axios.get("http://api.wavemocards.com/emotions?requirement=cards")
+          .then(function(response){
+            let cardsName = Object.keys(response.data.cards);
+            let resMeanings = [];
+            let resExamples = [];
+            let objCards = Object.values(response.data.cards);
+            let objCardsDet = [];
+            objCards.forEach(function(det, index){
+              resMeanings.push(det[0]);
+              resExamples.push(det[1]);
+            })
+            // 製作情緒卡資料陣列
+            let emoCards = [];
+            cardsName.forEach(function(name, index){
+              emoCards.push({"emoName": name})
+            })
+            resMeanings.forEach(function(meaning, index){
+              emoCards[index].meaning = meaning;
+            })
+            resExamples.forEach(function(example, index){
+              emoCards[index].example = example;
+            })
+            console.log(emoCards);
+            // 寫入資料
+            const list = document.querySelector('.list');
+            function init(){
+              let str = "";
+              emoCards.forEach(function(data, i){
+                let content = `
+                  <li>
+                    <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                        <div class="modal-content" id="cardBgColor">
+                          <div class="modal-body d-flex justify-content-between align-items-center">
+                            <div class="text">
+                              <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">
+                                <h2>${data.emoName}</h2>
+                                <a href="modifyEmoCard.html" role="button">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                              </div>
+                              <div class="mb-16">
+                                <h3 class="mb-4">意思：</h3>
+                                <p>${data.meaning}</p>
+                              </div>
+                              <div>
+                                <h3 class="mb-4">例句：</h3>
+                                <p>${data.example}</p>
+                              </div>
+                            </div>
+                            <div class="img">
+                              <img class="w-100" src="https://wavemocards.com/frontend/upload/01-happy/happy01-statisfy.svg" alt="滿足">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>`;
+                str+=content;
+              })
+              list.innerHTML = str;
+            }
+            init();
+          })
+    </script>
   </body>
 </html>
