@@ -8,4 +8,16 @@
   h2 {
     font-size: 128px;
   }
+  // phone 手機
+  @media(max-width:767px) {
+    padding: 48px 0;
+    background-image: url(../images/homepage-sm.svg);
+    h2 {
+      font-size: 64px;
+    }
+    .c-btn-xl {
+      padding: 8px 20px;
+      font-size: 28px;
+    }
+  }
 }
