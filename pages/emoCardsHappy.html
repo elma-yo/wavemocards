@@ -19,58 +19,105 @@
               <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
           </div>
         </div>
-        <div class="d-flex flex-wrap mb-72">
-          <button type="button" class="class-card me-16 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy01">
-            <p>滿&nbsp;足</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/01-happy/happy01-statisfy.svg" alt="滿足">
-            </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy02">
-            <p>快&nbsp;樂</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/01-happy/happy02-happy.svg" alt="快樂">
-            </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy03">
-            <p>幸&nbsp;福</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/01-happy/happy03-happiness.svg" alt="幸福">
-            </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy04">
-            <p>自&nbsp;豪</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/01-happy/happy04-proud.svg" alt="自豪">
-            </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy05">
-            <p>興&nbsp;奮</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/01-happy/happy05-excited.svg" alt="興奮">
-            </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy06">
-            <p>痛&nbsp;快</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/01-happy/happy06-cheerful.svg" alt="痛快">
-            </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy07">
-            <p>狂&nbsp;喜</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/01-happy/happy07-ecstasy.svg" alt="狂喜">
-            </div>
-          </button>
+        <div class="d-flex flex-wrap mb-72" id="happyCards">
         </div>
       </div>
     </main>
 
     <%- include('./layout/floatButton') -%>
-    
-    <%- include('./layout/modalEmoCards'); -%>
-    <%- include('./layout/footer'); -%>
 
+    <!-- modalEmoCards -->
+    <ul class="list">
+      <li></li>
+    </ul>
+
+    <%- include('./layout/footer'); -%>
+    
     <%- include('./layout/baseJs'); -%>
+    <script>
+      let imgHappy01 = "https://wavemocards.com/frontend/upload/01-happy/happy01-statisfy.svg";
+      let imgHappy02 = "https://wavemocards.com/frontend/upload/01-happy/happy02-happy.svg";
+      let imgHappy03 = "https://wavemocards.com/frontend/upload/01-happy/happy03-happiness.svg";
+      let imgHappy04 = "https://wavemocards.com/frontend/upload/01-happy/happy04-proud.svg";
+      let imgHappy05 = "https://wavemocards.com/frontend/upload/01-happy/happy05-excited.svg";
+      let imgHappy06 = "https://wavemocards.com/frontend/upload/01-happy/happy06-cheerful.svg";
+      let imgHappy07 = "https://wavemocards.com/frontend/upload/01-happy/happy07-ecstasy.svg";
+
+      const happyCards = document.querySelector('#happyCards');
+      const listModal = document.querySelector('.list');
+
+      axios.get("http://api.wavemocards.com/emotions?requirement=cards")
+      .then(function(response){
+        let aryData = Object.values(response.data);
+        initCards()
+        function initCards() {
+          let strCards = "";
+          let strModal = "";
+          let emo;
+          aryData.forEach(function(data, i){
+            let imgSrc;
+            if(data.Category == "快樂"){
+              emo = "happy";
+              if(data.Name == "滿足") {
+                imgSrc = imgHappy01;
+              } else if (data.Name == "快樂") {
+                imgSrc = imgHappy02;
+              } else if (data.Name == "幸福") {
+                imgSrc = imgHappy03;
+              } else if (data.Name == "自豪") {
+                imgSrc = imgHappy04;
+              } else if (data.Name == "興奮") {
+                imgSrc = imgHappy05;
+              } else if (data.Name == "痛快") {
+                imgSrc = imgHappy06;
+              } else if (data.Name == "狂喜") {
+                imgSrc = imgHappy07;
+              }
+              let contentCards = `
+                <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                  <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                  <div class="img-box">
+                    <img src="${imgSrc}}" alt="${data.Name}">
+                  </div>
+                </button>`;
+              let contentModals = `
+                <li>
+                  <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                      <div class="modal-content bg-${emo}" id="cardBgColor">
+                        <div class="modal-body d-flex justify-content-between align-items-center">
+                          <div class="text">
+                            <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">
+                              <h2>${data.Name}</h2>
+                              <a href="modifyEmoCard.html" role="button">
+                                  <i class="bi bi-pencil-square"></i>
+                              </a>
+                            </div>
+                            <div class="mb-16">
+                              <h3 class="mb-4">意思：</h3>
+                              <p>${data.Description}</p>
+                            </div>
+                            <div>
+                              <h3 class="mb-4">例句：</h3>
+                              <p>${data.Example}</p>
+                            </div>
+                          </div>
+                          <div class="img">
+                            <img class="w-100" src="${imgSrc}" alt="${data.Name}">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>`;
+              strCards+=contentCards;
+              strModal+=contentModals;
+            }
+          })
+          happyCards.innerHTML = strCards;
+          listModal.innerHTML = strModal;
+        }
+      })
+    </script>
   </body>
 </html>

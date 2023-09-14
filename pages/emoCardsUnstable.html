@@ -19,64 +19,107 @@
               <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
           </div>
         </div>
-        <div class="d-flex flex-wrap mb-72">
-          <button type="button" class="class-card mb-12 me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable01">
-            <p>害&nbsp;羞</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable01-shy.svg" alt="害羞">
-            </div>
-        </button>
-        <button type="button" class="class-card mb-12 me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable02">
-            <p>擔&nbsp;心</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable02-worry.svg" alt="擔心">
-            </div>
-        </button>
-        <button type="button" class="class-card mb-12 me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable03">
-            <p>迷&nbsp;惘</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable03-confused.svg" alt="迷惘">
-            </div>
-        </button>
-        <button type="button" class="class-card mb-12 me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable04">
-            <p>不&nbsp;安</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable04-anxious.svg" alt="不安">
-            </div>
-        </button>
-        <button type="button" class="class-card mb-12 me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable05">
-            <p>害&nbsp;怕</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable05-afraid.svg" alt="害怕">
-            </div>
-        </button>
-        <button type="button" class="class-card mb-12 me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable06">
-            <p>緊&nbsp;張</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable06-nervous.svg" alt="緊張">
-            </div>
-        </button>
-        <button type="button" class="class-card mb-12 me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable07">
-            <p>焦&nbsp;慮</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable07-anxious.svg" alt="焦慮">
-            </div>
-        </button>
-        <button type="button" class="class-card mb-12 me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable08">
-            <p>恐&nbsp;懼</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable08-fear.svg" alt="恐懼">
-            </div>
-        </button>
+        <div class="d-flex flex-wrap mb-72" id="unstableCards">
         </div>
       </div>
     </main>
 
     <%- include('./layout/floatButton') -%>
     
-    <%- include('./layout/modalEmoCards'); -%>
+    <!-- modalEmoCards -->
+    <ul class="list">
+      <li></li>
+    </ul>
     <%- include('./layout/footer'); -%>
 
     <%- include('./layout/baseJs'); -%>
+    <script>
+      let imgUnstable01 = "https://wavemocards.com/frontend/upload/04-unstable/unstable01-shy.svg";
+      let imgUnstable02 = "https://wavemocards.com/frontend/upload/04-unstable/unstable02-worry.svg";
+      let imgUnstable03 = "https://wavemocards.com/frontend/upload/04-unstable/unstable03-confused.svg";
+      let imgUnstable04 = "https://wavemocards.com/frontend/upload/04-unstable/unstable04-anxious.svg";
+      let imgUnstable05 = "https://wavemocards.com/frontend/upload/04-unstable/unstable05-afraid.svg";
+      let imgUnstable06 = "https://wavemocards.com/frontend/upload/04-unstable/unstable06-nervous.svg";
+      let imgUnstable07 = "https://wavemocards.com/frontend/upload/04-unstable/unstable07-anxious.svg";
+      let imgUnstable08 = "https://wavemocards.com/frontend/upload/04-unstable/unstable08-fear.svg";
+
+      const unstableCards = document.querySelector('#unstableCards');
+      const listModal = document.querySelector('.list');
+
+      axios.get("http://api.wavemocards.com/emotions?requirement=cards")
+      .then(function(response){
+        let aryData = Object.values(response.data);
+        initCards()
+        function initCards() {
+          let strCards = "";
+          let strModal = "";
+          let emo;
+          aryData.forEach(function(data, i){
+            let imgSrc;
+            if(data.Category == "不安"){
+              emo = "unstable";
+              if(data.Name == "害羞") {
+                imgSrc = imgUnstable01;
+              } else if (data.Name == "擔心") {
+                imgSrc = imgUnstable02;
+              } else if (data.Name == "迷惘") {
+                imgSrc = imgUnstable03;
+              } else if (data.Name == "不安") {
+                imgSrc = imgUnstable04;
+              } else if (data.Name == "害怕") {
+                imgSrc = imgUnstable05;
+              } else if (data.Name == "緊張") {
+                imgSrc = imgUnstable06;
+              } else if (data.Name == "焦慮") {
+                imgSrc = imgUnstable07;
+              } else if (data.Name == "恐懼") {
+                imgSrc = imgUnstable08;
+              }
+              let contentCards = `
+                <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                  <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                  <div class="img-box">
+                    <img src="${imgSrc}}" alt="${data.Name}">
+                  </div>
+                </button>`;
+              let contentModals = `
+                <li>
+                  <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                      <div class="modal-content bg-${emo}" id="cardBgColor">
+                        <div class="modal-body d-flex justify-content-between align-items-center">
+                          <div class="text">
+                            <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">
+                              <h2>${data.Name}</h2>
+                              <a href="modifyEmoCard.html" role="button">
+                                  <i class="bi bi-pencil-square"></i>
+                              </a>
+                            </div>
+                            <div class="mb-16">
+                              <h3 class="mb-4">意思：</h3>
+                              <p>${data.Description}</p>
+                            </div>
+                            <div>
+                              <h3 class="mb-4">例句：</h3>
+                              <p>${data.Example}</p>
+                            </div>
+                          </div>
+                          <div class="img">
+                            <img class="w-100" src="${imgSrc}" alt="${data.Name}">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>`;
+              strCards+=contentCards;
+              strModal+=contentModals;
+            }
+          })
+          unstableCards.innerHTML = strCards;
+          listModal.innerHTML = strModal;
+        }
+      })
+    </script>
   </body>
 </html>

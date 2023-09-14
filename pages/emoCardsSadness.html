@@ -19,8 +19,8 @@
               <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
           </div>
         </div>
-        <div class="d-flex flex-wrap mb-72">
-          <button type="button" class="class-card mb-12 me-16 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#sadness01">
+        <div class="d-flex flex-wrap mb-72" id="sadnessCards">
+          <!-- <button type="button" class="class-card mb-12 me-16 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#sadness01">
             <p>無&nbsp;奈</p>
             <div class="img-box">
               <img src="https://wavemocards.com/frontend/upload/06-sadness/sadness01-helpless.svg" alt="無奈">
@@ -91,16 +91,119 @@
             <div class="img-box">
               <img src="https://wavemocards.com/frontend/upload/06-sadness/sadness12-despair.svg" alt="絕望">
             </div>
-          </button>
+          </button> -->
         </div>
       </div>
     </main>
 
     <%- include('./layout/floatButton') -%>
     
-    <%- include('./layout/modalEmoCards'); -%>
+    <!-- modalEmoCards -->
+    <ul class="list">
+      <li></li>
+    </ul>
     <%- include('./layout/footer'); -%>
 
     <%- include('./layout/baseJs'); -%>
+    <script>
+      let imgSadness01 = "https://wavemocards.com/frontend/upload/06-sadness/sadness01-helpless.svg";
+      let imgSadness02 = "https://wavemocards.com/frontend/upload/06-sadness/sadness02-setback.svg";
+      let imgSadness03 = "https://wavemocards.com/frontend/upload/06-sadness/sadness03-disappointed.svg";
+      let imgSadness04 = "https://wavemocards.com/frontend/upload/06-sadness/sadness04-powerless.svg";
+      let imgSadness05 = "https://wavemocards.com/frontend/upload/06-sadness/sadness05-frustrated.svg";
+      let imgSadness06 = "https://wavemocards.com/frontend/upload/06-sadness/sadness06-sad.svg";
+      let imgSadness07 = "https://wavemocards.com/frontend/upload/06-sadness/sadness07-powerless.svg";
+      let imgSadness08 = "https://wavemocards.com/frontend/upload/06-sadness/sadness08-sorrow.svg";
+      let imgSadness09 = "https://wavemocards.com/frontend/upload/06-sadness/sadness09-heartache.svg";
+      let imgSadness10 = "https://wavemocards.com/frontend/upload/06-sadness/sadness10-depressed.svg";
+      let imgSadness11 = "https://wavemocards.com/frontend/upload/06-sadness/sadness11-collapse.svg";
+      let imgSadness12 = "https://wavemocards.com/frontend/upload/06-sadness/sadness12-despair.svg";
+
+      const sadnessCards = document.querySelector('#sadnessCards');
+      const listModal = document.querySelector('.list');
+
+      axios.get("http://api.wavemocards.com/emotions?requirement=cards")
+      .then(function(response){
+        let aryData = Object.values(response.data);
+        initCards()
+        function initCards() {
+          let strCards = "";
+          let strModal = "";
+          let emo;
+          aryData.forEach(function(data, i){
+            let imgSrc;
+            if(data.Category == "低落"){
+              emo = "sadness";
+              if(data.Name == "無奈") {
+                imgSrc = imgSadness01;
+              } else if (data.Name == "挫折") {
+                imgSrc = imgSadness02;
+              } else if (data.Name == "失望") {
+                imgSrc = imgSadness03;
+              } else if (data.Name == "無力") {
+                imgSrc = imgSadness04;
+              } else if (data.Name == "沮喪") {
+                imgSrc = imgSadness05;
+              } else if (data.Name == "難過") {
+                imgSrc = imgSadness06;
+              } else if (data.Name == "無助") {
+                imgSrc = imgSadness07;
+              } else if (data.Name == "悲傷") {
+                imgSrc = imgSadness08;
+              } else if (data.Name == "心痛") {
+                imgSrc = imgSadness09;
+              } else if (data.Name == "憂鬱") {
+                imgSrc = imgSadness10;
+              } else if (data.Name == "崩潰") {
+                imgSrc = imgSadness11;
+              } else if (data.Name == "絕望") {
+                imgSrc = imgSadness12;
+              }
+              let contentCards = `
+                <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                  <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                  <div class="img-box">
+                    <img src="${imgSrc}}" alt="${data.Name}">
+                  </div>
+                </button>`;
+              let contentModals = `
+                <li>
+                  <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                      <div class="modal-content bg-${emo}" id="cardBgColor">
+                        <div class="modal-body d-flex justify-content-between align-items-center">
+                          <div class="text">
+                            <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">
+                              <h2>${data.Name}</h2>
+                              <a href="modifyEmoCard.html" role="button">
+                                  <i class="bi bi-pencil-square"></i>
+                              </a>
+                            </div>
+                            <div class="mb-16">
+                              <h3 class="mb-4">意思：</h3>
+                              <p>${data.Description}</p>
+                            </div>
+                            <div>
+                              <h3 class="mb-4">例句：</h3>
+                              <p>${data.Example}</p>
+                            </div>
+                          </div>
+                          <div class="img">
+                            <img class="w-100" src="${imgSrc}" alt="${data.Name}">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>`;
+              strCards+=contentCards;
+              strModal+=contentModals;
+            }
+          })
+          sadnessCards.innerHTML = strCards;
+          listModal.innerHTML = strModal;
+        }
+      })
+    </script>
   </body>
 </html>

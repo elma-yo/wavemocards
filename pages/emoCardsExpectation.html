@@ -19,40 +19,96 @@
               <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
           </div>
         </div>
-        <div class="d-flex flex-wrap mb-72">
-          <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation01">
-              <p>期&nbsp;待</p>
-              <div class="img-box">
-                <img src="https://wavemocards.com/frontend/upload/02-expectation/expaction01-expect.svg" alt="期待">
-              </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation " data-bs-toggle="modal" data-bs-target="#expectation02">
-              <p class="px-0">有信心</p>
-              <div class="img-box">
-                <img src="https://wavemocards.com/frontend/upload/02-expectation/expaction02-confidence.svg" alt="有信心">
-              </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation03">
-              <p>充滿興趣</p>
-              <div class="img-box">
-                <img src="https://wavemocards.com/frontend/upload/02-expectation/expaction03-interested.svg" alt="充滿興趣">
-              </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation04">
-              <p>渴望</p>
-              <div class="img-box">
-                <img src="https://wavemocards.com/frontend/upload/02-expectation/expaction04-desire.svg" alt="渴望">
-              </div>
-          </button>
+        <div class="d-flex flex-wrap mb-72" id="expectationCards">
         </div>
       </div>
     </main>
 
     <%- include('./layout/floatButton') -%>
     
-    <%- include('./layout/modalEmoCards'); -%>
+    <!-- modalEmoCards -->
+    <ul class="list">
+      <li></li>
+    </ul>
+    
     <%- include('./layout/footer'); -%>
 
     <%- include('./layout/baseJs'); -%>
+    <script>
+      let imgExpectation01 = "https://wavemocards.com/frontend/upload/02-expectation/expaction01-expect.svg";
+      let imgExpectation02 = "https://wavemocards.com/frontend/upload/02-expectation/expaction02-confidence.svg";
+      let imgExpectation03 = "https://wavemocards.com/frontend/upload/02-expectation/expaction03-interested.svg";
+      let imgExpectation04 = "https://wavemocards.com/frontend/upload/02-expectation/expaction04-desire.svg";
+
+      const expectationCards = document.querySelector('#expectationCards');
+      const listModal = document.querySelector('.list');
+
+      axios.get("http://api.wavemocards.com/emotions?requirement=cards")
+      .then(function(response){
+        let aryData = Object.values(response.data);
+        initCards()
+        function initCards() {
+          let strCards = "";
+          let strModal = "";
+          let emo;
+          aryData.forEach(function(data, i){
+            let imgSrc;
+            if(data.Category == "期待"){
+              emo = "expectation";
+              if(data.Name == "期待") {
+                imgSrc = imgExpectation01;
+              } else if (data.Name == "有信心") {
+                imgSrc = imgExpectation02;
+              } else if (data.Name == "充滿興趣") {
+                imgSrc = imgExpectation03;
+              } else if (data.Name == "渴望") {
+                imgSrc = imgExpectation04;
+              }
+              let contentCards = `
+                <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                  <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                  <div class="img-box">
+                    <img src="${imgSrc}}" alt="${data.Name}">
+                  </div>
+                </button>`;
+              let contentModals = `
+                <li>
+                  <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                      <div class="modal-content bg-${emo}" id="cardBgColor">
+                        <div class="modal-body d-flex justify-content-between align-items-center">
+                          <div class="text">
+                            <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">
+                              <h2>${data.Name}</h2>
+                              <a href="modifyEmoCard.html" role="button">
+                                  <i class="bi bi-pencil-square"></i>
+                              </a>
+                            </div>
+                            <div class="mb-16">
+                              <h3 class="mb-4">意思：</h3>
+                              <p>${data.Description}</p>
+                            </div>
+                            <div>
+                              <h3 class="mb-4">例句：</h3>
+                              <p>${data.Example}</p>
+                            </div>
+                          </div>
+                          <div class="img">
+                            <img class="w-100" src="${imgSrc}" alt="${data.Name}">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>`;
+              strCards+=contentCards;
+              strModal+=contentModals;
+            }
+          })
+          expectationCards.innerHTML = strCards;
+          listModal.innerHTML = strModal;
+        }
+      })
+    </script>
   </body>
 </html>

@@ -19,8 +19,8 @@
               <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
           </div>
         </div>
-        <div class="d-flex flex-wrap mb-72">
-          <button type="button" class="class-card me-16 bg-anger link-gray-900 class-card-anger" data-bs-toggle="modal" data-bs-target="#anger01">
+        <div class="d-flex flex-wrap mb-72" id="angerCards">
+          <!-- <button type="button" class="class-card me-16 bg-anger link-gray-900 class-card-anger" data-bs-toggle="modal" data-bs-target="#anger01">
             <p>不&nbsp;滿</p>
             <div class="img-box">
               <img src="https://wavemocards.com/frontend/upload/08-anger/anger01-dissatisfied.svg" alt="anger">
@@ -49,16 +49,98 @@
             <div class="img-box">
               <img src="https://wavemocards.com/frontend/upload/08-anger/anger05-rage.svg" alt="anger">
             </div>
-          </button>
+          </button> -->
         </div>
       </div>
     </main>
 
     <%- include('./layout/floatButton') -%>
     
-    <%- include('./layout/modalEmoCards'); -%>
+    <!-- modalEmoCards -->
+    <ul class="list">
+      <li></li>
+    </ul>
     <%- include('./layout/footer'); -%>
 
     <%- include('./layout/baseJs'); -%>
+    <script>
+      let imgAnger01 = "https://wavemocards.com/frontend/upload/08-anger/anger01-dissatisfied.svg";
+      let imgAnger02 = "https://wavemocards.com/frontend/upload/08-anger/anger02-irritated.svg";
+      let imgAnger03 = "https://wavemocards.com/frontend/upload/08-anger/anger03-anger.svg";
+      let imgAnger04 = "https://wavemocards.com/frontend/upload/08-anger/anger04-indignant.svg";
+      let imgAnger05 = "https://wavemocards.com/frontend/upload/08-anger/anger05-rage.svg";
+
+      const angerCards = document.querySelector('#angerCards');
+      const listModal = document.querySelector('.list');
+
+      axios.get("http://api.wavemocards.com/emotions?requirement=cards")
+      .then(function(response){
+        let aryData = Object.values(response.data);
+        initCards()
+        function initCards() {
+          let strCards = "";
+          let strModal = "";
+          let emo;
+          aryData.forEach(function(data, i){
+            let imgSrc;
+            if(data.Category == "生氣"){
+              emo = "anger";
+              if(data.Name == "不滿") {
+                imgSrc = imgAnger01;
+              } else if (data.Name == "煩躁") {
+                imgSrc = imgAnger02;
+              } else if (data.Name == "生氣") {
+                imgSrc = imgAnger03;
+              } else if (data.Name == "憤怒") {
+                imgSrc = imgAnger04;
+              } else if (data.Name == "暴怒") {
+                imgSrc = imgAnger05;
+              }
+              let contentCards = `
+                <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                  <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                  <div class="img-box">
+                    <img src="${imgSrc}}" alt="${data.Name}">
+                  </div>
+                </button>`;
+              let contentModals = `
+                <li>
+                  <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                      <div class="modal-content bg-${emo}" id="cardBgColor">
+                        <div class="modal-body d-flex justify-content-between align-items-center">
+                          <div class="text">
+                            <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">
+                              <h2>${data.Name}</h2>
+                              <a href="modifyEmoCard.html" role="button">
+                                  <i class="bi bi-pencil-square"></i>
+                              </a>
+                            </div>
+                            <div class="mb-16">
+                              <h3 class="mb-4">意思：</h3>
+                              <p>${data.Description}</p>
+                            </div>
+                            <div>
+                              <h3 class="mb-4">例句：</h3>
+                              <p>${data.Example}</p>
+                            </div>
+                          </div>
+                          <div class="img">
+                            <img class="w-100" src="${imgSrc}" alt="${data.Name}">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>`;
+              strCards+=contentCards;
+              strModal+=contentModals;
+            }
+          })
+          angerCards.innerHTML = strCards;
+          listModal.innerHTML = strModal;
+        }
+      })
+    </script>
   </body>
 </html>

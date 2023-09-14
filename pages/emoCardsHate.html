@@ -19,8 +19,8 @@
               <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
           </div>
         </div>
-        <div class="d-flex flex-wrap mb-72">
-          <button type="button" class="class-card me-16 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#hate01">
+        <div class="d-flex flex-wrap mb-72" id="hateCards">
+          <!-- <button type="button" class="class-card me-16 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#hate01">
             <p>無&nbsp;聊</p>
             <div class="img-box">
               <img src="https://wavemocards.com/frontend/upload/07-hate/hate01-boring.svg" alt="無聊">
@@ -67,16 +67,107 @@
             <div class="img-box">
               <img src="https://wavemocards.com/frontend/upload/07-hate/hate08-resentment.svg" alt="怨恨">
             </div>
-          </button>
+          </button> -->
         </div>
       </div>
     </main>
 
     <%- include('./layout/floatButton') -%>
     
-    <%- include('./layout/modalEmoCards'); -%>
+    <!-- modalEmoCards -->
+    <ul class="list">
+      <li></li>
+    </ul>
     <%- include('./layout/footer'); -%>
 
     <%- include('./layout/baseJs'); -%>
+    <script>
+      let imgHate01 = "https://wavemocards.com/frontend/upload/07-hate/hate01-boring.svg";
+      let imgHate02 = "https://wavemocards.com/frontend/upload/07-hate/hate02-weariness.svg";
+      let imgHate03 = "https://wavemocards.com/frontend/upload/07-hate/hate03-inferiority.svg";
+      let imgHate04 = "https://wavemocards.com/frontend/upload/07-hate/hate04-hate.svg";
+      let imgHate05 = "https://wavemocards.com/frontend/upload/07-hate/hate05-jealousy.svg";
+      let imgHate06 = "https://wavemocards.com/frontend/upload/07-hate/hate06-disgust.svg";
+      let imgHate07 = "https://wavemocards.com/frontend/upload/07-hate/hate07-nausea.svg";
+      let imgHate08 = "https://wavemocards.com/frontend/upload/07-hate/hate08-resentment.svg";
+
+      const hateCards = document.querySelector('#hateCards');
+      const listModal = document.querySelector('.list');
+
+      axios.get("http://api.wavemocards.com/emotions?requirement=cards")
+      .then(function(response){
+        let aryData = Object.values(response.data);
+        initCards()
+        function initCards() {
+          let strCards = "";
+          let strModal = "";
+          let emo;
+          aryData.forEach(function(data, i){
+            let imgSrc;
+            if(data.Category == "討厭"){
+              emo = "hate";
+              if(data.Name == "無聊") {
+                imgSrc = imgHate01;
+              } else if (data.Name == "厭倦") {
+                imgSrc = imgHate02;
+              } else if (data.Name == "自卑") {
+                imgSrc = imgHate03;
+              } else if (data.Name == "討厭") {
+                imgSrc = imgHate04;
+              } else if (data.Name == "嫉妒") {
+                imgSrc = imgHate05;
+              } else if (data.Name == "厭惡") {
+                imgSrc = imgHate06;
+              } else if (data.Name == "噁心") {
+                imgSrc = imgHate07;
+              } else if (data.Name == "怨恨") {
+                imgSrc = imgHate08;
+              }
+              let contentCards = `
+                <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                  <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                  <div class="img-box">
+                    <img src="${imgSrc}}" alt="${data.Name}">
+                  </div>
+                </button>`;
+              let contentModals = `
+                <li>
+                  <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                      <div class="modal-content bg-${emo}" id="cardBgColor">
+                        <div class="modal-body d-flex justify-content-between align-items-center">
+                          <div class="text">
+                            <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">
+                              <h2>${data.Name}</h2>
+                              <a href="modifyEmoCard.html" role="button">
+                                  <i class="bi bi-pencil-square"></i>
+                              </a>
+                            </div>
+                            <div class="mb-16">
+                              <h3 class="mb-4">意思：</h3>
+                              <p>${data.Description}</p>
+                            </div>
+                            <div>
+                              <h3 class="mb-4">例句：</h3>
+                              <p>${data.Example}</p>
+                            </div>
+                          </div>
+                          <div class="img">
+                            <img class="w-100" src="${imgSrc}" alt="${data.Name}">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>`;
+              strCards+=contentCards;
+              strModal+=contentModals;
+            }
+          })
+          hateCards.innerHTML = strCards;
+          listModal.innerHTML = strModal;
+        }
+      })
+    </script>
   </body>
 </html>

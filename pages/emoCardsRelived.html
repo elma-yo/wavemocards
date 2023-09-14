@@ -14,57 +14,106 @@
     <main>
       <div class="container py-16 pt-72" id="top">
         <div class="titleBar d-flex justify-content-between align-items-center">
-          <h2>放鬆</h2>
+          <h2>安心</h2>
           <div class="nav-btn d-flex justify-content-end">
               <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
           </div>
         </div>
-        <div class="d-flex flex-wrap mb-72">
-          <button type="button" class="class-card me-16 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#relived01">
-            <p>舒&nbsp;服</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/03-relived/relived01-comfortable.svg" alt="舒服">
-            </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#relived02">
-            <p>放&nbsp;鬆</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/03-relived/relived02-relax.svg" alt="放鬆">
-            </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#relived03">
-            <p>平&nbsp;靜</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/03-relived/relived03-calm.svg" alt="平靜">
-            </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#relived04">
-            <p>安&nbsp;心</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/03-relived/relived04-relieved.svg" alt="安心">
-            </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#relived05">
-            <p>自&nbsp;在</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/03-relived/relived05-ease.svg" alt="自在">
-            </div>
-          </button>
-          <button type="button" class="class-card me-16 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#relived06">
-            <p>信&nbsp;任</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/03-relived/relived06-trust.svg" alt="信任">
-            </div>
-          </button>
+        <div class="d-flex flex-wrap mb-72" id="relivedCards">
         </div>
       </div>
     </main>
 
     <%- include('./layout/floatButton') -%>
     
-    <%- include('./layout/modalEmoCards'); -%>
+    <!-- modalEmoCards -->
+    <ul class="list">
+      <li></li>
+    </ul>
     <%- include('./layout/footer'); -%>
 
     <%- include('./layout/baseJs'); -%>
+    <script>
+      let imgRelived01 = "https://wavemocards.com/frontend/upload/03-relived/relived01-comfortable.svg";
+      let imgRelived02 = "https://wavemocards.com/frontend/upload/03-relived/relived02-relax.svg";
+      let imgRelived03 = "https://wavemocards.com/frontend/upload/03-relived/relived03-calm.svg";
+      let imgRelived04 = "https://wavemocards.com/frontend/upload/03-relived/relived04-relieved.svg";
+      let imgRelived05 = "https://wavemocards.com/frontend/upload/03-relived/relived05-ease.svg";
+      let imgRelived06 = "https://wavemocards.com/frontend/upload/03-relived/relived06-trust.svg";
+
+      const relivedCards = document.querySelector('#relivedCards');
+      const listModal = document.querySelector('.list');
+
+      axios.get("http://api.wavemocards.com/emotions?requirement=cards")
+      .then(function(response){
+        let aryData = Object.values(response.data);
+        initCards()
+        function initCards() {
+          let strCards = "";
+          let strModal = "";
+          let emo;
+          aryData.forEach(function(data, i){
+            let imgSrc;
+            if(data.Category == "安心"){
+              emo = "relived";
+              if(data.Name == "舒服") {
+                imgSrc = imgRelived01;
+              } else if (data.Name == "放鬆") {
+                imgSrc = imgRelived02;
+              } else if (data.Name == "平靜") {
+                imgSrc = imgRelived03;
+              } else if (data.Name == "安心") {
+                imgSrc = imgRelived04;
+              } else if (data.Name == "自在") {
+                imgSrc = imgRelived05;
+              } else if (data.Name == "信任") {
+                imgSrc = imgRelived06;
+              }
+              let contentCards = `
+                <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                  <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                  <div class="img-box">
+                    <img src="${imgSrc}}" alt="${data.Name}">
+                  </div>
+                </button>`;
+              let contentModals = `
+                <li>
+                  <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                      <div class="modal-content bg-${emo}" id="cardBgColor">
+                        <div class="modal-body d-flex justify-content-between align-items-center">
+                          <div class="text">
+                            <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">
+                              <h2>${data.Name}</h2>
+                              <a href="modifyEmoCard.html" role="button">
+                                  <i class="bi bi-pencil-square"></i>
+                              </a>
+                            </div>
+                            <div class="mb-16">
+                              <h3 class="mb-4">意思：</h3>
+                              <p>${data.Description}</p>
+                            </div>
+                            <div>
+                              <h3 class="mb-4">例句：</h3>
+                              <p>${data.Example}</p>
+                            </div>
+                          </div>
+                          <div class="img">
+                            <img class="w-100" src="${imgSrc}" alt="${data.Name}">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>`;
+              strCards+=contentCards;
+              strModal+=contentModals;
+            }
+          })
+          relivedCards.innerHTML = strCards;
+          listModal.innerHTML = strModal;
+        }
+      })
+    </script>
   </body>
 </html>
