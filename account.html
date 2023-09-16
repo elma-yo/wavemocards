@@ -82,8 +82,10 @@
                 <!-- title bar -->
                 <div class="mb-36 pt-32 pb-8 d-flex justify-content-between align-items-center border-2 border-bottom border-main-tint02">
                     <h2 class="fs-3">我的帳戶</h2>
+                    <form action="" method="">
                     <div class="nav-btn d-flex justify-content-end">
-                        <a class="ms-16 btn btn-outline-main c-btn" href="accountModify.html">編輯</a>
+                        <button class="ms-16 btn btn-outline-main c-btn" id="btnModify" type="button">編輯</button>
+                        <input type="submit" class="d-none ms-16 btn btn-outline-main c-btn" id="btnSave" value="儲存"></button>
                         <a class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="accountMyFriends.html">好友管理</a>
                     </div>
                 </div>
@@ -103,17 +105,23 @@
                         <span class="mb-8 text-gray-700">Email</span>
                         <p class="ms-4 mb-24 fs-6 fw-bold">wavemo@gmail.com</p>
                         <span class="mb-8 text-gray-700">密碼</span>
-                        <p class="ms-4 mb-24 fs-6 fw-bold">********</p>
-                        <span class="mb-8 text-gray-700">用戶名稱</span>
-                        <p class="ms-4 mb-24 fs-6 fw-bold">wavemo</p>
+                        <div class="d-flex justify-content-between">
+                            <p class="ms-4 mb-24 fs-6 fw-bold">********</p>
+                            <a class="link-pink-tint01" href="resetPsw.html">重設密碼</a>
+                        </div>
+                        <span class="mb-8 text-gray-700">帳號</span>
+                        <p class="ms-4 mb-24 fs-6 fw-bold" id="accountName">wavemo</p>
+                        <input type="text" class="d-none form-control w-100 mb-24 px-20 rounded-pill" id="formAccount" value="wavemo">
                         <div class="row">
                             <div class="col-6">
                                 <span class="mb-8 text-gray-700">姓</span>
-                                <p class="ms-4 mb-24 fs-6 fw-bold">陳</p>
+                                <p class="ms-4 mb-24 fs-6 fw-bold" id="lastName">陳</p>
+                                <input type="text" class="d-none form-control w-100 mb-24 px-20 rounded-pill" id="formLastName" value="陳" required>
                             </div>
                             <div class="col-6">
                                 <span class="mb-8 text-gray-700">名</span>
-                                <p class="ms-4 mb-24 fs-6 fw-bold">浪潮</p>
+                                <p class="ms-4 mb-24 fs-6 fw-bold" id="firstName">浪潮</p>
+                                <input type="text" class="d-none form-control w-100 mb-24 px-20 rounded-pill" id="formFirstName" value="浪潮" required>
                             </div>
                         </div>
                         <div class="row">
@@ -123,9 +131,18 @@
                             </div>
                             <div class="col-6">
                                 <span class="mb-8 text-gray-700">身份</span>
-                                <p class="ms-4 mb-24 fs-6 fw-bold">學生</p>
+                                <p class="ms-4 mb-24 fs-6 fw-bold" id="title">學生</p>
+                                <select class="d-none form-select px-20 rounded-pill" aria-label="Default select example" id="formTitle">
+                                    <option value="學生">學生</option>
+                                    <option value="教師">教師</option>
+                                    <option value="教師">輔導教師</option>
+                                    <option value="諮商師">諮商師</option>
+                                    <option value="醫生">醫生</option>
+                                    <option value="其他">其他</option>
+                                </select>
                             </div>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -213,5 +230,30 @@
 <script src="../assets/js/toolTips.js"></script>
 
 <!-- axios -->
-<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>    </body>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>        <script>
+            const btnModify = document.querySelector('#btnModify');
+            const btnSave = document.querySelector('#btnSave');
+            const accountName = document.querySelector('#accountName');
+            const lastName = document.querySelector('#lastName');
+            const firstName = document.querySelector('#firstName');
+            const title = document.querySelector('#title');
+            const formAccount = document.querySelector('#formAccount');
+            const formLastName = document.querySelector('#formLastName');
+            const formFirstName = document.querySelector('#formFirstName');
+            const formTitle = document.querySelector('#formTitle');
+
+            btnModify.addEventListener("click", function(){
+                btnModify.classList.add("d-none");
+                btnSave.classList.remove("d-none");
+                accountName.classList.add("d-none");
+                lastName.classList.add("d-none");
+                firstName.classList.add("d-none");
+                title.classList.add("d-none");
+                formAccount.classList.remove("d-none");
+                formLastName.classList.remove("d-none");
+                formFirstName.classList.remove("d-none");
+                formTitle.classList.remove("d-none");
+            })
+        </script>
+    </body>
 </html>
