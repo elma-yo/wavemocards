@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script type="module" crossorigin src="/wavemocards/assets/main-fd0ea064.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-34afe0c3.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-5738ba10.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-d6225b7a.css">
   </head>
   <body>
     <header class="header h-logined fixed-top">
@@ -299,7 +299,6 @@
 
 <!-- axios -->
 <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>    <script>
-      let cardBgColor = document.querySelector('#cardBgColor');
       const buttonsHappy = document.querySelector('#buttonsHappy');
       const buttonsExpectation = document.querySelector('#buttonsExpectation');
       const buttonsRelived = document.querySelector('#buttonsRelived');
@@ -397,7 +396,7 @@
               <li>
                 <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
-                    <div class="modal-content bg-${emo}" id="cardBgColor">
+                    <div class="modal-content bg-${emo}">
                       <div class="modal-body d-flex justify-content-between align-items-center">
                         <div class="text">
                           <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">

@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script type="module" crossorigin src="/wavemocards/assets/main-fd0ea064.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-34afe0c3.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-5738ba10.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-d6225b7a.css">
   </head>
   <body>
     <header class="header sticky-top">
@@ -30,20 +30,20 @@
                 <a href="signUp.html" class="btn btn-pink c-btn">註冊</a>
             </li>
             <li class="d-md-none ms-16 position-relative">
-                <button class="px-8 py-4 btn btn-white btn-hamburger border border-main-tint01 rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <button class="px-8 py-4 btn btn-main btn-hamburger border-0 rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     <i class="bi bi-list"></i>
                 </button>
                 <div class="collapse" style="position: absolute; right: 0; top: 40px;" id="collapseExample">
-                    <div class="p-0 card card-body rounded-2 border-0 bg-main-tint03" style="width: 120px;">
+                    <div class="p-0 card card-body rounded-2 border border-main-tint01" style="width: 120px;">
                         <ul>
                             <li>
-                                <a class="d-block px-16 py-12 link-gray-700 btn-hover-main-tint02 rounded-2" href="login.html">登入</a>
+                                <a class="d-block px-16 py-12 link-gray-600 btn-hover-main-tint02 rounded-2" href="login.html">登入</a>
                             </li>
                             <li>
-                                <a class="d-block px-16 py-12 link-gray-700 btn-hover-main-tint02 rounded-2" href="signUp.html">註冊</a>
+                                <a class="d-block px-16 py-12 link-gray-600 btn-hover-main-tint02 rounded-2" href="signUp.html">註冊</a>
                             </li>
                             <li>
-                                <a class="d-block px-16 py-12 link-gray-700 btn-hover-main-tint02 rounded-2" href="aboutEmotions.html">認識情緒</a>
+                                <a class="d-block px-16 py-12 link-gray-600 btn-hover-main-tint02 rounded-2" href="aboutEmotions.html">認識情緒</a>
                             </li>
                         </ul>
                     </div>
@@ -52,135 +52,133 @@
         </ul>
     </div>
 </header>
-    <main>
-        <div class="login signup d-flex justify-content-center align-items-stretch">
-            <div class="img w-50">
-                <img src="/wavemocards/assets/login-bg-22843504.svg" alt="login page background">
-            </div>
-    
-            <div class="w-50 py-32 px-24 d-flex flex-column align-items-center">
-                <div class="form">
-                    <div class="mb-20 text-pink d-flex flex-column align-items-center">
-                        <i class="bi bi-person-circle profile"></i>
-                    </div>
-                    <h2 class="mb-32 text-pink">註冊</h2>
-                    <!-- 尚未填入 a 連結 -->
-                    <!-- <a class="w-100 mb-32 py-8 btn btn-outline-pink c-btn-outline-pink d-flex justify-content-center align-items-center" href="#">
-                        連結 Google 帳號
-                        <i class="bi bi-google ms-8"></i>
-                    </a>
-                    <div class="or mb-32">或</div> -->
-    
-                    <!-- 尚未填入 action 內容 -->
-                    <form action="#" method="post" class="needs-validation" novalidate>
-                        <div class="mb-16">
-                            <label for="singupEmail" class="form-label  d-flex justify-content-between">
-                                E-mail
-                                <span class="text-pink-tint02 fs-9">*必填</span>
-                            </label>
-                            <input type="email" class="form-control rounded-pill px-20" id="singupEmail" placeholder="wavemocards@gmail.com" required>
-                            <div class="invalid-feedback">
-                                請輸入正確的 e-mail 帳號
-                            </div>
-                        </div>
-                        <div class="mb-16">
-                            <label for="singupPassword" class="form-label d-flex justify-content-between">
-                                密碼
-                                <span class="text-pink-tint02 fs-9">*必填</span>
-                            </label>
-                            <input type="password" class="form-control mb-8 rounded-pill px-20" id="singupPassword" required aria-describedby="passwordHelp" placeholder="********" required>
-                            <button class="px-16 fs-9 link-gray-550 bg-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                點我看 設定密碼規則
-                            </button>
-                            <!-- collapse 卡片內容 -->
-                            <div class="collapse mx-12" id="collapseExample">
-                                <div class="card card-body py-8 bg-main-tint03 border-0 rounded-2">
-                                    <ol class="fs-9">
-                                        <li class="ms-16">至少包含<span class="fw-bold"> 8 </span>個字符。</li>
-                                        <li class="ms-16">至少包含<span class="fw-bold"> 1 個大寫 </span>字母（A-Z）。</li>
-                                        <li class="ms-16">至少包含<span class="fw-bold"> 1 個小寫 </span>字母（a-z）。</li>
-                                        <li class="ms-16">至少包含<span class="fw-bold"> 1 個數字 </span>（0-9）。</li>
-                                        <li class="ms-16">至少包含<span class="fw-bold"> 1 個特殊字符 </span>（例如！、@、#、$、%等）。</li>
-                                    </ol>
-                                </div>
-                              </div>
-                            <!-- error msg -->
-                            <div class="invalid-feedback">
-                                請設定符合密碼規則的密碼
-                            </div>
-                        </div>
-                        <div class="mb-20">
-                            <label for="singupAccount" class="form-label  d-flex justify-content-between">
-                                用戶名稱
-                                <span class="text-pink-tint02 fs-9">*必填</span>
-                            </label>
-                            <input type="text" class="form-control rounded-pill px-20" id="singupAccount" placeholder="wavemocards" required>
-                            <div class="invalid-feedback">
-                                只能輸入英文和數字
-                            </div>
-                        </div>
-                        <div class="mb-20 row">
-                            <div class="col-6">
-                                <label for="singupLastName" class="form-label  d-flex justify-content-between">
-                                    姓
-                                    <span class="text-pink-tint02 fs-9">*必填</span>
-                                </label>
-                                <input type="text" class="form-control rounded-pill px-20" id="singupLastName" placeholder="陳" required>
-                                <div class="invalid-feedback">
-                                    請輸入您的姓氏
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <label for="singupFirstName" class="form-label  d-flex justify-content-between">
-                                    名
-                                    <span class="text-pink-tint02 fs-9">*必填</span>
-                                </label>
-                                <input type="text" class="form-control rounded-pill px-20" id="singupFirstName" placeholder="浪潮" required>
-                                <div class="invalid-feedback">
-                                    請輸入您的名字
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-24 row">
-                            <div class="col-6">
-                                <label for="singupBirthday" class="form-label d-flex justify-content-between">
-                                    生日
-                                    <span class="text-pink-tint02 fs-9">*必填</span>
-                                </label>
-                                <input type="date" class="form-control rounded-pill px-20" id="singupBirthday" required>
-                                <div class="invalid-feedback">
-                                    請輸入您的生日年月日
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <label for="singupTitle" class="form-label d-flex justify-content-between">
-                                    身份
-                                </label>
-                                <select class="form-select px-20 rounded-pill" aria-label="Default select example" id="singupTitle">
-                                    <option value="學生">學生</option>
-                                    <option value="教師">教師</option>
-                                    <option value="教師">輔導教師</option>
-                                    <option value="諮商師">諮商師</option>
-                                    <option value="醫生">醫生</option>
-                                    <option value="其他">其他</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-32">
-                            <input type="checkbox" required>
-                                    <span class="ms-4">
-                                        我已經詳讀並同意 <a href="#" class="link-main fw-normal">隱私權保護政策</a>
-                                    </span>
-                            <!-- error msg -->
-                            <div class="invalid-feedback">
-                                勾選後才能註冊
-                            </div>
-                        </div>
-                        <button class="w-100 mb-32 py-8 btn btn-pink c-btn" type="submit">註冊</button>
-                    </form>
-                    <a class="d-block 
-                    click-me clickMeToLogin" href="login.html">已經有帳號了嗎？ 點我登入</a>
+    <main class="login signup d-flex justify-content-center align-items-stretch">
+        <div class="d-none d-lg-block img w-50">
+            <img src="/wavemocards/assets/login-bg-22843504.svg" alt="login page background">
+        </div>
+
+        <div class="box-50 py-32 px-24 d-flex flex-column align-items-center">
+            <div class="form">
+                <div class="mb-20 text-pink d-flex flex-column align-items-center">
+                    <i class="bi bi-person-circle profile"></i>
                 </div>
+                <h2 class="mb-32 text-pink">註冊</h2>
+                <!-- 尚未填入 a 連結 -->
+                <!-- <a class="w-100 mb-32 py-8 btn btn-outline-pink c-btn-outline-pink d-flex justify-content-center align-items-center" href="#">
+                    連結 Google 帳號
+                    <i class="bi bi-google ms-8"></i>
+                </a>
+                <div class="or mb-32">或</div> -->
+
+                <!-- 尚未填入 action 內容 -->
+                <form action="#" method="post" class="needs-validation" novalidate>
+                    <div class="mb-16">
+                        <label for="singupEmail" class="form-label  d-flex justify-content-between">
+                            E-mail
+                            <span class="text-pink-tint02 fs-9">*必填</span>
+                        </label>
+                        <input type="email" class="form-control rounded-pill px-20" id="singupEmail" placeholder="wavemocards@gmail.com" required>
+                        <div class="invalid-feedback">
+                            請輸入正確的 e-mail 帳號
+                        </div>
+                    </div>
+                    <div class="mb-16">
+                        <label for="singupPassword" class="form-label d-flex justify-content-between">
+                            密碼
+                            <span class="text-pink-tint02 fs-9">*必填</span>
+                        </label>
+                        <input type="password" class="form-control mb-8 rounded-pill px-20" id="singupPassword" required aria-describedby="passwordHelp" placeholder="********" required>
+                        <button class="px-16 fs-9 link-gray-550 bg-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            點我看 設定密碼規則
+                        </button>
+                        <!-- collapse 卡片內容 -->
+                        <div class="collapse mx-12" id="collapseExample">
+                            <div class="card card-body py-8 bg-main-tint03 border-0 rounded-2">
+                                <ol class="fs-9">
+                                    <li class="ms-16">至少包含<span class="fw-bold"> 8 </span>個字符。</li>
+                                    <li class="ms-16">至少包含<span class="fw-bold"> 1 個大寫 </span>字母（A-Z）。</li>
+                                    <li class="ms-16">至少包含<span class="fw-bold"> 1 個小寫 </span>字母（a-z）。</li>
+                                    <li class="ms-16">至少包含<span class="fw-bold"> 1 個數字 </span>（0-9）。</li>
+                                    <li class="ms-16">至少包含<span class="fw-bold"> 1 個特殊字符 </span>（例如！、@、#、$、%等）。</li>
+                                </ol>
+                            </div>
+                            </div>
+                        <!-- error msg -->
+                        <div class="invalid-feedback">
+                            請設定符合密碼規則的密碼
+                        </div>
+                    </div>
+                    <div class="mb-20">
+                        <label for="singupAccount" class="form-label  d-flex justify-content-between">
+                            用戶名稱
+                            <span class="text-pink-tint02 fs-9">*必填</span>
+                        </label>
+                        <input type="text" class="form-control rounded-pill px-20" id="singupAccount" placeholder="wavemocards" required>
+                        <div class="invalid-feedback">
+                            只能輸入英文和數字
+                        </div>
+                    </div>
+                    <div class="mb-20 row">
+                        <div class="col-6">
+                            <label for="singupLastName" class="form-label  d-flex justify-content-between">
+                                姓
+                                <span class="text-pink-tint02 fs-9">*必填</span>
+                            </label>
+                            <input type="text" class="form-control rounded-pill px-20" id="singupLastName" placeholder="陳" required>
+                            <div class="invalid-feedback">
+                                請輸入您的姓氏
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="singupFirstName" class="form-label  d-flex justify-content-between">
+                                名
+                                <span class="text-pink-tint02 fs-9">*必填</span>
+                            </label>
+                            <input type="text" class="form-control rounded-pill px-20" id="singupFirstName" placeholder="浪潮" required>
+                            <div class="invalid-feedback">
+                                請輸入您的名字
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-24 row">
+                        <div class="col-6">
+                            <label for="singupBirthday" class="form-label d-flex justify-content-between">
+                                生日
+                                <span class="text-pink-tint02 fs-9">*必填</span>
+                            </label>
+                            <input type="date" class="form-control rounded-pill px-20" id="singupBirthday" required>
+                            <div class="invalid-feedback">
+                                請輸入您的生日年月日
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="singupTitle" class="form-label d-flex justify-content-between">
+                                身份
+                            </label>
+                            <select class="form-select px-20 rounded-pill" aria-label="Default select example" id="singupTitle">
+                                <option value="學生">學生</option>
+                                <option value="教師">教師</option>
+                                <option value="教師">輔導教師</option>
+                                <option value="諮商師">諮商師</option>
+                                <option value="醫生">醫生</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-32">
+                        <input type="checkbox" required>
+                                <span class="ms-4">
+                                    我已經詳讀並同意 <a href="#" class="link-main fw-normal">隱私權保護政策</a>
+                                </span>
+                        <!-- error msg -->
+                        <div class="invalid-feedback">
+                            勾選後才能註冊
+                        </div>
+                    </div>
+                    <button class="w-100 mb-32 py-8 btn btn-pink c-btn" type="submit">註冊</button>
+                </form>
+                <a class="d-block 
+                click-me clickMeToLogin" href="login.html">已經有帳號了嗎？ 點我登入</a>
             </div>
         </div>
     </main>
