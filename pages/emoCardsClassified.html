@@ -186,7 +186,6 @@
 
     <%- include('./layout/baseJs'); -%>
     <script>
-      let cardBgColor = document.querySelector('#cardBgColor');
       const buttonsHappy = document.querySelector('#buttonsHappy');
       const buttonsExpectation = document.querySelector('#buttonsExpectation');
       const buttonsRelived = document.querySelector('#buttonsRelived');
@@ -284,7 +283,7 @@
               <li>
                 <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
-                    <div class="modal-content bg-${emo}" id="cardBgColor">
+                    <div class="modal-content bg-${emo}">
                       <div class="modal-body d-flex justify-content-between align-items-center">
                         <div class="text">
                           <div class="title w-100 mb-20 d-flex justify-content-between  align-items-end">
