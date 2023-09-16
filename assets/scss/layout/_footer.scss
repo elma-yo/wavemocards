@@ -1,5 +1,11 @@
 .footer{
   background-color: $gray-550;
+  .footer-img {
+    width: 15%;
+  }
+  .footer-text-box {
+    width: 30%;
+  }
   h3 {
     margin-bottom: 8px;
     padding: 4px 0 8px 0;
@@ -22,5 +28,19 @@
     span {
       color: $happy;
     }
+  }
+  // tablet 平板
+  @media(max-width:992px){
+    .footer-img {
+        width: 20%;
+    }
+    .footer-text-box {
+      width: 50%;
+    }
+  }
+  @media(max-width:767px){ 
+    .footer-img {
+      width: 30%;
+  }
   }
 }
