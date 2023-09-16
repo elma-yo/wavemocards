@@ -1,0 +1,22 @@
+// login, signUp
+.box-50 {
+    width: 50%;
+}
+.box-account-img {
+    width: 25%;
+}
+.box-account-text {
+    width: 50%;
+}
+
+@media(max-width:992px){
+    .box-50 {
+        width: 100%;
+    }
+    .box-account-img {
+        width: 50%;
+    }
+    .box-account-text {
+        width: 80%;
+    }
+}

@@ -72,13 +72,3 @@
         color: $pink;
     }
 }
-
-.box-50 {
-    width: 50%;
-}
-// tablet 平板
-@media(max-width:992px){
-    .box-50 {
-        width: 100%;
-    }
-}
