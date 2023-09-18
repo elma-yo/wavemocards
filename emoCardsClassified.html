@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script type="module" crossorigin src="/wavemocards/assets/main-ccd2678c.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-4fc51099.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-809c6d56.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-2db09638.css">
   </head>
-  <body>
+  <body>ｚ
     <header class="header h-logined fixed-top">
     <div class="container py-16 d-flex justify-content-between align-items-center">
         <h1>
@@ -337,9 +337,11 @@
       const buttonsOthers = document.querySelector('#buttonsOthers');
       const listModal = document.querySelector('.list');
 
+
       axios.get("http://api.wavemocards.com/emotions?requirement=cards")
       .then(function(response){
         let aryData = Object.values(response.data); // 轉成「陣列」
+        console.log(response.data);
         // 情緒表 各個情緒的按鈕
         initEmlTable();
         function initEmlTable() {
@@ -401,23 +403,23 @@
           let emo;
           aryData.forEach(function(data, i){
             if(data.Category == "快樂") {
-              emo = "bg-happy";
+              emo = "happy";
             } else if (data.Category == "期待") {
-              emo = "bg-expectation";
+              emo = "expectation";
             } else if (data.Category == "安心") {
-              emo = "bg-relived";
+              emo = "relived";
             } else if (data.Category == "不安") {
-              emo = "bg-unstable";
+              emo = "unstable";
             } else if (data.Category == "驚訝") {
-              emo = "bg-amazed";
+              emo = "amazed";
             } else if (data.Category == "低落") {
-              emo = "bg-sadness";
+              emo = "sadness";
             } else if (data.Category == "討厭") {
-              emo = "bg-hate";
+              emo = "hate";
             } else if (data.Category == "生氣") {
-              emo = "bg-anger";
+              emo = "anger";
             } else if (data.Category == "其他") {
-              emo = "bg-others";
+              emo = "others";
             }
             let content = `
               <li>
