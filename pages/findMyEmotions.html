@@ -14,7 +14,7 @@
   <body>
     <%- include('./layout/headerLoggedIn'); -%>
 
-    <main style="min-height: 90vh;">
+    <main class="box-findEmo-main">
       <div class="container py-16 mb-48 pt-72" id="top">
           <!-- 標題欄 -->
           <div class="titleBar d-flex justify-content-between align-items-center">
@@ -23,27 +23,30 @@
   
           <div class="row justify-content-between align-items-center">
             <!-- 導覽說明 -->
-            <div class="col-6">
+            <div class="col-md-6 mb-24 mb-md-0">
               <div class="h-100 px-24 py-24 rounded-3 bg-main-tint03 fs-7 text-gray-700">
-                <p class="mb-12">你在情緒的世界裡迷航了嗎？</p>
-                <p class="mb-12">沒關係，讓我們一起在浪潮情緒卡中，找尋自己的情緒。</p>
-                <p class="mb-12">邀請你先閉上眼睛，深呼吸，再慢慢地吐氣。</p>
-                <p class="mb-12">在吸氣與吐氣的過程，慢慢地感受自己的身體與心靈的狀態。</p>
-                <p>如果準備好了的話，請點擊右方「分類探索」，開始探索情緒浪潮吧！</p>
+                <p class="mb-md-12">你在情緒的世界裡迷航了嗎？</p>
+                <p class="mb-md-12">沒關係，讓我們一起在浪潮情緒卡中，找尋自己的情緒。</p>
+                <p class="mb-md-12">邀請你先閉上眼睛，深呼吸，再慢慢地吐氣。</p>
+                <p class="mb-md-12">在吸氣與吐氣的過程，慢慢地感受自己的身體與心靈的狀態。</p>
+                <p>如果準備好了的話，<span class="text-main fw-bold">請點擊「開始探索」</span>，開始探索情緒浪潮吧！</p>
               </div>
             </div>
             <!-- 分類探索 -->
-            <div class="col-6 d-flex flex-column align-items-center">
-              <a class="mt-8 w-75 btn-find d-flex justify-content-between align-items-center rounded-pill" href="findEmoClassified.html">
-                <h2 class="w-50 me-36 text-nowrap text-center text-main fs-2">分類探索</h2>
+            <div class="col-md-6 d-flex flex-column align-items-center">
+              <a class="d-block mt-8 px-56 py-40 btn-find d-flex justify-content-between align-items-center rounded-pill" href="findEmoClassified.html">
+                開始探索
+              </a>
+              <!-- <a class="mt-8 w-75 btn-find d-flex justify-content-between align-items-center rounded-pill" href="findEmoClassified.html">
+                <h2 class="w-50 me-36 text-nowrap text-center text-main fs-2">開始探索</h2>
                 <div style="width: 50%;">
                   <img src="../assets/images/findEmoClassified.svg" alt="分類探索">
                 </div>
-              </a>
+              </a> -->
               <!-- 圖片引用來源 -->
               <span class="text-gray-500 fs-11">
                 Illustration by <a class="link-gray-500" href="https://icons8.com/illustrations/author/iAdLsFJOKDrk" target="_blank">Tanya Krasutska</a> from <a class="link-gray-500" href="https://icons8.com/illustrations" target="_blank">Ouch!</a>
-            </span>
+              </span>
             </div>
             
           </div>

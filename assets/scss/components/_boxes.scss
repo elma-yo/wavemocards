@@ -15,6 +15,9 @@
 .box-bigCard-img {
     width: 45%;
 }
+.box-findEmo-main {
+    min-height: 90vh;
+}
 
 // tablet
 @media(max-width:992px){
@@ -38,6 +41,9 @@
     }
     .box-bigCard-text {
         width: 50%;
+    }
+    .box-findEmo-main {
+        min-height: auto;
     }
 }
 @media(max-width:576px){
