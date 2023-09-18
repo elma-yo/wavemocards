@@ -1,11 +1,11 @@
 .emoTableHead {
     min-height: 52px;
     max-height: 52px;
+    min-width: 62px;
 }
 .btn-emoTable {
-    padding: 8px 20px;
-    font-size: 20px;
     border-radius: 4px;
+    font-size: 20px;
 }
 .emoTableAdd {
     a {
@@ -93,4 +93,14 @@
 .opacity-others:hover {
     background-color: rgba(235, 235, 235, .7);
     border: 3px solid $others;
+}
+@media(max-width:992px){
+    .emoTableHead {
+        max-width: 26px;
+        min-width: 26px;
+    }
+    .btn-emoTable {
+        line-height: 1.2;
+        font-size: 14px;
+    }
 }
