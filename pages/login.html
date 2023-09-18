@@ -42,21 +42,21 @@
                         <input type="text" class="form-control rounded-pill px-20" id="loginEmail" placeholder="wavemocards@gmail.com" required>
                     </div> -->
                     <div class="mb-16">
-                        <label for="loginAcount" class="form-label  d-flex justify-content-between">
+                        <label for="account" class="form-label  d-flex justify-content-between">
                             帳號
                             <span class="text-pink-tint02 fs-9">*必填</span>
                         </label>
-                        <input type="text" class="form-control rounded-pill px-20" id="loginAcount" placeholder="wavemocards" required>
+                        <input type="text" class="form-control rounded-pill px-20" id="account" placeholder="wavemocards" required>
                         <div class="invalid-feedback">
                             請輸入正確的帳號
                         </div>
                     </div>
                     <div class="mb-32">
-                        <label for="loginPassword" class="form-label d-flex justify-content-between">
+                        <label for="pwd" class="form-label d-flex justify-content-between">
                             密碼
                             <span class="text-pink-tint02 fs-9">*必填</span>
                         </label>
-                        <input type="password" class="form-control rounded-pill px-20" id="loginPassword" required aria-describedby="passwordHelp" placeholder="********" required>
+                        <input type="password" class="form-control rounded-pill px-20" id="pwd" required aria-describedby="passwordHelp" placeholder="********" required>
                         <div class="invalid-feedback">
                             請輸入正確的密碼
                         </div>
@@ -72,6 +72,22 @@
     </main>
 
     <%- include('./layout/baseJs'); -%>
+    <script type="text/javascript" src="../assets/js/beforeunload.js"></script>
     <script type="text/javascript" src="../assets/js/formValidation.js"></script>
+    <script>
+        const account = document.querySelector('#account');
+        const pwd = document.querySelector('#pwd');
+        const aHeaders = document.querySelectorAll('#aHeader');
+        aHeaders.forEach(function(a, index){
+            a.addEventListener("click", function(){
+                if (account.value!="" || pwd.value!="") {
+                    let confirmResult = confirm("離開後此頁面資料將不會被保存。\r您確定要離開嗎？");
+                    if (confirmResult) {
+                        location.href=a.href;
+                    }
+                }
+            })
+        })
+    </script>
   </body>
 </html>
