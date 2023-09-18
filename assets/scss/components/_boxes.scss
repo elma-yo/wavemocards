@@ -8,7 +8,15 @@
 .box-resetPwd-text {
     width: 50%;
 }
+// modal card text area
+.box-bigCard-text {
+    width: 50%;
+}
+.box-bigCard-img {
+    width: 45%;
+}
 
+// tablet
 @media(max-width:992px){
     .box-50 {
         width: 100%;
@@ -19,10 +27,24 @@
     .box-account-text {
         width: 80%;
     }
+    .box-bigCard-img {
+        width: 45%;
+    }
 }
-
+// mobile
 @media(max-width:767px){
     .box-resetPwd-text {
+        width: 100%;
+    }
+    .box-bigCard-text {
+        width: 50%;
+    }
+}
+@media(max-width:576px){
+    .box-bigCard-img {
+        width: 100%;
+    }
+    .box-bigCard-text {
         width: 100%;
     }
 }
