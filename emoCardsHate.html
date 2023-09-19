@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script type="module" crossorigin src="/wavemocards/assets/main-4fdada67.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-9e4da295.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-4f45402c.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-304f2ee8.css">
   </head>
   <body>
     <header class="header h-logined fixed-top">
@@ -78,14 +78,15 @@
 </header>
 
     <main>
-      <div class="container py-16 pt-72" id="top">
-        <div class="titleBar d-flex justify-content-between align-items-center">
-          <h2>討厭</h2>
+      <div class="container py-16 pt-112" id="top">
+        <!-- 標題 -->
+          <div class="mb-16 pb-8 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-end">
+            <h2 class="fs-3">討厭</h2>
           <div class="nav-btn d-flex justify-content-end">
               <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
           </div>
         </div>
-        <div class="d-flex flex-wrap mb-72" id="hateCards">
+        <div class="d-flex flex-wrap justify-content-center justify-content-md-start mb-72" id="hateCards">
           <!-- <button type="button" class="class-card me-16 bg-hate link-gray-900 class-card-hate" data-bs-toggle="modal" data-bs-target="#hate01">
             <p>無&nbsp;聊</p>
             <div class="img-box">
@@ -139,11 +140,10 @@
     </main>
 
     <!-- 浮動按鈕 -->
-<div class="me-12 mb-12" style="width: 60px; position: fixed; right: 0; bottom: 0; z-index: 1030;">
-    <a href="#top" type="button" class="btn btn-main-tint01 rounded-circle shadow d-flex flex-column justify-content-center align-items-center"
-    style="width: 60px; height: 60px;">
-            <img src="/wavemocards/assets/backToTop-1ea21c73.svg" alt="top">
-            <span class="text-white fs-10 fw-bold">TOP</span>
+<div class="me-12 mb-12 floatButton">
+    <a href="#top" type="button" class="btn btn-main-tint01 rounded-circle shadow d-flex flex-column justify-content-center align-items-center">
+        <img class="d-none d-md-block" src="/wavemocards/assets/backToTop-1ea21c73.svg" alt="top">
+        <span class="text-white fs-9 fs-md-10 fw-bold">TOP</span>
     </a>
 </div>    
     <!-- modalEmoCards -->
