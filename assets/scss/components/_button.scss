@@ -50,6 +50,29 @@
     box-shadow: 2px 2px 4px rgba(112, 132, 136, 0.5);
 }
 
+// float button
+.floatButton {
+    width: 60px;
+    opacity: 85%;
+    position: fixed; 
+    right: 0; 
+    bottom: 0; 
+    z-index: 1030;
+    a {
+        width: 60px; 
+        height: 60px;
+    }
+}
+@media(max-width:768px){
+    .floatButton {
+        width: 48px;
+        a {
+            width: 48px;
+            height: 48px;
+        }
+    }
+}
+
 // Be used in aboutEmotions, emotionCardsClassified
 .nav-btn {
     .btn-disable {
@@ -229,5 +252,10 @@
     .btn-find {
         background-color: $main;
         color: $white;
+    }
+}
+@media(max-width:576px){
+    .c-btn {
+        padding: 4px 8px;
     }
 }

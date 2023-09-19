@@ -32,3 +32,13 @@
         font-weight: 400;
     }
 }
+@media(max-width:992px){
+    .progressBar {
+        width: 45%;
+    }
+}
+@media(max-width:576px){
+    .progressBar {
+        width: 50%;
+    }
+}

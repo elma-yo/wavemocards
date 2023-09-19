@@ -2,6 +2,12 @@
     min-height: 52px;
     max-height: 52px;
     min-width: 62px;
+    max-width: 70px;
+}
+.emoTableHeadFind {
+    min-height: 47px;
+    max-height: 47px;
+    min-width: 66px;
 }
 .btn-emoTable {
     border-radius: 4px;
@@ -99,8 +105,22 @@
         max-width: 26px;
         min-width: 26px;
     }
+    .emoTableHeadFind {
+        min-height: 35px;
+        max-height: 35px;
+        max-width: 58px;
+        min-width: 58px;
+    }
     .btn-emoTable {
         line-height: 1.2;
         font-size: 14px;
+    }
+}
+@media(max-width:768px){
+    .emoTableHeadFind {
+        min-height: 42px;
+        max-height: 42px;
+        max-width: 26px;
+        min-width: 26px;
     }
 }

@@ -51,7 +51,7 @@
                             密碼
                             <span class="text-pink-tint02 fs-9">*必填</span>
                         </label>
-                        <input type="password" class="form-control mb-8 rounded-pill px-20" id="pwd" required aria-describedby="passwordHelp" placeholder="********" required>
+                        <input type="password" class="form-control rounded-pill px-20" id="pwd" required aria-describedby="passwordHelp" placeholder="********" required>
                         <!-- 密碼驗證 msg -->
                         <div class="mt-4 ms-24 fs-9" id="pwdCmt"></div>
                         <button class="ms-24 p-0 fs-9 link-gray-550 bg-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePwdRules" aria-expanded="false" aria-controls="collapsePwdRules">
@@ -82,7 +82,7 @@
                             <span class="text-pink-tint02 fs-9">*必填</span>
                         </label>
                         <input type="password" class="form-control rounded-pill px-20" id="pwd2" placeholder="請再次輸入您所欲設定的密碼" required>
-                        <div class="mt-4 ms-24" id="pwd2Cmt"></div>
+                        <div class="mt-4 ms-24 fs-9" id="pwd2Cmt"></div>
                     </div>
                     <div class="mb-20">
                         <label for="account" class="form-label  d-flex justify-content-between">
@@ -303,7 +303,7 @@
         function pwdVerify(){
             if(pwd.value != "" && pwd2.value != "" && pwd.value == pwd2.value) {
                 pwd2Cmt.textContent = "密碼相符";
-                pwd2Cmt.style.color = "green";
+                pwd2Cmt.style.color = "#3C9DAE";
             } else if(pwd.value != "" && pwd2.value != "" && pwd.value != pwd2.value) {
                 pwd2Cmt.textContent = "密碼有誤，請輸入相同的密碼";
                 pwd2Cmt.style.color = "#C37979";
@@ -316,9 +316,12 @@
         aHeaders.forEach(function(a, index){
             a.addEventListener("click", function(){
                 if (email.value!="" || pwd.value!="" || pwd2.value!="" || account.value!="" || lastName.value!="" || firstName.value!="") {
+                    event.preventDefault();
                     let confirmResult = confirm("離開後此頁面資料將不會被保存。\r您確定要離開嗎？");
                     if (confirmResult) {
                         location.href=a.href;
+                    } else {
+                        return
                     }
                 }
             })

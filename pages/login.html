@@ -81,6 +81,7 @@
         aHeaders.forEach(function(a, index){
             a.addEventListener("click", function(){
                 if (account.value!="" || pwd.value!="") {
+                    event.preventDefault();
                     let confirmResult = confirm("離開後此頁面資料將不會被保存。\r您確定要離開嗎？");
                     if (confirmResult) {
                         location.href=a.href;

@@ -11,50 +11,49 @@
     <!-- Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   </head>
-  <body>ｚ
+  <body>
     <%- include('./layout/headerLoggedIn'); -%>
     <main>
-      <div class="container py-16 pt-72" id="top">
+      <div class="container py-16 pt-112" id="top">
         <!-- 標題 -->
-        <div class="titleBar d-flex justify-content-between align-items-center">
-          <h2>認識情緒</h2>
+          <div class="mb-16 pb-8 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-end">
+            <h2 class="fs-3">認識情緒</h2>
           <div class="nav-btn d-flex justify-content-end">
             <a class="btn btn-outline-main c-btn" href="aboutEmotions.html">關於情緒</a>
             <div class="ms-16 btn-disable">情緒卡</div>
           </div>
         </div>
         <!-- 導覽說明 -->
-        <div class="guid px-24 py-16 bg-main-tint03">
-          <p class="mb-8">你在情緒的世界裡迷航了嗎？</p>
-          <p class="mb-8">沒關係，讓我們一起在浪潮情緒卡中，找尋自己的情緒。</p>
-          <p class="mb-8">
-            你可以藉由以下兩種方式「
-            <a class="px-4" href="#emoCardsTitle">情緒卡</a>
-            」、「
-            <a class="px-4" href="#emoTableTitle">情緒表</a>
-            」，瀏覽與認識各種情緒。
-          </p>
-          <p class="mb-8">
-            此外，若您想增加新的情緒卡・詞彙，可以點選「
-            <a class="px-4" href="addEmoCard.html">新增情緒卡</a>
-            」，新增情緒卡。
-          </p>
-          <p class="text-gray-600">
-            🔎 若你想要挑選與紀錄你的情緒，請點選「<a class="px-4 link-gray-600" style="font-size: 16px;" href="findMyEmoitons.html">找尋我的情緒</a>」。
-          </p>
-        </div>
+        <div class="accordion mb-12" id="accordionExample">
+          <div class="accordion-item border-2 border-main-tint02 rounded-2 bg-white">
+              <h2 class="accordion-header rounded-2" id="headingOne">
+                  <button class="accordion-button px-16 py-12 bg-white link-main text-main fs-6 fw-bold rounded-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  瀏覽情緒卡的方法
+                  </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <h3 class="mb-4 fs-7 fw-bold">瀏覽情緒卡的方法</h3>
+                      <ol class="ps-24 mb-8" style="list-style-type: decimal">
+                          <li class="mb-4">透過「<a class="px-4 fs-7 link-main" href="#emoCardsTitle">情緒卡</a>」，可以選擇「收合」或「展開」情緒卡 2 種方式，瀏覽情緒卡。</li>
+                          <li class="mb-4">透過「<a class="px-4 fs-7 link-main" href="#emoTableTitle">情緒表</a>」，可以快速瀏覽所有的情緒詞彙。</li>
+                      </ol>
+                  </div>
+              </div>
+          </div>
+      </div>
   
         <!-- 情緒卡 -->
-        <div id="emoCardsTitle" style="height: 56px;"></div>
-        <div class="titleBar d-flex justify-content-between align-items-center">
-          <h2>情緒卡</h2>
+        <div id="emoCardsTitle" style="height: 88px;"></div>
+        <div class="mb-16 pb-8 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-end">
+          <h2 class="fs-3">情緒卡</h2>
           <div class="nav-btn d-flex justify-content-end">
-            <div class="btn-disable">分類</div>
+            <div class="btn-disable">收合</div>
             <a class="ms-16 btn btn-outline-main c-btn" href="emoCardsClassifiedExpand.html">展開</a>
           </div>
         </div>
         <!-- 卡片分類 -->
-        <div class="d-flex flex-wrap">
+        <div class="d-flex flex-wrap justify-content-center justify-content-md-start">
           <a class="class-card me-16 bg-happy link-gray-900 class-card-happy" href="emoCardsHappy.html">
             <p>快&nbsp;樂</p>
             <div class="img-box">
@@ -112,63 +111,63 @@
         </div>
   
         <!-- 情緒表 -->
-        <div id="emoTableTitle" style="height: 56px;"></div>
-        <div class="titleBar">
-          <h2>情緒表</h2>
+        <div id="emoTableTitle" style="height: 88px;"></div>
+        <div class="mb-16 pb-8 border-2 border-bottom border-main-tint02">
+          <h2 class="fs-3">情緒表</h2>
         </div>
         <p class="mb-32 text-gray-550">
-          🔎 請點擊下方各個情緒名詞，展開詳細情緒資訊。
+          🔎 請點擊下方各個情緒名詞，可以展開觀看詳細的情緒資訊。
         </p>
         <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsHappy.html" class="emoTableHead me-8 px-4 py-4 px-md-20 py-md-8 btn btn-emoTable btn-happy fw-bold d-flex justify-content-center align-items-center text-md-nowrap">快樂</a>
+          <a href="emoCardsHappy.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-happy  fw-bold d-flex justify-content-center align-items-center text-md-nowrap">快樂</a>
           <div class="d-flex overflow-auto" id="buttonsHappy">
           </div>
         </div>
         
         <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsExpectation.html" class="emoTableHead me-8 px-4 py-4 px-md-20 py-md-8 btn btn-emoTable btn-expectation fw-bold d-flex justify-content-center align-items-center text-md-nowrap">期待</a>
+          <a href="emoCardsExpectation.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-expectation fw-bold d-flex justify-content-center align-items-center text-md-nowrap">期待</a>
           <div class="d-flex overflow-auto" id="buttonsExpectation">
           </div>
         </div>
         
         <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsRelived.html" class="emoTableHead me-8 px-4 py-4 px-md-20 py-md-8 btn btn-emoTable btn-relived fw-bold d-flex justify-content-center align-items-center text-md-nowrap">安心</a>
+          <a href="emoCardsRelived.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-relived fw-bold d-flex justify-content-center align-items-center text-md-nowrap">安心</a>
           <div class="d-flex overflow-auto" id="buttonsRelived">
           </div>
         </div>
         
         <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsUnstable.html" class="emoTableHead me-8 px-4 py-4 px-md-20 py-md-8 btn btn-emoTable btn-unstable fw-bold d-flex justify-content-center align-items-center text-md-nowrap">不安</a>
+          <a href="emoCardsUnstable.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-unstable fw-bold d-flex justify-content-center align-items-center text-md-nowrap">不安</a>
           <div class="d-flex overflow-auto" id="buttonsUnstable">
           </div>
         </div>
         
         <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsAmazed.html" class="emoTableHead me-8 px-4 py-4 px-md-20 py-md-8 btn btn-emoTable btn-amazed fw-bold d-flex justify-content-center align-items-center text-md-nowrap">驚訝</a>
+          <a href="emoCardsAmazed.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-amazed fw-bold d-flex justify-content-center align-items-center text-md-nowrap">驚訝</a>
           <div class="d-flex overflow-auto" id="buttonsAmazed">
           </div>
         </div>
         
         <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsSadness.html" class="emoTableHead me-8 px-4 py-4 px-md-20 py-md-8 btn btn-emoTable btn-sadness fw-bold d-flex justify-content-center align-items-center text-md-nowrap">低落</a>
+          <a href="emoCardsSadness.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-sadness fw-bold d-flex justify-content-center align-items-center text-md-nowrap">低落</a>
           <div class="d-flex overflow-auto" id="buttonsSadness">
           </div>
         </div>
         
         <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsHate.html" class="emoTableHead me-8 px-4 py-4 px-md-20 py-md-8 btn btn-emoTable btn-hate fw-bold d-flex justify-content-center align-items-center text-md-nowrap">討厭</a>
+          <a href="emoCardsHate.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-hate fw-bold d-flex justify-content-center align-items-center text-md-nowrap">討厭</a>
           <div class="d-flex overflow-auto" id="buttonsHate">
           </div>
         </div>
         
         <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsAnger.html" class="emoTableHead me-8 px-4 py-4 px-md-20 py-md-8 btn btn-emoTable btn-anger fw-bold d-flex justify-content-center align-items-center text-md-nowrap">生氣</a>
+          <a href="emoCardsAnger.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-anger fw-bold d-flex justify-content-center align-items-center text-md-nowrap">生氣</a>
           <div class="d-flex overflow-auto" id="buttonsAnger">
           </div>
         </div>
         
         <div class="mb-72 d-flex flex-nowrap">
-          <a href="emoCardsOthers.html" class="emoTableHead me-8 px-4 py-4 px-md-20 py-md-8 btn btn-emoTable btn-others fw-bold d-flex justify-content-center align-items-center text-md-nowrap">其他</a>
+          <a href="emoCardsOthers.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-others fw-bold d-flex justify-content-center align-items-center text-md-nowrap">其他</a>
           <div class="d-flex overflow-auto" id="buttonsOthers">
           </div>
         </div>

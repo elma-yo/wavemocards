@@ -14,15 +14,18 @@
     <%- include('./layout/headerLoggedIn'); -%>
 
     <main>
-      <div class="container py-16 pt-72" id="top">
-        <div class="titleBar d-flex justify-content-between align-items-center">
-            <h2>情緒卡</h2>
+      <div class="container py-16 pt-112" id="top">
+        <!-- 標題 -->
+          <div class="mb-16 pb-8 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-end">
+            <h2 class="fs-3">情緒卡</h2>
             <div class="nav-btn d-flex justify-content-end">
-                <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">分類</a>
+                <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">收合</a>
                 <div class="ms-16 btn-disable">展開</div>
             </div>
         </div>
-  
+        <p class="mb-32 text-gray-550">
+          🔎 請點擊情緒卡，可以展開觀看詳細的情緒資訊。
+        </p>
         <!-- 快樂類 -->
         <div class="mb-24 d-flex flex-nowrap">
           <a class="emoCardsHead link-gray-900 emoCardHeadHappy" href="emoCardsHappy.html">
