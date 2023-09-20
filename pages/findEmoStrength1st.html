@@ -12,64 +12,71 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   </head>
   <body>
-    <%- include('./layout/headerLoggedIn'); -%>
+    <div class="" id="top"></div>
+    <%- include('./layout/headerLoggedInNoFixed'); -%>
 
     <main>
-        <div class="container py-16 mb-48 pt-72" id="top">
-            <!-- process bar -->
-            <div class="mt-24 d-flex justify-content-end">
-                <div class="progressBar mt-16 mb-8 px-12">
-                    <div class="position-relative m-4">
-                        <div class="progress" style="height: 2px;">
-                            <div class="progress-bar bg-main-tint01" role="progressbar" style="width: 20%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-0 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">1</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-20 translate-middle btn btn-sm btn-outline-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">2</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-40 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">3</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-60 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">4</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-80 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">5</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-100 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">6</span>
+        <div class="sticky-top pb-8 bg-white">
+            <div class="container">
+                <!-- process bar -->
+                <div class="d-flex mb-20 pt-20 justify-content-center justify-content-sm-end">
+                    <div class="progressBar mb-8 px-12">
+                        <div class="position-relative m-4">
+                            <div class="progress bg-gray-300" style="height: 2px;">
+                                <div class="progress-bar bg-main-tint01" role="progressbar" style="width: 20%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="p-num position-absolute top-0 start-0 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                                <span class="d-block">1</span>
+                            </div>
+                            <div class="p-num position-absolute top-0 start-20 translate-middle btn btn-sm btn-outline-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                                <span class="d-block">2</span>
+                            </div>
+                            <div class="p-num position-absolute top-0 start-40 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                                <span class="d-block">3</span>
+                            </div>
+                            <div class="p-num position-absolute top-0 start-60 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                                <span class="d-block">4</span>
+                            </div>
+                            <div class="p-num position-absolute top-0 start-80 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                                <span class="d-block">5</span>
+                            </div>
+                            <div class="p-num position-absolute top-0 start-100 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                                <span class="d-block">6</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- title bar -->
-            <div class="titleBar d-lg-flex justify-content-between align-items-center">
-                <h2>我的情緒強度｜第一次</h2>
-                <div class="nav-btn d-lg-flex justify-content-end">
-                    <a class="btn btn-outline-main c-btn d-flex justify-content-center align-items-center" href="myEmoCardsHolder.html">上一步</a>
-                    <a class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="findEmoBackground.html"><span class="ms-4">下一步</span></a>
+                <!-- title bar -->
+                <div class="pb-8 px-12 px-sm-0 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
+                    <h2 class="fs-3 d-none d-md-block">我的情緒強度｜第一次</h2>
+                    <h2 class="fs-3 d-md-none d-flex flex-column">
+                        <span class="d-block">我的情緒強度</span>
+                        <span>第一次</span>
+                    </h2>
+                    <div class="nav-btn d-flex justify-content-end">
+                        <a class="btn btn-outline-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="myEmoCardsHolder.html">上一步</a>
+                        <a class="ms-16 btn btn-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="findEmoBackground.html"><span class="ms-4">下一步</span></a>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <p class="mb-4 text-gray-550 fs-7">
-                謝謝親愛的ＯＯ努力的尋找到屬於自己的情緒卡。
-            </p>
-            <p class="mb-4 text-gray-550 fs-7">
-                在進入下一步前，想邀請ＯＯ，先 <span class="text-main fw-500">閉上眼睛，深呼吸～吐氣～</span>
-            </p>
-            <p class="mb-40 text-gray-550 fs-7">
-                並在深呼吸的過程中，問問心中的自己，<span class="text-main fw-500">剛剛挑選的情緒，其強度分別如何呢？</span><span class="fs-8">（ 1分代表最為微弱，5分代表最為強烈 ）</span>
-            </p>
+        <div class="container">
+            <ul  class="ms-4 mt-12 mb-36 px-12 px-sm-0 text-gray-550 fs-7">
+                <li class="mb-4 text-gray-550 fs-7">謝謝親愛的ＯＯ努力地找尋到屬於自己的情緒卡。</li>
+                <li class="mb-4 text-gray-550 fs-7">
+                    在進入下一步前，想邀請ＯＯ，再次 <span class="text-main fw-500">閉上眼睛，深呼吸～吐氣～</span></li>
+                <li class="mb-40 text-gray-550 fs-7">
+                    並在深呼吸的過程中，感受心中的自己，<span class="text-main fw-500">挑選的情緒，其強度分別如何呢？</span><span class="fs-8">（ 1分代表最為微弱，5分代表最為強烈 ）</span></li>
+            </ul>
 
             <!-- 尚未設定form action內濃 -->
             <form action="#">
                 <!-- 1 card & point -->
-                <div class="mb-24 d-flex justify-content-between">
+                <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
                     <!-- card -->
-                    <button type="button" class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation01">
+                    <button type="button" class="class-card mb-md-0 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation01">
                         <p>期&nbsp;待</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/02-expectation/expaction01-expect.svg" alt="期待">
@@ -110,9 +117,9 @@
                     </div>
                 </div>
                 <!-- 2 card & point -->
-                <div class="mb-24 d-flex justify-content-between">
+                <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
                     <!-- card -->
-                    <button type="button" class="class-card me-16 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy05">
+                    <button type="button" class="class-card mb-md-0 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy05">
                         <p>興&nbsp;奮</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/01-happy/happy05-excited.svg" alt="興奮">
@@ -153,9 +160,9 @@
                     </div>
                 </div>
                 <!-- 3 card & point -->
-                <div class="mb-24 d-flex justify-content-between">
+                <div class="mb-72 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
                     <!-- card -->
-                    <button type="button" class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable02">
+                    <button type="button" class="class-card mb-md-0 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable02">
                         <p>擔&nbsp;心</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable02-worry.svg" alt="擔心">

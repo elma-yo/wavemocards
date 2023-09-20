@@ -60,6 +60,36 @@ input[type="radio"]:checked+label{
     background-color: $main;
     border: 2px solid $main;
 }
+@media(max-width:992px){
+    .box-strength {
+        width: 50%;
+    }
+}
+@media(max-width:768px){
+    .box-strength {
+        width: 55%;
+    }
+    .text-strength {
+        width: 44px;
+        height: 44px;
+    }
+}
+@media(max-width:576px){
+    .box-strength {
+        width: 80%;
+    }
+}
+
+// 情緒故事 字體大小
+.fs-emoForm-main {
+    font-size: 20px;
+}
+@media(max-width:576){
+    .fs-emoForm-main {
+        font-size: 18px;
+    }
+}
+
 // 情緒故事 是否/好不好 radio btn 的 label
 .EmoStoryLabel {
     padding: 8px 24px;

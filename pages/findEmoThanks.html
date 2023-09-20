@@ -1,88 +1,99 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- 手機版網頁 CSS Reset 螢幕解析度 Reset -->
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <title>浪潮情緒卡｜找尋我的情緒｜我的情緒強度2nd</title>
-    <!-- Bootstrap icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <!-- Bootstrap css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-  </head>
-  <body>
-    <%- include('./layout/headerLoggedIn'); -%>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- 手機版網頁 CSS Reset 螢幕解析度 Reset -->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <title>浪潮情緒卡｜找尋我的情緒｜我的情緒強度2nd</title>
+        <!-- Bootstrap icon -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <!-- Bootstrap css -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="" id="top"></div>
+        <%- include('./layout/headerLoggedInNoFixed'); -%>
 
-    <main>
-        <div class="container py-16 mb-48 pt-72" id="top">
-            <!-- process bar -->
-            <div class="mt-24 d-flex justify-content-end">
-                <div class="progressBar mt-16 mb-8 px-12">
-                    <div class="position-relative m-4">
-                        <div class="progress" style="height: 2px;">
-                            <div class="progress-bar bg-main-tint01" role="progressbar" style="width: 100%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        <main>
+            <div class="sticky-top pb-8 bg-white">
+                <div class="container">
+                    <!-- process bar -->
+                    <div class="d-flex mb-20 pt-20 justify-content-center justify-content-sm-end">
+                        <div class="progressBar mb-8 px-12">
+                            <div class="position-relative m-4">
+                                <div class="progress bg-gray-300" style="height: 2px;">
+                                    <div class="progress-bar bg-main-tint01" role="progressbar" style="width: 100%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="p-num position-absolute top-0 start-0 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                                    <span class="d-block">1</span>
+                                </div>
+                                <div class="p-num position-absolute top-0 start-20 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                                    <span class="d-block">2</span>
+                                </div>
+                                <div class="p-num position-absolute top-0 start-40 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                                    <span class="d-block">3</span>
+                                </div>
+                                <div class="p-num position-absolute top-0 start-60 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                                    <span class="d-block">4</span>
+                                </div>
+                                <div class="p-num position-absolute top-0 start-80 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                                    <span class="d-block">5</span>
+                                </div>
+                                <div class="p-num position-absolute top-0 start-100 translate-middle btn btn-sm btn-outline-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                                    <span class="d-block">6</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="p-num position-absolute top-0 start-0 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">1</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-20 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">2</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-40 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">3</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-60 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">4</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-80 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">5</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-100 translate-middle btn btn-sm btn-outline-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">6</span>
+                    </div>
+        
+                    <!-- title bar -->
+                    <div class="pb-8 px-12 px-sm-0 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
+                        <h2 class="fs-3 d-none d-md-block">謝謝自己與情緒浪潮同在</h2>
+                        <h2 class="fs-3 d-md-none d-flex flex-column">
+                            <span class="d-block">謝謝自己</span>
+                            <span>與情緒浪潮同在</span>
+                        </h2>
+                        <div class="nav-btn d-flex justify-content-end">
+                            <!-- <a class="btn btn-outline-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="findEmoStrength2nd.html">上一步</a> -->
+                            <a class="ms-16 btn btn-main c-btn px-24 px-md-32 fs-6 text-nowrap d-flex justify-content-center align-items-center" href="myRecords.html"><span class="ms-4">完成</span></a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- title bar -->
-            <div class="titleBar d-lg-flex justify-content-between align-items-center">
-                <h2>謝謝自己與情緒浪潮同在</h2>
-                <div class="nav-btn d-lg-flex justify-content-end">
-                    <a class="btn btn-outline-main c-btn" href="findEmoStrength2nd.html">上一步</a>
-                    <a class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="myRecords.html"><span class="ms-4">完成</span></a>
-                </div>
-            </div>
             
-            <div class="row">
-                <div class="col-9">
-                    <p class="mb-8 text-gray-550 fs-7">
-                        親愛的ＯＯ，謝謝你為了自己花了時間與心思做覺察、紀錄與省思。
-                    </p>
-                    <p class="mb-8 text-gray-550 fs-7">
-                        想邀請你一起為自己說：
-                    </p>
-                    <p  class="text-main fs-6 fw-500">
-                        「我願意謝謝自己，我有情緒，我願意覺察、擁抱情緒與我自己，這樣的我已經很棒了！」
-                    </p>
-                </div>
-                <div class="col-3 d-flex justify-content-end align-items-center">
-                    <img src="../assets/images/emoStory/lime-thanks.svg" alt="thanks myself">
-                </div>
-                <!-- 圖片引用來源 -->
-                <div class="text-end mb-64">
-                    <span class="text-gray-500 fs-11">
-                        Illustration by <a class="link-gray-500" href="https://icons8.com/illustrations/author/iAdLsFJOKDrk" target="_blank">Tanya Krasutska</a> from <a class="link-gray-500" href="https://icons8.com/illustrations" target="_blank">Ouch!</a>
-                    </span>
+            <div class="container">
+                <!-- <div class="row">
+                    <div class="col-9"> -->
+                        <ul  class="mb-8 ms-4 mt-12 mb-36 px-12 px-sm-0 mb-lg-0 text-gray-550">
+                            <li class="mb-4 text-gray-550 fs-5">親愛的ＯＯ，</li>
+                            <li class="mb-4 text-gray-550 fs-5">謝謝你為了自己花了時間、心思，做覺察、紀錄與省思。</li>
+                            <li class="mb-12 text-gray-550 fs-5">想邀請你對自己說：</li>
+                            <li class="mb-4 text-main fs-5 fw-500">我想謝謝自己，</li>
+                            <li class="mb-4 d-md-none fs-5 fw-500"><span class="text-main">我願意覺察、擁抱情緒與我自己</span> </li>
+                            <li class="d-md-none fs-5 fw-500"><span class="text-main">這樣的我已經很棒了！</span> </li>
+                            <li class="d-none d-md-block fs-5 fw-500"><span class="text-main">我願意覺察、擁抱情緒與我自己，這樣的我已經很棒了！</span> </li>
+                        </ul>
+                    <!-- </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center"> -->
+                    <div class="d-flex justify-content-end">
+                        <img src="../assets/images/emoStory/lime-thanks.svg" alt="thanks myself">
+                    </div>
+                    <!-- </div> -->
+                    <!-- 圖片引用來源 -->
+                    <div class="text-end mb-64">
+                        <span class="text-gray-500 fs-11">
+                            Illustration by <a class="link-gray-500" href="https://icons8.com/illustrations/author/iAdLsFJOKDrk" target="_blank">Tanya Krasutska</a> from <a class="link-gray-500" href="https://icons8.com/illustrations" target="_blank">Ouch!</a>
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
 
-    <%- include('./layout/floatButton') -%>
-    
-    <%- include('./layout/footer'); -%>
+        <%- include('./layout/floatButton') -%>
+        
+        <%- include('./layout/footer'); -%>
 
-    <%- include('./layout/baseJs'); -%>
-  </body>
+        <%- include('./layout/baseJs'); -%>
+    </body>
 </html>
