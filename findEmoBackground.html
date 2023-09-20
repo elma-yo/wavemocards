@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script type="module" crossorigin src="/wavemocards/assets/main-4f45402c.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-304f2ee8.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-f3e21832.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-8b2778b9.css">
   </head>
   <body>
-    <header class="header h-logined fixed-top">
+    <div class="" id="top"></div>
+    <header class="header h-logined mb-12">
     <div class="container py-16 d-flex justify-content-between align-items-center">
         <h1>
             <a href="home.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="回到首頁">浪潮情緒卡</a>
@@ -23,7 +24,7 @@
             <button class="px-8 py-4 btn btn-outline-main rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 <i class="bi bi-list"></i>
             </button>
-            <div class="collapse" style="position: absolute; right: 0; top: 40px;" id="collapseExample">
+            <div class="collapse" style="position: absolute; right: 0; top: 40px; z-index: 10000;" id="collapseExample">
                 <div class="p-0 card card-body rounded-2 border-2 border-main-tint01" style="width: 160px;">
                     <ul>
                         <li>
@@ -78,68 +79,76 @@
 </header>
 
     <main>
-        <div class="container py-16 pt-72" id="top">
-            <!-- process bar -->
-            <div class="mt-24 d-flex justify-content-end">
-                <div class="progressBar mt-16 mb-8 px-12">
-                    <div class="position-relative m-4">
-                        <div class="progress" style="height: 2px;">
-                            <div class="progress-bar bg-main-tint01" role="progressbar" style="width: 40%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-0 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">1</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-20 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">2</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-40 translate-middle btn btn-sm btn-outline-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">3</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-60 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">4</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-80 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">5</span>
-                        </div>
-                        <div class="p-num position-absolute top-0 start-100 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
-                            <span class="d-block">6</span>
+        <div class="sticky-top pb-8 bg-white">
+            <div class="container">
+                <!-- process bar -->
+                <div class="d-flex mb-20 pt-20 justify-content-center justify-content-sm-end">
+                    <div class="progressBar mb-8 px-12">
+                        <div class="position-relative m-4">
+                            <div class="progress bg-gray-300" style="height: 2px;">
+                                <div class="progress-bar bg-main-tint01" role="progressbar" style="width: 40%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="p-num position-absolute top-0 start-0 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                                <span class="d-block">1</span>
+                            </div>
+                            <div class="p-num position-absolute top-0 start-20 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                                <span class="d-block">2</span>
+                            </div>
+                            <div class="p-num position-absolute top-0 start-40 translate-middle btn btn-sm btn-outline-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                                <span class="d-block">3</span>
+                            </div>
+                            <div class="p-num position-absolute top-0 start-60 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                                <span class="d-block">4</span>
+                            </div>
+                            <div class="p-num position-absolute top-0 start-80 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                                <span class="d-block">5</span>
+                            </div>
+                            <div class="p-num position-absolute top-0 start-100 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                                <span class="d-block">6</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- title bar -->
-            <div class="titleBar d-lg-flex justify-content-between align-items-center">
-                <h2>我的情緒故事｜背景篇</h2>
-                <div class="nav-btn d-lg-flex justify-content-end">
-                    <a class="btn btn-outline-main c-btn" href="findEmoStrength1st.html">上一步</a>
-                    <a class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="findEmoAction.html"><span class="ms-4">下一步</span></a>
+    
+                <!-- title bar -->
+                <div class="pb-8 px-12 px-sm-0 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
+                    <h2 class="fs-3 d-none d-md-block">我的情緒故事｜背景篇</h2>
+                    <h2 class="fs-3 d-md-none d-flex flex-column">
+                        <span class="d-block">我的情緒故事</span>
+                        <span>背景篇</span>
+                    </h2>
+                    <div class="nav-btn d-flex justify-content-end">
+                        <a class="btn btn-outline-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="findEmoStrength1st.html">上一步</a>
+                        <a class="ms-16 btn btn-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="findEmoAction.html"><span class="ms-4">下一步</span></a>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <p class="mb-4 text-gray-550 fs-7">
-                謝謝親愛的ＯＯ，真誠地感受情緒。
-            </p>
-            <p class="mb-24 text-gray-550  fs-7">
-                接下來，想邀請你潛入情緒故事中，尋找自己情緒的源頭。
-            </p>
+        <div class="container">
+            <ul  class="ms-4 mt-12 mb-24 px-12 px-sm-0 text-gray-550 fs-7">
+                <li class="d-sm-none mb-4">謝謝親愛的ＯＯ，</li>
+                <li class="d-sm-none mb-4">真誠地感受自己的情緒。</li>
+                <li class="d-none d-sm-block mb-4">謝謝親愛的ＯＯ，真誠地感受自己的情緒。</li>
+                <li>接下來，想邀請你慢慢地潛入自己的情緒故事中，找尋自己情緒的源頭。</li>
+            </ul>
 
             <form action="#" method="post">
                 <!-- 第一題 -->
                 <div class="container">
                     <div class="mb-24 row align-items-center">
-                        <div class="col-9 bg-main-tint03 rounded">
-                            <label for="whatHappened" class="py-12">
-                                <p class="mb-4 text-main fw-500  fs-7">
-                                    邀請你輕輕地闔上雙眼，在呼吸的吸吐之間，慢慢地回想，<br>在感受到「ＸＸ、ＸＸ、ＸＸ」的情緒前，發生了什麼事情呢？
+                        <div class="col-md-8 col-lg-9 mb-24 mb-md-0 bg-main-tint03 rounded">
+                            <label for="whatHappened" class="py-12 px-4">
+                                <p class="mb-8 text-main fw-500 fs-6">
+                                    邀請你輕輕地闔上雙眼，在吸氣與吐氣之間，慢慢地回想，在感受到「 ＸＸ 、 ＸＸ 、 ＸＸ 」的情緒之前，發生了什麼事情呢？
                                 </p>
-                                <p class="text-gray-550 fs-8">
-                                    請在下欄中，試著寫下在感受到「ＸＸ、ＸＸ、ＸＸ」情緒的原因、事情、背景故事等。
+                                <p class="text-gray-550 fs-7">
+                                    請在下欄中，試著寫下你覺得可能是讓你有這些情緒的原因或是事情、背景故事等。
                                 </p>
                             </label>
                             <textarea class="w-100 mb-12 p-12 border rounded border-gray-500 text-gray-900" id="whatHappened" name="whatHappened"></textarea>
                         </div>
-                        <div class="col-3 d-flex justify-content-end">
+                        <div class="col-md-4 col-lg-3 d-flex justify-content-md-end">
                             <img class="d-block" src="/wavemocards/assets/lime-diving-8200d2f8.svg" alt="a man is diving">
                         </div>
                     </div>
@@ -147,7 +156,7 @@
             </form>
 
             <!-- 圖片引用來源 -->
-            <div class="text-end mb-64">
+            <div class="text-md-end mb-64 px-12 px-sm-0">
                 <span class="text-gray-500 fs-11">
                     Illustration by <a class="link-gray-500" href="https://icons8.com/illustrations/author/iAdLsFJOKDrk" target="_blank">Tanya Krasutska</a> from <a class="link-gray-500" href="https://icons8.com/illustrations" target="_blank">Ouch!</a>
                 </span>
