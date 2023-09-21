@@ -10,11 +10,12 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <!-- Bootstrap css -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-      <script type="module" crossorigin src="/wavemocards/assets/main-f3e21832.js"></script>
-      <link rel="stylesheet" href="/wavemocards/assets/main-8b2778b9.css">
+      <script type="module" crossorigin src="/wavemocards/assets/main-3a7e9866.js"></script>
+      <link rel="stylesheet" href="/wavemocards/assets/main-a717b611.css">
     </head>
     <body>
-        <header class="header h-logined fixed-top">
+        <div class="" id="top"></div>
+        <header class="header h-logined mb-12">
     <div class="container py-16 d-flex justify-content-between align-items-center">
         <h1>
             <a href="home.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="回到首頁">浪潮情緒卡</a>
@@ -23,14 +24,14 @@
             <button class="px-8 py-4 btn btn-outline-main rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 <i class="bi bi-list"></i>
             </button>
-            <div class="collapse" style="position: absolute; right: 0; top: 40px;" id="collapseExample">
+            <div class="collapse" style="position: absolute; right: 0; top: 40px; z-index: 10000;" id="collapseExample">
                 <div class="p-0 card card-body rounded-2 border-2 border-main-tint01" style="width: 160px;">
                     <ul>
                         <li>
                             <a class="d-block px-16 py-12 link-gray-600 btn-hover-main-tint02 rounded-2" href="aboutEmotions.html">認識情緒</a>
                         </li>
                         <li>
-                            <a class="d-block px-16 py-12 link-gray-600 btn-hover-main-tint02 rounded-2" href="findMyEmotions.html">找尋我的情緒</a>
+                            <a class="d-block px-16 py-12 link-gray-600 btn-hover-main-tint02 rounded-2" href="findMyEmotions.html">探索情緒</a>
                         </li>
                         <li>
                             <a class="d-block px-16 py-12 link-gray-600 btn-hover-main-tint02 rounded-2" href="myRecords.html">我的紀錄</a>
@@ -53,7 +54,7 @@
                 <a href="aboutEmotions.html" class="px-4 py-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="認識情緒與情緒卡">認識情緒</a>
             </li>
             <li class="ms-16">
-                <a href="findMyEmotions.html" class="px-4 py-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="選擇與紀錄我的情緒">找尋我的情緒</a>
+                <a href="findMyEmotions.html" class="px-4 py-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="選擇情緒卡與紀錄情緒">探索情緒</a>
             </li>
             <li class="ms-16">
                 <a href="myRecords.html" class="px-4 py-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="觀看我的情緒紀錄與分析">我的紀錄</a>
@@ -78,112 +79,190 @@
 </header>
 
         <main>
-            <div class="container py-16 mb-48 pt-72" id="top">
-                <!-- title bar -->
-                <div class="mb-8 pt-32 pb-8 d-flex justify-content-between align-items-center border-2 border-bottom border-main-tint02">
-                    <h2 class="fs-3">我的紀錄｜情緒故事</h2>
-                    <div class="nav-btn d-flex justify-content-end">
-                        <a class="btn btn-outline-main c-btn" href="myRecords.html">返回</a>
-                        <a class="ms-16 btn btn-outline-main c-btn" href="#shared">分享清單</a>
-                        <a class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="myRecordsEmoStoryModify.html">編輯</a>
+            <div class="sticky-top pb-8 bg-white">
+                <div class="container pt-16">
+                    <!-- 標題 -->
+                    <div class="mb-20 pb-8 px-12 px-sm-0 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
+                        <h2 class="fs-3 d-none d-md-block">我的紀錄｜情緒故事</h2>
+                        <h2 class="fs-3 d-md-none d-flex flex-column">
+                            <span class="d-block">我的紀錄</span>
+                            <span>情緒故事</span>
+                        </h2>
+                        <div class="nav-btn d-flex justify-content-end align-items-center">
+                            <button class="rounded-pill border-0 fs-5 c-btn-icon" id="btnDelete">
+                                <i class="bi bi-trash3"></i>
+                            </button>
+                            <a class="ms-12 btn btn-outline-main c-btn d-flex justify-content-center align-items-center" id="btnBack" href="myRecords.html">返回</a>
+                            <!-- <a class="ms-16 btn btn-outline-main c-btn" href="#shared">分享清單</a> -->
+                            <!-- <a class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="myRecordsEmoStoryModify.html">編輯</a> -->
+                            <button class="d-none ms-16 btn btn-outline-main c-btn" id="btnCancel" type="button">取消</button>
+                            <button class="ms-16 btn btn-outline-main c-btn" id="btnModify" type="button">編輯</button>
+                <form action="#" method="">
+                            <input type="submit" class="d-none ms-16 btn btn-main c-btn" id="btnSave" value="儲存"></button>
+                        </div>
                     </div>
-                </div>
-                <!-- 分享、刪除 -->
-                <div class="d-flex justify-content-end align-items-center">
-                    <button class="me-16 rounded-pill border-0 fs-5 c-btn-icon">
-                    <i class="bi bi-trash3"></i>
-                    </button>
-                    <button class="rounded-pill border-0 fs-5 c-btn-icon">
-                    <i class="bi bi-share"></i>
-                    </button>
-                </div>
-
-                <div class="container">
-                    <!-- 第 1 區 日期與情緒 -->
-                    <div class="row mb-8">
-                        <div class="col-2 px-12 py-8 bg-main text-white fw-bold rounded-1">日期</div>
-                        <div class="col-10 px-12 py-8">2023 / 03 / 14</div>
-                    </div>
-                    <div class="row mb-8">
-                        <div class="col-2 px-12 py-8 bg-main text-white fw-bold rounded-1">情緒強度｜第一次</div>
-                        <div class="col-10 px-12 py-8">快樂 5・幸福 4・安心 3</div>
-                    </div>
-                    <div class="row mb-24 justify-content-end">
-                        <div class="col-2 px-12 py-8 bg-main text-white fw-bold rounded-1">情緒強度｜第二次</div>
-                        <div class="col-10 px-12 py-8">快樂 5・幸福 4・安心 3</div>
-                    </div>
-                    <!-- 第 2 區 情緒故事｜背景篇 -->
-                    <div class="row mb-16">
-                        <div class="col px-8 py-4 border border-start-0 border-end-0 border-top-0 border-2 border-main-tint02 text-main fw-bold fs-6">情緒故事｜背景篇</div>
-                    </div>
-                    <div class="row mb-24">
-                        <div class="col-2 px-12 py-8 d-flex align-items-center bg-main-tint02 fw-500 rounded-1">情緒的原因/背景</div>
-                        <div class="col-10 px-12 py-8">同學誇獎我總是很貼心，做事也很細心。說我是她很重要的朋友。</div>
-                    </div>
-                    <!-- 第 3 區 情緒故事｜行動篇 -->
-                    <div class="row mb-16">
-                        <div class="col px-8 py-4 border border-start-0 border-end-0 border-top-0 border-2 border-main-tint02 text-main fw-bold fs-6">情緒故事｜行動篇</div>
-                    </div>
-                    <div class="row mb-8">
-                        <div class="col-2 px-12 py-8 d-flex align-items-center bg-main-tint02 fw-500 rounded-1">情緒後我所做的行動</div>
-                        <div class="col-10 px-12 py-8">我很開心地跑去和同學Ｂ說。</div>
-                    </div>
-                    <div class="row mb-8">
-                        <div class="col-2 px-12 py-8 d-flex align-items-center bg-main-tint02 fw-500 rounded-1">行動後的結果</div>
-                        <div class="col-10 px-12 py-8 bg-gray-200 rounded-1">同學Ｂ聽完後很開心地說他也要跟我們一起出去玩！</div>
-                    </div>
-                    <div class="row mb-8">
-                        <div class="col-2 px-12 py-8 d-flex align-items-center bg-main-tint02 fw-500 rounded-1">結果帶給我的感受</div>
-                        <div class="col-10 px-12 py-8">我很開心！</div>
-                    </div>
-                    <div class="row mb-8">
-                        <div class="col-2 px-12 py-8 d-flex align-items-center bg-main-tint02 fw-500 rounded-1">結果好或不好？</div>
-                        <div class="col-10 px-12 py-8 bg-gray-200 rounded-1">好</div>
-                    </div>
-                    <div class="row mb-8">
-                        <div class="col-2 px-12 py-8 d-flex align-items-center bg-main-tint02 fw-500 rounded-1">是否感到後悔</div>
-                        <div class="col-10 px-12 py-8">否</div>
-                    </div>
-                    <div class="row mb-32">
-                        <div class="col-2 px-12 py-8 d-flex align-items-center bg-main-tint02 fw-500 rounded-1">下次怎麼做會更好呢？</div>
-                        <div class="col-10 px-12 py-8 bg-gray-200 rounded-1"></div>
-                    </div>
-                    <!-- 第 4 區 分享清單 -->
-                    <div class="mb-24 pt-32 pb-8 d-flex justify-content-between align-items-center border-2 border-bottom border-main-tint02" id="shared">
-                        <h2 class="fs-3">我的紀錄｜分享清單</h2> 
+                    <!-- 分享、刪除 -->
+                    <!-- <div class="d-flex justify-content-end align-items-center">
                         <button class="me-16 rounded-pill border-0 fs-5 c-btn-icon">
-                            <i class="bi bi-trash3"></i>
+                        <i class="bi bi-trash3"></i>
                         </button>
-                    </div>
-                    <table class="mb-24 table table-hover c-table-border">
-                        <thead>
-                            <tr class="table-main-tint01 text-center">
-                                <th scope="col"></th>
-                                <th scope="col">日期</th>
-                                <th scope="col">對象</th>
-                                <th scope="col">身份</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="text-center">
-                                <th scope="row">
-                                <input type="checkbox" id="">
-                                </th>
-                                <td>2023 / 03 / 14</td>
-                                <td>陳鳳香</td>
-                                <td>教師</td>
-                            </tr>
-                            <tr class="text-center table-main-tint03">
-                                <th scope="row">
-                                <input type="checkbox" id="">
-                                </th>
-                                <td>2023 / 03 / 15</td>
-                                <td>林凱翔</td>
-                                <td>學生</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <button class="rounded-pill border-0 fs-5 c-btn-icon">
+                        <i class="bi bi-share"></i>
+                        </button>
+                    </div> -->
                 </div>
+            </div>
+
+            <div class="container">
+                <!-- 第 1 區 日期與情緒 -->
+                <div class="row mb-16 mb-md-8 px-12 px-sm-0">
+                    <div class="col-lg-3">
+                        <div class="px-12 py-8 bg-main text-white rounded-1 text-nowrap fs-7">日期</div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="px-12 py-8 text-nowrap fs-7 rounded-1 bg-content-gray-200">2023 / 03 / 14</div>
+                    </div>
+                </div>
+                <div class="row mb-16 mb-md-8 px-12 px-sm-0">
+                    <div class="col-lg-3">
+                        <div class="px-12 py-8 bg-main text-white rounded-1 text-nowrap fs-7">情緒強度｜第一次</div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="px-12 py-8 bg-gray-200 rounded-1 fs-7">快樂 5・幸福 4・安心 3</div>
+                    </div>
+                </div>
+                <div class="row mb-24 px-12 px-sm-0">
+                    <div class="col-lg-3">
+                        <div class="px-12 py-8 bg-main text-white rounded-1 text-nowrap fs-7">情緒強度｜第二次</div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="px-12 py-8 fs-7 rounded-1 bg-content-gray-200">快樂 5・幸福 4・安心 3</div>
+                    </div>
+                </div>
+                <!-- 第 2 區 情緒故事｜背景篇 -->
+                <div class="row mb-16 px-12 px-sm-0">
+                    <div class="px-8 py-4 border border-start-0 border-end-0 border-top-0 border-2 border-main-tint02 text-main fw-bold fs-4">情緒故事｜背景篇</div>
+                </div>
+                <div class="row mb-24 px-12 px-sm-0 align-items-md-stretch">
+                    <div class="col-lg-3 h-100">
+                        <div class="h-100 px-12 py-8 d-flex align-items-center bg-main-tint02 rounded-1 fs-7">情緒的背景</div>
+                    </div>
+                    <div class="col-lg-9" id="background">
+                        <div class="px-12 py-8 fs-7 rounded-1 bg-content-gray-200">同學誇獎我總是很貼心，做事也很細心。說我是她很重要的朋友。</div>
+                    </div>
+                    <div class="d-none col-lg-9" id="formBackground">
+                        <div class="px-12 fs-7">
+                            <textarea class="w-100 py-8 ps-8 border border-main-tint02 rounded-1" value="同學誇獎我總是很貼心，做事也很細心。說我是她很重要的朋友。"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- 第 3 區 情緒故事｜行動篇 -->
+                <div class="row mb-16 px-12 px-sm-0">
+                    <div class="col px-8 py-4 border border-start-0 border-end-0 border-top-0 border-2 border-main-tint02 text-main fw-bold fs-4">情緒故事｜行動篇</div>
+                </div>
+                <div class="row mb-16 mb-md-8 px-12 px-sm-0 align-items-md-stretch">
+                    <div class="col-lg-3">
+                        <div class="px-12 py-8 d-flex align-items-center bg-main-tint02 rounded-1 fs-7">情緒後做的反應</div>
+                    </div>
+                    <div class="col-lg-9" id="action">
+                        <div class="px-12 py-8 fs-7 rounded-1 bg-content-gray-200">我很開心地跑去和同學Ｂ說。</div>
+                    </div>
+                    <div class="d-none col-lg-9" id="formAction">
+                        <div class="px-12 fs-7">
+                            <textarea class="w-100 py-8 ps-8 border border-main-tint02 rounded-1" value="我很開心地跑去和同學Ｂ說。"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-16 mb-md-8 px-12 px-sm-0 align-items-md-stretch">
+                    <div class="col-lg-3">
+                        <div class="px-12 py-8 d-flex align-items-center bg-main-tint02 rounded-1 fs-7">反應後的結果</div>
+                    </div>
+                    <div class="col-lg-9" id="result">
+                        <div class="px-12 py-8 bg-gray-200 rounded-1 fs-7">同學Ｂ聽完後很開心地說他也要跟我們一起出去玩！</div>
+                    </div>
+                    <div class="d-none col-lg-9" id="formResult">
+                        <div class="px-12 fs-7">
+                            <textarea class="w-100 py-8 ps-8 border border-main-tint02 rounded-1" value="同學Ｂ聽完後很開心地說他也要跟我們一起出去玩！"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-16 mb-md-8 px-12 px-sm-0 align-items-md-stretch">
+                    <div class="col-lg-3">
+                        <div class="px-12 py-8 d-flex align-items-center bg-main-tint02 rounded-1 fs-7">結果帶給我的感受</div>
+                    </div>
+                    <div class="col-lg-9" id="feeling">
+                        <div class="px-12 py-8 fs-7 rounded-1 bg-content-gray-200">我很開心！</div>
+                    </div>
+                    <div class="d-none col-lg-9" id="formFeeling">
+                        <div class="px-12 fs-7">
+                            <textarea class="w-100 py-8 ps-8 border border-main-tint02 rounded-1" value="我很開心！"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-16 mb-md-8 px-12 px-sm-0 align-items-md-stretch">
+                    <div class="col-lg-3">
+                        <div class="px-12 py-8 d-flex align-items-center bg-main-tint02 rounded-1 fs-7">結果是否是我所期待的？</div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="h-100 px-12 py-8 bg-gray-200 rounded-1 fs-7 d-flex align-items-center">是</div>
+                    </div>
+                </div>
+        </form>
+                <!-- <div class="row mb-16 mb-md-8">
+                    <div class="col-lg-3 px-12 py-8 d-flex align-items-center bg-main-tint02 rounded-1 fs-7">是否感到後悔</div>
+                    <div class="col-lg-9 px-12 py-8 fs-7">否</div>
+                </div> -->
+                <div class="row mb-72 px-12 px-sm-0 align-items-md-stretch">
+                    <div class="col-lg-3">
+                        <div class="px-12 py-8 d-flex flex-column justify-content-center bg-main-tint02 rounded-1 fs-7">
+                            <p>下次可以怎麼做？</p>
+                            <p>或是，我想肯定自己的地方</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-9" id="next">
+                        <div class="h-100 px-12 py-8 rounded-1 fs-7 bg-content-gray-200 d-flex align-items-center"></div>
+                    </div>
+                    <div class="d-none col-lg-9" id="formNext">
+                        <div class="px-12 fs-7">
+                            <textarea class="w-100 py-8 ps-8 border border-main-tint02 rounded-1" value=""></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- 第 4 區 分享清單 -->
+                <!-- <div class="mb-24 pt-32 pb-8 d-flex justify-content-between align-items-center border-2 border-bottom border-main-tint02" id="shared">
+                    <h2 class="fs-3">我的紀錄｜分享清單</h2> 
+                    <button class="me-16 rounded-pill border-0 fs-5 c-btn-icon">
+                        <i class="bi bi-trash3"></i>
+                    </button>
+                </div>
+                <table class="mb-24 table table-hover c-table-border">
+                    <thead>
+                        <tr class="table-main-tint01 text-center">
+                            <th scope="col"></th>
+                            <th scope="col">日期</th>
+                            <th scope="col">對象</th>
+                            <th scope="col">身份</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <th scope="row">
+                            <input type="checkbox" id="">
+                            </th>
+                            <td>2023 / 03 / 14</td>
+                            <td>陳鳳香</td>
+                            <td>教師</td>
+                        </tr>
+                        <tr class="text-center table-main-tint03">
+                            <th scope="row">
+                            <input type="checkbox" id="">
+                            </th>
+                            <td>2023 / 03 / 15</td>
+                            <td>林凱翔</td>
+                            <td>學生</td>
+                        </tr>
+                    </tbody>
+                </table> -->
             </div>
         </main>
         <!-- 浮動按鈕 -->
@@ -266,5 +345,63 @@
 <script src="../assets/js/toolTips.js"></script>
 
 <!-- axios -->
-<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>    </body>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>        <script>
+            const btnModify = document.querySelector('#btnModify');
+            const btnCancel = document.querySelector('#btnCancel');
+            const btnSave = document.querySelector('#btnSave');
+            const btnBack = document.querySelector('#btnBack');
+            const btnDelete = document.querySelector('#btnDelete');
+            const background = document.querySelector('#background');
+            const action = document.querySelector('#action');
+            const result = document.querySelector('#result');
+            const feeling = document.querySelector('#feeling');
+            const next = document.querySelector('#next');
+            const formBackground = document.querySelector('#formBackground');
+            const formAction = document.querySelector('#formAction');
+            const formResult = document.querySelector('#formResult');
+            const formFeeling = document.querySelector('#formFeeling');
+            const formNext = document.querySelector('#formNext');
+
+            btnModify.addEventListener("click", function(){
+                btnModify.classList.add("d-none");
+                btnBack.classList.add("d-none");
+                btnDelete.classList.add("d-none");
+                btnCancel.classList.remove("d-none");
+                btnSave.classList.remove("d-none");
+                background.classList.add("d-none");
+                action.classList.add("d-none");
+                result.classList.add("d-none");
+                feeling.classList.add("d-none");
+                next.classList.add("d-none");
+                formBackground.classList.remove("d-none");
+                formAction.classList.remove("d-none");
+                formResult.classList.remove("d-none");
+                formFeeling.classList.remove("d-none");
+                formNext.classList.remove("d-none");
+            })
+
+            btnCancel.addEventListener('click',function(){
+                let confirmResult = confirm("執行取消的話，您的修改將不會被儲存喔！\r您確定要離開嗎？");
+                if (confirmResult) {
+                    btnModify.classList.remove("d-none");
+                    btnBack.classList.remove("d-none");
+                    btnDelete.classList.remove("d-none");
+                    btnCancel.classList.add("d-none");
+                    btnSave.classList.add("d-none");
+                    background.classList.remove("d-none");
+                    action.classList.remove("d-none");
+                    result.classList.remove("d-none");
+                    feeling.classList.remove("d-none");
+                    next.classList.remove("d-none");
+                    formBackground.classList.add("d-none");
+                    formAction.classList.add("d-none");
+                    formResult.classList.add("d-none");
+                    formFeeling.classList.add("d-none");
+                    formNext.classList.add("d-none");
+                } else {
+                    return
+                }
+            })
+        </script>
+    </body>
 </html>
