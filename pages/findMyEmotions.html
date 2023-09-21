@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- 手機版網頁 CSS Reset 螢幕解析度 Reset -->
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <title>浪潮情緒卡｜找尋我的情緒</title>
+    <title>浪潮情緒卡｜探索情緒</title>
     <!-- Bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Bootstrap css -->
@@ -14,41 +14,52 @@
   <body>
     <%- include('./layout/headerLoggedIn'); -%>
 
-    <main class="box-findEmo-main">
+    <main>
       <div class="container py-16 mb-48 pt-112" id="top">
           <!-- 標題欄 -->
           <div class="mb-16 pb-8 border-2 border-bottom border-main-tint02 d-flex justify-content-between">
-            <h2 class="fs-3">找尋我的情緒</h2>
+            <h2 class="fs-3">探索情緒</h2>
           </div>
   
-          <div class="row justify-content-between align-items-center">
+          <div class="row align-items-center">
             <!-- 導覽說明 -->
-            <div class="col-md-6 mb-24 mb-md-0">
-              <div class="h-100 px-20 py-16 rounded-3 bg-main-tint03 fs-7 text-gray-700">
-                <p class="mb-md-12 fs-8">你在情緒的世界裡迷航了嗎？</p>
-                <p class="mb-md-12 fs-8">沒關係，讓我們一起在浪潮情緒卡中，找尋自己的情緒。</p>
-                <p class="mb-md-12 fs-8">邀請你先閉上眼睛，<span class="text-main fw-bold">深呼吸</span>，再慢慢地吐氣。</p>
-                <p class="mb-md-12 fs-8">在吸氣與吐氣的過程，<span class="text-main fw-bold">慢慢地感受自己的身體與心靈的狀態</span>。</p>
-                <p class="fs-8">如果準備好了的話，<span class="text-main fw-bold">請點擊「開始探索」</span>，開始探索情緒浪潮吧！</p>
+            <div class="col-md-8 mb-24 mb-md-0">
+              <div class="h-100 px-36 py-24 bg-main-tint03 rounded-4 fs-6 text-gray-700 d-flex flex-column justify-content-center">
+                <p class="mb-md-12">你在情緒的世界裡迷航了嗎？</p>
+                <p class="mb-md-12">沒關係，讓我們一起在浪潮情緒卡中，探索自己的情緒。</p>
+                <p class="mb-md-12">邀請你先閉上眼睛，<span class="text-main fw-bold">深呼吸</span>，再慢慢地吐氣。</p>
+                <p class="mb-md-12">在吸氣與吐氣的過程，<span class="text-main fw-bold">慢慢地感受自己的身體與心靈的狀態</span>。</p>
+                <p>如果準備好了的話，<span class="text-main fw-bold">請點擊「開始探索」</span>。</p>
               </div>
             </div>
+            
             <!-- 分類探索 -->
-            <div class="col-md-6 d-flex flex-column align-items-center">
-              <a class="d-block mt-8 mb-4 px-56 py-40 btn-find d-flex justify-content-between align-items-center rounded-pill" href="findEmoClassified.html">
+            <div class="d-md-none mt-md-24 d-flex justify-content-center">
+              <a class="w-75 mt-8 mb-4 px-56 py-24 btn-find d-flex justify-content-center align-items-center rounded-pill text-nowrap" href="findEmoClassifiedExpand.html">
                 開始探索
               </a>
+            </div>
+            <div class="col-md-4 pt-36 d-flex flex-column align-items-center">
+              <!-- <a class="d-block mt-8 mb-4 px-56 py-40 btn-find d-flex justify-content-between align-items-center rounded-pill" href="findEmoClassifiedExpand.html">
+                開始探索
+              </a> -->
               <!-- <a class="mt-8 w-75 btn-find d-flex justify-content-between align-items-center rounded-pill" href="findEmoClassified.html">
                 <h2 class="w-50 me-36 text-nowrap text-center text-main fs-2">開始探索</h2>
                 <div style="width: 50%;">
                   <img src="../assets/images/findEmoClassified.svg" alt="分類探索">
                 </div>
               </a> -->
+              <img src="../assets/images/lime-Breath.svg" alt="breath">
               <!-- 圖片引用來源 -->
               <span class="text-gray-500 fs-11">
                 Illustration by <a class="link-gray-500" href="https://icons8.com/illustrations/author/iAdLsFJOKDrk" target="_blank">Tanya Krasutska</a> from <a class="link-gray-500" href="https://icons8.com/illustrations" target="_blank">Ouch!</a>
               </span>
             </div>
-            
+            <div class="d-none d-md-block mt-24 d-flex justify-content-center">
+              <a class="w-75 mt-8 mb-4 px-56 py-24 btn-find d-flex justify-content-center align-items-center rounded-pill" href="findEmoClassifiedExpand.html">
+                開始探索
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -12,32 +12,37 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   </head>
   <body>
-    <%- include('./layout/headerLoggedIn'); -%>
+    <div class="" id="top"></div>
+    <%- include('./layout/headerLoggedInNoFixed'); -%>
 
     <main>
-        <div class="container py-16 pt-72" id="top">
-            <!-- title bar -->
-            <div class="titleBar d-flex justify-content-between align-items-center">
-                <h2>其他</h2>
-                <div class="nav-btn d-flex justify-content-end">
-                    <a class="btn btn-outline-main c-btn" href="findEmoClassified.html">返回</a>
-                    <a class="ms-16 btn btn-main c-btn btn-goToMyCards" href="myEmoCardsHolder.html">
-                        <i class="bi bi-folder2"></i>
-                        <i class="bi bi-folder2-open"></i>
-                        <span class="ms-4">我的情緒卡夾</span>
-                    </a>
+        <!-- title bar -->
+        <div class="sticky-top pb-8 bg-white">
+            <div class="container pt-16">
+                <div class="pb-8 px-12 px-sm-0 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
+                    <h2 class="fs-3">其他</h2>
+                    <div class="nav-btn d-flex justify-content-end">
+                        <a class="btn btn-outline-main c-btn" href="findEmoClassifiedExpand.html">返回</a>
+                        <a class="ms-16 btn btn-main c-btn btn-goToMyCards" href="myEmoCardsHolder.html">
+                            <i class="bi bi-folder2"></i>
+                            <i class="bi bi-folder2-open"></i>
+                            <span class="ms-4">我的情緒卡夾</span>
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <p class="mb-44 text-gray-550">
-                🔎 透過點擊 <i class="bi bi-plus-lg"></i>，將情緒新增進「我的情緒卡夾」中。
+        <div class="container">
+            <p class="mt-16 mb-48 px-12 px-sm-0 text-gray-550">
+                🔎 點擊卡片，可閱讀該情緒的詳細內容。
             </p>
 
             <!-- cards -->
-            <div class="d-flex flex-wrap mb-72">
+            <div class="mb-72 d-flex flex-wrap justify-content-center justify-content-md-start">
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers01">
+                    <button type="button" class="class-card mb-36 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers01">
                         <p>釋&nbsp;懷</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/09-others/others01-release.svg" alt="釋懷">
@@ -46,7 +51,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers02">
+                    <button type="button" class="class-card mb-36 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers02">
                         <p>尷&nbsp;尬</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/09-others/others02-awkward.svg" alt="尷尬">
@@ -55,7 +60,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers03">
+                    <button type="button" class="class-card mb-36 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers03">
                         <p>羨&nbsp;慕</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/09-others/others03-envy.svg" alt="羨慕">
@@ -64,7 +69,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers04">
+                    <button type="button" class="class-card mb-36 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers04">
                         <p>愧&nbsp;疚</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/09-others/others04-guilty.svg" alt="愧疚">
@@ -73,7 +78,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers05">
+                    <button type="button" class="class-card mb-36 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers05">
                         <p>矛&nbsp;盾</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/09-others/others05-conflict.svg" alt="矛盾">
@@ -82,7 +87,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers06">
+                    <button type="button" class="class-card mb-36 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers06">
                         <p>後&nbsp;悔</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/09-others/others06-regret.svg" alt="後悔">
@@ -91,7 +96,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers07">
+                    <button type="button" class="class-card mb-36 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers07">
                         <p>委&nbsp;屈</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/09-others/others07-injustice.svg" alt="委屈">
@@ -100,7 +105,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers08">
+                    <button type="button" class="class-card mb-36 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers08">
                         <p>寂&nbsp;寞</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/09-others/others08-loneliness.svg" alt="寂寞">
@@ -109,7 +114,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers09">
+                    <button type="button" class="class-card mb-36 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers09">
                         <p>羞&nbsp;恥</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/09-others/others09-shame.svg" alt="羞恥">
@@ -118,7 +123,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers10">
+                    <button type="button" class="class-card mb-36 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers10">
                         <p>感&nbsp;動</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/09-others/others10-touching.svg" alt="感動">
@@ -127,7 +132,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers11">
+                    <button type="button" class="class-card mb-36 bg-others link-gray-900 class-card-others" data-bs-toggle="modal" data-bs-target="#addOthers11">
                         <p>激&nbsp;動</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/09-others/others11-excited.svg" alt="激動">
@@ -138,7 +143,7 @@
         </div>
     </main>
 
-    <%- include('./layout/floatButtons') -%>
+    <%- include('./layout/floatButton') -%>
     
     <%- include('./layout/footer'); -%>
     <%- include('./layout/modalEmoCardsPlus'); -%>

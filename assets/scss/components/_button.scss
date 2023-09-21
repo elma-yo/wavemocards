@@ -37,6 +37,19 @@
     box-shadow: 2px 2px 4px rgba(112, 132, 136, 0.5);
 }
 
+.c-btn-outline-main-tint01 {
+    border: 2px solid $main-tint01;
+    border-radius: 100px;
+    padding: 4px 16px;
+    color: $main;
+    font-size: 16px;
+    font-weight: bold;
+}
+.c-btn-outline-main-tint01:hover {
+    color: $main-dark02;
+    box-shadow: 2px 2px 4px rgba(112, 132, 136, 0.5);
+}
+
 .c-btn-outline-pink {
     border: 2px solid $pink;
     border-radius: 100px;
@@ -81,8 +94,9 @@
         align-items: center;
         cursor: not-allowed;
         border-radius: 100px;
-        padding: 4px 16px;
+        padding: 4px 8px;
         background-color: $gray-300;
+        border: 2px solid $gray-300;
         color: $gray-500;
         font-size: 16px;
         font-weight: bold;

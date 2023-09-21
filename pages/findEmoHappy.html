@@ -12,32 +12,37 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   </head>
   <body>
-    <%- include('./layout/headerLoggedIn'); -%>
+    <div class="" id="top"></div>
+    <%- include('./layout/headerLoggedInNoFixed'); -%>
 
     <main>
-        <div class="container py-16 pt-72" id="top">
-            <!-- title bar -->
-            <div class="titleBar d-flex justify-content-between align-items-center">
-                <h2>快樂</h2>
-                <div class="nav-btn d-flex justify-content-end">
-                    <a class="btn btn-outline-main c-btn" href="findEmoClassified.html">返回</a>
-                    <a class="ms-16 btn btn-main c-btn btn-goToMyCards" href="myEmoCardsHolder.html">
-                        <i class="bi bi-folder2"></i>
-                        <i class="bi bi-folder2-open"></i>
-                        <span class="ms-4">我的情緒卡夾</span>
-                    </a>
+        <!-- title bar -->
+        <div class="sticky-top pb-8 bg-white">
+            <div class="container pt-16">
+                <div class="pb-8 px-12 px-sm-0 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
+                    <h2 class="fs-3">快樂</h2>
+                    <div class="nav-btn d-flex justify-content-end">
+                        <a class="btn btn-outline-main c-btn" href="findEmoClassifiedExpand.html">返回</a>
+                        <a class="ms-16 btn btn-main c-btn btn-goToMyCards" href="myEmoCardsHolder.html">
+                            <i class="bi bi-folder2"></i>
+                            <i class="bi bi-folder2-open"></i>
+                            <span class="ms-4">我的情緒卡夾</span>
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <p class="mb-44 text-gray-550">
-                🔎 透過點擊 <i class="bi bi-plus-lg"></i>，將情緒新增進「我的情緒卡夾」中。
+        <div class="container">
+            <p class="mt-16 mb-48 px-12 px-sm-0 text-gray-550">
+                🔎 點擊卡片，可閱讀該情緒的詳細內容。
             </p>
 
             <!-- cards -->
-            <div class="d-flex flex-wrap mb-72">
+            <div class="mb-72 d-flex flex-wrap justify-content-center justify-content-md-start">
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy01">
+                    <button type="button" class="class-card mb-36 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy01">
                         <p>滿&nbsp;足</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/01-happy/happy01-statisfy.svg" alt="滿足">
@@ -46,7 +51,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy02">
+                    <button type="button" class="class-card mb-36 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy02">
                         <p>快&nbsp;樂</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/01-happy/happy02-happy.svg" alt="快樂">
@@ -55,7 +60,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy03">
+                    <button type="button" class="class-card mb-36 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy03">
                         <p>幸&nbsp;福</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/01-happy/happy03-happiness.svg" alt="幸福">
@@ -64,7 +69,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy04">
+                    <button type="button" class="class-card mb-36 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy04">
                         <p>自&nbsp;豪</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/01-happy/happy04-proud.svg" alt="自豪">
@@ -73,7 +78,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy05">
+                    <button type="button" class="class-card mb-36 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy05">
                         <p>興&nbsp;奮</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/01-happy/happy05-excited.svg" alt="興奮">
@@ -82,7 +87,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy06">
+                    <button type="button" class="class-card mb-36 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy06">
                         <p>痛&nbsp;快</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/01-happy/happy06-cheerful.svg" alt="痛快">
@@ -91,7 +96,7 @@
                 </div>
                 <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
-                    <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy07">
+                    <button type="button" class="class-card mb-36 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy07">
                         <p>狂&nbsp;喜</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/01-happy/happy07-ecstasy.svg" alt="狂喜">
@@ -102,7 +107,7 @@
         </div>
     </main>
 
-    <%- include('./layout/floatButtons') -%>
+    <%- include('./layout/floatButton') -%>
     
     <%- include('./layout/footer'); -%>
     <%- include('./layout/modalEmoCardsPlus'); -%>

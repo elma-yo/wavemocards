@@ -11,106 +11,125 @@
     <!-- Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   </head>
-  <body>
+  <body id="body">
     <%- include('./layout/headerLoggedIn'); -%>
     <main>
-      <div class="container py-16 pt-72" id="top">
+      <div class="container py-16 pt-112" id="top">
         <!-- 標題 -->
-        <div class="titleBar d-flex justify-content-between align-items-center">
-            <h2>我的紀錄</h2>
+        <div class="mb-20 pb-8 px-12 px-sm-0 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
+          <h2 class="fs-3">我的紀錄</h2>
             <div class="nav-btn d-flex justify-content-end">
                 <div class="btn-disable">紀錄</div>
-                <a class="ms-16 btn btn-outline-main c-btn" href="myRecordsAnalyze.html">分析</a>
+                <a class="ms-16 btn btn-outline-main c-btn px-16" href="myRecordsAnalyze.html">分析</a>
             </div>
         </div>
         
         <!-- 搜尋條 & 分享、刪除 -->
-        <div class="mb-24 d-flex justify-content-between align-items-center">
+        <div class="w-100 mb-12 mb-md-24 px-12 px-sm-4 d-flex flex-column flex-md-row justify-content-between align-items-end  align-items-md-center">
           <!-- 搜尋條 -->
-          <form action="" method="get">
-            <div class="d-flex align-items-center">
-              <input type="date" class="d-block input-date me-8 px-16 py-6 border border-main-tint02 border-2 rounded-pill text-main-tint01">
-              <span class="me-8 text-main-tint01">～</span>
-              <input type="date" class="d-block input-date me-12 px-16 py-6 border border-main-tint02 border-2 rounded-pill text-main-tint01">
-              <input type="search" class="search-bar me-8 py-12 border border-main-tint02 border-2 rounded-pill" placeholder="請輸入關鍵字">
-              <button type="submit" class="btn btn-main c-btn px-24 py-8 border-0">搜尋</button>
+          <form class="w-100 mb-12 mb-md-0" action="" method="get">
+            <div class="w-100 d-flex flex-column flex-md-row align-items-md-center">
+              <div class="box-dates d-flex align-items-center mb-16 mb-md-0">
+                <input type="date" class="d-block input-date me-4 me-md-8 px-16 py-6 border border-main-tint02 border-2 rounded-pill text-main-tint01">
+                <span class="me-4 me-md-8 text-main-tint01">～</span>
+                <input type="date" class="d-block input-date me-md-12 px-16 py-6 border border-main-tint02 border-2 rounded-pill text-main-tint01">
+              </div>
+              <div class="box-searchBar d-flex align-items-center">
+                <input type="search" class="search-bar me-8 py-12 border border-main-tint02 border-2 rounded-pill" placeholder="請輸入關鍵字">
+                <button type="submit" class="btn btn-main c-btn px-24 py-8 border-0 text-nowrap">搜尋</button>
+              </div>
             </div>
           </form>
           <!-- 分享、刪除 -->
-          <div class="d-flex align-items-center">
-            <button class="me-16 rounded-pill border-0 fs-5 c-btn-icon">
+          <!-- <div class="d-flex align-items-center"> -->
+            <button class="d-none d-md-block rounded-pill border-0 fs-5 c-btn-icon" id="btnTrash">
               <i class="bi bi-trash3"></i>
             </button>
-            <button class="rounded-pill border-0 fs-5 c-btn-icon">
+            <!-- <button class="rounded-pill border-0 fs-5 c-btn-icon">
               <i class="bi bi-share"></i>
-            </button>
-          </div>
+            </button> -->
+          <!-- </div> -->
         </div>
   
         <!-- Table -->
-        <table class="mb-24 table table-hover c-table-border">
+        <table class="mb-24 px-12 px-sm-0 table table-hover c-table-border overflow-auto">
           <thead>
             <tr class="table-main-tint01 text-center">
               <th scope="col"></th>
-              <th scope="col">日期</th>
-              <th scope="col">情緒與強度</th>
-              <th scope="col">分享人數</th>
-              <th scope="col">情緒故事與分享</th>
+              <th scope="col" class="text-nowrap">日期</th>
+              <th scope="col" class="text-nowrap">情緒與強度</th>
+              <!-- <th scope="col">分享人數</th> -->
+              <th scope="col" class="text-nowrap">情緒故事</th>
             </tr>
           </thead>
           <tbody>
             <tr class="text-center">
-              <th scope="row">
-                <input type="checkbox" id="">
+              <th scope="row" class="align-middle">
+                <input type="checkbox" id="checkBox">
               </th>
-              <td>2023/03/14</td>
-              <td>快樂 5・幸福 4・安心 3</td>
-              <td>2次</td>
-              <td><a class="link-main" href="myRecordsEmoStory.html">由此進入</a></td>
+              <td class="align-middle">2023/03/14</td>
+              <td class="d-flex flex-column flex-sm-row justify-content-center align-items-center align-middle">
+                <span>快樂 5</span>
+                <span class="d-none d-sm-inline">・</span>
+                <span>幸福 4</span>
+                <span class="d-none d-sm-inline">・</span>
+                <span>安心 3</span>
+              </td>
+              <!-- <td>2次</td> -->
+              <td class="align-middle">
+                <a class="link-main" href="myRecordsEmoStory.html">由此進入</a>
+              </td>
             </tr>
             <tr class="text-center table-main-tint03">
-              <th scope="row">
-                <input type="checkbox" id="">
+              <th scope="row" class="align-middle">
+                <input type="checkbox" id="checkBox">
               </th>
-              <td>2023/03/14</td>
-              <td>快樂 5・幸福 4・安心 3</td>
-              <td>0次</td>
-              <td><a class="link-main" href="myRecordsEmoStory.html">由此進入</a></td>
+              <td class="align-middle">2023/03/14</td>
+              <td class="d-flex flex-column flex-sm-row justify-content-center align-items-center align-middle">
+                <span>快樂 5</span>
+                <span class="d-none d-sm-inline">・</span>
+                <span>幸福 4</span>
+                <span class="d-none d-sm-inline">・</span>
+                <span>安心 3</span>
+              </td>
+              <!-- <td>2次</td> -->
+              <td class="align-middle">
+                <a class="link-main" href="myRecordsEmoStory.html">由此進入</a>
+              </td>
             </tr>
             <tr class="text-center">
-              <th scope="row">
-                <input type="checkbox" id="">
+              <th scope="row" class="align-middle">
+                <input type="checkbox" id="checkBox">
               </th>
-              <td>2023/03/14</td>
-              <td>快樂 5・幸福 4・安心 3</td>
-              <td>0次</td>
-              <td><a class="link-main" href="myRecordsEmoStory.html">由此進入</a></td>
-            </tr>
-            <tr class="text-center table-main-tint03">
-              <th scope="row">
-                <input type="checkbox" id="">
-              </th>
-              <td>2023/03/14</td>
-              <td>快樂 5・幸福 4・安心 3</td>
-              <td>0次</td>
-              <td><a class="link-main" href="myRecordsEmoStory.html">由此進入</a></td>
+              <td class="align-middle">2023/03/14</td>
+              <td class="d-flex flex-column flex-sm-row justify-content-center align-items-center align-middle">
+                <span>快樂 5</span>
+                <span class="d-none d-sm-inline">・</span>
+                <span>幸福 4</span>
+                <span class="d-none d-sm-inline">・</span>
+                <span>安心 3</span>
+              </td>
+              <!-- <td>2次</td> -->
+              <td class="align-middle">
+                <a class="link-main" href="myRecordsEmoStory.html">由此進入</a>
+              </td>
             </tr>
           </tbody>
         </table>
   
         <!-- 分頁 -->
-        <div class="mb-64 d-flex justify-content-end pt-72" id="top">
+        <div class="mb-64 d-flex justify-content-center justify-content-md-end pt-24" id="top">
           <nav aria-label="Page navigation example">
             <ul class="pagination">
-              <li class="page-item disabled">
+              <li class="page-item disabled me-8 me-md-4">
                 <span class="page-link rounded-pill" href="#" aria-label="Previous">
                   <span aria-hidden="true">&laquo;</span>
                 </span>
               </li>
-              <li class="page-item "><span class="page-link rounded-pill active" href="#">1</span></li>
-              <li class="page-item"><a class="page-link rounded-pill" href="#">2</a></li>
-              <li class="page-item"><a class="page-link rounded-pill" href="#">3</a></li>
-              <li class="page-item">
+              <li class="page-item me-8 me-md-4"><span class="page-link rounded-pill active" href="#">1</span></li>
+              <li class="page-item me-8 me-md-4"><a class="page-link rounded-pill" href="#">2</a></li>
+              <li class="page-item me-8 me-md-4"><a class="page-link rounded-pill" href="#">3</a></li>
+              <li class="page-item me-8 me-md-4">
                 <a class="page-link rounded-pill" href="#" aria-label="Next">
                   <span aria-hidden="true">&raquo;</span>
                 </a>
@@ -124,5 +143,29 @@
     <%- include('./layout/footer'); -%>
 
     <%- include('./layout/baseJs'); -%>
+    <script>
+      const body = document.querySelector('#body');
+      const checkBoxes = document.querySelectorAll('#checkBox');
+      const btnTrash = document.querySelector('#btnTrash');
+      if(body.style.width<='768px'){
+        let checkedNum = 0;
+        checkBoxes.forEach(function(checkBox,index){
+          checkBox.addEventListener('click', function(){
+            if(checkBox.checked){
+              checkedNum++;
+            } else if (checkBox.checked == false) {
+              checkedNum--;
+            }
+            if(checkedNum!=0){
+              btnTrash.classList.remove("d-none");
+              btnTrash.classList.add("d-block");
+            } else {
+              btnTrash.classList.remove("d-block");
+              btnTrash.classList.add("d-none");
+            }
+          })
+        })
+      }
+    </script>
   </body>
 </html>
