@@ -21,6 +21,10 @@
 .box-findEmo-main {
     min-height: 90vh;
 }
+// analyze
+.box-47 {
+    width: 47%;
+}
 
 // tablet
 @media(max-width:992px){
@@ -35,6 +39,11 @@
     }
     .box-bigCard-img {
         width: 45%;
+    }
+}
+@media (max-width:992px){
+    .box-47 {
+        width: 100%;
     }
 }
 // mobile

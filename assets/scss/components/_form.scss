@@ -102,10 +102,19 @@ input[type="radio"]:checked+label{
 
 // 搜尋列
 .box-date {
-    width: 50%;
+    width: 40%;
 }
-.input-date {
+.box-analyze {
+    width: 70%;
+}
+.box-date-analyze {
+    width: 90%;
+}
+.input-date, .input-date-analyze {
     width: 48%;
+}
+.box-btn-analyze, .box-btn-search {
+    width: auto;
 }
 .box-searchBar {
     width: 50%;
@@ -122,11 +131,24 @@ input[type="radio"]:checked+label{
 input[type=search]::placeholder {
     color: $main-tint01;
 }
-@media(max-width:768px) {
-    .input-date {
+@media(max-width:1200px){
+    .box-date {
+        width: 45%;
+    }
+}
+@media(max-width:992px){
+    .box-searchBar, .box-date {
+        width: 90%;
+    }
+    .box-analyze {
+        width: 80%;
+    }
+}
+@media(max-width:767px) {
+    .input-date, .input-date-analyze {
         width: 48%;
     }
-    .box-searchBar {
+    .box-searchBar, .box-date, .box-analyze, .box-date-analyze, .box-btn-analyze {
         width: 100%;
     }
     .search-bar {
@@ -134,8 +156,8 @@ input[type=search]::placeholder {
     }
 }
 @media(max-width:576px) {
-    .search-bar {
-        width: 74%;
+    .search-bar, .box-btn-search, .input-date-analyze {
+        width: 100%;
     }
 }
 
