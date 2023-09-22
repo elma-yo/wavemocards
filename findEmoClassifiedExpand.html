@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script type="module" crossorigin src="/wavemocards/assets/main-8646ab9c.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-36e1cdcf.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-79d2df86.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-b62d9bb2.css">
   </head>
   <body>
     <div class="" id="top"></div>
@@ -90,7 +90,7 @@
                     </div>
                     <div class="nav-btn d-flex flex-column flex-md-row justify-content-end align-items-end align-items-md-center">
                         <div class="mb-12 mb-md-0 d-flex justify-content-end align-items-center">
-                            <button type="button" class="btn btn-disable text-nowrap" id="btnExpand" disabled>展開</button>
+                            <button type="button" class="btn-disable text-nowrap" id="btnExpand" disabled>展開</button>
                             <button type="button" class="ms-8 ms-md-12 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 fw-bold text-nowrap" id="btnFold">收合</button>
                             <button type="button" class="ms-8 ms-md-12 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 fw-bold text-nowrap" id="btnEmoTable">情緒表</button>
                         </div>
@@ -113,18 +113,19 @@
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div class="accordion-body text-gray-700">
-                            <h3 class="mb-4 fs-6 fw-bold">探索步驟</h3>
-                            <ol class="ps-24 mb-20 fs-7" style="list-style-type: decimal">
+                        <div class="accordion-body fs-7">
+                            <h3 class="mb-4 fw-bold text-gray-700">探索步驟</h3>
+                            <ol class="ps-24 mb-24 text-gray-600" style="list-style-type: decimal">
                                 <li class="mb-4">下滑頁面，開始瀏覽情緒卡。</li>
-                                <li class="mb-4">點擊情緒卡右上方的「<span class="fs-6 fw-bold text-pink-tint01"> <i class="bi bi-plus-circle-fill"></i> </span>」按鈕，即可將情緒卡放進「我的情緒卡夾」中。</li>
-                                <li>完成情緒卡挑選後，請點擊「<span class="fs-7 fw-bold text-main"> 我的情緒卡夾 </span>」按鈕，進行<span class="fs-7 fw-bold text-main"> 下一步 </span>的內容。</li>
+                                <li class="mb-4">點擊情緒卡右上方的「<span class="px-4 fs-6 fw-bold text-pink-tint01"> <i class="bi bi-plus-circle-fill"></i> </span>」按鈕，即可將情緒卡放進「我的情緒卡夾」中。</li>
+                                <li>完成情緒卡挑選後，請點擊「<span class="px-4 fs-6 fw-bold text-main"> 我的情緒卡夾 </span>」按鈕，進行<span class="px-4 fw-bold text-main"> 下一步 </span>的內容。</li>
                             </ol>
-                            <h3 class="mb-4 fs-6 fw-bold">瀏覽情緒卡的方法</h3>
-                            <ol class="ps-24 mb-8 fs-7" style="list-style-type: decimal">
-                                <li class="mb-4">你可以點擊右上方的「<span class="px-4 fs-7 fw-bold text-main">收合</span>」或「<span class="px-4 fs-7 fw-bold text-main">展開</span>」按鈕，轉換情緒卡的展示方式。</li>
-                                <li class="mb-4">你可以點擊右上方的「<span class="px-4 fs-7 fw-bold text-main">情緒表</span>」，快速瀏覽所有情緒詞彙。</li>
+                            <h3 class="mb-4 fw-bold text-gray-700">瀏覽情緒卡的方法</h3>
+                            <ol class="ps-24 mb-24 text-gray-600" style="list-style-type: decimal">
+                                <li class="mb-4">點擊右上方的「<span class="px-4 fw-bold text-main"> 收合 </span>」或「<span class="px-4  fw-bold text-main"> 展開 </span>」按鈕，可以轉換情緒卡的展示方式。</li>
+                                <li class="mb-4">點擊右上方的「<span class="px-4 fw-bold text-main"> 情緒表 </span>」，可以快速瀏覽所有情緒詞彙。</li>
                             </ol>
+                            <p class="text-gray-600 fs-8">💬 透過點擊 標題「瀏覽情緒卡的方法」的區塊，可將此說明收合。</p>
                         </div>
                     </div>
                 </div>
@@ -858,6 +859,9 @@
 
             <!-- 情緒表 -->
             <div class="d-none mt-24 mb-72" id="emoTable">
+                <p class="mb-32 px-4 px-md-12 text-gray-550">
+                    🔎 請點擊下方各個情緒名詞，可以展開觀看詳細的情緒資訊。
+                </p>
                 <!-- 快樂類 -->
                 <div class="d-flex flex-nowrap">
                     <a href="emoCardsHappy.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-happy fw-700 d-flex justify-content-center align-items-center text-md-nowrap">快樂</a>
@@ -3428,79 +3432,6 @@
 <script src="../assets/js/toolTips.js"></script>
 
 <!-- axios -->
-<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>    <script>
-        const btnExpand = document.querySelector('#btnExpand');
-        const btnFold = document.querySelector('#btnFold');
-        const btnEmoTable = document.querySelector('#btnEmoTable');
-        const expanded = document.querySelector('#expanded');
-        const folded = document.querySelector('#folded');
-        const emoTable = document.querySelector('#emoTable');
-
-        btnExpand.addEventListener('click',function(){
-            btnExpand.classList.remove('btn-outline-main-tint01', 'c-btn-outline-main-tint01');
-            btnExpand.classList.add('btn-disable');
-            btnExpand.disabled=true;
-            if(btnFold.disabled==true){
-                btnFold.disabled=false;
-                btnFold.classList.add('btn-outline-main-tint01', 'c-btn-outline-main-tint01');
-                btnFold.classList.remove('btn-disable');
-            }
-            if (btnEmoTable.disabled==true){
-                btnEmoTable.disabled=false;
-                btnEmoTable.classList.add('btn-outline-main-tint01', 'c-btn-outline-main-tint01');
-                btnEmoTable.classList.remove('btn-disable');
-            }
-            expanded.classList.remove('d-none');
-            expanded.classList.add('d-block');
-            folded.classList.remove('d-block');
-            folded.classList.add('d-none');
-            emoTable.classList.remove('d-block');
-            emoTable.classList.add('d-none');
-        })
-        btnFold.addEventListener('click',function(){
-            btnFold.classList.remove('btn-outline-main-tint01', 'c-btn-outline-main-tint01');
-            btnFold.classList.add('btn-disable');
-            btnFold.disabled=true;
-            if(btnExpand.disabled==true){
-                btnExpand.disabled=false;
-                btnExpand.classList.add('btn-outline-main-tint01', 'c-btn-outline-main-tint01');
-                btnExpand.classList.remove('btn-disable');
-            }
-            if (btnEmoTable.disabled==true){
-                btnEmoTable.disabled=false;
-                btnEmoTable.classList.add('btn-outline-main-tint01', 'c-btn-outline-main-tint01');
-                btnEmoTable.classList.remove('btn-disable');
-            }
-            folded.classList.remove('d-none');
-            folded.classList.add('d-block');
-            expanded.classList.remove('d-block');
-            expanded.classList.add('d-none');
-            emoTable.classList.remove('d-block');
-            emoTable.classList.add('d-none');
-        })
-        btnEmoTable.addEventListener('click',function(){
-            btnEmoTable.classList.remove('btn-outline-main-tint01', 'c-btn-outline-main-tint01');
-            btnEmoTable.classList.add('btn-disable');
-            btnEmoTable.disabled=true;
-            if(btnExpand.disabled==true){
-                btnExpand.disabled=false;
-                btnExpand.classList.add('btn-outline-main-tint01', 'c-btn-outline-main-tint01');
-                btnExpand.classList.remove('btn-disable');
-            }
-            if (btnFold.disabled==true){
-                btnFold.disabled=false;
-                btnFold.classList.add('btn-outline-main-tint01', 'c-btn-outline-main-tint01');
-                btnFold.classList.remove('btn-disable');
-            }
-            emoTable.classList.remove('d-none');
-            emoTable.classList.add('d-block');
-            expanded.classList.remove('d-block');
-            expanded.classList.add('d-none');
-            folded.classList.remove('d-block');
-            folded.classList.add('d-none');
-        })
-
-        console.log('hi');
-    </script>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>    <script src="../assets/js/pages/changStyleOfCards.js"></script>
   </body>
 </html>

@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script type="module" crossorigin src="/wavemocards/assets/main-8646ab9c.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-36e1cdcf.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-79d2df86.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-b62d9bb2.css">
   </head>
   <body>
     <header class="header h-logined fixed-top">
@@ -79,15 +79,23 @@
     <main>
       <div class="container py-16 pt-112" id="top">
         <!-- 標題 -->
-          <div class="mb-16 pb-8 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
-            <h2 class="fs-3">認識情緒</h2>
+        <div class="pb-8 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
+          <h2 class="fs-3">認識情緒</h2>
           <div class="nav-btn d-flex justify-content-end">
-            <a class="btn btn-outline-main c-btn" href="aboutEmotions.html">關於情緒</a>
-            <div class="ms-16 btn-disable">情緒卡</div>
+            <a class="ms-24 btn btn-outline-main c-btn" href="aboutEmotions.html">關於情緒</a>
+            <div class="ms-16 px-16 btn-disable">情緒卡</div>
           </div>
         </div>
+        <div style="position: sticky; top:77px; z-index: 999; background-color: rgba(255, 255, 255, .75);">
+          <div class="py-24 d-flex justify-content-end align-items-center">
+            <button type="button" class="px-16 btn-disable text-nowrap" id="btnExpand" disabled>展開</button>
+            <button type="button" class="ms-8 ms-md-12 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 fw-bold text-nowrap" id="btnFold">收合</button>
+            <button type="button" class="ms-8 ms-md-12 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 fw-bold text-nowrap" id="btnEmoTable">情緒表</button>
+          </div>
+        </div>
+
         <!-- 導覽說明 -->
-        <div class="accordion mb-12" id="accordionExample">
+        <div class="accordion mb-48" id="accordionExample">
           <div class="accordion-item border-2 border-main-tint02 rounded-2 bg-white">
               <h2 class="accordion-header rounded-2" id="headingOne">
                   <button class="accordion-button px-16 py-12 bg-white link-main text-main fs-6 fw-bold rounded-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -95,143 +103,229 @@
                   </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                      <h3 class="mb-4 fs-7 fw-bold">瀏覽情緒卡的方法</h3>
-                      <ol class="ps-24 mb-8" style="list-style-type: decimal">
-                          <li class="mb-4">透過「<a class="px-4 fs-7 link-main" href="#emoCardsTitle">情緒卡</a>」，可以選擇「收合」或「展開」情緒卡 2 種方式，瀏覽情緒卡。</li>
-                          <li class="mb-4">透過「<a class="px-4 fs-7 link-main" href="#emoTableTitle">情緒表</a>」，可以快速瀏覽所有的情緒詞彙。</li>
-                      </ol>
+                  <div class="accordion-body fs-7">
+                    <h3 class="mb-8 fw-bold text-gray-700">介面的種類</h3>
+                    <ol class="ps-24 mb-24 text-gray-600" style="list-style-type: decimal">
+                      <li class="mb-4">點擊右上方的「<span class="px-4 fw-bold text-main">收合</span>」或「<span class="px-4 fw-bold text-main">展開</span>」按鈕，可以轉換情緒卡的展示方式。</li>
+                      <li class="mb-4">點擊右上方的「<span class="px-4 fw-bold text-main">情緒表</span>」，可以快速瀏覽所有情緒詞彙。</li>
+                    </ol>
+                    <h3 class="mb-8 fw-bold text-gray-700">各個介面的使用說明</h3>
+                    <ol class="ps-24 mb-24 text-gray-700" style="list-style-type: decimal">
+                      <li class="mb-4"><span class="fw-bold">展開</span>：
+                        <p class=" text-gray-600">點擊單張「<span class="px-4">情緒卡</span>」，可以查看關於該情緒的詳細內容。</p>
+                      </li>
+                      <li class="mb-4"><span class="fw-bold">收合</span>：
+                        <p class=" text-gray-600">共有 9 張分類卡，點擊單張「<span class="px-4">分類卡</span>」後，即可進入該分類的情緒卡頁面。</p>
+                      </li>
+                      <li class="mb-4"><span class="fw-bold">情緒表</span>：
+                        <p class=" text-gray-600">點擊單一「<span class="px-4">情緒詞彙</span>」，可以查看關於該情緒的詳細內容。</p>
+                      </li>
+                    </ol>
+                    <p class="text-gray-600 fs-8">💬 透過點擊 標題「瀏覽情緒卡的方法」的區塊，可將此說明收合。</p>
                   </div>
               </div>
           </div>
-      </div>
+        </div>
   
         <!-- 情緒卡 -->
-        <div id="emoCardsTitle" style="height: 88px;"></div>
+        <!-- <div id="emoCardsTitle" style="height: 88px;"></div>
         <div class="mb-16 pb-8 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
           <h2 class="fs-3">情緒卡</h2>
           <div class="nav-btn d-flex justify-content-end">
             <div class="btn-disable">收合</div>
             <a class="ms-16 btn btn-outline-main c-btn" href="emoCardsClassifiedExpand.html">展開</a>
           </div>
+        </div> -->
+
+        <!-- 展開 -->
+        <div id="expanded">
+          <!-- 快樂類 -->
+          <div class="mb-24 d-flex flex-nowrap">
+            <a class="emoCardsHead link-gray-900 emoCardHeadHappy" href="emoCardsHappy.html">
+                <span>快</span><span>樂</span>
+            </a>
+            <div class="d-flex overflow-auto" id="happyCards"></div>
+          </div>
+          <!-- 期待類 -->
+          <div class="mb-24 d-flex flex-nowrap">
+            <a class="emoCardsHead link-gray-900 emoCardHeadExpectation" href="emoCardsExpectation.html">
+                <span>期</span><span>待</span>
+            </a>
+            <div class="d-flex overflow-auto" id="expectationCards"></div>
+          </div>
+          <!-- 安心類 -->
+          <div class="mb-24 d-flex flex-nowrap">
+            <a class="emoCardsHead link-gray-900 emoCardHeadRelived" href="emoCardsRelived.html">
+                <span>安</span><span>心</span>
+            </a>
+            <div class="d-flex overflow-auto" id="relivedCards"></div>
+          </div>
+          <!-- 不安類 -->
+          <div class="mb-24 d-flex flex-nowrap">
+            <a class="emoCardsHead link-gray-900 emoCardHeadUnstable" href="emoCardsUnstable.html">
+                <span>不</span><span>安</span>
+            </a>
+            <div class="d-flex overflow-auto" id="unstableCards"></div>
+          </div>
+          <!-- 驚訝類 -->
+          <div class="mb-24 d-flex flex-nowrap">
+            <a class="emoCardsHead link-gray-900 emoCardHeadAmazed" href="emoCardsAmazed.html">
+                <span>驚</span><span>訝</span>
+            </a>
+            <div class="d-flex overflow-auto" id="amazedCards"></div>
+          </div>
+          <!-- 低落類 -->
+          <div class="mb-24 d-flex flex-nowrap">
+            <a class="emoCardsHead link-gray-900 emoCardHeadSadness" href="emoCardsSadness.html">
+                <span>低</span><span>落</span>
+            </a>
+            <div class="d-flex overflow-auto" id="sadnessCards"></div>
+          </div>
+          <!-- 討厭類 -->
+          <div class="mb-24 d-flex flex-nowrap">
+            <a class="emoCardsHead link-gray-900 emoCardHeadHate" href="emoCardsHate.html">
+                <span>討</span><span>厭</span>
+            </a>
+            <div class="d-flex overflow-auto" id="hateCards"></div>
+          </div>
+          <!-- 生氣類 -->
+          <div class="mb-24 d-flex flex-nowrap">
+            <a class="emoCardsHead link-gray-900 emoCardHeadAnger" href="emoCardsAnger.html">
+                <span>生</span><span>氣</span>
+            </a>
+            <div class="d-flex overflow-auto" id="angerCards"></div>
+          </div>
+          <!-- 其他類 -->
+          <div class="mb-24 d-flex flex-nowrap">
+            <a class="emoCardsHead link-gray-900 emoCardHeadOthers" href="emoCardsOthers.html">
+                <span>其</span><span>他</span>
+            </a>
+            <div class="d-flex overflow-auto" id="othersCards"></div>
+          </div>
         </div>
+        
         <!-- 卡片分類 -->
-        <div class="d-flex flex-wrap justify-content-center justify-content-md-start">
-          <a class="class-card me-16 bg-happy link-gray-900 class-card-happy" href="emoCardsHappy.html">
-            <p>快&nbsp;樂</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/01-happy/happy02-happy.svg" alt="快樂">
-            </div>
-          </a>
-          <a class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" href="emoCardsExpectation.html">
-            <p>期&nbsp;待</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/02-expectation/expaction01-expect.svg" alt="期待">
-            </div>
-          </a>
-          <a class="class-card me-16 bg-relived link-gray-900 class-card-relived" href="emoCardsRelived.html">
-            <p>安&nbsp;心</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/03-relived/relived04-relieved.svg" alt="安心">
-            </div>
-          </a>
-          <a class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" href="emoCardsUnstable.html">
-            <p>不&nbsp;安</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable04-anxious.svg" alt="不安">
-            </div>
-          </a>
-          <a class="class-card me-16 bg-amazed link-gray-900 class-card-amazed" href="emoCardsAmazed.html">
-            <p>驚&nbsp;訝</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/05-amazed/amazed02-astonishment.svg" alt="驚訝">
-            </div>
-          </a>
-          <a class="class-card me-16 bg-sadness link-gray-900 class-card-sadness" href="emoCardsSadness.html">
-            <p>低&nbsp;落</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/06-sadness/sadness05-frustrated.svg" alt="低落">
-            </div>
-          </a>
-          <a class="class-card me-16 bg-hate link-gray-900 class-card-hate" href="emoCardsHate.html">
-            <p>討&nbsp;厭</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/07-hate/hate03-inferiority.svg" alt="討厭">
-            </div>
-          </a>
-          <a class="class-card me-16 bg-anger link-gray-900 class-card-anger" href="emoCardsAnger.html">
-            <p>生&nbsp;氣</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/08-anger/anger02-irritated.svg" alt="生氣">
-            </div>
-          </a>
-          <a class="class-card me-16 bg-others link-gray-900 class-card-others" href="emoCardsOthers.html">
-            <p>其&nbsp;他</p>
-            <div class="img-box">
-              <img src="https://wavemocards.com/frontend/upload/09-others/others01-release.svg" alt="其他">
-            </div>
-          </a>
+        <div class="d-none mt-24 mb-72" id="folded">
+          <ul  class="mb-36 text-gray-550 fs-7">
+            <li class="text-gray-550 fs-7">
+                🔍 以下共有 9 張分類卡，點擊分類卡後，即可進入該分類的情緒卡頁。
+            </li>
+          </ul>
+          <div class="d-flex flex-wrap justify-content-center justify-content-md-start">
+            <a class="class-card me-16 bg-happy link-gray-900 class-card-happy" href="emoCardsHappy.html">
+              <p>快&nbsp;樂</p>
+              <div class="img-box">
+                <img src="https://wavemocards.com/frontend/upload/01-happy/happy02-happy.svg" alt="快樂">
+              </div>
+            </a>
+            <a class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" href="emoCardsExpectation.html">
+              <p>期&nbsp;待</p>
+              <div class="img-box">
+                <img src="https://wavemocards.com/frontend/upload/02-expectation/expaction01-expect.svg" alt="期待">
+              </div>
+            </a>
+            <a class="class-card me-16 bg-relived link-gray-900 class-card-relived" href="emoCardsRelived.html">
+              <p>安&nbsp;心</p>
+              <div class="img-box">
+                <img src="https://wavemocards.com/frontend/upload/03-relived/relived04-relieved.svg" alt="安心">
+              </div>
+            </a>
+            <a class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" href="emoCardsUnstable.html">
+              <p>不&nbsp;安</p>
+              <div class="img-box">
+                <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable04-anxious.svg" alt="不安">
+              </div>
+            </a>
+            <a class="class-card me-16 bg-amazed link-gray-900 class-card-amazed" href="emoCardsAmazed.html">
+              <p>驚&nbsp;訝</p>
+              <div class="img-box">
+                <img src="https://wavemocards.com/frontend/upload/05-amazed/amazed02-astonishment.svg" alt="驚訝">
+              </div>
+            </a>
+            <a class="class-card me-16 bg-sadness link-gray-900 class-card-sadness" href="emoCardsSadness.html">
+              <p>低&nbsp;落</p>
+              <div class="img-box">
+                <img src="https://wavemocards.com/frontend/upload/06-sadness/sadness05-frustrated.svg" alt="低落">
+              </div>
+            </a>
+            <a class="class-card me-16 bg-hate link-gray-900 class-card-hate" href="emoCardsHate.html">
+              <p>討&nbsp;厭</p>
+              <div class="img-box">
+                <img src="https://wavemocards.com/frontend/upload/07-hate/hate03-inferiority.svg" alt="討厭">
+              </div>
+            </a>
+            <a class="class-card me-16 bg-anger link-gray-900 class-card-anger" href="emoCardsAnger.html">
+              <p>生&nbsp;氣</p>
+              <div class="img-box">
+                <img src="https://wavemocards.com/frontend/upload/08-anger/anger02-irritated.svg" alt="生氣">
+              </div>
+            </a>
+            <a class="class-card me-16 bg-others link-gray-900 class-card-others" href="emoCardsOthers.html">
+              <p>其&nbsp;他</p>
+              <div class="img-box">
+                <img src="https://wavemocards.com/frontend/upload/09-others/others01-release.svg" alt="其他">
+              </div>
+            </a>
+          </div>
         </div>
   
         <!-- 情緒表 -->
-        <div id="emoTableTitle" style="height: 88px;"></div>
+        <!-- <div id="emoTableTitle" style="height: 88px;"></div>
         <div class="mb-16 pb-8 border-2 border-bottom border-main-tint02">
           <h2 class="fs-3">情緒表</h2>
-        </div>
-        <p class="mb-32 text-gray-550">
-          🔎 請點擊下方各個情緒名詞，可以展開觀看詳細的情緒資訊。
-        </p>
-        <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsHappy.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-happy  fw-bold d-flex justify-content-center align-items-center text-md-nowrap">快樂</a>
-          <div class="d-flex overflow-auto" id="buttonsHappy">
+        </div> -->
+        <div class="d-none mt-24 mb-72" id="emoTable">
+          <div class="mb-8 d-flex flex-nowrap">
+            <a href="emoCardsHappy.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-happy  fw-bold d-flex justify-content-center align-items-center text-md-nowrap">快樂</a>
+            <div class="d-flex overflow-auto" id="buttonsHappy"></div>
           </div>
-        </div>
-        
-        <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsExpectation.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-expectation fw-bold d-flex justify-content-center align-items-center text-md-nowrap">期待</a>
-          <div class="d-flex overflow-auto" id="buttonsExpectation">
+          
+          <div class="mb-8 d-flex flex-nowrap">
+            <a href="emoCardsExpectation.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-expectation fw-bold d-flex justify-content-center align-items-center text-md-nowrap">期待</a>
+            <div class="d-flex overflow-auto" id="buttonsExpectation">
+            </div>
           </div>
-        </div>
-        
-        <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsRelived.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-relived fw-bold d-flex justify-content-center align-items-center text-md-nowrap">安心</a>
-          <div class="d-flex overflow-auto" id="buttonsRelived">
+          
+          <div class="mb-8 d-flex flex-nowrap">
+            <a href="emoCardsRelived.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-relived fw-bold d-flex justify-content-center align-items-center text-md-nowrap">安心</a>
+            <div class="d-flex overflow-auto" id="buttonsRelived">
+            </div>
           </div>
-        </div>
-        
-        <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsUnstable.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-unstable fw-bold d-flex justify-content-center align-items-center text-md-nowrap">不安</a>
-          <div class="d-flex overflow-auto" id="buttonsUnstable">
+          
+          <div class="mb-8 d-flex flex-nowrap">
+            <a href="emoCardsUnstable.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-unstable fw-bold d-flex justify-content-center align-items-center text-md-nowrap">不安</a>
+            <div class="d-flex overflow-auto" id="buttonsUnstable">
+            </div>
           </div>
-        </div>
-        
-        <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsAmazed.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-amazed fw-bold d-flex justify-content-center align-items-center text-md-nowrap">驚訝</a>
-          <div class="d-flex overflow-auto" id="buttonsAmazed">
+          
+          <div class="mb-8 d-flex flex-nowrap">
+            <a href="emoCardsAmazed.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-amazed fw-bold d-flex justify-content-center align-items-center text-md-nowrap">驚訝</a>
+            <div class="d-flex overflow-auto" id="buttonsAmazed">
+            </div>
           </div>
-        </div>
-        
-        <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsSadness.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-sadness fw-bold d-flex justify-content-center align-items-center text-md-nowrap">低落</a>
-          <div class="d-flex overflow-auto" id="buttonsSadness">
+          
+          <div class="mb-8 d-flex flex-nowrap">
+            <a href="emoCardsSadness.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-sadness fw-bold d-flex justify-content-center align-items-center text-md-nowrap">低落</a>
+            <div class="d-flex overflow-auto" id="buttonsSadness">
+            </div>
           </div>
-        </div>
-        
-        <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsHate.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-hate fw-bold d-flex justify-content-center align-items-center text-md-nowrap">討厭</a>
-          <div class="d-flex overflow-auto" id="buttonsHate">
+          
+          <div class="mb-8 d-flex flex-nowrap">
+            <a href="emoCardsHate.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-hate fw-bold d-flex justify-content-center align-items-center text-md-nowrap">討厭</a>
+            <div class="d-flex overflow-auto" id="buttonsHate">
+            </div>
           </div>
-        </div>
-        
-        <div class="mb-8 d-flex flex-nowrap">
-          <a href="emoCardsAnger.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-anger fw-bold d-flex justify-content-center align-items-center text-md-nowrap">生氣</a>
-          <div class="d-flex overflow-auto" id="buttonsAnger">
+          
+          <div class="mb-8 d-flex flex-nowrap">
+            <a href="emoCardsAnger.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-anger fw-bold d-flex justify-content-center align-items-center text-md-nowrap">生氣</a>
+            <div class="d-flex overflow-auto" id="buttonsAnger">
+            </div>
           </div>
-        </div>
-        
-        <div class="mb-72 d-flex flex-nowrap">
-          <a href="emoCardsOthers.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-others fw-bold d-flex justify-content-center align-items-center text-md-nowrap">其他</a>
-          <div class="d-flex overflow-auto" id="buttonsOthers">
+          
+          <div class="mb-72 d-flex flex-nowrap">
+            <a href="emoCardsOthers.html" class="emoTableHead me-8 px-4 py-4 btn btn-emoTable btn-others fw-bold d-flex justify-content-center align-items-center text-md-nowrap">其他</a>
+            <div class="d-flex overflow-auto" id="buttonsOthers">
+            </div>
           </div>
         </div>
       </div>
@@ -245,7 +339,7 @@
     </a>
 </div>
     <!-- modalEmoCards -->
-    <ul class="list">
+    <ul class="listModal">
       <li></li>
     </ul>
     
@@ -323,7 +417,10 @@
 <script src="../assets/js/toolTips.js"></script>
 
 <!-- axios -->
-<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>    <script>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>    <script src="../assets/js/pages/changStyleOfCards.js"></script>
+    <!-- <script src="../assets/js/pages/getEmoCardsExpanded.js"></script> -->
+    <script>
+      // 情緒表
       const buttonsHappy = document.querySelector('#buttonsHappy');
       const buttonsExpectation = document.querySelector('#buttonsExpectation');
       const buttonsRelived = document.querySelector('#buttonsRelived');
@@ -333,13 +430,147 @@
       const buttonsHate = document.querySelector('#buttonsHate');
       const buttonsAnger = document.querySelector('#buttonsAnger');
       const buttonsOthers = document.querySelector('#buttonsOthers');
-      const listModal = document.querySelector('.list');
+      // cards
+      const happyCards = document.querySelector('#happyCards');
+      const expectationCards = document.querySelector('#expectationCards');
+      const relivedCards = document.querySelector('#relivedCards');
+      const unstableCards = document.querySelector('#unstableCards');
+      const amazedCards = document.querySelector('#amazedCards');
+      const sadnessCards = document.querySelector('#sadnessCards');
+      const hateCards = document.querySelector('#hateCards');
+      const angerCards = document.querySelector('#angerCards');
+      const othersCards = document.querySelector('#othersCards');
+      // Big Cards
+      const listModal = document.querySelector('.listModal');
 
-
-      axios.get("http://api.wavemocards.com/emotions?requirement=cards")
+      axios.get("http://api2.wavemocards.com/emotions?require=cards")
       .then(function(response){
         let aryData = Object.values(response.data); // 轉成「陣列」
-        console.log(response.data);
+        let aryIds = Object.keys(response.data); // 資料庫中的各卡片 id (0~64)
+
+        for(let i=0; i<aryData.length; i++){
+          aryData[i].id= aryIds[i];
+        }
+
+        // 展開卡
+        initCards()
+        function initCards() {
+            let strCardsHappy = "";
+            let strCardsExpectation = "";
+            let strCardsRelived = "";
+            let strCardsUnstable = "";
+            let strCardsAmazed = "";
+            let strCardsSadness = "";
+            let strCardsHate = "";
+            let strCardsAnger = "";
+            let strCardsOthers = "";
+            let strModal = "";
+            let emo;
+            aryData.forEach(function(data, i){
+              if(data.Category == "快樂"){
+                  emo = "happy";
+                  let contentCards = `
+                  <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                  <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                  <div class="img-box">
+                      <img src="./upload/${data.id}.svg" alt="${data.Name}">
+                  </div>
+                  </button>`;
+                  strCardsHappy+=contentCards;
+              } 
+              else if(data.Category == "期待"){
+                  emo = "expectation";
+                  let contentCards = `
+                  <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                  <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                  <div class="img-box">
+                      <img src="./upload/${data.id}.svg" alt="${data.Name}">
+                  </div>
+                  </button>`;
+                  strCardsExpectation+=contentCards;
+              } else if(data.Category == "安心"){
+                  emo = "relived";
+                  let contentCards = `
+                  <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                      <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                      <div class="img-box">
+                      <img src="./upload/${data.id}.svg" alt="${data.Name}">
+                      </div>
+                  </button>`;
+                  strCardsRelived+=contentCards;
+              } else if(data.Category == "不安"){
+                  emo = "unstable";
+                  let contentCards = `
+                  <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                      <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                      <div class="img-box">
+                      <img src="./upload/${data.id}.svg" alt="${data.Name}">
+                      </div>
+                  </button>`;
+                  strCardsUnstable+=contentCards;
+              } else if(data.Category == "驚訝"){
+                  emo = "amazed";
+                  let contentCards = `
+                  <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                      <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                      <div class="img-box">
+                      <img src="./upload/${data.id}.svg" alt="${data.Name}">
+                      </div>
+                  </button>`;
+                  strCardsAmazed+=contentCards;
+              } else if(data.Category == "低落"){
+                  emo = "sadness";
+                  let contentCards = `
+                  <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                      <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                      <div class="img-box">
+                      <img src="./upload/${data.id}.svg" alt="${data.Name}">
+                      </div>
+                  </button>`;
+                  strCardsSadness+=contentCards;
+              } else if(data.Category == "討厭"){
+                  emo = "hate";
+                  let contentCards = `
+                  <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                      <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                      <div class="img-box">
+                      <img src="./upload/${data.id}.svg" alt="${data.Name}">
+                      </div>
+                  </button>`;
+                  strCardsHate+=contentCards;
+              } else if(data.Category == "生氣"){
+                  emo = "anger";
+                  let contentCards = `
+                  <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                      <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                      <div class="img-box">
+                      <img src="./upload/${data.id}.svg" alt="${data.Name}">
+                      </div>
+                  </button>`;
+                  strCardsAnger+=contentCards;
+              } else if(data.Category == "其他"){
+                emo = "others";
+                let contentCards = `
+                <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                    <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                    <div class="img-box">
+                    <img src="./upload/${data.id}.svg" alt="${data.Name}">
+                    </div>
+                </button>`;
+                strCardsOthers+=contentCards;
+              }
+            })
+            happyCards.innerHTML = strCardsHappy;
+            expectationCards.innerHTML = strCardsExpectation;
+            relivedCards.innerHTML = strCardsRelived;
+            unstableCards.innerHTML = strCardsUnstable;
+            amazedCards.innerHTML = strCardsAmazed;
+            sadnessCards.innerHTML = strCardsSadness;
+            hateCards.innerHTML = strCardsHate;
+            angerCards.innerHTML = strCardsAnger;
+            othersCards.innerHTML = strCardsOthers;
+        }
+
         // 情緒表 各個情緒的按鈕
         initEmlTable();
         function initEmlTable() {
@@ -394,6 +625,7 @@
             buttonsOthers.innerHTML = strOthers;
           })
         }
+
         // 大情緒卡 Modal
         initModal();
         function initModal() {
@@ -419,6 +651,7 @@
             } else if (data.Category == "其他") {
               emo = "others";
             }
+            
             let content = `
               <li>
                 <div class="modal fade px-40 px-md-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -428,7 +661,7 @@
                         <div class="box-bigCard-text">
                           <div class="d-flex d-md-none w-100 justify-content-center">
                             <div class="d-sm-none box-bigCard-img mb-8">
-                              <img class="w-100" src="https://wavemocards.com/frontend/upload/01-happy/happy01-statisfy.svg" alt="${data.Name}">
+                              <img class="w-100" src="./upload/${data.id}.svg" alt="${data.Name}">
                             </div>
                           </div>
                           <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
@@ -447,15 +680,15 @@
                           </div>
                         </div>
                         <div class="d-none d-sm-block box-bigCard-img">
-                          <img class="w-100" src="https://wavemocards.com/frontend/upload/01-happy/happy01-statisfy.svg" alt="${data.Name}">
+                          <img class="w-100" src="./upload/${data.id}.svg" alt="${data.Name}">
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </li>`;
-              strModal+=content;
-            })
+            strModal+=content;
+          })
           listModal.innerHTML = strModal;
         }
       })
