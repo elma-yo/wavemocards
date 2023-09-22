@@ -40,7 +40,16 @@
                             E-mail
                             <span class="text-pink-tint02 fs-9">*必填</span>
                         </label>
-                        <input type="email" class="form-control rounded-pill px-20" id="email" placeholder="wavemocards@mail.com" required>
+                        <div class="d-flex flex-column flex-sm-row">
+                            <input type="email" class="form-control rounded-pill mb-8 mb-sm-0 px-20" id="email" placeholder="wavemocards@mail.com" required>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-sm-none mt-4 ms-12 fs-9" id="emailCmt"></div>
+                                <button type="button" class="ms-8 px-12 btn btn-outline-main c-btn c-btn-outline-main fs-8 text-nowrap" id="btnVerify">驗證</button>
+                            </div>
+                        </div>
+                        <!-- email驗證結果 -->
+                        <div class="d-none d-sm-block mt-4 ms-24 fs-9" id="emailCmt"></div>
+                        <!-- bs的資料驗證回饋 -->
                         <div class="invalid-feedback">
                             請輸入正確的 e-mail 帳號
                         </div>
@@ -58,7 +67,7 @@
                             點我看 設定密碼規則
                         </button>
                         <!-- collapse 卡片內容 -->
-                        <div class="collapse mx-24" id="collapsePwdRules">
+                        <div class="collapse ms-12 ms-sm-24" id="collapsePwdRules">
                             <div class="card card-body py-8 bg-gray-200 border-0 rounded-2">
                                 <ol class="fs-9">
                                     <li class="ms-16">包含<span class="fw-bold"> 8 ~ 16 </span>個字符。</li>
@@ -83,7 +92,7 @@
                         </label>
                         <input type="password" class="form-control rounded-pill px-20" id="pwd2" placeholder="請再次輸入您所欲設定的密碼" required>
                         <!-- 雙重密碼驗證結果 -->
-                        <div class="mt-4 ms-24 fs-9" id="pwd2Cmt"></div>
+                        <div class="mt-4 ms-12 ms-sm-24 fs-9" id="pwd2Cmt"></div>
                     </div>
                     <div class="mb-20">
                         <label for="account" class="form-label  d-flex justify-content-between">
@@ -154,9 +163,9 @@
                             勾選後才能註冊
                         </div>
                     </div>
-                    <button class="w-100 mb-32 py-8 btn btn-pink c-btn" id="btnSubmit" type="submit">註冊</button>
+                    <button class="w-100 mb-32 py-8 btn btn-pink c-btn" id="btnSubmit" type="submit" data-bs-toggle="modal">註冊</button>
                 </form>
-                <a class="d-block 
+                <a class="mb-16 d-block 
                 click-me clickMeToLogin" href="login.html">已經有帳號了嗎？ 點我登入</a>
             </div>
         </div>
@@ -170,7 +179,7 @@
             <h5 class="modal-title fs-6 fw-bold text-main" id="staticBackdropLabel">隱私權保護政策</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body px-24">
                 <p>
                     歡迎來到「浪潮情緒卡網站」（以下簡稱本網站）。
                 </p>
@@ -283,13 +292,36 @@
                         <span class="fw-bold fs-7">📮 聯絡我們</span>
                         <p class="mx-24">
                             若有任何隱私權政策相關問題，請Email至
-                            <a href="mailto:info@wavemocards.com">info@wavemocards.com</a>
+                            <a href="mailto:info@wavemocards.com" class="link-main">info@wavemocards.com</a>
                         </p>
                     </li>
                 </ul>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-main link-white" data-bs-dismiss="modal">我瞭解了</button>
+            <button type="button" class="btn btn-main c-btn py-8" data-bs-dismiss="modal">我瞭解了</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- 註冊成功/失敗 Modal -->
+    <div class="modal fade" id="modalResult" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4">
+            <div class="modal-body d-flex flex-column align-items-center px-48 py-36">
+                <p id="modalResultText" class="fs-4 fw-bold">註冊成功</p>
+                <p id="modalResultText2" class="d-none mt-12 fs-7 text-gray-700"></p>
+                <p id="modalResultText3" class="d-none mt-12 fs-7 text-gray-700">
+                    若無法排除問題，請 
+                    <a class="link-pink" href="mailto:info@wavemocards.com">與我們聯繫</a>
+                </p>
+                <div style="width: 45%; height: 45%;">
+                    <img class="w-100" src="https://wavemocards.com/frontend/upload/01-happy/happy05-excited.svg" alt="興奮" id="modalResultImg">
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <a href="login.html" id="modalResultLink" class="btn btn-main px-16 py-8 link-white fs-6 fw-bold">前往登入！</a>
+                <button type="button" id="modalResultClose" class="d-none btn btn-pink c-btn px-36 py-8 link-white fs-6 fw-bold" data-bs-dismiss="modal">重新註冊</button>
             </div>
         </div>
         </div>
@@ -299,7 +331,9 @@
     <script type="text/javascript" src="../assets/js/beforeunload.js"></script>
     <script type="text/javascript" src="../assets/js/formValidation.js"></script>
     <script>
+        const btnVerify = document.querySelector('#btnVerify');
         const email = document.querySelector('#email');
+        const emailCmt = document.querySelectorAll('#emailCmt');
         const pwd = document.querySelector('#pwd');
         const pwd2 = document.querySelector('#pwd2');
         const pwdCmt = document.querySelector('#pwdCmt');
@@ -311,6 +345,40 @@
         const title = document.querySelector('#title');
         const agree = document.querySelector('#agree');
         const btnSubmit = document.querySelector('#btnSubmit');
+        const modalResult = document.querySelector('#modalResult');
+        const modalResultText = document.querySelector('#modalResultText');
+        const modalResultText2 = document.querySelector('#modalResultText2');
+        const modalResultText3 = document.querySelector('#modalResultText3');
+        const modalResultImg = document.querySelector('#modalResultImg');
+        const modalResultLink = document.querySelector('#modalResultLink');
+        const modalResultClose = document.querySelector('#modalResultClose');
+
+        // 驗證 email 
+        let emailVerified = true;
+        btnVerify.addEventListener('click', function(){
+            // post email
+            // get 是否驗證成功，成功的話 emailVerified = true;
+            if(email.value==""){
+                emailCmt.forEach(function(cmt, index){
+                    cmt.textContent = "請先輸入Email";
+                    cmt.classList.add("text-pink");
+                })
+                return
+            }
+            if(emailVerified==true) {
+                emailCmt.forEach(function(cmt, index){
+                    cmt.textContent = "驗證成功，您可使用此Email";
+                    cmt.classList.remove("text-pink");
+                    cmt.classList.add("text-main");
+                })
+                btnVerify.classList.add('d-none');
+            } else {
+                emailCmt.forEach(function(cmt, index){
+                    cmt.textContent = "驗證失敗，該Email已被註冊，請使用其他的Email";
+                    cmt.classList.add("text-pink");
+                })
+            }
+        })
 
         // 驗證是否符合 密碼規則
         pwd.addEventListener("keyup", function(){
@@ -353,6 +421,27 @@
                     }
                 }
             })
+        })
+
+        // 註冊內容驗證
+        btnSubmit.addEventListener('click', function(){
+            let success = true;
+            if(success==true){
+                modalResultText.classList.add("text-main");
+                btnSubmit.setAttribute("data-bs-target", "#modalResult");
+                btnSubmit.click(); // 設定該按鈕被點擊
+            } else {
+                modalResultText.textContent = "註冊失敗";
+                modalResultText.classList.add("text-pink");
+                modalResultText2.classList.remove("d-none");
+                modalResultText3.classList.remove("d-none");
+                modalResultText2.textContent = `很抱歉，您填寫的內容可能有誤，請重新註冊`;
+                modalResultImg.src="https://wavemocards.com/frontend/upload/09-others/others04-guilty.svg";
+                modalResultLink.classList.add("d-none");
+                modalResultClose.classList.remove('d-none');
+                btnSubmit.setAttribute("data-bs-target", "#modalResult");
+                btnSubmit.click();
+            }
         })
     </script>
   </body>

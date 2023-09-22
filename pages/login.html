@@ -64,12 +64,35 @@
                             <a class="link-gray-550 fw-normal fs-8" href="resetPsw.html">忘記密碼</a>
                         </div>
                     </div>
-                    <button class="w-100 mb-32 py-8 btn btn-main c-btn" type="submit">登入</button>
+                    <button class="w-100 mb-32 py-8 btn btn-main c-btn" type="submit" id="btnSubmit" data-bs-toggle="modal">登入</button>
                 </form>
                 <a class="d-block click-me" href="signUp.html">點我註冊</a>
             </div>
         </div>
     </main>
+
+    <!-- 成功/失敗 Modal -->
+    <div class="modal fade" id="modalResult" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4">
+            <div class="modal-body d-flex flex-column align-items-center px-48 py-36">
+                <p id="modalResultText" class="fs-4 fw-bold">登入成功</p>
+                <p id="modalResultText2" class="d-none mt-12 fs-7 text-gray-700"></p>
+                <p id="modalResultText3" class="d-none mt-12 fs-7 text-gray-700">
+                    若無法排除問題，請 
+                    <a class="link-pink" href="mailto:info@wavemocards.com">與我們聯繫</a>
+                </p>
+                <div style="width: 45%; height: 45%;">
+                    <img class="w-100" src="https://wavemocards.com/frontend/upload/01-happy/happy05-excited.svg" alt="興奮" id="modalResultImg">
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <a href="home.html" id="modalResultLink" class="btn btn-main px-16 py-8 link-white fs-6 fw-bold">前往首頁</a>
+                <button type="button" id="modalResultClose" class="d-none btn btn-pink c-btn px-36 py-8 link-white fs-6 fw-bold" data-bs-dismiss="modal">重新登入</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <%- include('./layout/baseJs'); -%>
     <script type="text/javascript" src="../assets/js/beforeunload.js"></script>
@@ -88,6 +111,27 @@
                     }
                 }
             })
+        })
+
+        // 登入內容驗證
+        btnSubmit.addEventListener('click', function(){
+            let success = true;
+            if(success==true){
+                modalResultText.classList.add("text-main");
+                btnSubmit.setAttribute("data-bs-target", "#modalResult");
+                btnSubmit.click(); // 設定該按鈕被點擊
+            } else {
+                modalResultText.textContent = "登入失敗";
+                modalResultText.classList.add("text-pink");
+                modalResultText2.classList.remove("d-none");
+                modalResultText3.classList.remove("d-none");
+                modalResultText2.textContent = `很抱歉，您填寫的內容可能有誤，請重新登入`;
+                modalResultImg.src="https://wavemocards.com/frontend/upload/09-others/others04-guilty.svg";
+                modalResultLink.classList.add("d-none");
+                modalResultClose.classList.remove('d-none');
+                btnSubmit.setAttribute("data-bs-target", "#modalResult");
+                btnSubmit.click();
+            }
         })
     </script>
   </body>
