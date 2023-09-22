@@ -84,9 +84,9 @@
                     <h2 class="fs-3">我的帳戶</h2>
                     <form action="" method="">
                     <div class="nav-btn d-flex justify-content-end">
-                        <button class="d-none ms-16 btn btn-outline-main c-btn" id="btnCancel" type="button">取消</button>
-                        <button class="ms-16 btn btn-outline-main c-btn" id="btnModify" type="button">編輯</button>
-                        <input type="submit" class="d-none ms-16 btn btn-main c-btn" id="btnSave" value="儲存"></button>
+                        <button class="d-none ms-16 px-16 btn btn-outline-main c-btn" id="btnCancel" type="button">取消</button>
+                        <button class="ms-16 px-16 btn btn-outline-main c-btn" id="btnModify" type="button">編輯</button>
+                        <input type="submit" class="d-none ms-16 px-16 btn btn-main c-btn" id="btnSave" value="儲存"></button>
                         <!-- <a class="ms-16 btn btn-main c-btn d-flex justify-content-center align-items-center" href="accountMyFriends.html">好友管理</a> -->
                     </div>
                 </div>
@@ -108,29 +108,29 @@
                         <span class="mb-8 text-gray-700">密碼</span>
                         <div class="d-flex justify-content-between">
                             <p class="ms-4 mb-24 fs-6 fw-bold">********</p>
-                            <a class="link-pink-tint01" href="resetPsw.html">重設密碼</a>
+                            <!-- <a class="link-pink-tint01" href="resetPsw.html">重設密碼</a> -->
                         </div>
                         <span class="mb-8 text-gray-700">帳號</span>
                         <p class="ms-4 mb-24 fs-6 fw-bold" id="accountName">wavemo</p>
                         <input type="text" class="d-none form-control w-100 mb-24 px-20 rounded-pill" id="formAccount" value="wavemo">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 <span class="mb-8 text-gray-700">姓</span>
                                 <p class="ms-4 mb-24 fs-6 fw-bold" id="lastName">陳</p>
                                 <input type="text" class="d-none form-control w-100 mb-24 px-20 rounded-pill" id="formLastName" value="陳" required>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 <span class="mb-8 text-gray-700">名</span>
                                 <p class="ms-4 mb-24 fs-6 fw-bold" id="firstName">浪潮</p>
                                 <input type="text" class="d-none form-control w-100 mb-24 px-20 rounded-pill" id="formFirstName" value="浪潮" required>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 <span class="mb-8 text-gray-700">生日</span>
                                 <p class="ms-4 mb-24 fs-6 fw-bold">2023 / 01 / 15</p>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 <span class="mb-8 text-gray-700">身份</span>
                                 <p class="ms-4 mb-24 fs-6 fw-bold" id="title">學生</p>
                                 <select class="d-none form-select px-20 rounded-pill" aria-label="Default select example" id="formTitle">
@@ -230,7 +230,8 @@
 <script src="../assets/js/toolTips.js"></script>
 
 <!-- axios -->
-<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>        <script>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>        <script type="text/javascript" src="../assets/js/beforeunload.js"></script>
+        <script>
             const btnModify = document.querySelector('#btnModify');
             const btnCancel = document.querySelector('#btnCancel');
             const btnSave = document.querySelector('#btnSave');
@@ -255,6 +256,25 @@
                 formLastName.classList.remove("d-none");
                 formFirstName.classList.remove("d-none");
                 formTitle.classList.remove("d-none");
+            })
+
+            btnCancel.addEventListener('click',function(){
+                let confirmResult = confirm("執行取消的話，您的修改將不會被儲存喔！\r您確定要離開嗎？");
+                if (confirmResult) {
+                    btnModify.classList.remove("d-none");
+                    btnCancel.classList.add("d-none");
+                    btnSave.classList.add("d-none");
+                    accountName.classList.remove("d-none");
+                    lastName.classList.remove("d-none");
+                    firstName.classList.remove("d-none");
+                    title.classList.remove("d-none");
+                    formAccount.classList.add("d-none");
+                    formLastName.classList.add("d-none");
+                    formFirstName.classList.add("d-none");
+                    formTitle.classList.add("d-none");
+                } else {
+                    return
+                }
             })
         </script>
     </body>
