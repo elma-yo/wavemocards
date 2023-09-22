@@ -35,7 +35,7 @@
         <div class="accordion mb-48" id="accordionExample">
           <div class="accordion-item border-2 border-main-tint02 rounded-2 bg-white">
               <h2 class="accordion-header rounded-2" id="headingOne">
-                  <button class="accordion-button px-16 py-12 bg-white link-main text-main fs-6 fw-bold rounded-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <button class="accordion-button px-16 py-12 bg-white link-main text-main fs-6 fw-bold rounded-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="btnAccordion">
                   瀏覽情緒卡的方法
                   </button>
               </h2>
@@ -303,6 +303,31 @@
       const othersCards = document.querySelector('#othersCards');
       // Big Cards
       const listModal = document.querySelector('.listModal');
+
+      //  手風琴開合紀錄
+      const collapseOne = document.querySelector('#collapseOne');
+      let recAccordionOpen = localStorage.getItem("accordionOpen");
+      if(recAccordionOpen=="false"){
+        collapseOne.classList.remove('show');
+      } else {
+        collapseOne.classList.add('show');
+      }
+      const btnAccordion = document.querySelector('#btnAccordion');
+      let numAccordionClicked = 0;
+      btnAccordion.addEventListener("click",function(){
+        if(recAccordionOpen=="false"){
+          numAccordionClicked++;
+        }
+        numAccordionClicked++;
+        if(numAccordionClicked%2!=0){
+          let accordionOpen = false;
+          localStorage.setItem("accordionOpen", accordionOpen);
+        } else {
+          let accordionOpen = true;
+          localStorage.setItem("accordionOpen", accordionOpen);
+        }
+      })
+      
 
       axios.get("http://api2.wavemocards.com/emotions?require=cards")
       .then(function(response){
