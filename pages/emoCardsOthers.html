@@ -104,106 +104,184 @@
 
     <%- include('./layout/baseJs'); -%>
     <script>
-      let imgOthers01 = "https://wavemocards.com/frontend/upload/09-others/others01-release.svg";
-      let imgOthers02 = "https://wavemocards.com/frontend/upload/09-others/others02-awkward.svg";
-      let imgOthers03 = "https://wavemocards.com/frontend/upload/09-others/others03-envy.svg";
-      let imgOthers04 = "https://wavemocards.com/frontend/upload/09-others/others04-guilty.svg";
-      let imgOthers05 = "https://wavemocards.com/frontend/upload/09-others/others05-conflict.svg";
-      let imgOthers06 = "https://wavemocards.com/frontend/upload/09-others/others06-regret.svg";
-      let imgOthers07 = "https://wavemocards.com/frontend/upload/09-others/others07-injustice.svg";
-      let imgOthers08 = "https://wavemocards.com/frontend/upload/09-others/others08-loneliness.svg";
-      let imgOthers09 = "https://wavemocards.com/frontend/upload/09-others/others09-shame.svg";
-      let imgOthers10 = "https://wavemocards.com/frontend/upload/09-others/others10-touching.svg";
-      let imgOthers11 = "https://wavemocards.com/frontend/upload/09-others/others11-excited.svg";
+      // let imgOthers01 = "https://wavemocards.com/frontend/upload/09-others/others01-release.svg";
+      // let imgOthers02 = "https://wavemocards.com/frontend/upload/09-others/others02-awkward.svg";
+      // let imgOthers03 = "https://wavemocards.com/frontend/upload/09-others/others03-envy.svg";
+      // let imgOthers04 = "https://wavemocards.com/frontend/upload/09-others/others04-guilty.svg";
+      // let imgOthers05 = "https://wavemocards.com/frontend/upload/09-others/others05-conflict.svg";
+      // let imgOthers06 = "https://wavemocards.com/frontend/upload/09-others/others06-regret.svg";
+      // let imgOthers07 = "https://wavemocards.com/frontend/upload/09-others/others07-injustice.svg";
+      // let imgOthers08 = "https://wavemocards.com/frontend/upload/09-others/others08-loneliness.svg";
+      // let imgOthers09 = "https://wavemocards.com/frontend/upload/09-others/others09-shame.svg";
+      // let imgOthers10 = "https://wavemocards.com/frontend/upload/09-others/others10-touching.svg";
+      // let imgOthers11 = "https://wavemocards.com/frontend/upload/09-others/others11-excited.svg";
 
       const othersCards = document.querySelector('#othersCards');
       const listModal = document.querySelector('.list');
 
-      axios.get("http://api.wavemocards.com/emotions?requirement=cards")
+      axios.get("http://api2.wavemocards.com/emotions?require=cards")
       .then(function(response){
-        let aryData = Object.values(response.data);
+        let aryData = Object.values(response.data); // 轉成「陣列」
+        let aryIds = Object.keys(response.data); // 資料庫中的各卡片 id (0~64)
+
+        for(let i=0; i<aryData.length; i++){
+          aryData[i].id= aryIds[i];
+        }
+
+        // 展開卡
         initCards()
         function initCards() {
-          let strCards = "";
+            let strCardsOthers = "";
+            let emo;
+            aryData.forEach(function(data, i){
+              if(data.Category == "其他"){
+                emo = "others";
+                let contentCards = `
+                <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                    <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                    <div class="img-box">
+                    <img src="./upload/${data.id}.svg" alt="${data.Name}">
+                    </div>
+                </button>`;
+                strCardsOthers+=contentCards;
+              }
+            })
+            othersCards.innerHTML = strCardsOthers;
+        }
+
+        // 大情緒卡 Modal
+        initModal();
+        function initModal() {
           let strModal = "";
           let emo;
           aryData.forEach(function(data, i){
-            let imgSrc;
-            if(data.Category == "其他"){
+            if (data.Category == "其他") {
               emo = "others";
-              if(data.Name == "釋懷") {
-                imgSrc = imgOthers01;
-              } else if (data.Name == "尷尬") {
-                imgSrc = imgOthers02;
-              } else if (data.Name == "羨慕") {
-                imgSrc = imgOthers03;
-              } else if (data.Name == "愧疚") {
-                imgSrc = imgOthers04;
-              } else if (data.Name == "矛盾") {
-                imgSrc = imgOthers05;
-              } else if (data.Name == "後悔") {
-                imgSrc = imgOthers06;
-              } else if (data.Name == "委屈") {
-                imgSrc = imgOthers07;
-              } else if (data.Name == "寂寞") {
-                imgSrc = imgOthers08;
-              } else if (data.Name == "羞恥") {
-                imgSrc = imgOthers09;
-              } else if (data.Name == "感動") {
-                imgSrc = imgOthers10;
-              } else if (data.Name == "激動") {
-                imgSrc = imgOthers11;
-              }
-              let contentCards = `
-                <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                  <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
-                  <div class="img-box">
-                    <img src="${imgSrc}}" alt="${data.Name}">
-                  </div>
-                </button>`;
-              let contentModals = `
-                <li>
-                  <div class="modal fade px-40 px-md-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
-                      <div class="modal-content bg-${emo}">
-                        <div class="modal-body d-sm-flex justify-content-between align-items-center">
-                          <div class="box-bigCard-text">
-                            <div class="d-flex d-md-none w-100 justify-content-center">
-                              <div class="d-sm-none box-bigCard-img mb-8">
-                                <img class="w-100" src="${imgSrc}" alt="${data.Name}">
-                              </div>
-                            </div>
-                            <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
-                              <h2>${data.Name}</h2>
-                              <!-- <a href="modifyEmoCard.html" role="button">
-                                  <i class="bi bi-pencil-square"></i>
-                              </a> -->
-                            </div>
-                            <div class="mb-16">
-                              <h3 class="mb-4">意思：</h3>
-                              <p>${data.Description}</p>
-                            </div>
-                            <div>
-                              <h3 class="mb-4">例句：</h3>
-                              <p>${data.Example}</p>
+            }
+            
+            let content = `
+              <li>
+                <div class="modal fade px-40 px-md-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                    <div class="modal-content bg-${emo}">
+                      <div class="modal-body d-sm-flex justify-content-between align-items-center">
+                        <div class="box-bigCard-text">
+                          <div class="d-flex d-md-none w-100 justify-content-center">
+                            <div class="d-sm-none box-bigCard-img mb-8">
+                              <img class="w-100" src="./upload/${data.id}.svg" alt="${data.Name}">
                             </div>
                           </div>
-                          <div class="d-none d-sm-block box-bigCard-img">
-                            <img class="w-100" src="${imgSrc}" alt="${data.Name}">
+                          <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
+                            <h2>${data.Name}</h2>
+                            <!-- <a href="modifyEmoCard.html" role="button">
+                                <i class="bi bi-pencil-square"></i>
+                            </a> -->
                           </div>
+                          <div class="mb-16">
+                            <h3 class="mb-4">意思：</h3>
+                            <p>${data.Description}</p>
+                          </div>
+                          <div>
+                            <h3 class="mb-4">例句：</h3>
+                            <p>${data.Example}</p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block box-bigCard-img">
+                          <img class="w-100" src="./upload/${data.id}.svg" alt="${data.Name}">
                         </div>
                       </div>
                     </div>
                   </div>
-                </li>`;
-              strCards+=contentCards;
-              strModal+=contentModals;
-            }
+                </div>
+              </li>`;
+            strModal+=content;
           })
-          othersCards.innerHTML = strCards;
           listModal.innerHTML = strModal;
         }
+
       })
+      // let aryData = Object.values(response.data);
+      // initCards()
+      // function initCards() {
+      //   let strCards = "";
+      //   let strModal = "";
+      //   let emo;
+      //   aryData.forEach(function(data, i){
+      //     let imgSrc;
+      //     if(data.Category == "其他"){
+      //       emo = "others";
+      //       if(data.Name == "釋懷") {
+      //         imgSrc = imgOthers01;
+      //       } else if (data.Name == "尷尬") {
+      //         imgSrc = imgOthers02;
+      //       } else if (data.Name == "羨慕") {
+      //         imgSrc = imgOthers03;
+      //       } else if (data.Name == "愧疚") {
+      //         imgSrc = imgOthers04;
+      //       } else if (data.Name == "矛盾") {
+      //         imgSrc = imgOthers05;
+      //       } else if (data.Name == "後悔") {
+      //         imgSrc = imgOthers06;
+      //       } else if (data.Name == "委屈") {
+      //         imgSrc = imgOthers07;
+      //       } else if (data.Name == "寂寞") {
+      //         imgSrc = imgOthers08;
+      //       } else if (data.Name == "羞恥") {
+      //         imgSrc = imgOthers09;
+      //       } else if (data.Name == "感動") {
+      //         imgSrc = imgOthers10;
+      //       } else if (data.Name == "激動") {
+      //         imgSrc = imgOthers11;
+      //       }
+      //       let contentCards = `
+      //         <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+      //           <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+      //           <div class="img-box">
+      //             <img src="${imgSrc}}" alt="${data.Name}">
+      //           </div>
+      //         </button>`;
+      //       let contentModals = `
+      //         <li>
+      //           <div class="modal fade px-40 px-md-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      //             <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+      //               <div class="modal-content bg-${emo}">
+      //                 <div class="modal-body d-sm-flex justify-content-between align-items-center">
+      //                   <div class="box-bigCard-text">
+      //                     <div class="d-flex d-md-none w-100 justify-content-center">
+      //                       <div class="d-sm-none box-bigCard-img mb-8">
+      //                         <img class="w-100" src="${imgSrc}" alt="${data.Name}">
+      //                       </div>
+      //                     </div>
+      //                     <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
+      //                       <h2>${data.Name}</h2>
+      //                       <!-- <a href="modifyEmoCard.html" role="button">
+      //                           <i class="bi bi-pencil-square"></i>
+      //                       </a> -->
+      //                     </div>
+      //                     <div class="mb-16">
+      //                       <h3 class="mb-4">意思：</h3>
+      //                       <p>${data.Description}</p>
+      //                     </div>
+      //                     <div>
+      //                       <h3 class="mb-4">例句：</h3>
+      //                       <p>${data.Example}</p>
+      //                     </div>
+      //                   </div>
+      //                   <div class="d-none d-sm-block box-bigCard-img">
+      //                     <img class="w-100" src="${imgSrc}" alt="${data.Name}">
+      //                   </div>
+      //                 </div>
+      //               </div>
+      //             </div>
+      //           </div>
+      //         </li>`;
+      //       strCards+=contentCards;
+      //       strModal+=contentModals;
+      //     }
+      //   })
+      //   othersCards.innerHTML = strCards;
+      //   listModal.innerHTML = strModal;
+      // }
     </script>
   </body>
 </html>
