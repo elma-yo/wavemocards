@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script type="module" crossorigin src="/wavemocards/assets/main-79d2df86.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-b62d9bb2.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-626d1fdd.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-06c05151.css">
   </head>
   <body>
     <div class="" id="top"></div>
@@ -85,7 +85,7 @@
                 <div class="pb-8 px-12 px-sm-0 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
                     <h2 class="fs-3">安心</h2>
                     <div class="nav-btn d-flex justify-content-end">
-                        <a class="btn btn-outline-main c-btn" href="findEmoClassifiedExpand.html">返回</a>
+                        <a class="btn btn-outline-main c-btn" href="findEmoCards.html">返回</a>
                         <a class="ms-16 btn btn-main c-btn btn-goToMyCards" href="myEmoCardsHolder.html">
                             <i class="bi bi-folder2"></i>
                             <i class="bi bi-folder2-open"></i>
@@ -102,8 +102,8 @@
             </p>
     
             <!-- cards -->
-            <div class="mb-72 d-flex flex-wrap justify-content-center justify-content-md-start">
-                <div class="position-relative me-24">
+            <div class="mb-72 d-flex flex-wrap justify-content-center justify-content-md-start" id="relivedCards">
+                <!-- <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
                     <button type="button" class="class-card mb-36 bg-relived link-gray-900 class-card-relived" data-bs-toggle="modal" data-bs-target="#addRelived01">
                         <p>舒&nbsp;服</p>
@@ -156,10 +156,15 @@
                             <img src="https://wavemocards.com/frontend/upload/03-relived/relived06-trust.svg" alt="信任">
                         </div>
                     </button>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>
+
+    <!-- modalEmoCards -->
+    <ul class="listModal">
+        <li></li>
+    </ul>
 
     <!-- 浮動按鈕 -->
 <div class="me-12 mb-12 floatButton">
@@ -2274,5 +2279,92 @@
 <script src="../assets/js/toolTips.js"></script>
 
 <!-- axios -->
-<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>  </body>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>    <script>
+        const relivedCards = document.querySelector('#relivedCards');
+        const listModal = document.querySelector('.listModal');
+
+        axios.get("http://api2.wavemocards.com/emotions?require=cards")
+            .then(function(response){
+                let aryData = Object.values(response.data); // 轉成「陣列」
+                let aryIds = Object.keys(response.data); // 資料庫中的各卡片 id (0~64)
+
+                for(let i=0; i<aryData.length; i++){
+                    aryData[i].id= aryIds[i];
+                }
+
+            // 展開卡
+            initCards()
+            function initCards() {
+                let strCardsRelived = "";
+                let strModal = "";
+                let emo;
+                aryData.forEach(function(data, i){
+                    if(data.Category == "安心"){
+                        emo = "relived";
+                        let contentCards = `
+                        <div class="position-relative me-48 mb-24">
+                            <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m"></button>
+                            <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                                <div class="img-box">
+                                    <img src="./upload/${data.id}.svg" alt="${data.Name}">
+                                </div>
+                            </button>
+                        </div>`;
+                        strCardsRelived+=contentCards;
+                    }
+                })
+                relivedCards.innerHTML = strCardsRelived;
+            }
+
+            // 大情緒卡 Modal
+            initModal();
+            function initModal() {
+            let strModal = "";
+            let emo;
+            aryData.forEach(function(data, i){
+                if (data.Category == "安心") {
+                    emo = "relived";
+                }
+                
+                let content = `
+                    <li>
+                        <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                                <div class="modal-content bg-${emo} my-36">
+                                    <div class="modal-body d-sm-flex justify-content-between align-items-center position-relative">
+                                        <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-xl"></button>
+                                        <div class="box-bigCard-text">
+                                            <div class="d-flex d-md-none w-100 justify-content-center">
+                                                <div class="d-sm-none box-bigCard-img mb-8">
+                                                    <img class="w-100" src="./upload/${data.id}.svg" alt="${data.Name}">
+                                                </div>
+                                            </div>
+                                            <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
+                                                <h2>${data.Name}</h2>
+                                            </div>
+                                            <div class="mb-16">
+                                                <h3 class="mb-4">意思：</h3>
+                                                <p>${data.Description}</p>
+                                            </div>
+                                            <div>
+                                                <h3 class="mb-4">例句：</h3>
+                                                <p>${data.Example}</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-none d-sm-block box-bigCard-img">
+                                            <img class="w-100" src="./upload/${data.id}.svg" alt="${data.Name}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>`;
+                    strModal+=content;
+                })
+                listModal.innerHTML = strModal;
+            }
+        })
+    </script>
+  </body>
 </html>
