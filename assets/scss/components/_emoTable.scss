@@ -13,20 +13,18 @@
     border-radius: 4px;
     font-size: 20px;
 }
-.emoTableAdd {
-    a {
-        display: block;
-        width: 24px;
-        height: 24px;
-        background-image: url(../images/plus-btn-table.svg);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;
-    }
-    a:hover {
-        background-image: url(../images/plus-btn-hover.svg);
-    }
+.btn-emoTableAdd {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/plus-btn-table.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.btn-emoTableAdd:hover {
+    background-image: url(../images/plus-btn-hover.svg);
 }
 .opacity-happy {
     background-color: rgba(255, 229, 127, .2);

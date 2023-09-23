@@ -5,7 +5,39 @@ const expanded = document.querySelector('#expanded');
 const folded = document.querySelector('#folded');
 const emoTable = document.querySelector('#emoTable');
 
+// 檢查 localStorage 中的 btnName，並切換到該介面
+let recBtnName = localStorage.getItem("btnName");
+if(recBtnName=="fold"){
+    btnFolded();
+} else if (recBtnName=="emoTable") {
+    btnEmoTableOn();
+} else {
+    btnExpanded();
+}
+
+// 3 個按鈕的監聽事件 該按鈕被點擊時，資料內容會轉換
 btnExpand.addEventListener('click',function(){
+    // 將被點擊按鈕名稱 紀錄到 localStorage 中
+    let btnName = "expand";
+    localStorage.setItem("btnName", btnName);
+    // 轉換介面
+    btnExpanded();
+})
+btnFold.addEventListener('click',function(){
+    // 將被點擊按鈕名稱 紀錄到 localStorage 中
+    let btnName = "fold";
+    localStorage.setItem("btnName", btnName);
+    // 轉換介面
+    btnFolded();
+})
+btnEmoTable.addEventListener('click',function(){
+    // 將被點擊按鈕名稱 紀錄到 localStorage 中
+    let btnName = "emoTable";
+    localStorage.setItem("btnName", btnName);
+    // 轉換介面
+    btnEmoTableOn();
+})
+function btnExpanded(){
     btnExpand.classList.remove('btn', 'btn-outline-main-tint01', 'c-btn-outline-main-tint01');
     btnExpand.classList.add('btn-disable');
     btnExpand.disabled=true;
@@ -25,8 +57,8 @@ btnExpand.addEventListener('click',function(){
     folded.classList.add('d-none');
     emoTable.classList.remove('d-block');
     emoTable.classList.add('d-none');
-})
-btnFold.addEventListener('click',function(){
+}
+function btnFolded(){
     btnFold.classList.remove('btn', 'btn-outline-main-tint01', 'c-btn-outline-main-tint01');
     btnFold.classList.add('btn-disable');
     btnFold.disabled=true;
@@ -46,8 +78,8 @@ btnFold.addEventListener('click',function(){
     expanded.classList.add('d-none');
     emoTable.classList.remove('d-block');
     emoTable.classList.add('d-none');
-})
-btnEmoTable.addEventListener('click',function(){
+}
+function btnEmoTableOn(){
     btnEmoTable.classList.remove('btn', 'btn-outline-main-tint01', 'c-btn-outline-main-tint01');
     btnEmoTable.classList.add('btn-disable');
     btnEmoTable.disabled=true;
@@ -67,4 +99,4 @@ btnEmoTable.addEventListener('click',function(){
     expanded.classList.add('d-none');
     folded.classList.remove('d-block');
     folded.classList.add('d-none');
-})
+}

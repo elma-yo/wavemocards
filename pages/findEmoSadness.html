@@ -22,7 +22,7 @@
                 <div class="pb-8 px-12 px-sm-0 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
                     <h2 class="fs-3">低落</h2>
                     <div class="nav-btn d-flex justify-content-end">
-                        <a class="btn btn-outline-main c-btn" href="findEmoClassifiedExpand.html">返回</a>
+                        <a class="btn btn-outline-main c-btn" href="findEmoCards.html">返回</a>
                         <a class="ms-16 btn btn-main c-btn btn-goToMyCards" href="myEmoCardsHolder.html">
                             <i class="bi bi-folder2"></i>
                             <i class="bi bi-folder2-open"></i>
@@ -39,8 +39,8 @@
             </p>
     
             <!-- cards -->
-            <div class="mb-72 d-flex flex-wrap justify-content-center justify-content-md-start">
-                <div class="position-relative me-24">
+            <div class="mb-72 d-flex flex-wrap justify-content-center justify-content-md-start" id="sadnessCards">
+                <!-- <div class="position-relative me-24">
                     <a class="position-absolute top-0 start-100 translate-middle btn-add-card-m"></a>
                     <button type="button" class="class-card mb-36 bg-sadness link-gray-900 class-card-sadness" data-bs-toggle="modal" data-bs-target="#addSadness01">
                         <p>無&nbsp;奈</p>
@@ -147,10 +147,15 @@
                             <img src="https://wavemocards.com/frontend/upload/06-sadness/sadness12-despair.svg" alt="絕望">
                         </div>
                     </button>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>
+
+    <!-- modalEmoCards -->
+    <ul class="listModal">
+        <li></li>
+    </ul>
 
     <%- include('./layout/floatButton') -%>
     
@@ -158,5 +163,92 @@
     <%- include('./layout/modalEmoCardsPlus'); -%>
 
     <%- include('./layout/baseJs'); -%>
+    <script>
+        const sadnessCards = document.querySelector('#sadnessCards');
+        const listModal = document.querySelector('.listModal');
+
+        axios.get("http://api2.wavemocards.com/emotions?require=cards")
+            .then(function(response){
+                let aryData = Object.values(response.data); // 轉成「陣列」
+                let aryIds = Object.keys(response.data); // 資料庫中的各卡片 id (0~64)
+
+                for(let i=0; i<aryData.length; i++){
+                    aryData[i].id= aryIds[i];
+                }
+
+            // 展開卡
+            initCards()
+            function initCards() {
+                let strCardsSadness = "";
+                let strModal = "";
+                let emo;
+                aryData.forEach(function(data, i){
+                    if(data.Category == "低落"){
+                        emo = "sadness";
+                        let contentCards = `
+                        <div class="position-relative me-48 mb-24">
+                            <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m"></button>
+                            <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                                <div class="img-box">
+                                    <img src="./upload/${data.id}.svg" alt="${data.Name}">
+                                </div>
+                            </button>
+                        </div>`;
+                        strCardsSadness+=contentCards;
+                    }
+                })
+                sadnessCards.innerHTML = strCardsSadness;
+            }
+
+            // 大情緒卡 Modal
+            initModal();
+            function initModal() {
+            let strModal = "";
+            let emo;
+            aryData.forEach(function(data, i){
+                if (data.Category == "低落") {
+                    emo = "sadness";
+                }
+                
+                let content = `
+                    <li>
+                        <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                                <div class="modal-content bg-${emo} my-36">
+                                    <div class="modal-body d-sm-flex justify-content-between align-items-center position-relative">
+                                        <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-xl"></button>
+                                        <div class="box-bigCard-text">
+                                            <div class="d-flex d-md-none w-100 justify-content-center">
+                                                <div class="d-sm-none box-bigCard-img mb-8">
+                                                    <img class="w-100" src="./upload/${data.id}.svg" alt="${data.Name}">
+                                                </div>
+                                            </div>
+                                            <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
+                                                <h2>${data.Name}</h2>
+                                            </div>
+                                            <div class="mb-16">
+                                                <h3 class="mb-4">意思：</h3>
+                                                <p>${data.Description}</p>
+                                            </div>
+                                            <div>
+                                                <h3 class="mb-4">例句：</h3>
+                                                <p>${data.Example}</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-none d-sm-block box-bigCard-img">
+                                            <img class="w-100" src="./upload/${data.id}.svg" alt="${data.Name}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>`;
+                    strModal+=content;
+                })
+                listModal.innerHTML = strModal;
+            }
+        })
+    </script>
   </body>
 </html>
