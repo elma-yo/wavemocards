@@ -118,7 +118,7 @@
                         <span>第一次</span>
                     </h2>
                     <div class="nav-btn d-flex justify-content-end">
-                        <a class="btn btn-outline-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="myEmoCardsHolder.html">上一步</a>
+                        <a class="btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 text-nowrap d-flex justify-content-center align-items-center" href="myEmoCardsHolder.html">上一步</a>
                         <a class="ms-16 btn btn-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="findEmoBackground.html"><span class="ms-4">下一步</span></a>
                     </div>
                 </div>
@@ -126,6 +126,7 @@
         </div>
 
         <div class="container">
+            <!-- 導覽 -->
             <ul  class="ms-4 mt-12 mb-36 px-12 px-sm-0 text-gray-550 fs-7">
                 <li class="mb-4 text-gray-550 fs-7">謝謝親愛的ＯＯ努力地找尋到屬於自己的情緒卡。</li>
                 <li class="mb-4 text-gray-550 fs-7">
@@ -133,139 +134,133 @@
                 <li class="mb-40 text-gray-550 fs-7">
                     並在深呼吸的過程中，感受心中的自己，<span class="text-main fw-500">挑選的情緒，其強度分別如何呢？</span><span class="fs-8">（ 1分代表最為微弱，5分代表最為強烈 ）</span></li>
             </ul>
-
-            <!-- 尚未設定form action內濃 -->
-            <form action="#">
-                <!-- 1 card & point -->
-                <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
-                    <!-- card -->
-                    <button type="button" class="class-card mb-md-0 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation01">
-                        <p>期&nbsp;待</p>
-                        <div class="img-box">
-                            <img src="https://wavemocards.com/frontend/upload/02-expectation/expaction01-expect.svg" alt="期待">
-                        </div>
-                    </button>
-                    <!-- point -->
-                    <div class="box-strength d-flex justify-content-between align-items-center">
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point01" value="1">
-                            <label for="1stEmo01Point01" class="form-label text-strength ">
-                                1
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point02" value="2">
-                            <label for="1stEmo01Point02" class="form-label text-strength ">
-                                2
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point03" value="3">
-                            <label for="1stEmo01Point03" class="form-label text-strength ">
-                                3
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point04" value="4">
-                            <label for="1stEmo01Point04" class="form-label text-strength ">
-                                4
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point05" value="5">
-                            <label for="1stEmo01Point05" class="form-label text-strength ">
-                                5
-                            </label>
-                        </div>
+        
+            <div id="strengthArea"></div>
+            <!-- 1 card & point -->
+            <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
+                <!-- card -->
+                <button type="button" class="class-card mb-md-0 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation01">
+                    <p>期&nbsp;待</p>
+                    <div class="img-box">
+                        <img src="https://wavemocards.com/frontend/upload/02-expectation/expaction01-expect.svg" alt="期待">
+                    </div>
+                </button>
+                <!-- point -->
+                <div class="box-strength d-flex justify-content-between align-items-center">
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point01" value="1">
+                        <label for="1stEmo01Point01" class="form-label text-strength ">
+                            1
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point02" value="2">
+                        <label for="1stEmo01Point02" class="form-label text-strength ">
+                            2
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point03" value="3">
+                        <label for="1stEmo01Point03" class="form-label text-strength ">
+                            3
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point04" value="4">
+                        <label for="1stEmo01Point04" class="form-label text-strength ">
+                            4
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point05" value="5">
+                        <label for="1stEmo01Point05" class="form-label text-strength ">
+                            5
+                        </label>
                     </div>
                 </div>
-                <!-- 2 card & point -->
-                <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
-                    <!-- card -->
-                    <button type="button" class="class-card mb-md-0 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy05">
-                        <p>興&nbsp;奮</p>
-                        <div class="img-box">
-                            <img src="https://wavemocards.com/frontend/upload/01-happy/happy05-excited.svg" alt="興奮">
-                        </div>
-                    </button>
-                    <!-- point -->
-                    <div class="box-strength d-flex justify-content-between align-items-center">
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point01" value="1">
-                            <label for="1stEmo02Point01" class="form-label text-strength ">
-                                1
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point02" value="2">
-                            <label for="1stEmo02Point02" class="form-label text-strength ">
-                                2
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point03" value="3">
-                            <label for="1stEmo02Point03" class="form-label text-strength ">
-                                3
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point04" value="4">
-                            <label for="1stEmo02Point04" class="form-label text-strength ">
-                                4
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point05" value="5">
-                            <label for="1stEmo02Point05" class="form-label text-strength ">
-                                5
-                            </label>
-                        </div>
+            </div>
+            <!-- 2 card & point -->
+            <!-- <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
+                <button type="button" class="class-card mb-md-0 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy05">
+                    <p>興&nbsp;奮</p>
+                    <div class="img-box">
+                        <img src="https://wavemocards.com/frontend/upload/01-happy/happy05-excited.svg" alt="興奮">
+                    </div>
+                </button>
+                <div class="box-strength d-flex justify-content-between align-items-center">
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point01" value="1">
+                        <label for="1stEmo02Point01" class="form-label text-strength ">
+                            1
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point02" value="2">
+                        <label for="1stEmo02Point02" class="form-label text-strength ">
+                            2
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point03" value="3">
+                        <label for="1stEmo02Point03" class="form-label text-strength ">
+                            3
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point04" value="4">
+                        <label for="1stEmo02Point04" class="form-label text-strength ">
+                            4
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point05" value="5">
+                        <label for="1stEmo02Point05" class="form-label text-strength ">
+                            5
+                        </label>
                     </div>
                 </div>
-                <!-- 3 card & point -->
-                <div class="mb-72 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
-                    <!-- card -->
-                    <button type="button" class="class-card mb-md-0 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable02">
-                        <p>擔&nbsp;心</p>
-                        <div class="img-box">
-                            <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable02-worry.svg" alt="擔心">
-                        </div>
-                    </button>
-                    <!-- point -->
-                    <div class="box-strength d-flex justify-content-between align-items-center">
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point01" value="1">
-                            <label for="1stEmo03Point01" class="form-label text-strength ">
-                                1
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point02" value="2">
-                            <label for="1stEmo03Point02" class="form-label text-strength ">
-                                2
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point03" value="3">
-                            <label for="1stEmo03Point03" class="form-label text-strength ">
-                                3
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point04" value="4">
-                            <label for="1stEmo03Point04" class="form-label text-strength ">
-                                4
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point05" value="5">
-                            <label for="1stEmo03Point05" class="form-label text-strength ">
-                                5
-                            </label>
-                        </div>
+            </div> -->
+            <!-- 3 card & point -->
+            <!-- <div class="mb-72 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
+                <button type="button" class="class-card mb-md-0 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable02">
+                    <p>擔&nbsp;心</p>
+                    <div class="img-box">
+                        <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable02-worry.svg" alt="擔心">
+                    </div>
+                </button>
+                <div class="box-strength d-flex justify-content-between align-items-center">
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point01" value="1">
+                        <label for="1stEmo03Point01" class="form-label text-strength ">
+                            1
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point02" value="2">
+                        <label for="1stEmo03Point02" class="form-label text-strength ">
+                            2
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point03" value="3">
+                        <label for="1stEmo03Point03" class="form-label text-strength ">
+                            3
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point04" value="4">
+                        <label for="1stEmo03Point04" class="form-label text-strength ">
+                            4
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point05" value="5">
+                        <label for="1stEmo03Point05" class="form-label text-strength ">
+                            5
+                        </label>
                     </div>
                 </div>
-            </form>
+            </div> -->
         </div>
     </main>
 
@@ -2512,5 +2507,8 @@
 <script src="../assets/js/toolTips.js"></script>
 
 <!-- axios -->
-<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>  </body>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>    <script>
+        const strengthArea =document.querySelector('#strengthArea');
+    </script>
+  </body>
 </html>
