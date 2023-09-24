@@ -1698,11 +1698,13 @@
                         let cardInfo = aryData[id-1];
 
                         // 取得 localStorage stringAddedCards 的資料
-                        let storageCards;
+                        let storageData; // local storage 全部的資料
+                        let storageCards; // 存放 local storage 中的 card 資料
                         let getAddedCards = localStorage.getItem("addedCards");
                         let hadThisCard; // 判別是否已有此卡
                         if(getAddedCards!=null){
-                            storageCards=JSON.parse(getAddedCards); // 將 string 資料轉為 array 資料
+                            storageData=JSON.parse(getAddedCards); // 將 string 資料轉為 array 資料
+                            storageCards=storageData[0].cards;
                             // 檢查此卡片是否已被放入 localStorage
                             storageCards.forEach(function(card, index){
                             if(cardInfo.ID==card.ID){
@@ -1711,7 +1713,8 @@
                         })
                         } else {
                             // storageCards 尚未被定義，因此 定義成array格式，後續才能將卡片資料新增進入array中
-                            storageCards=[];
+                            storageData=[{cards:[]}];
+                            storageCards=storageData[0].cards;
                         }
                         if(hadThisCard==true){
                             // 失敗 Modal
@@ -1741,8 +1744,9 @@
                             btnAdd.setAttribute("data-bs-target", "#modalResult");
                             btnAdd.click(); // 設定該按鈕被點擊
                             storageCards.push(cardInfo);
+                            storageData[0].cards=storageCards;
                             // 將資料 轉為 string 資料
-                            let stringAddedCard = JSON.stringify(storageCards);
+                            let stringAddedCard = JSON.stringify(storageData);
                             // 將 aryAddedCards 存入 localStorage 中
                             localStorage.setItem("addedCards", stringAddedCard);
                         }

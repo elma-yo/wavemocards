@@ -224,4 +224,13 @@
     <%- include('./layout/baseJs'); -%>
     <script type="text/javascript" src="../assets/js/textarea.js"></script>
   </body>
+  <script>
+    // 取得local storage 資料
+    let storageData;
+    let storageCards;
+    let getAddedCards = localStorage.getItem("addedCards");
+    storageData=JSON.parse(getAddedCards);
+    console.log(storageData);
+    storageCards=storageData[0].cards;
+  </script>
 </html>

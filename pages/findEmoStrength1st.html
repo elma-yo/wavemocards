@@ -236,9 +236,11 @@
         const strengthArea =document.querySelector('#strengthArea');
         const listModal = document.querySelector('.listModal');
         // 抓 local storage 的 卡片資料
+        let storageData;
         let storageCards;
         let getAddedCards = localStorage.getItem("addedCards");
-        storageCards=JSON.parse(getAddedCards);
+        storageData=JSON.parse(getAddedCards);
+        storageCards=storageData[0].cards;
         // 將卡片資料印到版面上
         axios.get("https://api.wavemocards.com/emotions?require=cards")
         .then(function(response){
@@ -432,6 +434,10 @@
                     }
                 })
                 if(fail==false){
+                    // 將資料 轉為 string 資料，並將 aryAddedCards 存入 localStorage 中
+                    storageData[0].cards=storageCards;
+                    let stringAddedCard = JSON.stringify(storageData);
+                    localStorage.setItem("addedCards", stringAddedCard);
                     location.href = "findEmoBackground.html";
                 }
             })
