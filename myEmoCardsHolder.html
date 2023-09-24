@@ -301,7 +301,7 @@
 <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>        <script>
             const btnNext = document.querySelector('#btnNext');
             const cardsList = document.querySelector('#cardsList');
-            const listModal = document.querySelector('.listModal')
+            const listModal = document.querySelector('.listModal');
             // 刪除卡片 Modal
             const modalDelete = document.querySelector('#modalDelete');
             const modalDeleteSure = document.querySelector('#modalDeleteSure');
@@ -318,7 +318,7 @@
             if(getAddedCards!=null){
                 storageCards=JSON.parse(getAddedCards); // 將 string 資料轉為 array 資料
 
-                axios.get("http://api2.wavemocards.com/emotions?require=cards")
+                axios.get("https://api.wavemocards.com/emotions?require=cards")
                 .then(function(response){
                     let aryData = Object.values(response.data); // 轉成「陣列」
                     // cards 卡片列
@@ -461,11 +461,12 @@
                             btnNext.setAttribute("data-bs-target", "#modalNextErr");
                             btnNext.click();
                         } else {
+                            // 將資料 轉為 string 資料，並將 aryAddedCards 存入 localStorage 中
+                            let stringAddedCard = JSON.stringify(storageCards);
+                            localStorage.setItem("addedCards", stringAddedCard);
                             location.href = "findEmoStrength1st.html";
                         }
                     })
-                    // console.log(cardsNum);
-
                 })
             }
         </script>

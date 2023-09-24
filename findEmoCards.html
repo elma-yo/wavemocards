@@ -1492,7 +1492,7 @@
             const modalResultLink = document.querySelector('#modalResultLink');
             const modalResultClose = document.querySelector('#modalResultClose');
 
-            axios.get("http://api2.wavemocards.com/emotions?require=cards")
+            axios.get("https://api.wavemocards.com/emotions?require=cards")
             .then(function(response){
                 let aryData = Object.values(response.data); // 轉成「陣列」
                 // let aryIds = Object.keys(response.data); // 資料庫中的各卡片 id (0~64)
