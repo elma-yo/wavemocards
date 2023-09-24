@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- 手機版網頁 CSS Reset 螢幕解析度 Reset -->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <title>浪潮情緒卡｜探索情緒</title>
+        <!-- Bootstrap icon -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <!-- Bootstrap css -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+      <script type="module" crossorigin src="/wavemocards/assets/main-626d1fdd.js"></script>
+      <link rel="stylesheet" href="/wavemocards/assets/main-06c05151.css">
+    </head>
+    <body>
+        <div class="" id="top"></div>
+        <header class="header h-logined mb-12">
+    <div class="container py-16 d-flex justify-content-between align-items-center">
+        <h1>
+            <a href="home.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="回到首頁">浪潮情緒卡</a>
+        </h1>
+        <div class="d-lg-none position-relative">
+            <button class="px-8 py-4 btn btn-outline-main rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="collapse" style="position: absolute; right: 0; top: 40px; z-index: 10000;" id="collapseExample">
+                <div class="p-0 card card-body rounded-2 border-2 border-main-tint01" style="width: 160px;">
+                    <ul>
+                        <li>
+                            <a class="d-block px-16 py-12 link-gray-600 btn-hover-main-tint02 rounded-2" href="aboutEmotions.html">認識情緒</a>
+                        </li>
+                        <li>
+                            <a class="d-block px-16 py-12 link-gray-600 btn-hover-main-tint02 rounded-2" href="findMyEmotions.html">探索情緒</a>
+                        </li>
+                        <li>
+                            <a class="d-block px-16 py-12 link-gray-600 btn-hover-main-tint02 rounded-2" href="myRecords.html">我的紀錄</a>
+                        </li>
+                        <!-- <li>
+                            <a class="d-block px-16 py-12 link-gray-600 btn-hover-main-tint02 rounded-2" href="sharedByOthers.html">他人的分享</a>
+                        </li> -->
+                        <li>
+                            <a class="d-block px-16 py-12 link-gray-600 btn-hover-main-tint02 rounded-2" href="account.html">我的帳戶</a>
+                        </li>
+                        <li>
+                            <a class="d-block px-16 py-12 link-gray-600 btn-hover-main-tint02 rounded-2" href="#">登出</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="d-none d-lg-flex justify-content-between align-items-center mb-0 ps-0">
+            <li>
+                <a href="aboutEmotions.html" class="px-4 py-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="認識情緒與情緒卡">認識情緒</a>
+            </li>
+            <li class="ms-16">
+                <a href="findMyEmotions.html" class="px-4 py-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="選擇情緒卡與紀錄情緒">探索情緒</a>
+            </li>
+            <li class="ms-16">
+                <a href="myRecords.html" class="px-4 py-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="觀看我的情緒紀錄與分析">我的紀錄</a>
+            </li>
+            <!-- <li class="ms-16">
+                <a href="sharedByOthers.html" class="px-4 py-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="觀看他人分享的情緒紀錄">他人的分享</a> -->
+            </li>
+            <li class="ms-16">
+                <a href="account.html" class="profile" data-bs-toggle="tooltip" data-bs-placement="bottom" title="管理我的帳戶">
+                    <i class="bi bi-person-fill"></i>
+                    <i class="bi bi-person-fill-gear"></i>
+                </a>
+            </li>
+            <li class="ms-16">
+                <a href="#" class="logout" data-bs-toggle="tooltip" data-bs-placement="bottom" title="登出">
+                    <i class="bi bi-door-closed-fill"></i>
+                    <i class="bi bi-door-open-fill"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+        <main>
+            <!-- Title -->
+            <div class="sticky-top pb-4 bg-white">
+                <div class="container pt-16">
+                    <div class="mb-16 pb-8 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
+                        <div>
+                            <div class="d-md-none" style="font-size: 32px;">
+                                <h2>探索情緒</h2>
+                            </div>
+                            <h2 class="d-none d-md-block fs-3">探索情緒｜情緒卡</h2>
+                        </div>
+                        <div class="nav-btn d-flex flex-column flex-md-row justify-content-end align-items-end align-items-md-center">
+                            <div class="mb-12 mb-md-0 d-flex justify-content-end align-items-center">
+                                <button type="button" class="btn-disable text-nowrap" id="btnExpand" disabled>展開</button>
+                                <button type="button" class="ms-8 ms-md-12 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 fw-bold text-nowrap" id="btnFold">收合</button>
+                                <button type="button" class="ms-8 ms-md-12 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 fw-bold text-nowrap" id="btnEmoTable">情緒表</button>
+                            </div>
+                            <a class="ms-24 px-16 btn btn-main c-btn btn-goToMyCards fs-7 d-flex justify-content-center align-items-center" style="width: 100%; @media(max-width:768){width: auto;}" href="myEmoCardsHolder.html">
+                                <i class="bi bi-folder2"></i>
+                                <i class="bi bi-folder2-open"></i>
+                                <span class="ms-4">我的情緒卡夾</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container py-16">
+                <!-- <button class="w-100 mb-32 py-8 btn btn-pink c-btn" id="btnSubmit" type="submit" data-bs-toggle="modal">註冊</button> -->
+                <!-- 展開 -->
+                <div id="expanded">
+                    <!-- 快樂類 -->
+                    <div class="mb-20 d-flex flex-nowrap">
+                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadHappy" href="findEmoHappy.html">
+                            <span>快</span><span>樂</span>
+                        </a>
+                        <div class="d-flex overflow-auto pt-20" id="happyCards">
+                            <div class="position-relative me-24">
+                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"></button>
+                                <button type="button" class="class-card mb-12 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#addHappy01">
+                                    <p>滿&nbsp;足</p>
+                                    <div class="img-box">
+                                        <img src="https://wavemocards.com/frontend/upload/01-happy/happy01-statisfy.svg" alt="滿足">
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="modal fade" id="modalResult" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-body d-flex flex-column align-items-center px-48 pt-24 pb-16">
+                        <p id="modalResultTitle" class="mb-12 fs-3 fw-bold">成功</p>
+                        <div class="d-flex flex-column">
+                            <p id="modalResultErr" class="d-none mt-4 fs-7 text-gray-700">此卡片已被放入情緒卡夾，請選擇其他卡片。</p>
+                            <p id="modalResultText1" class="mt-4 fs-7 text-gray-700">
+                                若想繼續挑選情緒卡，請點擊「<span class="px-2 fw-bold">繼續挑選</span>」。
+                            </p>
+                            <p id="modalResultText2" class="mt-4 fs-7 text-gray-700">
+                                若完成挑選卡片，請點擊「<span class="px-2 fw-bold">我的情緒卡夾</span>」進行下一個步驟。
+                            </p>
+                        </div>
+                        <div style="width: 45%;">
+                            <img class="w-100 pt-24 pb-2" src="/wavemocards/assets/addCardSuccess-1a5c2705.svg" alt="img" id="modalResultImg">
+                        </div>
+                        <span class="text-gray-400 fs-11">Illustration by <a class="link-gray-400" href="https://blush.design/artists/RyUTVuP8G4QeAAEEQgug/pablo-stanley">Pablo Stanley</a> from <a class="link-gray-400" href="https://blush.design/">blush design</a></span>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" id="modalResultClose" class="me-16 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 px-24 py-8 fs-6" data-bs-dismiss="modal">繼續挑選</button>
+                        <a href="myEmoCardsHolder.html" id="modalResultLink" class="btn btn-main c-btn px-24 py-8 link-white fs-6 rounded-pill">我的情緒卡夾</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-body d-flex flex-column align-items-center px-48 py-36">
+                        <p id="resultTitle" class="fs-4 fw-bold">卡片成功加入情緒卡夾中</p>
+                        <p id="resultErrMsg" class="d-none mt-12 fs-7 text-gray-700">此卡片已被放入情緒卡夾中，請選擇其他卡片。</p>
+                        <p id="resultText" class="fs-7 fw-bold">若完成挑選卡片，請點擊「<span class="px-2 text-main fw-bold">我的情緒卡夾</span>」進行下一步驟。</p>
+                        <div style="width: 45%; height: 45%;">
+                            <img class="w-100" src="./upload/15.svg" alt="安心" id="resultImg">
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" id="resultClose" class="btn btn-pink c-btn px-36 py-8 link-white fs-6 fw-bold" data-bs-dismiss="modal">繼續挑選情緒卡</button>
+                        <a href="login.html" id="resultNext" class="btn btn-main px-16 py-8 link-white fs-6 fw-bold">前往「我的情緒卡夾」</a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- 浮動按鈕 -->
+<div class="me-12 mb-12 floatButton">
+    <a href="#top" type="button" class="btn btn-main-tint01 rounded-circle shadow d-flex flex-column justify-content-center align-items-center">
+        <img class="d-none d-md-block" src="/wavemocards/assets/backToTop-1ea21c73.svg" alt="top">
+        <span class="text-white fs-9 fs-md-10 fw-bold">TOP</span>
+    </a>
+</div>
+        <footer class="footer py-48">
+    <div class="container">
+        <div class="d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
+            <!-- logo -->
+            <div class="footer-img mb-48 mb-lg-0 me-lg-96">
+                <img class="w-100" src="/wavemocards/assets/logo_footer-2fe4aa72.svg" alt="logo">
+            </div>
+            <!-- Developers -->
+            <div class="footer-text-box mb-48 mb-lg-0 me-lg-56">
+                <h3 class="mb-16 fs-5">開發團隊</h3>
+                <ul>
+                    <li class="mb-8">
+                        <a class="d-lg-flex justify-content-between" href="https://www.linkedin.com/in/shu-ping-yu-238655268/"  target="_blank">
+                            <span>Product Manager</span>
+                            <span class="mt-4 d-block text-end">Shu-Ping Yu</span>
+                        </a>
+                    </li>
+                    <li class="mb-8">
+                        <a class="d-lg-flex justify-content-between" href="https://www.linkedin.com/in/shu-ping-yu-238655268/"  target="_blank">
+                            <span>Product Designer</span>
+                            <span class="mt-4 d-block text-end">Shu-Ping Yu</span>
+                        </a>
+                    </li>
+                    <li class="mb-8">
+                        <a class="d-lg-flex justify-content-between" href="https://www.linkedin.com/in/shu-ping-yu-238655268/" target="_blank">
+                            <span>Front-End Engineer</span>
+                            <span class="mt-4 d-block text-end">Shu-Ping Yu</span>
+                        </a>
+                    </li>
+                    <li class="mb-8">
+                        <a class="d-lg-flex justify-content-between" href="https://www.linkedin.com/in/%E5%81%89%E5%87%B1-%E6%9E%97-668aaa204/" target="_blank">
+                            <span>Front-End Consultant</span>
+                            <span class="mt-4 d-block text-end">Wei-Kai Lin</span>
+                        </a>
+                    </li>
+                    <li class="mb-8">
+                        <a class="d-lg-flex justify-content-between" href="https://www.linkedin.com/in/techleon/" target="_blank">
+                            <span>Database Developer</span>
+                            <span class="mt-4 d-block text-end">Leon Wu</span>
+                        </a>
+                    </li>
+                    <li class="mb-8">
+                        <a class="d-lg-flex justify-content-between" href="https://www.linkedin.com/in/techleon/" target="_blank">
+                            <span>Back-End Developer</span>
+                            <span class="mt-4 d-block text-end">Leon Wu</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="d-lg-flex justify-content-between" href="https://a8607125167.wixsite.com/mysite/about"  target="_blank">
+                            <span>Illustrator</span>
+                            <span class="mt-4 d-block text-end">Yi-Wen Fang</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Contact -->
+            <div class="footer-text-box mb-48 mb-lg-0 me-lg-56">
+                <a href="mailto:info@wavemocards.com">
+                    <h3 class="mb-16 fs-5">聯絡我們</h3>
+                    <span>info@wavemocards.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+<!--  Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- toolTips on header -->
+<script src="../assets/js/toolTips.js"></script>
+
+<!-- axios -->
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>        <!-- <script src="../assets/js/pages/changStyleOfCards.js"></script> -->
+        <script>
+            // const btnAdd = document.querySelector('#btnAdd');
+            // // result modal
+            // const resultModal = document.querySelector('#resultModal');
+            // const resultTitle = document.querySelector('#resultTitle');
+            // const resultErrMsg = document.querySelector('#resultErrMsg');
+            // const resultText = document.querySelector('#resultText');
+            // const resultImg = document.querySelector('#resultImg');
+            // btnAdd.addEventListener('click', function(){
+            //     resultTitle.classList.add("text-main");
+            //     btnAdd.setAttribute("data-bs-target", "#resultModal");
+            //     // btnAdd.click(); // 設定該按鈕被點擊
+            // })
+
+            const btnAdd = document.querySelector('#btnAdd');
+            const modalResult = document.querySelector('#modalResult');
+            const modalResultTitle = document.querySelector('#modalResultTitle');
+            const modalResultErr = document.querySelector('#modalResultErr');
+            const modalResultText1 = document.querySelector('#modalResultText1');
+            const modalResultText2 = document.querySelector('#modalResultText2');
+            const modalResultLink = document.querySelector('#modalResultLink');
+            const modalResultClose = document.querySelector('#modalResultClose');
+            // 註冊內容驗證
+            btnAdd.addEventListener('click', function(){
+                let success = true;
+                if(success==true){
+                    modalResultTitle.classList.add("text-main");
+                    btnAdd.setAttribute("data-bs-toggle", "modal");
+                    btnAdd.setAttribute("data-bs-target", "#modalResult");
+                    btnAdd.click(); // 設定該按鈕被點擊
+                } else {
+                    modalResultTitle.textContent = "已有此卡囉！";
+                    modalResultTitle.classList.add("text-pink");
+                    modalResultErr.classList.remove("d-none");
+                    modalResultText2.classList.add("d-none");
+                    modalResultImg.src="../assets/images/addCardFail.svg";
+                    modalResultLink.classList.add("d-none");
+                    modalResultClose.classList.remove("btn-outline-main-tint01", "c-btn-outline-main-tint01");
+                    modalResultClose.classList.add("btn-outline-pink", "c-btn-outline-pink");
+                    btnAdd.setAttribute("data-bs-toggle", "modal");
+                    btnAdd.setAttribute("data-bs-target", "#modalResult");
+                    btnAdd.click();
+                }
+            })
+        </script>
+    </body>
+</html>
+
+

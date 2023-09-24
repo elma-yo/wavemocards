@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- 手機版網頁 CSS Reset 螢幕解析度 Reset -->
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <title>浪潮情緒卡｜註冊</title>
-    <!-- Bootstrap icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <!-- Bootstrap css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script type="module" crossorigin src="/wavemocards/assets/main-626d1fdd.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-06c05151.css">
-  </head>
-  <body>
-    <header class="header sticky-top">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- 手機版網頁 CSS Reset 螢幕解析度 Reset -->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <title>浪潮情緒卡｜註冊</title>
+        <!-- Bootstrap icon -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <!-- Bootstrap css -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+      <script type="module" crossorigin src="/wavemocards/assets/main-626d1fdd.js"></script>
+      <link rel="stylesheet" href="/wavemocards/assets/main-06c05151.css">
+    </head>
+    <body>
+        <header class="header sticky-top">
     <div class="container py-16 d-flex justify-content-between align-items-center">
         <h1 id="home">
             <a href="index.html" data-bs-toggle="tooltip" data-bs-placement="bottom" id="aHeader" title="回到首頁">浪潮情緒卡</a>
@@ -52,320 +52,320 @@
         </ul>
     </div>
 </header>
-    <main class="login signup d-flex justify-content-center align-items-stretch">
-        <div class="d-none d-lg-block img w-50">
-            <img src="/wavemocards/assets/login-bg-22843504.svg" alt="login page background">
-        </div>
+        <main class="login signup d-flex justify-content-center align-items-stretch">
+            <div class="d-none d-lg-block img w-50">
+                <img src="/wavemocards/assets/login-bg-22843504.svg" alt="login page background">
+            </div>
 
-        <div class="box-50 py-32 px-24 d-flex flex-column align-items-center">
-            <div class="form">
-                <div class="mb-20 text-pink d-flex flex-column align-items-center">
-                    <i class="bi bi-person-circle profile"></i>
+            <div class="box-50 py-32 px-24 d-flex flex-column align-items-center">
+                <div class="form">
+                    <div class="mb-20 text-pink d-flex flex-column align-items-center">
+                        <i class="bi bi-person-circle profile"></i>
+                    </div>
+                    <h2 class="mb-32 text-pink">註冊</h2>
+                    <!-- 尚未填入 a 連結 -->
+                    <!-- <a class="w-100 mb-32 py-8 btn btn-outline-pink c-btn-outline-pink d-flex justify-content-center align-items-center" href="#">
+                        連結 Google 帳號
+                        <i class="bi bi-google ms-8"></i>
+                    </a>
+                    <div class="or mb-32">或</div> -->
+
+                    <!-- 尚未填入 action 內容 -->
+                    <form action="#" method="post" class="needs-validation" novalidate>
+                        <div class="mb-16">
+                            <!-- email -->
+                            <label for="email" class="form-label  d-flex justify-content-between">
+                                E-mail
+                                <span class="text-pink-tint02 fs-9">*必填</span>
+                            </label>
+                            <div class="d-flex flex-column flex-sm-row">
+                                <input type="email" class="form-control rounded-pill mb-8 mb-sm-0 px-20" id="email" placeholder="wavemocards@mail.com" required>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-sm-none mt-4 ms-12 fs-9" id="emailCmt"></div>
+                                    <button type="button" class="ms-8 px-12 btn btn-outline-main c-btn c-btn-outline-main fs-8 text-nowrap" id="btnVerify">驗證</button>
+                                </div>
+                            </div>
+                            <!-- email驗證結果 -->
+                            <div class="d-none d-sm-block mt-4 ms-24 fs-9" id="emailCmt"></div>
+                            <!-- bs的資料驗證回饋 -->
+                            <div class="invalid-feedback">
+                                請輸入正確的 e-mail 帳號
+                            </div>
+                        </div>
+                        <!-- passWord -->
+                        <div class="mb-16">
+                            <label for="pwd" class="form-label d-flex justify-content-between">
+                                密碼
+                                <span class="text-pink-tint02 fs-9">*必填</span>
+                            </label>
+                            <input type="password" class="form-control rounded-pill px-20" id="pwd" required aria-describedby="passwordHelp" placeholder="********" required>
+                            <!-- 密碼驗證 msg -->
+                            <div class="mt-4 ms-24 fs-9" id="pwdCmt"></div>
+                            <button class="ms-24 p-0 fs-9 link-gray-550 bg-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePwdRules" aria-expanded="false" aria-controls="collapsePwdRules">
+                                點我看 設定密碼規則
+                            </button>
+                            <!-- collapse 卡片內容 -->
+                            <div class="collapse ms-12 ms-sm-24" id="collapsePwdRules">
+                                <div class="card card-body py-8 bg-gray-200 border-0 rounded-2">
+                                    <ol class="fs-9">
+                                        <li class="ms-16">包含<span class="fw-bold"> 8 ~ 16 </span>個字符。</li>
+                                        <li class="ms-16">至少包含<span class="fw-bold"> 1 個英文字母</span>(A-Z或a-z)。</li>
+                                        <!-- <li class="ms-16">至少包含<span class="fw-bold"> 1 個大寫 </span>字母（A-Z）。</li>
+                                        <li class="ms-16">至少包含<span class="fw-bold"> 1 個小寫 </span>字母（a-z）。</li> -->
+                                        <li class="ms-16">至少包含<span class="fw-bold"> 1 個數字 </span>（0-9）。</li>
+                                        <!-- <li class="ms-16">至少包含<span class="fw-bold"> 1 個特殊字符 </span>（例如！、@、#、$、%等）。</li> -->
+                                    </ol>
+                                </div>
+                                </div>
+                            <!-- error msg -->
+                            <div class="invalid-feedback">
+                                請設定符合密碼規則的密碼
+                            </div>
+                        </div>
+                        <!-- passWord 2 -->
+                        <div class="mb-16">
+                            <label for="pwd2" class="form-label  d-flex justify-content-between">
+                                確認密碼
+                                <span class="text-pink-tint02 fs-9">*必填</span>
+                            </label>
+                            <input type="password" class="form-control rounded-pill px-20" id="pwd2" placeholder="請再次輸入您所欲設定的密碼" required>
+                            <!-- 雙重密碼驗證結果 -->
+                            <div class="mt-4 ms-12 ms-sm-24 fs-9" id="pwd2Cmt"></div>
+                        </div>
+                        <div class="mb-20">
+                            <label for="account" class="form-label  d-flex justify-content-between">
+                                帳號
+                                <span class="text-pink-tint02 fs-9">*必填</span>
+                            </label>
+                            <input type="text" class="form-control rounded-pill px-20" id="account" placeholder="wavemocards" required>
+                            <div class="invalid-feedback">
+                                只能輸入英文和數字
+                            </div>
+                        </div>
+                        <!-- lastName & firstName -->
+                        <div class="mb-20 row">
+                            <div class="col-6">
+                                <label for="lastName" class="form-label  d-flex justify-content-between">
+                                    姓
+                                    <span class="text-pink-tint02 fs-9">*必填</span>
+                                </label>
+                                <input type="text" class="form-control rounded-pill px-20" id="lastName" placeholder="陳" required>
+                                <div class="invalid-feedback">
+                                    請輸入您的姓氏
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="firstName" class="form-label  d-flex justify-content-between">
+                                    名
+                                    <span class="text-pink-tint02 fs-9">*必填</span>
+                                </label>
+                                <input type="text" class="form-control rounded-pill px-20" id="firstName" placeholder="浪潮" required>
+                                <div class="invalid-feedback">
+                                    請輸入您的名字
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-24 row">
+                            <div class="col-6">
+                                <label for="birthday" class="form-label d-flex justify-content-between">
+                                    生日
+                                    <span class="text-pink-tint02 fs-9">*必填</span>
+                                </label>
+                                <input type="date" class="form-control rounded-pill px-20" id="birthday" required>
+                                <div class="invalid-feedback">
+                                    請輸入您的生日年月日
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="title" class="form-label d-flex justify-content-between">
+                                    身份
+                                </label>
+                                <select class="form-select px-20 rounded-pill" aria-label="Default select example" id="title">
+                                    <option value="學生">學生</option>
+                                    <option value="教師">教師</option>
+                                    <option value="教師">輔導教師</option>
+                                    <option value="諮商師">諮商師</option>
+                                    <option value="醫生">醫生</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-32">
+                            <input type="checkbox" id="agree" required>
+                                    <span class="ms-4">
+                                        我已經詳讀並同意
+                                        <button type="button" class="bg-white border-0 link-main fs-8 fw-normal" data-bs-toggle="modal" data-bs-target="#staticBackdrop">隱私權保護政策</button>。
+                                    </span>
+                            <!-- error msg -->
+                            <div class="invalid-feedback">
+                                勾選後才能註冊
+                            </div>
+                        </div>
+                        <button class="w-100 mb-32 py-8 btn btn-pink c-btn" id="btnSubmit" type="submit">註冊</button>
+                    </form>
+                    <a class="mb-16 d-block 
+                    click-me clickMeToLogin" href="login.html">已經有帳號了嗎？ 點我登入</a>
                 </div>
-                <h2 class="mb-32 text-pink">註冊</h2>
-                <!-- 尚未填入 a 連結 -->
-                <!-- <a class="w-100 mb-32 py-8 btn btn-outline-pink c-btn-outline-pink d-flex justify-content-center align-items-center" href="#">
-                    連結 Google 帳號
-                    <i class="bi bi-google ms-8"></i>
-                </a>
-                <div class="or mb-32">或</div> -->
-
-                <!-- 尚未填入 action 內容 -->
-                <form action="#" method="post" class="needs-validation" novalidate>
-                    <div class="mb-16">
-                        <!-- email -->
-                        <label for="email" class="form-label  d-flex justify-content-between">
-                            E-mail
-                            <span class="text-pink-tint02 fs-9">*必填</span>
-                        </label>
-                        <div class="d-flex flex-column flex-sm-row">
-                            <input type="email" class="form-control rounded-pill mb-8 mb-sm-0 px-20" id="email" placeholder="wavemocards@mail.com" required>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-sm-none mt-4 ms-12 fs-9" id="emailCmt"></div>
-                                <button type="button" class="ms-8 px-12 btn btn-outline-main c-btn c-btn-outline-main fs-8 text-nowrap" id="btnVerify">驗證</button>
-                            </div>
-                        </div>
-                        <!-- email驗證結果 -->
-                        <div class="d-none d-sm-block mt-4 ms-24 fs-9" id="emailCmt"></div>
-                        <!-- bs的資料驗證回饋 -->
-                        <div class="invalid-feedback">
-                            請輸入正確的 e-mail 帳號
-                        </div>
-                    </div>
-                    <!-- passWord -->
-                    <div class="mb-16">
-                        <label for="pwd" class="form-label d-flex justify-content-between">
-                            密碼
-                            <span class="text-pink-tint02 fs-9">*必填</span>
-                        </label>
-                        <input type="password" class="form-control rounded-pill px-20" id="pwd" required aria-describedby="passwordHelp" placeholder="********" required>
-                        <!-- 密碼驗證 msg -->
-                        <div class="mt-4 ms-24 fs-9" id="pwdCmt"></div>
-                        <button class="ms-24 p-0 fs-9 link-gray-550 bg-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePwdRules" aria-expanded="false" aria-controls="collapsePwdRules">
-                            點我看 設定密碼規則
-                        </button>
-                        <!-- collapse 卡片內容 -->
-                        <div class="collapse ms-12 ms-sm-24" id="collapsePwdRules">
-                            <div class="card card-body py-8 bg-gray-200 border-0 rounded-2">
-                                <ol class="fs-9">
-                                    <li class="ms-16">包含<span class="fw-bold"> 8 ~ 16 </span>個字符。</li>
-                                    <li class="ms-16">至少包含<span class="fw-bold"> 1 個英文字母</span>(A-Z或a-z)。</li>
-                                    <!-- <li class="ms-16">至少包含<span class="fw-bold"> 1 個大寫 </span>字母（A-Z）。</li>
-                                    <li class="ms-16">至少包含<span class="fw-bold"> 1 個小寫 </span>字母（a-z）。</li> -->
-                                    <li class="ms-16">至少包含<span class="fw-bold"> 1 個數字 </span>（0-9）。</li>
-                                    <!-- <li class="ms-16">至少包含<span class="fw-bold"> 1 個特殊字符 </span>（例如！、@、#、$、%等）。</li> -->
-                                </ol>
-                            </div>
-                            </div>
-                        <!-- error msg -->
-                        <div class="invalid-feedback">
-                            請設定符合密碼規則的密碼
-                        </div>
-                    </div>
-                    <!-- passWord 2 -->
-                    <div class="mb-16">
-                        <label for="pwd2" class="form-label  d-flex justify-content-between">
-                            確認密碼
-                            <span class="text-pink-tint02 fs-9">*必填</span>
-                        </label>
-                        <input type="password" class="form-control rounded-pill px-20" id="pwd2" placeholder="請再次輸入您所欲設定的密碼" required>
-                        <!-- 雙重密碼驗證結果 -->
-                        <div class="mt-4 ms-12 ms-sm-24 fs-9" id="pwd2Cmt"></div>
-                    </div>
-                    <div class="mb-20">
-                        <label for="account" class="form-label  d-flex justify-content-between">
-                            帳號
-                            <span class="text-pink-tint02 fs-9">*必填</span>
-                        </label>
-                        <input type="text" class="form-control rounded-pill px-20" id="account" placeholder="wavemocards" required>
-                        <div class="invalid-feedback">
-                            只能輸入英文和數字
-                        </div>
-                    </div>
-                    <!-- lastName & firstName -->
-                    <div class="mb-20 row">
-                        <div class="col-6">
-                            <label for="lastName" class="form-label  d-flex justify-content-between">
-                                姓
-                                <span class="text-pink-tint02 fs-9">*必填</span>
-                            </label>
-                            <input type="text" class="form-control rounded-pill px-20" id="lastName" placeholder="陳" required>
-                            <div class="invalid-feedback">
-                                請輸入您的姓氏
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <label for="firstName" class="form-label  d-flex justify-content-between">
-                                名
-                                <span class="text-pink-tint02 fs-9">*必填</span>
-                            </label>
-                            <input type="text" class="form-control rounded-pill px-20" id="firstName" placeholder="浪潮" required>
-                            <div class="invalid-feedback">
-                                請輸入您的名字
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-24 row">
-                        <div class="col-6">
-                            <label for="birthday" class="form-label d-flex justify-content-between">
-                                生日
-                                <span class="text-pink-tint02 fs-9">*必填</span>
-                            </label>
-                            <input type="date" class="form-control rounded-pill px-20" id="birthday" required>
-                            <div class="invalid-feedback">
-                                請輸入您的生日年月日
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <label for="title" class="form-label d-flex justify-content-between">
-                                身份
-                            </label>
-                            <select class="form-select px-20 rounded-pill" aria-label="Default select example" id="title">
-                                <option value="學生">學生</option>
-                                <option value="教師">教師</option>
-                                <option value="教師">輔導教師</option>
-                                <option value="諮商師">諮商師</option>
-                                <option value="醫生">醫生</option>
-                                <option value="其他">其他</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mb-32">
-                        <input type="checkbox" id="agree" required>
-                                <span class="ms-4">
-                                    我已經詳讀並同意
-                                    <button type="button" class="bg-white border-0 link-main fs-8 fw-normal" data-bs-toggle="modal" data-bs-target="#staticBackdrop">隱私權保護政策</button>。
-                                </span>
-                        <!-- error msg -->
-                        <div class="invalid-feedback">
-                            勾選後才能註冊
-                        </div>
-                    </div>
-                    <button class="w-100 mb-32 py-8 btn btn-pink c-btn" id="btnSubmit" type="submit" data-bs-toggle="modal">註冊</button>
-                </form>
-                <a class="mb-16 d-block 
-                click-me clickMeToLogin" href="login.html">已經有帳號了嗎？ 點我登入</a>
             </div>
-        </div>
-    </main>
+        </main>
 
-    <!-- Scrollable modal 隱私權保護政策 -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title fs-6 fw-bold text-main" id="staticBackdropLabel">隱私權保護政策</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body px-24">
-                <p>
-                    歡迎來到「浪潮情緒卡網站」（以下簡稱本網站）。
-                </p>
-                <br>
-                <p>
-                    我們重視您的隱私和數據安全。本隱私政策概述了我們如何處理您的個人數據以及您對其使用擁有的權利。若您註冊使用我們的網站即表示您同意本政策中描述的做法。
-                </p>
-                <br>
-                <p>
-                    為了讓您能夠安心的使用本網站的各項服務與資訊，特此向您說明本網站的隱私權保護政策，以保障您的權益，請您詳閱下列內容：
-                </p>
-                <br>
-                <ol class="mx-16" style="list-style-type: cjk-ideographic;">
-                    <li class="mx-16">
-                        <span class="fw-bold">隱私權保護政策的適用範圍</span>
-                        <p>隱私權保護政策內容，包括本網站如何處理在您使用網站服務時收集到的個人識別資料。隱私權保護政策不適用於本網站以外的相關連結網站，也不適用於非本網站所委託或參與管理的人員。</p>
-                    </li>
+        <!-- Scrollable modal 隱私權保護政策 -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title fs-6 fw-bold text-main" id="staticBackdropLabel">隱私權保護政策</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-24">
+                    <p>
+                        歡迎來到「浪潮情緒卡網站」（以下簡稱本網站）。
+                    </p>
                     <br>
-                    <li class="mx-16">
-                        <span class="fw-bold">個人資料的蒐集、處理及利用方式</span>
-                        <ul class="ms-16" style="list-style-type: disc;">
-                            <li>
-                                當您造訪本網站或使用本網站所提供之功能服務時，我們將視該服務功能性質，請您提供必要的個人資料，並在該特定目的範圍內處理及利用您的個人資料；非經您書面同意，本網站不會將個人資料用於其他用途。
-                            </li>
-                            <li>
-                                本網站在您使用服務信箱、問卷調查等互動性功能時，會保留您所提供的姓名、電子郵件地址、聯絡方式及使用時間等。
-                            </li>
-                            <li>
-                                於一般瀏覽時，伺服器會自行記錄相關行徑，包括您使用連線設備的 IP 位址、使用時間、使用的瀏覽器、瀏覽及點選資料記錄等，做為我們增進網站服務的參考依據，此記錄為內部應用，決不對外公佈。
-                            </li>
-                            <li>
-                                為提供精確的服務，我們會將收集的問卷調查內容進行統計與分析，分析結果之統計數據或說明文字呈現，除供內部研究外，我們會視需要公佈統計數據及說明文字，但不涉及特定個人之資料。
-                            </li>
-                            <li>
-                                您可以隨時向我們提出請求，以更正或刪除本網站所蒐集您錯誤或不完整的個人資料。
-                            </li>
-                        </ul>
-                    </li>
+                    <p>
+                        我們重視您的隱私和數據安全。本隱私政策概述了我們如何處理您的個人數據以及您對其使用擁有的權利。若您註冊使用我們的網站即表示您同意本政策中描述的做法。
+                    </p>
                     <br>
-                    <li class="mx-16">
-                        <span class="fw-bold">資料之保護</span>
-                        <ul class="ms-16" style="list-style-type: disc;">
-                            <li>
-                                本網站主機均設有防火牆、防毒系統等相關的各項資訊安全設備及必要的安全防護措施，加以保護網站及您的個人資料採用嚴格的保護措施，只由經過授權的人員才能接觸您的個人資料，相關處理人員皆簽有保密合約，如有違反保密義務者，將會受到相關的法律處分。
-                            </li>
-                            <li>
-                                如因業務需要有必要委託其他單位提供服務時，本網站亦會嚴格要求其遵守保密義務，並且採取必要檢查程序以確定其將確實遵守。
-                            </li>
-                        </ul>
-                    </li>
+                    <p>
+                        為了讓您能夠安心的使用本網站的各項服務與資訊，特此向您說明本網站的隱私權保護政策，以保障您的權益，請您詳閱下列內容：
+                    </p>
                     <br>
-                    <li class="mx-16">
-                        <span class="fw-bold">數據安全</span>
-                        <p>
-                            本網站對使用者密碼進行加密，以確保使用者密碼安全。
-                        </p>
-                    </li>
-                    <br>
-                    <li class="mx-16">
-                        <span class="fw-bold">網站對外的相關連結</span>
-                        <p>本網站的網頁提供其他網站的網路連結，您也可經由本網站所提供的連結，點選進入其他網站。但該連結網站不適用本網站的隱私權保護政策，您必須參考該連結網站中的隱私權保護政</p>
-                    </li>
-                    <br>
-                    <li class="mx-16">
-                        <span class="fw-bold">
-                            與第三人共用個人資料之政策
-                        </span>
-                        <p>
-                            本網站絕不會提供、交換、出租或出售任何您的個人資料給其他個人、團體、私人企業或公務機關，但有法律依據或合約義務者，不在此限。
-                            前項但書之情形包括不限於：
+                    <ol class="mx-16" style="list-style-type: cjk-ideographic;">
+                        <li class="mx-16">
+                            <span class="fw-bold">隱私權保護政策的適用範圍</span>
+                            <p>隱私權保護政策內容，包括本網站如何處理在您使用網站服務時收集到的個人識別資料。隱私權保護政策不適用於本網站以外的相關連結網站，也不適用於非本網站所委託或參與管理的人員。</p>
+                        </li>
+                        <br>
+                        <li class="mx-16">
+                            <span class="fw-bold">個人資料的蒐集、處理及利用方式</span>
                             <ul class="ms-16" style="list-style-type: disc;">
                                 <li>
-                                    經由您書面同意。
+                                    當您造訪本網站或使用本網站所提供之功能服務時，我們將視該服務功能性質，請您提供必要的個人資料，並在該特定目的範圍內處理及利用您的個人資料；非經您書面同意，本網站不會將個人資料用於其他用途。
                                 </li>
                                 <li>
-                                    法律明文規定。
+                                    本網站在您使用服務信箱、問卷調查等互動性功能時，會保留您所提供的姓名、電子郵件地址、聯絡方式及使用時間等。
                                 </li>
                                 <li>
-                                    為免除您生命、身體、自由或財產上之危險。
+                                    於一般瀏覽時，伺服器會自行記錄相關行徑，包括您使用連線設備的 IP 位址、使用時間、使用的瀏覽器、瀏覽及點選資料記錄等，做為我們增進網站服務的參考依據，此記錄為內部應用，決不對外公佈。
                                 </li>
                                 <li>
-                                    與公務機關或學術研究機構合作，基於公共利益為統計或學術研究而有必要，且資料經過提供者處理或蒐集者依其揭露方式無從識別特定之當事人。
+                                    為提供精確的服務，我們會將收集的問卷調查內容進行統計與分析，分析結果之統計數據或說明文字呈現，除供內部研究外，我們會視需要公佈統計數據及說明文字，但不涉及特定個人之資料。
                                 </li>
                                 <li>
-                                    當您在網站的行為，違反服務條款或可能損害或妨礙網站與其他使用者權益或導致任何人遭受損害時，經網站管理單位研析揭露您的個人資料是為了辨識、聯絡或採取法律行動所必要者。
-                                </li>
-                                <li>
-                                    有利於您的權益。
-                                </li>
-                                <li>
-                                    本網站委託廠商協助蒐集、處理或利用您的個人資料時，將對委外廠商或個人善盡監督管理之責。
+                                    您可以隨時向我們提出請求，以更正或刪除本網站所蒐集您錯誤或不完整的個人資料。
                                 </li>
                             </ul>
-                        </p>
-                    </li>
+                        </li>
+                        <br>
+                        <li class="mx-16">
+                            <span class="fw-bold">資料之保護</span>
+                            <ul class="ms-16" style="list-style-type: disc;">
+                                <li>
+                                    本網站主機均設有防火牆、防毒系統等相關的各項資訊安全設備及必要的安全防護措施，加以保護網站及您的個人資料採用嚴格的保護措施，只由經過授權的人員才能接觸您的個人資料，相關處理人員皆簽有保密合約，如有違反保密義務者，將會受到相關的法律處分。
+                                </li>
+                                <li>
+                                    如因業務需要有必要委託其他單位提供服務時，本網站亦會嚴格要求其遵守保密義務，並且採取必要檢查程序以確定其將確實遵守。
+                                </li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li class="mx-16">
+                            <span class="fw-bold">數據安全</span>
+                            <p>
+                                本網站對使用者密碼進行加密，以確保使用者密碼安全。
+                            </p>
+                        </li>
+                        <br>
+                        <li class="mx-16">
+                            <span class="fw-bold">網站對外的相關連結</span>
+                            <p>本網站的網頁提供其他網站的網路連結，您也可經由本網站所提供的連結，點選進入其他網站。但該連結網站不適用本網站的隱私權保護政策，您必須參考該連結網站中的隱私權保護政</p>
+                        </li>
+                        <br>
+                        <li class="mx-16">
+                            <span class="fw-bold">
+                                與第三人共用個人資料之政策
+                            </span>
+                            <p>
+                                本網站絕不會提供、交換、出租或出售任何您的個人資料給其他個人、團體、私人企業或公務機關，但有法律依據或合約義務者，不在此限。
+                                前項但書之情形包括不限於：
+                                <ul class="ms-16" style="list-style-type: disc;">
+                                    <li>
+                                        經由您書面同意。
+                                    </li>
+                                    <li>
+                                        法律明文規定。
+                                    </li>
+                                    <li>
+                                        為免除您生命、身體、自由或財產上之危險。
+                                    </li>
+                                    <li>
+                                        與公務機關或學術研究機構合作，基於公共利益為統計或學術研究而有必要，且資料經過提供者處理或蒐集者依其揭露方式無從識別特定之當事人。
+                                    </li>
+                                    <li>
+                                        當您在網站的行為，違反服務條款或可能損害或妨礙網站與其他使用者權益或導致任何人遭受損害時，經網站管理單位研析揭露您的個人資料是為了辨識、聯絡或採取法律行動所必要者。
+                                    </li>
+                                    <li>
+                                        有利於您的權益。
+                                    </li>
+                                    <li>
+                                        本網站委託廠商協助蒐集、處理或利用您的個人資料時，將對委外廠商或個人善盡監督管理之責。
+                                    </li>
+                                </ul>
+                            </p>
+                        </li>
+                        <br>
+                        <li class="mx-16">
+                            <span class="fw-bold">Cookie 之使用</span>
+                            <p>為了提供您最佳的服務，本網站會在您的電腦中放置並取用我們的 Cookie，若您不願接受 Cookie 的寫入，您可在您使用的瀏覽器功能項中設定隱私權等級為高，即可拒絕 Cookie 的寫入，但可能會導致網站某些功能無法正常執行 。</p>
+                        </li>
+                        <br>
+                        <li class="mx-16">
+                            <span class="fw-bold">隱私權保護政策之修正</span>
+                            <p>本網站隱私權保護政策將因應需求隨時進行修正，修正後的條款將刊登於網站上。</p>
+                        </li>
+                    </ol>
                     <br>
-                    <li class="mx-16">
-                        <span class="fw-bold">Cookie 之使用</span>
-                        <p>為了提供您最佳的服務，本網站會在您的電腦中放置並取用我們的 Cookie，若您不願接受 Cookie 的寫入，您可在您使用的瀏覽器功能項中設定隱私權等級為高，即可拒絕 Cookie 的寫入，但可能會導致網站某些功能無法正常執行 。</p>
-                    </li>
-                    <br>
-                    <li class="mx-16">
-                        <span class="fw-bold">隱私權保護政策之修正</span>
-                        <p>本網站隱私權保護政策將因應需求隨時進行修正，修正後的條款將刊登於網站上。</p>
-                    </li>
-                </ol>
-                <br>
-                <ul>
-                    <li>
-                        <span class="fw-bold fs-7">📮 聯絡我們</span>
-                        <p class="mx-24">
-                            若有任何隱私權政策相關問題，請Email至
-                            <a href="mailto:info@wavemocards.com" class="link-main">info@wavemocards.com</a>
-                        </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-main c-btn py-8" data-bs-dismiss="modal">我瞭解了</button>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <!-- 註冊成功/失敗 Modal -->
-    <div class="modal fade" id="modalResult" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content rounded-4">
-            <div class="modal-body d-flex flex-column align-items-center px-48 py-36">
-                <p id="modalResultText" class="fs-4 fw-bold">註冊成功</p>
-                <p id="modalResultText2" class="d-none mt-12 fs-7 text-gray-700"></p>
-                <p id="modalResultText3" class="d-none mt-12 fs-7 text-gray-700">
-                    若無法排除問題，請 
-                    <a class="link-pink" href="mailto:info@wavemocards.com">與我們聯繫</a>
-                </p>
-                <div style="width: 45%; height: 45%;">
-                    <img class="w-100" src="https://wavemocards.com/frontend/upload/01-happy/happy05-excited.svg" alt="興奮" id="modalResultImg">
+                    <ul>
+                        <li>
+                            <span class="fw-bold fs-7">📮 聯絡我們</span>
+                            <p class="mx-24">
+                                若有任何隱私權政策相關問題，請Email至
+                                <a href="mailto:info@wavemocards.com" class="link-main">info@wavemocards.com</a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-main c-btn py-8" data-bs-dismiss="modal">我瞭解了</button>
                 </div>
             </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <a href="login.html" id="modalResultLink" class="btn btn-main px-16 py-8 link-white fs-6 fw-bold">前往登入！</a>
-                <button type="button" id="modalResultClose" class="d-none btn btn-pink c-btn px-36 py-8 link-white fs-6 fw-bold" data-bs-dismiss="modal">重新註冊</button>
             </div>
         </div>
-        </div>
-    </div>
 
-    
+        <!-- 註冊成功/失敗 Modal -->
+        <div class="modal fade" id="modalResult" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-body d-flex flex-column align-items-center px-48 py-36">
+                        <p id="modalResultText" class="fs-4 fw-bold">註冊成功</p>
+                        <p id="modalResultText2" class="d-none mt-12 fs-7 text-gray-700"></p>
+                        <p id="modalResultText3" class="d-none mt-12 fs-7 text-gray-700">
+                            若無法排除問題，請 
+                            <a class="link-pink" href="mailto:info@wavemocards.com">與我們聯繫</a>
+                        </p>
+                        <div style="width: 45%; height: 45%;">
+                            <img class="w-100" src="https://wavemocards.com/frontend/upload/01-happy/happy05-excited.svg" alt="興奮" id="modalResultImg">
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <a href="login.html" id="modalResultLink" class="btn btn-main c-btn px-16 py-8 link-white fs-6 fw-bold">前往登入！</a>
+                        <button type="button" id="modalResultClose" class="d-none btn btn-pink c-btn px-36 py-8 link-white fs-6 fw-bold" data-bs-dismiss="modal">重新註冊</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
 <!--  Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -374,121 +374,123 @@
 <script src="../assets/js/toolTips.js"></script>
 
 <!-- axios -->
-<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>    <script type="text/javascript" src="../assets/js/beforeunload.js"></script>
-    <script type="text/javascript" src="../assets/js/formValidation.js"></script>
-    <script>
-        const btnVerify = document.querySelector('#btnVerify');
-        const email = document.querySelector('#email');
-        const emailCmt = document.querySelectorAll('#emailCmt');
-        const pwd = document.querySelector('#pwd');
-        const pwd2 = document.querySelector('#pwd2');
-        const pwdCmt = document.querySelector('#pwdCmt');
-        const pwd2Cmt = document.querySelector('#pwd2Cmt');
-        const account = document.querySelector('#account');
-        const lastName = document.querySelector('#lastName');
-        const firstName = document.querySelector('#firstName');
-        const birthday = document.querySelector('#birthday');
-        const title = document.querySelector('#title');
-        const agree = document.querySelector('#agree');
-        const btnSubmit = document.querySelector('#btnSubmit');
-        const modalResult = document.querySelector('#modalResult');
-        const modalResultText = document.querySelector('#modalResultText');
-        const modalResultText2 = document.querySelector('#modalResultText2');
-        const modalResultText3 = document.querySelector('#modalResultText3');
-        const modalResultImg = document.querySelector('#modalResultImg');
-        const modalResultLink = document.querySelector('#modalResultLink');
-        const modalResultClose = document.querySelector('#modalResultClose');
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>        <script type="text/javascript" src="../assets/js/beforeunload.js"></script>
+        <script type="text/javascript" src="../assets/js/formValidation.js"></script>
+        <script>
+            const btnVerify = document.querySelector('#btnVerify');
+            const email = document.querySelector('#email');
+            const emailCmt = document.querySelectorAll('#emailCmt');
+            const pwd = document.querySelector('#pwd');
+            const pwd2 = document.querySelector('#pwd2');
+            const pwdCmt = document.querySelector('#pwdCmt');
+            const pwd2Cmt = document.querySelector('#pwd2Cmt');
+            const account = document.querySelector('#account');
+            const lastName = document.querySelector('#lastName');
+            const firstName = document.querySelector('#firstName');
+            const birthday = document.querySelector('#birthday');
+            const title = document.querySelector('#title');
+            const agree = document.querySelector('#agree');
+            const btnSubmit = document.querySelector('#btnSubmit');
+            const modalResult = document.querySelector('#modalResult');
+            const modalResultText = document.querySelector('#modalResultText');
+            const modalResultText2 = document.querySelector('#modalResultText2');
+            const modalResultText3 = document.querySelector('#modalResultText3');
+            const modalResultImg = document.querySelector('#modalResultImg');
+            const modalResultLink = document.querySelector('#modalResultLink');
+            const modalResultClose = document.querySelector('#modalResultClose');
 
-        // 驗證 email 
-        let emailVerified = true;
-        btnVerify.addEventListener('click', function(){
-            // post email
-            // get 是否驗證成功，成功的話 emailVerified = true;
-            if(email.value==""){
-                emailCmt.forEach(function(cmt, index){
-                    cmt.textContent = "請先輸入Email";
-                    cmt.classList.add("text-pink");
-                })
-                return
-            }
-            if(emailVerified==true) {
-                emailCmt.forEach(function(cmt, index){
-                    cmt.textContent = "驗證成功，您可使用此Email";
-                    cmt.classList.remove("text-pink");
-                    cmt.classList.add("text-main");
-                })
-                btnVerify.classList.add('d-none');
-            } else {
-                emailCmt.forEach(function(cmt, index){
-                    cmt.textContent = "驗證失敗，該Email已被註冊，請使用其他的Email";
-                    cmt.classList.add("text-pink");
-                })
-            }
-        })
-
-        // 驗證是否符合 密碼規則
-        pwd.addEventListener("keyup", function(){
-            let pwdRegex = /(?![0-9]+$)(?![a-zA-z]+$)[0-9A-za-z]{8,16}/;
-            if(!pwdRegex.test(pwd.value)){
-                pwdCmt.textContent = "您的密碼不符合密碼規則，請重新設定密碼";
-                pwdCmt.style.color = "#C37979";
-                console.log("您所設定的密碼，不符合密碼規則");
-            } else {
-                pwdCmt.textContent = "您可使用此密碼";
-                pwdCmt.style.color = "#3C9DAE";
-            }
-        })
-
-        // 監聽 pwd & pwd ，並且驗證兩者密碼是否相同
-        pwd.addEventListener("keyup", pwdVerify)
-        pwd2.addEventListener("keyup", pwdVerify)
-        function pwdVerify(){
-            if(pwd.value != "" && pwd2.value != "" && pwd.value == pwd2.value) {
-                pwd2Cmt.textContent = "密碼相符";
-                pwd2Cmt.style.color = "#3C9DAE";
-            } else if(pwd.value != "" && pwd2.value != "" && pwd.value != pwd2.value) {
-                pwd2Cmt.textContent = "密碼有誤，請輸入相同的密碼";
-                pwd2Cmt.style.color = "#C37979";
-            } else if (pwd.value == "") {
-                pwd2Cmt.textContent = "";
-            } 
-        }
-
-        const aHeaders = document.querySelectorAll('#aHeader');
-        aHeaders.forEach(function(a, index){
-            a.addEventListener("click", function(){
-                if (email.value!="" || pwd.value!="" || pwd2.value!="" || account.value!="" || lastName.value!="" || firstName.value!="") {
-                    event.preventDefault();
-                    let confirmResult = confirm("離開後此頁面資料將不會被保存。\r您確定要離開嗎？");
-                    if (confirmResult) {
-                        location.href=a.href;
-                    } else {
-                        return
-                    }
+            // 驗證 email 
+            let emailVerified = true;
+            btnVerify.addEventListener('click', function(){
+                // post email
+                // get 是否驗證成功，成功的話 emailVerified = true;
+                if(email.value==""){
+                    emailCmt.forEach(function(cmt, index){
+                        cmt.textContent = "請先輸入Email";
+                        cmt.classList.add("text-pink");
+                    })
+                    return
+                }
+                if(emailVerified==true) {
+                    emailCmt.forEach(function(cmt, index){
+                        cmt.textContent = "驗證成功，您可使用此Email";
+                        cmt.classList.remove("text-pink");
+                        cmt.classList.add("text-main");
+                    })
+                    btnVerify.classList.add('d-none');
+                } else {
+                    emailCmt.forEach(function(cmt, index){
+                        cmt.textContent = "驗證失敗，該Email已被註冊，請使用其他的Email";
+                        cmt.classList.add("text-pink");
+                    })
                 }
             })
-        })
 
-        // 註冊內容驗證
-        btnSubmit.addEventListener('click', function(){
-            let success = true;
-            if(success==true){
-                modalResultText.classList.add("text-main");
-                btnSubmit.setAttribute("data-bs-target", "#modalResult");
-                btnSubmit.click(); // 設定該按鈕被點擊
-            } else {
-                modalResultText.textContent = "註冊失敗";
-                modalResultText.classList.add("text-pink");
-                modalResultText2.classList.remove("d-none");
-                modalResultText3.classList.remove("d-none");
-                modalResultText2.textContent = `很抱歉，您填寫的內容可能有誤，請重新註冊`;
-                modalResultImg.src="https://wavemocards.com/frontend/upload/09-others/others04-guilty.svg";
-                modalResultLink.classList.add("d-none");
-                modalResultClose.classList.remove('d-none');
-                btnSubmit.setAttribute("data-bs-target", "#modalResult");
-                btnSubmit.click();
+            // 驗證是否符合 密碼規則
+            pwd.addEventListener("keyup", function(){
+                let pwdRegex = /(?![0-9]+$)(?![a-zA-z]+$)[0-9A-za-z]{8,16}/;
+                if(!pwdRegex.test(pwd.value)){
+                    pwdCmt.textContent = "您的密碼不符合密碼規則，請重新設定密碼";
+                    pwdCmt.style.color = "#C37979";
+                    console.log("您所設定的密碼，不符合密碼規則");
+                } else {
+                    pwdCmt.textContent = "您可使用此密碼";
+                    pwdCmt.style.color = "#3C9DAE";
+                }
+            })
+
+            // 監聽 pwd & pwd ，並且驗證兩者密碼是否相同
+            pwd.addEventListener("keyup", pwdVerify)
+            pwd2.addEventListener("keyup", pwdVerify)
+            function pwdVerify(){
+                if(pwd.value != "" && pwd2.value != "" && pwd.value == pwd2.value) {
+                    pwd2Cmt.textContent = "密碼相符";
+                    pwd2Cmt.style.color = "#3C9DAE";
+                } else if(pwd.value != "" && pwd2.value != "" && pwd.value != pwd2.value) {
+                    pwd2Cmt.textContent = "密碼有誤，請輸入相同的密碼";
+                    pwd2Cmt.style.color = "#C37979";
+                } else if (pwd.value == "") {
+                    pwd2Cmt.textContent = "";
+                } 
             }
-        })
-    </script>
-  </body>
+
+            const aHeaders = document.querySelectorAll('#aHeader');
+            aHeaders.forEach(function(a, index){
+                a.addEventListener("click", function(){
+                    if (email.value!="" || pwd.value!="" || pwd2.value!="" || account.value!="" || lastName.value!="" || firstName.value!="") {
+                        event.preventDefault();
+                        let confirmResult = confirm("離開後此頁面資料將不會被保存。\r您確定要離開嗎？");
+                        if (confirmResult) {
+                            location.href=a.href;
+                        } else {
+                            return
+                        }
+                    }
+                })
+            })
+
+            // 註冊內容驗證
+            btnSubmit.addEventListener('click', function(){
+                let success = false;
+                if(success==true){
+                    modalResultText.classList.add("text-main");
+                    btnSubmit.setAttribute("data-bs-toggle", "modal");
+                    btnSubmit.setAttribute("data-bs-target", "#modalResult");
+                    btnSubmit.click(); // 設定該按鈕被點擊
+                } else {
+                    modalResultText.textContent = "註冊失敗";
+                    modalResultText.classList.add("text-pink");
+                    modalResultText2.classList.remove("d-none");
+                    modalResultText3.classList.remove("d-none");
+                    modalResultText2.textContent = `很抱歉，您填寫的內容可能有誤，請重新註冊`;
+                    modalResultImg.src="https://wavemocards.com/frontend/upload/09-others/others04-guilty.svg";
+                    modalResultLink.classList.add("d-none");
+                    modalResultClose.classList.remove('d-none');
+                    btnSubmit.setAttribute("data-bs-toggle", "modal");
+                    btnSubmit.setAttribute("data-bs-target", "#modalResult");
+                    btnSubmit.click();
+                }
+            })
+        </script>
+    </body>
 </html>
