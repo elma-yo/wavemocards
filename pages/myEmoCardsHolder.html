@@ -51,13 +51,12 @@
                     <div class="pb-8 px-12 px-sm-0 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
                         <h2 class="fs-3">我的情緒卡夾</h2>
                         <div class="nav-btn d-flex justify-content-end">
-                            <a class="btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01  text-nowrap d-flex justify-content-center align-items-center" href="findEmoCards.html">
+                            <a class="btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 text-nowrap d-flex justify-content-center align-items-center" href="findEmoCards.html">
                                 <span class="d-none d-sm-block">回到情緒卡</span>
                                 <span class="d-sm-none">上一步</span>
                             </a>
-                            <a class="ms-16 btn btn-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="findEmoStrength1st.html">
-                                <span class="ms-4">下一步</span>
-                            </a>
+                            <button type="button" class="ms-16 px-md-24 btn btn-main c-btn text-nowrap d-flex justify-content-center align-items-center" id="btnNext">下一步
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -134,16 +133,46 @@
             </div>
         </div>
 
+        <!-- 卡片數量錯誤 Modal -->
+        <div class="modal fade" id="modalNextErr" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-body d-flex flex-column align-items-center px-48 pt-24 pb-16">
+                        <p id="modalNextErrTitle" class="mb-12 fs-3 fw-bold text-pink">卡片數量不足</p>
+                        <p id="modalNextErrText1" class="mt-4 fs-7 text-gray-700">
+                            請<span class="fw-bold text-pink">至少挑選 1 </span>張卡片。
+                        </p>
+                        <div id="modalNextErrText2" class="d-none mt-4 fs-7 text-gray-700 d-flex flex-column align-items-center">
+                            <p>卡片數量<span class="fw-bold text-pink">最多 3 </span>張。</p>
+                            <p>請篩選出最貼近您的情緒的卡片。</p>
+                        </div>
+                        <div style="width: 45%;">
+                            <img class="w-100 pt-24 pb-2" src="../assets/images/addCardFail.svg" alt="img" id="modalNextErrImg">
+                        </div>
+                        <span class="text-gray-400 fs-11">Illustration by <a class="link-gray-400" href="https://blush.design/artists/RyUTVuP8G4QeAAEEQgug/pablo-stanley">Pablo Stanley</a> from <a class="link-gray-400" href="https://blush.design/">blush design</a></span>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" id="modalNextErrClose" class="btn btn-pink c-btn px-24 py-8 link-white fs-6 rounded-pill" data-bs-dismiss="modal">我知道了</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <%- include('./layout/baseJs'); -%>
         <script>
+            const btnNext = document.querySelector('#btnNext');
             const cardsList = document.querySelector('#cardsList');
-            const listModal = document.querySelector('.listModal');
-
+            const listModal = document.querySelector('.listModal')
             // 刪除卡片 Modal
             const modalDelete = document.querySelector('#modalDelete');
             const modalDeleteSure = document.querySelector('#modalDeleteSure');
             const modalDeleteClose = document.querySelector('#modalDeleteClose');
-
+            // 卡片數量 錯誤 Modal
+            const modalNextErrTitle = document.querySelector('#modalNextErrTitle');
+            const modalNextErrText1 = document.querySelector('#modalNextErrText1');
+            const modalNextErrText2 = document.querySelector('#modalNextErrText2');
+            // 預設初始卡片數量為 0 張
+            let cardsNum = 0;
             // 抓 localStorage 的 localStorage.getItem("addedCards"); 資料
             let storageCards;
             let getAddedCards = localStorage.getItem("addedCards");
@@ -244,6 +273,9 @@
                             listModal.innerHTML = strModal;
                         })
                     }
+                    // 建立 初始卡片數量
+                    cardsNum = storageCards.length;
+                    console.log(cardsNum);
                     // 監聽 x按鈕，被點擊後 刪除該卡（先跳出刪除確認視窗，再跳出刪除成功）
                     const btnDeletes = document.querySelectorAll('#btnDelete');
                     const cardBoxes = document.querySelectorAll('#cardBox');
@@ -255,6 +287,7 @@
                             // 確認 -> 刪除 -> 處理 storageCards 資料，並傳新寫入 localStorage
                             modalDeleteSure.addEventListener("click", function(){
                                 storageCards.splice(i, 1);
+                                cardsNum = storageCards.length;
                                 // 將資料 轉為 string 資料
                                 let stringAddedCard = JSON.stringify(storageCards);
                                 // 將 aryAddedCards 存入 localStorage 中
@@ -271,6 +304,29 @@
                             // 取消 -> close modal
                         })
                     })
+                    // 確認卡片張數是否 >0 <=3
+                    btnNext.addEventListener("click", function(){
+                        console.log(cardsNum);
+                        if( cardsNum==0 ){
+                            modalNextErrTitle.textContent="卡片數量不足";
+                            modalNextErrText1.classList.remove('d-none');
+                            modalNextErrText2.classList.add('d-none');
+                            btnNext.setAttribute("data-bs-toggle", "modal");
+                            btnNext.setAttribute("data-bs-target", "#modalNextErr");
+                            btnNext.click();
+                        } else if( cardsNum>3 ) {
+                            modalNextErrTitle.textContent="卡片數量過多";
+                            modalNextErrText1.classList.add('d-none');
+                            modalNextErrText2.classList.remove('d-none');
+                            btnNext.setAttribute("data-bs-toggle", "modal");
+                            btnNext.setAttribute("data-bs-target", "#modalNextErr");
+                            btnNext.click();
+                        } else {
+                            location.href = "findEmoStrength1st.html";
+                        }
+                    })
+                    // console.log(cardsNum);
+
                 })
             }
         </script>
