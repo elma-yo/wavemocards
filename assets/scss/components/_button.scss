@@ -1,4 +1,4 @@
-// c -> ｃustomization
+// c -> Customization
 .c-btn {
     border-radius: 100px;
     padding: 4px 16px;
@@ -62,6 +62,20 @@
     font-weight: bold;
 }
 .c-btn-outline-pink:hover {
+    color: $white;
+    box-shadow: 2px 2px 4px rgba(112, 132, 136, 0.5);
+}
+.c-btn-outline-pink-tint01 {
+    border: 3px solid $pink-tint02;
+    background-color: $white;
+    padding: 6px 22px;
+    border-radius: 100px;
+    color: $pink-tint01;
+    font-size: 16px;
+    font-weight: bold;
+}
+.c-btn-outline-pink-tint01:hover {
+    background-color: $pink-tint02;
     color: $white;
     box-shadow: 2px 2px 4px rgba(112, 132, 136, 0.5);
 }

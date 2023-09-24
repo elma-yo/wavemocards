@@ -51,7 +51,7 @@
                     <div class="pb-8 px-12 px-sm-0 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
                         <h2 class="fs-3">我的情緒卡夾</h2>
                         <div class="nav-btn d-flex justify-content-end">
-                            <a class="btn btn-outline-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="findEmoCards.html">
+                            <a class="btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01  text-nowrap d-flex justify-content-center align-items-center" href="findEmoCards.html">
                                 <span class="d-none d-sm-block">回到情緒卡</span>
                                 <span class="d-sm-none">上一步</span>
                             </a>
@@ -63,20 +63,20 @@
                 </div>
             </div>
             
-            <div class="container">
+            <div class="container pb-80">
                 <ul  class="ms-4 mt-12 mb-36 px-12 px-sm-0 text-gray-550 fs-7">
                     <li class="mb-4">🔎 請 <span class="text-main fw-bold">留下</span> 最符合您現在狀態的情緒卡「 <span class="fs-6 fw-bold text-main">3</span> 張」。</li>
                     <li>🔎 您可以透過點擊 <span class="fs-6 text-pink-tint01"><i class="bi bi-x-circle-fill"></i></span>，將情緒卡移除。</li>
                 </ul>
 
                 <!-- cards -->
-                <div class="mb-72 d-flex flex-wrap justify-content-center justify-content-md-start">
-                    <div class="position-relative me-36 mb-20">
+                <div class="mb-72 d-flex flex-wrap justify-content-center justify-content-md-start" id="cardsList">
+                    <!-- <div class="position-relative me-36 mb-20">
                         <a class="position-absolute top-0 start-100 translate-middle btn-delete-card-m"></a>
                         <button type="button" class="class-card mb-12 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#deleteExpectation01">
                             <p>期&nbsp;待</p>
                             <div class="img-box">
-                                <img src="../assets/images/02-expectation/expaction01-expect.svg" alt="期待">
+                                <img src="./upload/8.svg" alt="期待">
                             </div>
                         </button>
                     </div>
@@ -97,14 +97,182 @@
                                 <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable02-worry.svg" alt="擔心">
                             </div>
                         </button>
+                    </div> -->
+                </div>
+            </div>
+        </main>
+        <%- include('./layout/footer'); -%>
+        <%- include('./layout/floatButton') -%>
+        
+        <!-- modalEmoCards -->
+        <ul class="listModal">
+            <li></li>
+        </ul>
+
+        <!-- 確認是否要 刪除 卡片 Modal -->
+        <div class="modal fade" id="modalDelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-body d-flex flex-column align-items-center px-48 pt-24 pb-16">
+                        <p id="modalDeleteTitle" class="mb-12 fs-3 fw-bold">確定要移除嗎？</p>
+                        <div class="d-flex flex-column">
+                            <p id="modalDeleteText1" class="d-none mt-4 fs-7 text-gray-700">若確定要移除此張情緒卡的話，請點擊「<span class="px-2 fw-bold">確定</span>」</p>
+                            <p id="modalDeleteText2" class="mt-4 fs-7 text-gray-700">
+                                反之，則請點擊「<span class="px-2 fw-bold">取消</span>」。
+                            </p>
+                        </div>
+                        <div style="width: 45%;">
+                            <img class="w-100 pt-24 pb-2" src="../assets/images/sureToDelete.svg" alt="img" id="modalDeleteImg">
+                        </div>
+                        <span class="text-gray-400 fs-11">Illustration by <a class="link-gray-400" href="https://blush.design/artists/RyUTVuP8G4QeAAEEQgug/pablo-stanley">Pablo Stanley</a> from <a class="link-gray-400" href="https://blush.design/">blush design</a></span>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" id="modalDeleteClose" class="me-16 c-btn-outline-pink-tint01 fs-6" data-bs-dismiss="modal">取消</button>
+                        <button type="button" id="modalDeleteSure" class="btn btn-pink c-btn px-24 py-8 link-white fs-6 rounded-pill">確定</a>
                     </div>
                 </div>
             </div>
-            <%- include('./layout/footer'); -%>
-        </main>
-        <%- include('./layout/floatButton') -%>
-        <%- include('./layout/modalEmoCardsCross'); -%>
+        </div>
 
         <%- include('./layout/baseJs'); -%>
+        <script>
+            const cardsList = document.querySelector('#cardsList');
+            const listModal = document.querySelector('.listModal');
+
+            // 刪除卡片 Modal
+            const modalDelete = document.querySelector('#modalDelete');
+            const modalDeleteSure = document.querySelector('#modalDeleteSure');
+            const modalDeleteClose = document.querySelector('#modalDeleteClose');
+
+            // 抓 localStorage 的 localStorage.getItem("addedCards"); 資料
+            let storageCards;
+            let getAddedCards = localStorage.getItem("addedCards");
+            if(getAddedCards!=null){
+                storageCards=JSON.parse(getAddedCards); // 將 string 資料轉為 array 資料
+
+                axios.get("http://api2.wavemocards.com/emotions?require=cards")
+                .then(function(response){
+                    let aryData = Object.values(response.data); // 轉成「陣列」
+                    // cards 卡片列
+                    let strCards = "";
+                    let strModal = "";
+                    let emo;
+                    initCardsAndModals();
+                    function initCardsAndModals(){
+                        storageCards.forEach(function(card, i){
+                            let category = aryData[card.ID-1].Category;
+                            if(category == "快樂") {
+                                emo = "happy";
+                            } else if (category == "期待") {
+                                emo = "expectation";
+                            } else if (category == "安心") {
+                                emo = "relived";
+                            } else if (category == "不安") {
+                                emo = "unstable";
+                            } else if (category == "驚訝") {
+                                emo = "amazed";
+                            } else if (category == "低落") {
+                                emo = "sadness";
+                            } else if (category == "討厭") {
+                                emo = "hate";
+                            } else if (category == "生氣") {
+                                emo = "anger";
+                            } else if (category == "其他") {
+                                emo = "others";
+                            }
+    
+                            if(card.Name.length>2){
+                                let contentCards = `
+                                <div class="position-relative me-36 mb-20" id="cardBox"">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-delete-card-m" id="btnDelete" data-bs-toggle="modal" data-bs-target="#modalDelete"><div class="d-none">${card.ID}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                        <p>${card.Name}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                        </div>
+                                    </button>
+                                </div>`;
+                                strCards+=contentCards;
+                            } else {
+                                let contentCards = `
+                                    <div class="position-relative me-36 mb-20" id="cardBox">
+                                        <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-delete-card-m" id="btnDelete" data-bs-toggle="modal" data-bs-target="#modalDelete"><div class="d-none">${card.ID}</div></button>
+                                        <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                            <p>${card.Name[0]}&nbsp;${card.Name[1]}</p>
+                                            <div class="img-box">
+                                                <img src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                            </div>
+                                        </button>
+                                    </div>`;
+                                strCards+=contentCards;
+                            }
+                            cardsList.innerHTML = strCards;
+                            let modalContent = `
+                                <li>
+                                    <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                                            <div class="modal-content bg-${emo} my-36">
+                                                <div class="modal-body d-sm-flex justify-content-between align-items-center position-relative">
+                                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-delete-card-xl" id="btnDelete" data-bs-toggle="modal" data-bs-target="#modalDelete"><div class="d-none">${card.ID}</div></button>
+                                                    <div class="box-bigCard-text">
+                                                        <div class="d-flex d-md-none w-100 justify-content-center">
+                                                            <div class="d-sm-none box-bigCard-img mb-8">
+                                                                <img class="w-100" src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
+                                                            <h2>${card.Name}</h2>
+                                                        </div>
+                                                        <div class="mb-16">
+                                                            <h3 class="mb-4">意思：</h3>
+                                                            <p>${card.Description}</p>
+                                                        </div>
+                                                        <div>
+                                                            <h3 class="mb-4">例句：</h3>
+                                                            <p>${card.Example}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-none d-sm-block box-bigCard-img">
+                                                        <img class="w-100" src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>`;
+                            strModal+=modalContent;
+                            listModal.innerHTML = strModal;
+                        })
+                    }
+                    // 監聽 x按鈕，被點擊後 刪除該卡（先跳出刪除確認視窗，再跳出刪除成功）
+                    const btnDeletes = document.querySelectorAll('#btnDelete');
+                    const cardBoxes = document.querySelectorAll('#cardBox');
+                    
+                    btnDeletes.forEach(function(btnDelete, i){
+                        let id = btnDelete.textContent;
+                        btnDelete.addEventListener("click", function(){
+                            // Modal 確認是否要刪除
+                            // 確認 -> 刪除 -> 處理 storageCards 資料，並傳新寫入 localStorage
+                            modalDeleteSure.addEventListener("click", function(){
+                                storageCards.splice(i, 1);
+                                // 將資料 轉為 string 資料
+                                let stringAddedCard = JSON.stringify(storageCards);
+                                // 將 aryAddedCards 存入 localStorage 中
+                                localStorage.setItem("addedCards", stringAddedCard);
+                                // 完成資料處理，關閉Modal
+                                modalDeleteClose.click();
+                                cardBoxes.forEach(function(cardBox, index){
+                                    let cardId = cardBox.childNodes[1].textContent;
+                                    if (id == cardId) {
+                                        cardBox.classList.add("d-none");
+                                    }
+                                })
+                            })
+                            // 取消 -> close modal
+                        })
+                    })
+                })
+            }
+        </script>
     </body>
 </html>
