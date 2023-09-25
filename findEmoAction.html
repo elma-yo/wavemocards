@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script type="module" crossorigin src="/wavemocards/assets/main-b56f0798.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-d39193d2.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-53ce6bfa.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-2af72cda.css">
   </head>
   <body>
     <div class="" id="top"></div>
@@ -117,8 +117,10 @@
                         <span>行動篇</span>
                     </h2>
                     <div class="nav-btn d-flex justify-content-end">
-                        <a class="btn btn-outline-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="findEmoBackground.html">上一步</a>
-                        <a class="ms-16 btn btn-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="findEmoStrength2nd.html"><span class="ms-4">下一步</span></a>
+                        <!-- <a class="btn btn-outline-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="findEmoBackground.html">上一步</a> -->
+                        <button type="button" class="ms-16 px-md-24 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 text-nowrap d-flex justify-content-center align-items-center" id="btnBack">上一步</button>
+                        <button type="button" class="ms-16 px-md-24 btn btn-main c-btn text-nowrap d-flex justify-content-center align-items-center" id="btnNext">下一步
+                        </button>
                     </div>
                 </div>
             </div>
@@ -135,16 +137,16 @@
                 <div class="container mb-md-48">
                     <div class="mb-24 row align-items-stretch">
                         <div class="col-md-8 col-lg-9 bg-main-tint03 rounded">
-                            <label for="whatIdid" class="d-block py-12 px-4">
-                                <p class="mb-4 text-gray-550">第 1 題</p>
+                            <label for="whatIDid" id="whatIDidLabel" class="d-block py-12 px-4">
+                                <!-- <p class="mb-4 text-gray-550">第 1 題</p>
                                 <p class="mb-4 text-main fw-500 fs-emoForm-main">
                                     在感受到「 ＸＸ 、 ＸＸ 、 ＸＸ 」情緒後，你有什麼反應或是做了什麼事情呢？
                                 </p>
                                 <p class="text-gray-550">
                                     例如：在感受到心中的焦慮後，我在日記本寫下各種心中所擔憂的事情。
-                                </p>
+                                </p> -->
                             </label>
-                            <textarea class="w-100 mb-12 p-12 border rounded border-gray-500 text-gray-900" id="whatIdid" name="whatHappened"></textarea>
+                            <textarea class="w-100 mb-12 p-12 border rounded border-gray-500 text-gray-900" id="whatIDid"></textarea>
                         </div>
                         <div class="d-none col-md-4 col-lg-3 d-md-flex justify-content-end align-items-center">
                             <img class="d-block" src="/wavemocards/assets/lime-action-679a9ee9.svg" alt="a man is diving" id="img">
@@ -155,13 +157,13 @@
                 <div class="container mb-md-48">
                     <div class="mb-24 row align-items-stretch">
                         <div class="col-md-8 col-lg-9 order-2 bg-main-tint03 rounded">
-                            <label for="resault" class="d-block py-12 px-4">
+                            <label for="actionResult" id="actionResultLabel" class="d-block py-12 px-4">
                                 <p class="mb-4 text-gray-550">第 2 題</p>
                                 <p class="text-main fw-500 fs-emoForm-main">
                                     在上述你所做的反應後，帶來了什麼樣的結果呢？
                                 </p>
                             </label>
-                            <textarea class="w-100 mb-12 p-12 border rounded border-gray-500 text-gray-900" id="resault" name="whatHappened"></textarea>
+                            <textarea class="w-100 mb-12 p-12 border rounded border-gray-500 text-gray-900" id="actionResult"></textarea>
                         </div>
                         <div class="d-none col-md-4 col-lg-3 d-md-flex order-1 justify-content-end align-items-center">
                             <img class="d-block" src="/wavemocards/assets/lime-happened-9942cb27.svg" alt="a man is diving" id="img">
@@ -172,13 +174,13 @@
                 <div class="container mb-md-48">
                     <div class="mb-24 row align-items-stretch">
                         <div class="col-md-8 col-lg-9 order-1 bg-main-tint03 rounded">
-                            <label for="feeling" class="d-block py-12 px-4">
+                            <label for="feeling" id="feelingLabel" class="d-block py-12 px-4">
                                 <p class="mb-4 text-gray-550">第 3 題</p>
                                 <p class="text-main fw-500 fs-emoForm-main">
                                     對於上述發生的結果，你有什麼樣的感受呢？
                                 </p>
                             </label>
-                            <textarea class="w-100 mb-12 p-12 border rounded border-gray-500 text-gray-900" id="feeling" name="whatHappened"></textarea>
+                            <textarea class="w-100 mb-12 p-12 border rounded border-gray-500 text-gray-900" id="feeling"></textarea>
                         </div>
                         <div class="d-none col-md-4 col-lg-3 d-md-flex order-2 justify-content-end align-items-center">
                             <img class="d-block" src="/wavemocards/assets/lime-feel-2229e121.svg" alt="a man is diving" id="img">
@@ -199,20 +201,23 @@
                             <div class="mb-16 d-flex align-items-center">
                                 <div>
                                     <input type="radio" class="d-none" name="isGoodResult" id="isGoodResultYes" value="0">
-                                    <label for="isGoodResultYes" class="form-label EmoStoryLabel me-16 fs-7">
+                                    <label for="isGoodResultYes" class="emoStoryLabel me-16 fs-7" id="isGoodResultLabel">
                                         是
+                                        <div class="d-none">0</div>
                                     </label>
                                 </div>
                                 <div>
                                     <input type="radio" class="d-none" name="isGoodResult" id="isGoodResultNo" value="1">
-                                    <label for="isGoodResultNo" class="form-label EmoStoryLabel me-16 fs-7">
+                                    <label for="isGoodResultNo" class="emoStoryLabel me-16 fs-7" id="isGoodResultLabel">
                                         否
+                                        <div class="d-none">1</div>
                                     </label>
                                 </div>
                                 <div>
                                     <input type="radio" class="d-none" name="isGoodResult" id="isGoodResultNotSure" value="null">
-                                    <label for="isGoodResultNotSure" class="form-label EmoStoryLabel fs-7">
+                                    <label for="isGoodResultNotSure" class="emoStoryLabel fs-7" id="isGoodResultLabel">
                                         不清楚
+                                        <div class="d-none">null</div>
                                     </label>
                                 </div>
                             </div>
@@ -246,7 +251,7 @@
                 <div class="container mb-64 mb-md-24">
                     <div class="mb-24 row align-items-stretch">
                         <div class="col-md-8 col-lg-9 order-1 bg-main-tint03 rounded">
-                            <label for="betterAction" class="d-block py-12 px-4">
+                            <label for="betterAction" class="d-block py-12 px-4" id="betterActionLabel">
                                 <p class="mb-4 text-gray-550 fs-8">第 5 題</p>
                                 <!-- <p class="mb-4 text-gray-550 fs-8">如果這次所做的事情/行為，所帶來的結果不太好的話。</p> -->
                                 <ul class="ms-24" style="list-style-type:circle;">
@@ -257,12 +262,13 @@
                                     </li>
                                     <li>
                                         <p class="text-gray-600 fs-emoForm-main">
-                                            如果這次的<span class="mb-4 text-main fw-500"> 結果是你所期待 </span>的話，想邀請你寫下<span class="mb-4 text-main fw-500"> 肯定自己做得好的地方 </span>。
+                                            <!-- 這次的<span class="mb-4 text-main fw-500"> 結果是你所期待 </span>的話，想邀請你寫下<span class="mb-4 text-main fw-500"> 肯定自己做得好的地方 </span>。 -->
+                                            這次的情緒歷程，有哪些是你覺得做得不錯的地方呢？邀請你寫下<span class="mb-4 text-main fw-500"> 肯定自己做得不錯的地方 </span>。
                                         </p>
                                     </li>
                                 </ul>
                             </label>
-                            <textarea class="w-100 mb-12 p-12 border rounded border-gray-500 text-gray-900" id="betterAction" name="whatHappened"></textarea>
+                            <textarea class="w-100 mb-12 p-12 border rounded border-gray-500 text-gray-900" id="betterAction"></textarea>
                         </div>
                         <div class="d-none col-md-4 col-lg-3 d-md-flex order-2 justify-content-end align-items-center">
                             <img class="d-block" src="/wavemocards/assets/lime-nextActionPlan-d7ec7f23.svg" alt="a man is diving" id="img">
@@ -364,12 +370,117 @@
 <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>    <script type="text/javascript" src="../assets/js/textarea.js"></script>
   </body>
   <script>
+    const btnBack = document.querySelector('#btnBack');
+    const btnNext = document.querySelector('#btnNext');
+    const whatIDidLabel = document.querySelector("#whatIDidLabel");
+    const whatIDid = document.querySelector("#whatIDid");
+    const actionResultLabel = document.querySelector("#actionResultLabel");
+    const actionResult = document.querySelector("#actionResult");
+    const feelingLabel = document.querySelector("#feelingLabel");
+    const feeling = document.querySelector("#feeling");
+    const isGoodResultLabels = document.querySelectorAll('#isGoodResultLabel');
+    const betterActionLabel = document.querySelector('#betterActionLabel');
+    const betterAction = document.querySelector('#betterAction');
     // 取得local storage 資料
     let storageData;
     let storageCards;
     let getAddedCards = localStorage.getItem("addedCards");
     storageData=JSON.parse(getAddedCards);
-    console.log(storageData);
     storageCards=storageData[0].cards;
+    console.log(storageData);
+    // 確認 有無 whatHappened 的資料，有的話寫入textarea
+    if(storageData[1].whatIDid!="" && storageData[1].whatIDid!=undefined){
+        whatIDid.value=storageData[1].whatIDid;
+    }
+    if(storageData[1].actionResult!="" && storageData[1].actionResult!=undefined){
+        actionResult.value=storageData[1].actionResult;
+    }
+    if(storageData[1].feeling!="" && storageData[1].feeling!=undefined){
+        feeling.value=storageData[1].feeling;
+    }
+    let isGoodResultValue = "";
+    if(storageData[1].isGoodResult!=undefined){
+        isGoodResultLabels.forEach(function(label, i){
+            if(storageData[1].isGoodResult==label.childNodes[1].textContent){
+                isGoodResultValue = storageData[1].isGoodResult;
+                label.click();
+            }
+        })
+    }
+    if(storageData[1].betterAction!="" && storageData[1].betterAction!=undefined){
+        betterAction.value=storageData[1].betterAction;
+    }
+
+    // 將情緒名詞寫入文句中
+    axios.get("https://api.wavemocards.com/emotions?require=cards")
+    .then(function(response){
+        let aryData = Object.values(response.data);
+        let strWhatIDid = "";
+        let cardsNum = storageCards.length;
+        let cardNames = [];
+        storageCards.forEach(function(card, i){
+            cardNames.push(card.Name);
+        })
+        if(cardsNum==1){
+            strWhatIDid = `
+                <p class="mb-4 text-gray-550">第 1 題</p>
+                <p class="mb-4 text-main fw-500 fs-emoForm-main">
+                    在感受到「<span class="px-2">${cardNames[0]}</span>」的情緒後，你有什麼反應呢？或是做了什麼事情呢？
+                </p>
+                <p class="text-gray-550">
+                    例如：在感受到心中的焦慮後，我在日記本寫下各種心中所擔憂的事情。
+                </p>`;
+        } else if (cardsNum==2){
+            strWhatIDid = `
+                <p class="mb-4 text-gray-550">第 1 題</p>
+                <p class="mb-4 text-main fw-500 fs-emoForm-main">
+                    在感受到「<span class="px-2">${cardNames[0]}</span>、<span class="px-2">${cardNames[1]}</span>」的情緒後，你有什麼反應呢？或是做了什麼事情呢？
+                </p>
+                <p class="text-gray-550">
+                    例如：在感受到心中的焦慮後，我在日記本寫下各種心中所擔憂的事情。
+                </p>`;
+        } else {
+            strWhatIDid = `
+                <p class="mb-4 text-gray-550">第 1 題</p>
+                <p class="mb-4 text-main fw-500 fs-emoForm-main">
+                    在感受到「<span class="px-2">${cardNames[0]}</span>、<span class="px-2">${cardNames[1]}</span>、<span class="px-2">${cardNames[2]}</span>」的情緒後，你有什麼反應呢？或是做了什麼事情呢？
+                </p>
+                <p class="text-gray-550">
+                    例如：在感受到心中的焦慮後，我在日記本寫下各種心中所擔憂的事情。
+                </p>`;
+        }
+        whatIDidLabel.innerHTML = strWhatIDid;
+    })
+    
+    // 監聽 label 被點擊事件，並記錄所選擇的選項內容
+    isGoodResultLabels.forEach(function(label, i){
+        label.addEventListener("click", function(){
+            isGoodResultValue = label.childNodes[1].textContent;
+        })
+    })
+
+    // 點擊上一步時，將資料寫入local storage中
+    btnBack.addEventListener("click", function(){
+        storageData[1].whatIDid = whatIDid.value;
+        storageData[1].actionResult = actionResult.value;
+        storageData[1].feeling = feeling.value;
+        storageData[1].isGoodResult = isGoodResultValue;
+        storageData[1].betterAction = betterAction.value;
+        let stringAddedCard = JSON.stringify(storageData);
+        localStorage.setItem("addedCards", stringAddedCard);
+        location.href = "findEmoBackground.html";
+    })
+
+    // 點擊下一步時，將資料寫入 local storage中
+    btnNext.addEventListener("click", function(){
+        storageData[1].whatIDid = whatIDid.value;
+        storageData[1].actionResult = actionResult.value;
+        storageData[1].feeling = feeling.value;
+        storageData[1].isGoodResult = isGoodResultValue;
+        storageData[1].betterAction = betterAction.value;
+        let stringAddedCard = JSON.stringify(storageData);
+        localStorage.setItem("addedCards", stringAddedCard);
+        location.href = "findEmoStrength2nd.html";
+    })
   </script>
 </html>
