@@ -22,8 +22,8 @@
                 <div class="pb-8 px-12 px-sm-0 border-2 border-bottom border-main-tint02 d-flex justify-content-between align-items-center">
                     <h2 class="fs-3">快樂</h2>
                     <div class="nav-btn d-flex justify-content-end">
-                        <a class="btn btn-outline-main c-btn" href="findEmoCards.html">返回</a>
-                        <a class="ms-16 btn btn-main c-btn btn-goToMyCards" href="myEmoCardsHolder.html">
+                        <a class="btn btn-outline-main c-btn" id="btnBack" href="findEmoCards.html">返回</a>
+                        <a class="ms-16 btn btn-main c-btn btn-goToMyCards" id="myEmoCardsHolder" href="myEmoCardsHolder.html">
                             <i class="bi bi-folder2"></i>
                             <i class="bi bi-folder2-open"></i>
                             <span class="ms-4">我的情緒卡夾</span>
@@ -147,7 +147,11 @@
 
     <%- include('./layout/baseJs'); -%>
     <script>
-        const happyCards = document.querySelector('#happyCards');
+        // 追蹤頁面足跡
+        let pageLocation = "findEmoHappy.html";
+        localStorage.setItem("location", pageLocation);
+
+        const cards = document.querySelector('#happyCards');
         const listModal = document.querySelector('.listModal');
         // 卡片加入成功/失敗 Modal
         const modalResult = document.querySelector('#modalResult');
@@ -158,79 +162,71 @@
         const modalResultLink = document.querySelector('#modalResultLink');
         const modalResultClose = document.querySelector('#modalResultClose');
 
-        axios.get("https://api.wavemocards.com/emotions?require=cards")
+        axios.get("https://api.wavemocards.com/emoinfo/cards/")
         .then(function(response){
             let aryData = Object.values(response.data);
-            // 展開卡
+            // 展開卡 & 大卡
             initCards()
             function initCards() {
-                let strCardsHappy = "";
+                let strCards = "";
                 let strModal = "";
                 let emo;
                 aryData.forEach(function(data, i){
-                    if(data.Category == "快樂"){
+                    let dataName = data.name;
+                    let dataId = data.ID;
+                    let dataDescription = data.description;
+                    let dataExample = data.example;
+                    if(data.category == "快樂"){
                         emo = "happy";
                         let contentCards = `
                             <div class="position-relative me-48 mb-24">
                                 <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
                                 <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                    <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                                    <p>${dataName[0]}&nbsp;${dataName[1]}</p>
                                     <div class="img-box">
-                                        <img src="./upload/${data.ID}.svg" alt="${data.Name}">
+                                        <img src="./upload/${dataId}.svg" alt="${dataName }">
                                     </div>
                                 </button>
                             </div>`;
-                        strCardsHappy+=contentCards;
-                    }
-                })
-                happyCards.innerHTML = strCardsHappy;
-            }
+                        strCards+=contentCards;
 
-            // 大情緒卡 Modal
-            initModal();
-            function initModal() {
-            let strModal = "";
-            let emo;
-            aryData.forEach(function(data, i){
-                if(data.Category == "快樂") {
-                    emo = "happy";
-                }
-                
-                let content = `
-                    <li>
-                        <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
-                                <div class="modal-content bg-${emo} my-36">
-                                    <div class="modal-body d-sm-flex justify-content-between align-items-center position-relative">
-                                        <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-xl" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                                        <div class="box-bigCard-text">
-                                            <div class="d-flex d-md-none w-100 justify-content-center">
-                                                <div class="d-sm-none box-bigCard-img mb-8">
-                                                    <img class="w-100" src="./upload/${data.ID}.svg" alt="${data.Name}">
+                        let contentModal = `
+                            <li>
+                                <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                                        <div class="modal-content bg-${emo} my-36">
+                                            <div class="modal-body d-sm-flex justify-content-between align-items-center position-relative">
+                                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-xl" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                                <div class="box-bigCard-text">
+                                                    <div class="d-flex d-md-none w-100 justify-content-center">
+                                                        <div class="d-sm-none box-bigCard-img mb-8">
+                                                            <img class="w-100" src="./upload/${dataId}.svg" alt="${dataName}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
+                                                        <h2>${dataName}</h2>
+                                                    </div>
+                                                    <div class="mb-16">
+                                                        <h3 class="mb-4">意思：</h3>
+                                                        <p>${dataDescription}</p>
+                                                    </div>
+                                                    <div>
+                                                        <h3 class="mb-4">例句：</h3>
+                                                        <p>${dataExample}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-sm-block box-bigCard-img">
+                                                    <img class="w-100" src="./upload/${dataId}.svg" alt="${dataName}">
                                                 </div>
                                             </div>
-                                            <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
-                                                <h2>${data.Name}</h2>
-                                            </div>
-                                            <div class="mb-16">
-                                                <h3 class="mb-4">意思：</h3>
-                                                <p>${data.Description}</p>
-                                            </div>
-                                            <div>
-                                                <h3 class="mb-4">例句：</h3>
-                                                <p>${data.Example}</p>
-                                            </div>
-                                        </div>
-                                        <div class="d-none d-sm-block box-bigCard-img">
-                                            <img class="w-100" src="./upload/${data.ID}.svg" alt="${data.Name}">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </li>`;
-                    strModal+=content;
+                            </li>`;
+                        strModal+=contentModal;
+                    }
                 })
+                cards.innerHTML = strCards;
                 listModal.innerHTML = strModal;
             }
 
@@ -245,11 +241,13 @@
                     let cardInfo = aryData[id-1];
 
                     // 取得 localStorage stringAddedCards 的資料
-                    let storageCards;
+                    let storageData; // local storage 全部的資料
+                    let storageCards; // 存放 local storage 中的 card 資料
                     let getAddedCards = localStorage.getItem("addedCards");
                     let hadThisCard; // 判別是否已有此卡
                     if(getAddedCards!=null){
-                        storageCards=JSON.parse(getAddedCards); // 將 string 資料轉為 array 資料
+                        storageData=JSON.parse(getAddedCards); // 將 string 資料轉為 array 資料
+                        storageCards=storageData[0].cards;
                         // 檢查此卡片是否已被放入 localStorage
                         storageCards.forEach(function(card, index){
                         if(cardInfo.ID==card.ID){
@@ -258,7 +256,8 @@
                     })
                     } else {
                         // storageCards 尚未被定義，因此 定義成array格式，後續才能將卡片資料新增進入array中
-                        storageCards=[];
+                        storageData=[{cards:[]}];
+                        storageCards=storageData[0].cards;
                     }
                     if(hadThisCard==true){
                         // 失敗 Modal
@@ -288,12 +287,29 @@
                         btnAdd.setAttribute("data-bs-target", "#modalResult");
                         btnAdd.click(); // 設定該按鈕被點擊
                         storageCards.push(cardInfo);
+                        storageData[0].cards=storageCards;
                         // 將資料 轉為 string 資料
-                        let stringAddedCard = JSON.stringify(storageCards);
+                        let stringAddedCard = JSON.stringify(storageData);
                         // 將 aryAddedCards 存入 localStorage 中
                         localStorage.setItem("addedCards", stringAddedCard);
                     }
                 })
+            })
+
+            // 防止頁面移轉
+            window.onbeforeunload = function () {
+                return "Are you really sure?";
+            }
+            const myEmoCardsHolder = document.querySelector('#myEmoCardsHolder');
+            myEmoCardsHolder.addEventListener('click', function(e){
+                window.onbeforeunload = false;
+            })
+            const btnBack = document.querySelector('#btnBack');
+            btnBack.addEventListener("click", function(){
+                window.onbeforeunload = false;
+            })
+            modalResultLink.addEventListener("click", function(){
+                window.onbeforeunload = false;
             })
         })
     </script>

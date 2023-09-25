@@ -25,22 +25,22 @@
                             <div class="progress bg-gray-300" style="height: 2px;">
                                 <div class="progress-bar bg-main-tint01" role="progressbar" style="width: 20%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <div class="p-num position-absolute top-0 start-0 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
-                                <span class="d-block">1</span>
-                            </div>
-                            <div class="p-num position-absolute top-0 start-20 translate-middle btn btn-sm btn-outline-main-tint01 rounded-pill d-flex justify-content-center align-items-center">
+                            <a class="p-num position-absolute top-0 start-0 translate-middle btn btn-sm btn-main-tint01 rounded-pill d-flex justify-content-center align-items-center" id="tooltip" href="myEmoCardsHolder.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="我的情緒卡夾">
+                                <span class="d-block" style="cursor: pointer;">1</span>
+                            </a>
+                            <div class="p-num position-absolute top-0 start-20 translate-middle btn btn-sm btn-outline-main-tint01 border-2 rounded-pill d-flex justify-content-center align-items-center" data-bs-toggle="tooltip" data-bs-placement="bottom" title="1st情緒強度">
                                 <span class="d-block">2</span>
                             </div>
-                            <div class="p-num position-absolute top-0 start-40 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                            <div class="p-num position-absolute top-0 start-40 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center" data-bs-toggle="tooltip" data-bs-placement="bottom" title="背景篇">
                                 <span class="d-block">3</span>
                             </div>
-                            <div class="p-num position-absolute top-0 start-60 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                            <div class="p-num position-absolute top-0 start-60 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center" data-bs-toggle="tooltip" data-bs-placement="bottom" title="行動篇">
                                 <span class="d-block">4</span>
                             </div>
-                            <div class="p-num position-absolute top-0 start-80 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                            <div class="p-num position-absolute top-0 start-80 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center" data-bs-toggle="tooltip" data-bs-placement="bottom" title="2nd情緒強度">
                                 <span class="d-block">5</span>
                             </div>
-                            <div class="p-num position-absolute top-0 start-100 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center">
+                            <div class="p-num position-absolute top-0 start-100 translate-middle btn btn-sm btn-outline-gray-450 rounded-pill d-flex justify-content-center align-items-center" data-bs-toggle="tooltip" data-bs-placement="bottom" title="感謝自我">
                                 <span class="d-block">6</span>
                             </div>
                         </div>
@@ -233,10 +233,20 @@
 
     <%- include('./layout/baseJs'); -%>
     <script>
+        const tooltips = document.querySelectorAll('#tooltip');
         const btnBack = document.querySelector('#btnBack');
         const btnNext = document.querySelector('#btnNext');
         const strengthArea =document.querySelector('#strengthArea');
         const listModal = document.querySelector('.listModal');
+        // 預防頁面跳轉
+        window.onbeforeunload = function () {
+            return "Are you really sure?";
+        }
+        tooltips.forEach(function(tooltip, i){
+            tooltip.addEventListener('click',function(){
+                window.onbeforeunload = false;
+            })
+        })
         // 抓 local storage 的 卡片資料
         let storageData;
         let storageCards;
@@ -244,7 +254,7 @@
         storageData=JSON.parse(getAddedCards);
         storageCards=storageData[0].cards;
         // 將卡片資料印到版面上
-        axios.get("https://api.wavemocards.com/emotions?require=cards")
+        axios.get("https://api.wavemocards.com/emoinfo/cards/")
         .then(function(response){
             let aryData = Object.values(response.data);
             let strCards = "";
@@ -253,7 +263,7 @@
             initCardsAndModals();
             function initCardsAndModals(){
                 storageCards.forEach(function(card, i){
-                    let category = aryData[card.ID-1].Category;
+                    let category = aryData[card.ID-1].category;
                     if(category == "快樂") {
                         emo = "happy";
                     } else if (category == "期待") {
@@ -274,13 +284,13 @@
                         emo = "others";
                     }
 
-                    if(card.Name.length>2){
+                    if(card.name.length>2){
                         let contentCards = `
                         <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
                             <button type="button" class="class-card mb-md-0 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                <p>${card.Name}</p>
+                                <p>${card.name}</p>
                                 <div class="img-box">
-                                    <img src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                    <img src="./upload/${card.ID}.svg" alt="${card.name}">
                                 </div>
                             </button>
                             <div class="box-strength d-flex justify-content-between align-items-center">
@@ -326,9 +336,9 @@
                         let contentCards = `
                             <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
                                 <button type="button" class="class-card mb-md-0 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                    <p>${card.Name[0]}&nbsp;${card.Name[1]}</p>
+                                    <p>${card.name[0]}&nbsp;${card.name[1]}</p>
                                     <div class="img-box">
-                                        <img src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                        <img src="./upload/${card.ID}.svg" alt="${card.name}">
                                     </div>
                                 </button>
                                 <div class="box-strength d-flex justify-content-between align-items-center">
@@ -381,23 +391,23 @@
                                             <div class="box-bigCard-text">
                                                 <div class="d-flex d-md-none w-100 justify-content-center">
                                                     <div class="d-sm-none box-bigCard-img mb-8">
-                                                        <img class="w-100" src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                                        <img class="w-100" src="./upload/${card.ID}.svg" alt="${card.name}">
                                                     </div>
                                                 </div>
                                                 <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
-                                                    <h2>${card.Name}</h2>
+                                                    <h2>${card.name}</h2>
                                                 </div>
                                                 <div class="mb-16">
                                                     <h3 class="mb-4">意思：</h3>
-                                                    <p>${card.Description}</p>
+                                                    <p>${card.description}</p>
                                                 </div>
                                                 <div>
                                                     <h3 class="mb-4">例句：</h3>
-                                                    <p>${card.Example}</p>
+                                                    <p>${card.example}</p>
                                                 </div>
                                             </div>
                                             <div class="d-none d-sm-block box-bigCard-img">
-                                                <img class="w-100" src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                                <img class="w-100" src="./upload/${card.ID}.svg" alt="${card.name}">
                                             </div>
                                         </div>
                                     </div>
@@ -453,6 +463,7 @@
                 storageData[0].cards=storageCards;
                 let stringAddedCard = JSON.stringify(storageData);
                 localStorage.setItem("addedCards", stringAddedCard);
+                window.onbeforeunload = false;
                 location.href = "myEmoCardsHolder.html";
             })
             // 確認是否都已選填，並將更新後的資料寫入localStorage
@@ -474,6 +485,7 @@
                     storageData[0].cards=storageCards;
                     let stringAddedCard = JSON.stringify(storageData);
                     localStorage.setItem("addedCards", stringAddedCard);
+                    window.onbeforeunload = false;
                     location.href = "findEmoBackground.html";
                 }
             })

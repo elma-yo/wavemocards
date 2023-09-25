@@ -35,9 +35,9 @@
             
             <!-- 分類探索 -->
             <div class="d-md-none mt-md-24 d-flex justify-content-center">
-              <a class="w-75 mt-8 mb-4 px-56 py-24 btn-find d-flex justify-content-center align-items-center rounded-pill text-nowrap" href="findEmoCards.html">
+              <button type="button" class="w-75 mt-8 mb-4 px-56 py-24 btn-find d-flex justify-content-center align-items-center rounded-pill text-nowrap fw-bold" id="btnStart">
                 開始探索
-              </a>
+              </button>
             </div>
             <div class="col-md-4 pt-36 d-flex flex-column align-items-center">
               <!-- <a class="d-block mt-8 mb-4 px-56 py-40 btn-find d-flex justify-content-between align-items-center rounded-pill" href="findEmoClassifiedExpand.html">
@@ -53,9 +53,9 @@
               
             </div>
             <div class="d-none d-md-flex mt-24 justify-content-center">
-              <a class="w-75 mt-8 mb-4 px-56 py-24 btn-find d-flex justify-content-center align-items-center rounded-pill" href="findEmoCards.html">
+              <button type="button" class="w-75 mt-8 mb-4 px-56 py-24 btn-find d-flex justify-content-center align-items-center rounded-pill fw-bold" id="btnStart">
                 開始探索
-              </a>
+              </button>
             </div>
           </div>
           <!-- 圖片引用來源 -->
@@ -72,4 +72,13 @@
 
     <%- include('./layout/baseJs'); -%>
   </body>
+  <script>
+    const btnStarts = document.querySelectorAll('#btnStart');
+    btnStarts.forEach(function(btnStart, i){
+      btnStart.addEventListener("click", function(){
+        localStorage.removeItem("addedCards");
+        location.href = "findEmoCards.html";
+      })
+    })
+  </script>
 </html>

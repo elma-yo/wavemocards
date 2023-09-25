@@ -32,7 +32,7 @@
                                 <button type="button" class="ms-8 ms-md-12 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 fw-bold text-nowrap" id="btnFold">收合</button>
                                 <button type="button" class="ms-8 ms-md-12 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 fw-bold text-nowrap" id="btnEmoTable">情緒表</button>
                             </div>
-                            <a class="ms-24 px-16 btn btn-main c-btn btn-goToMyCards fs-7 d-flex justify-content-center align-items-center" style="width: 100%; @media(max-width:768){width: auto;}" href="myEmoCardsHolder.html">
+                            <a class="ms-24 px-16 btn btn-main c-btn btn-goToMyCards fs-7 d-flex justify-content-center align-items-center" id="myEmoCardsHolder" style="width: 100%; @media(max-width:768){width: auto;}" href="myEmoCardsHolder.html">
                                 <i class="bi bi-folder2"></i>
                                 <i class="bi bi-folder2-open"></i>
                                 <span class="ms-4">我的情緒卡夾</span>
@@ -73,7 +73,7 @@
                 <div id="expanded">
                     <!-- 快樂類 -->
                     <div class="mb-20 d-flex flex-nowrap">
-                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadHappy" href="findEmoHappy.html">
+                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadHappy" id="btnTitle" href="findEmoHappy.html">
                             <span>快</span><span>樂</span>
                         </a>
                         <div class="d-flex overflow-auto pt-20" id="happyCards">
@@ -144,7 +144,7 @@
                     </div>
                     <!-- 期待類 -->
                     <div class="mb-20 d-flex flex-nowrap">
-                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadExpectation" href="findEmoExpectation.html">
+                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadExpectation" id="btnTitle" href="findEmoExpectation.html">
                             <span>期</span><span>待</span>
                         </a>
                         <div class="d-flex overflow-auto pt-20" id="expectationCards">
@@ -188,7 +188,7 @@
                     </div>
                     <!-- 安心類 -->
                     <div class="mb-20 d-flex flex-nowrap">
-                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadRelived" href="findEmoRelived.html">
+                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadRelived" id="btnTitle" href="findEmoRelived.html">
                             <span>安</span><span>心</span>
                         </a>
                         <div class="d-flex overflow-auto pt-20" id="relivedCards">
@@ -250,7 +250,7 @@
                     </div>
                     <!-- 不安類 -->
                     <div class="mb-20 d-flex flex-nowrap">
-                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadUnstable" href="findEmoUnstable.html">
+                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadUnstable" id="btnTitle" href="findEmoUnstable.html">
                             <span>不</span><span>安</span>
                         </a>
                         <div class="d-flex overflow-auto pt-20" id="unstableCards">
@@ -330,7 +330,7 @@
                     </div>
                     <!-- 驚訝類 -->
                     <div class="mb-20 d-flex flex-nowrap">
-                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadAmazed" href="findEmoAmazed.html">
+                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadAmazed" id="btnTitle" href="findEmoAmazed.html">
                             <span>驚</span><span>訝</span>
                         </a>
                         <div class="d-flex overflow-auto pt-20" id="amazedCards">
@@ -374,7 +374,7 @@
                     </div>
                     <!-- 低落類 -->
                     <div class="mb-20 d-flex flex-nowrap">
-                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadSadness" href="findEmoSadness.html">
+                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadSadness" id="btnTitle" href="findEmoSadness.html">
                             <span>低</span><span>落</span>
                         </a>
                         <div class="d-flex overflow-auto pt-20" id="sadnessCards">
@@ -490,7 +490,7 @@
                     </div>
                     <!-- 討厭類 -->
                     <div class="mb-20 d-flex flex-nowrap">
-                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadHate" href="findEmoHate.html">
+                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadHate" id="btnTitle" href="findEmoHate.html">
                             <span>討</span><span>厭</span>
                         </a>
                         <div class="d-flex overflow-auto pt-20" id="hateCards">
@@ -623,7 +623,7 @@
                     </div>
                     <!-- 其他類 -->
                     <div class="mb-64 d-flex flex-nowrap">
-                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadOthers" href="findEmoOthers.html">
+                        <a class="emoCardsHead mt-20 link-gray-900 emoCardHeadOthers" id="btnTitle" href="findEmoOthers.html">
                             <span>其</span><span>他</span>
                         </a>
                         <div class="d-flex overflow-auto pt-20" id="othersCards">
@@ -738,55 +738,55 @@
                         </li>
                     </ul>
                     <div class="d-flex flex-wrap justify-content-center justify-content-md-start">
-                        <a class="class-card me-16 bg-happy link-gray-900 class-card-happy" href="findEmoHappy.html">
+                        <a class="class-card me-16 bg-happy link-gray-900 class-card-happy" id="btnTitle" href="findEmoHappy.html">
                         <p>快&nbsp;樂</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/01-happy/happy02-happy.svg" alt="快樂">
                         </div>
                         </a>
-                        <a class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" href="findEmoExpectation.html">
+                        <a class="class-card me-16 bg-expectation link-gray-900 class-card-expectation" id="btnTitle" href="findEmoExpectation.html">
                         <p>期&nbsp;待</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/02-expectation/expaction01-expect.svg" alt="期待">
                         </div>
                         </a>
-                        <a class="class-card me-16 bg-relived link-gray-900 class-card-relived" href="findEmoRelived.html">
+                        <a class="class-card me-16 bg-relived link-gray-900 class-card-relived" id="btnTitle" href="findEmoRelived.html">
                         <p>安&nbsp;心</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/03-relived/relived04-relieved.svg" alt="安心">
                         </div>
                         </a>
-                        <a class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" href="findEmoUnstable.html">
+                        <a class="class-card me-16 bg-unstable link-gray-900 class-card-unstable" id="btnTitle" href="findEmoUnstable.html">
                         <p>不&nbsp;安</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable04-anxious.svg" alt="不安">
                         </div>
                         </a>
-                        <a class="class-card me-16 bg-amazed link-gray-900 class-card-amazed" href="findEmoAmazed.html">
+                        <a class="class-card me-16 bg-amazed link-gray-900 class-card-amazed" id="btnTitle" href="findEmoAmazed.html">
                         <p>驚&nbsp;訝</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/05-amazed/amazed02-astonishment.svg" alt="驚訝">
                         </div>
                         </a>
-                        <a class="class-card me-16 bg-sadness link-gray-900 class-card-sadness" href="findEmoSadness.html">
+                        <a class="class-card me-16 bg-sadness link-gray-900 class-card-sadness" id="btnTitle" href="findEmoSadness.html">
                         <p>低&nbsp;落</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/06-sadness/sadness05-frustrated.svg" alt="低落">
                         </div>
                         </a>
-                        <a class="class-card me-16 bg-hate link-gray-900 class-card-hate" href="findEmoHate.html">
+                        <a class="class-card me-16 bg-hate link-gray-900 class-card-hate" id="btnTitle" href="findEmoHate.html">
                         <p>討&nbsp;厭</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/07-hate/hate03-inferiority.svg" alt="討厭">
                         </div>
                         </a>
-                        <a class="class-card me-16 bg-anger link-gray-900 class-card-anger" href="findEmoAnger.html">
+                        <a class="class-card me-16 bg-anger link-gray-900 class-card-anger" id="btnTitle" href="findEmoAnger.html">
                         <p>生&nbsp;氣</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/08-anger/anger02-irritated.svg" alt="生氣">
                         </div>
                         </a>
-                        <a class="class-card me-16 bg-others link-gray-900 class-card-others" href="findEmoOthers.html">
+                        <a class="class-card me-16 bg-others link-gray-900 class-card-others" id="btnTitle" href="findEmoOthers.html">
                         <p>其&nbsp;他</p>
                         <div class="img-box">
                             <img src="https://wavemocards.com/frontend/upload/09-others/others01-release.svg" alt="其他">
@@ -802,7 +802,7 @@
                     </p>
                     <!-- 快樂類 -->
                     <div class="d-flex flex-nowrap">
-                        <a href="emoCardsHappy.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-happy fw-700 d-flex justify-content-center align-items-center text-md-nowrap">快樂</a>
+                        <a href="emoCardsHappy.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-happy fw-700 d-flex justify-content-center align-items-center text-md-nowrap" id="btnTitle">快樂</a>
                         <div class="d-flex align-items-center overflow-auto pt-12 mb-4" id="buttonsHappy">
                             <!-- Button trigger modal -->
                             <!-- <div class="me-20 position-relative emoTableAdd">
@@ -851,7 +851,7 @@
                     </div>
                     <!-- 期待類 -->
                     <div class="d-flex flex-nowrap mt-16">
-                        <a href="emoCardsExpectation.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-expectation fw-700 d-flex justify-content-center align-items-center text-md-nowrap">期待</a>
+                        <a href="emoCardsExpectation.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-expectation fw-700 d-flex justify-content-center align-items-center text-md-nowrap" id="btnTitle">期待</a>
                         <div class="d-flex overflow-auto pt-12 mb-4" id="buttonsExpectation">
                             <!-- Button trigger modal -->
                             <!-- <div class="me-20 position-relative emoTableAdd">
@@ -882,7 +882,7 @@
                     </div>
                     <!-- 安心類 -->
                     <div class="d-flex flex-nowrap mt-16">
-                        <a href="emoCardsRelived.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-relived fw-700 d-flex justify-content-center align-items-center text-md-nowrap">安心</a>
+                        <a href="emoCardsRelived.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-relived fw-700 d-flex justify-content-center align-items-center text-md-nowrap" id="btnTitle">安心</a>
                         <div class="d-flex overflow-auto pt-12 mb-4" id="buttonsRelived">
                             <!-- Button trigger modal -->
                             <!-- <div class="me-20 position-relative emoTableAdd">
@@ -925,7 +925,7 @@
                     </div>
                     <!-- 不安類 -->
                     <div class="d-flex flex-nowrap mt-16">
-                        <a href="emoCardsUnstable.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-unstable fw-700 d-flex justify-content-center align-items-center text-md-nowrap">不安</a>
+                        <a href="emoCardsUnstable.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-unstable fw-700 d-flex justify-content-center align-items-center text-md-nowrap" id="btnTitle">不安</a>
                         <div class="d-flex overflow-auto pt-12 mb-4" id="buttonsUnstable">
                             <!-- Button trigger modal -->
                             <!-- <div class="me-20 position-relative emoTableAdd">
@@ -980,7 +980,7 @@
                     </div>
                     <!-- 驚訝類 -->
                     <div class="d-flex flex-nowrap mt-16">
-                        <a href="emoCardsAmazed.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-amazed fw-700 d-flex justify-content-center align-items-center text-md-nowrap">驚訝</a>
+                        <a href="emoCardsAmazed.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-amazed fw-700 d-flex justify-content-center align-items-center text-md-nowrap" id="btnTitle">驚訝</a>
                         <div class="d-flex overflow-auto pt-12 mb-4" id="buttonsAmazed">
                             <!-- Button trigger modal -->
                             <!-- <div class="me-20 position-relative emoTableAdd">
@@ -1011,7 +1011,7 @@
                     </div>
                     <!-- 低落類 -->
                     <div class="d-flex flex-nowrap mt-16">
-                        <a href="emoCardsSadness.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-sadness fw-700 d-flex justify-content-center align-items-center text-md-nowrap">低落</a>
+                        <a href="emoCardsSadness.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-sadness fw-700 d-flex justify-content-center align-items-center text-md-nowrap" id="btnTitle">低落</a>
                         <div class="d-flex overflow-auto pt-12 mb-4" id="buttonsSadness">
                             <!-- Button trigger modal -->
                             <!-- <div class="me-20 position-relative emoTableAdd">
@@ -1090,7 +1090,7 @@
                     </div>
                     <!-- 討厭類 -->
                     <div class="d-flex flex-nowrap mt-16">
-                        <a href="emoCardsHate.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-hate fw-700 d-flex justify-content-center align-items-center text-md-nowrap">討厭</a>
+                        <a href="emoCardsHate.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-hate fw-700 d-flex justify-content-center align-items-center text-md-nowrap" id="btnTitle">討厭</a>
                         <div class="d-flex overflow-auto pt-12 mb-4" id="buttonsHate">
                             <!-- Button trigger modal -->
                             <!-- <div class="me-20 position-relative emoTableAdd">
@@ -1145,7 +1145,7 @@
                     </div>
                     <!-- 生氣類 -->
                     <div class="d-flex flex-nowrap mt-16">
-                        <a href="emoCardsAnger.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-anger fw-700 d-flex justify-content-center align-items-center text-md-nowrap">生氣</a>
+                        <a href="emoCardsAnger.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-anger fw-700 d-flex justify-content-center align-items-center text-md-nowrap" id="btnTitle">生氣</a>
                         <div class="d-flex overflow-auto pt-12 mb-4" id="buttonsAnger">
                             <!-- Button trigger modal -->
                             <!-- <div class="me-20 position-relative emoTableAdd">
@@ -1182,7 +1182,7 @@
                     </div>
                     <!-- 其他類 -->
                     <div class="mb-64 d-flex flex-nowrap mt-16">
-                        <a href="emoCardsOthers.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-others fw-700 d-flex justify-content-center align-items-center text-md-nowrap">其他</a>
+                        <a href="emoCardsOthers.html" class="emoTableHeadFind me-12 mt-8 mt-md-12 px-4 px-md-12 py-2 btn btn-emoTable btn-others fw-700 d-flex justify-content-center align-items-center text-md-nowrap" id="btnTitle">其他</a>
                         <div class="d-flex overflow-auto pt-12 mb-4" id="buttonsOthers">
                             <!-- Button trigger modal -->
                             <!-- <div class="me-20 position-relative emoTableAdd">
@@ -1297,6 +1297,10 @@
         <%- include('./layout/baseJs'); -%>
         <script src="../assets/js/pages/changStyleOfCards.js"></script>
         <script>
+            // 追蹤頁面足跡
+            let pageLocation = "findEmoCards.html";
+            localStorage.setItem("location", pageLocation);
+
             //  手風琴開合紀錄 探索情緒頁面用
             const collapseOne = document.querySelector('#collapseOne');
             let recAccordionFindOpen = localStorage.getItem("accordionFindOpen");
@@ -1353,14 +1357,9 @@
             const modalResultLink = document.querySelector('#modalResultLink');
             const modalResultClose = document.querySelector('#modalResultClose');
 
-            axios.get("https://api.wavemocards.com/emotions?require=cards")
+            axios.get("https://api.wavemocards.com/emoinfo/cards/")
             .then(function(response){
                 let aryData = Object.values(response.data); // 轉成「陣列」
-                // let aryIds = Object.keys(response.data); // 資料庫中的各卡片 id (0~64)
-
-                // for(let i=0; i<aryData.length; i++){
-                //     aryData[i].id= aryIds[i];
-                // }
 
                 // 展開卡
                 initCards()
@@ -1374,142 +1373,266 @@
                     let strCardsHate = "";
                     let strCardsAnger = "";
                     let strCardsOthers = "";
+                    let strTableHappy = "";
+                    let strTableExpectation = "";
+                    let strTableRelived = "";
+                    let strTableUnstable = "";
+                    let strTableAmazed = "";
+                    let strTableSadness = "";
+                    let strTableHate = "";
+                    let strTableAnger = "";
+                    let strTableOthers = "";
                     let strModal = "";
                     let emo;
                     aryData.forEach(function(data, i){
-                        if(data.Category == "快樂"){
+                        let dataName = data.name;
+                        let dataId = data.ID;
+                        let dataDescription = data.description;
+                        let dataExample = data.example;
+                        if(data.category == "快樂"){
                             emo = "happy";
                             let contentCards = `
                             <div class="position-relative me-28">
                                 <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
                                 <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                    <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                                    <p>${dataName[0]}&nbsp;${dataName[1]}</p>
                                     <div class="img-box">
-                                        <img src="./upload/${data.ID}.svg" alt="${data.Name}">
+                                        <img src="./upload/${dataId}.svg" alt="${dataName}">
                                     </div>
                                 </button>
                             </div>`;
                             strCardsHappy+=contentCards;
+
+                            let contentEmoTable = `
+                                <div class="me-20 position-relative emoTableAdd">
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                </div>`;
+                            strTableHappy+=contentEmoTable;
                         } 
-                        else if(data.Category == "期待"){
+                        else if(data.category == "期待"){
                             emo = "expectation";
-                            if(data.Name.length>2){
+                            if(dataName.length>2){
                                 let contentCards = `
                                 <div class="position-relative me-28">
-                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
                                     <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                        <p>${data.Name}</p>
+                                        <p>${dataName}</p>
                                         <div class="img-box">
-                                            <img src="./upload/${data.ID}.svg" alt="${data.Name}">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
                                         </div>
                                     </button>
                                 </div>`;
                                 strCardsExpectation+=contentCards;
+
+                                let contentEmoTable = `
+                                <div class="me-20 position-relative emoTableAdd">
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                </div>`;
+                                strTableExpectation+=contentEmoTable;
                             } else {
                                 let contentCards = `
                                 <div class="position-relative me-28">
-                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
                                     <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                        <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
                                         <div class="img-box">
-                                            <img src="./upload/${data.ID}.svg" alt="${data.Name}">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
                                         </div>
                                     </button>
                                 </div>`;
                                 strCardsExpectation+=contentCards;
+
+                                let contentEmoTable = `
+                                    <div class="me-20 position-relative emoTableAdd">
+                                        <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                        <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    </div>`;
+                                strTableExpectation+=contentEmoTable;
                             }
-                        } else if(data.Category == "安心"){
+                        } else if(data.category == "安心"){
                             emo = "relived";
                             let contentCards = `
-                            <div class="position-relative me-28">
-                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                                <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                    <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
-                                    <div class="img-box">
-                                        <img src="./upload/${data.ID}.svg" alt="${data.Name}">
-                                    </div>
-                                </button>
-                            </div>`;
+                                <div class="position-relative me-28">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                    </button>
+                                </div>`;
                             strCardsRelived+=contentCards;
-                        } else if(data.Category == "不安"){
+
+                            let contentEmoTable = `
+                                <div class="me-20 position-relative emoTableAdd">
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                </div>`;
+                            strTableRelived+=contentEmoTable;
+
+                        } else if(data.category == "不安"){
                             emo = "unstable";
                             let contentCards = `
-                            <div class="position-relative me-28">
-                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                                <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                    <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
-                                    <div class="img-box">
-                                        <img src="./upload/${data.ID}.svg" alt="${data.Name}">
-                                    </div>
-                                </button>
-                            </div>`;
+                                <div class="position-relative me-28">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                    </button>
+                                </div>`;
                             strCardsUnstable+=contentCards;
-                        } else if(data.Category == "驚訝"){
+
+                            let contentEmoTable = `
+                                <div class="me-20 position-relative emoTableAdd">
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                </div>`;
+                            strTableUnstable+=contentEmoTable;
+
+                        } else if(data.category == "驚訝"){
                             emo = "amazed";
                             let contentCards = `
                             <div class="position-relative me-28">
-                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
+                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
                                 <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                    <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                                    <p>${dataName[0]}&nbsp;${dataName[1]}</p>
                                     <div class="img-box">
-                                        <img src="./upload/${data.ID}.svg" alt="${data.Name}">
+                                        <img src="./upload/${dataId}.svg" alt="${dataName}">
                                     </div>
                                 </button>
                             </div>`;
                             strCardsAmazed+=contentCards;
-                        } else if(data.Category == "低落"){
+
+                            let contentEmoTable = `
+                                <div class="me-20 position-relative emoTableAdd">
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                </div>`;
+                            strTableAmazed+=contentEmoTable;
+
+                        } else if(data.category == "低落"){
                             emo = "sadness";
                             let contentCards = `
                             <div class="position-relative me-28">
-                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
+                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
                                 <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                    <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
+                                    <p>${dataName[0]}&nbsp;${dataName[1]}</p>
                                     <div class="img-box">
-                                        <img src="./upload/${data.ID}.svg" alt="${data.Name}">
+                                        <img src="./upload/${dataId}.svg" alt="${dataName}">
                                     </div>
                                 </button>
                             </div>`;
                             strCardsSadness+=contentCards;
-                        } else if(data.Category == "討厭"){
+
+                            let contentEmoTable = `
+                                <div class="me-20 position-relative emoTableAdd">
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                </div>`;
+                            strTableSadness+=contentEmoTable;
+
+                        } else if(data.category == "討厭"){
                             emo = "hate";
                             let contentCards = `
-                            <div class="position-relative me-28">
-                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                                <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                    <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
-                                    <div class="img-box">
-                                        <img src="./upload/${data.ID}.svg" alt="${data.Name}">
-                                    </div>
-                                </button>
-                            </div>`;
+                                <div class="position-relative me-28">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                    </button>
+                                </div>`;
                             strCardsHate+=contentCards;
-                        } else if(data.Category == "生氣"){
+
+                            let contentEmoTable = `
+                                <div class="me-20 position-relative emoTableAdd">
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                </div>`;
+                            strTableHate+=contentEmoTable;
+
+                        } else if(data.category == "生氣"){
                             emo = "anger";
                             let contentCards = `
-                            <div class="position-relative me-28">
-                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                                <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                    <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
-                                    <div class="img-box">
-                                        <img src="./upload/${data.ID}.svg" alt="${data.Name}">
-                                    </div>
-                                </button>
-                            </div>`;
+                                <div class="position-relative me-28">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                    </button>
+                                </div>`;
                             strCardsAnger+=contentCards;
-                        } else if(data.Category == "其他"){
+
+                            let contentEmoTable = `
+                                <div class="me-20 position-relative emoTableAdd">
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                </div>`;
+                            strTableAnger+=contentEmoTable;
+
+                        } else if(data.category == "其他"){
                             emo = "others";
                             let contentCards = `
-                            <div class="position-relative me-28">
-                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                                <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                    <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
-                                    <div class="img-box">
-                                        <img src="./upload/${data.ID}.svg" alt="${data.Name}">
-                                    </div>
-                                </button>
-                            </div>`;
+                                <div class="position-relative me-28">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                    </button>
+                                </div>`;
                             strCardsOthers+=contentCards;
+
+                            let contentEmoTable = `
+                                <div class="me-20 position-relative emoTableAdd">
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                </div>`;
+                            strTableOthers+=contentEmoTable;
                         }
+
+                        let contentModel = `
+                            <li>
+                                <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                                        <div class="modal-content bg-${emo} my-36">
+                                            <div class="modal-body d-sm-flex justify-content-between align-items-center position-relative">
+                                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-xl" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                                <div class="box-bigCard-text">
+                                                    <div class="d-flex d-md-none w-100 justify-content-center">
+                                                        <div class="d-sm-none box-bigCard-img mb-8">
+                                                            <img class="w-100" src="./upload/${dataId}.svg" alt="${dataName}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
+                                                        <h2>${dataName}</h2>
+                                                    </div>
+                                                    <div class="mb-16">
+                                                        <h3 class="mb-4">意思：</h3>
+                                                        <p>${dataDescription}</p>
+                                                    </div>
+                                                    <div>
+                                                        <h3 class="mb-4">例句：</h3>
+                                                        <p>${dataExample}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-sm-block box-bigCard-img">
+                                                    <img class="w-100" src="./upload/${dataId}.svg" alt="${dataName}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>`;
+                        strModal+=contentModel;
                     })
                     happyCards.innerHTML = strCardsHappy;
                     expectationCards.innerHTML = strCardsExpectation;
@@ -1520,170 +1643,15 @@
                     hateCards.innerHTML = strCardsHate;
                     angerCards.innerHTML = strCardsAnger;
                     othersCards.innerHTML = strCardsOthers;
-                }
-
-                // 情緒表 各個情緒的按鈕
-                initEmlTable();
-                function initEmlTable() {
-                let strHappy = "";
-                let strExpectation = "";
-                let strRelived = "";
-                let strUnstable = "";
-                let strAmazed = "";
-                let strSadness = "";
-                let strHate = "";
-                let strAnger = "";
-                let strOthers = "";
-                let emo;
-                aryData.forEach(function(data, i) {
-                    let category = aryData[i].Category;
-                    let emoName = aryData[i].Name;
-                    if (category == "快樂") {
-                        emo = "happy";
-                        let content = `
-                        <div class="me-20 position-relative emoTableAdd">
-                            <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>
-                            <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                        </div>`;
-                        strHappy+=content;
-                    } else if (category == "期待") {
-                        emo = "expectation";
-                        let content = `
-                        <div class="me-20 position-relative emoTableAdd">
-                            <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>
-                            <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                        </div>`;
-                        strExpectation+=content;
-                    } else if (category == "安心") {
-                        emo = "relived";
-                        let content = `
-                        <div class="me-20 position-relative emoTableAdd">
-                            <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>
-                            <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                        </div>`;
-                        strRelived+=content;
-                    } else if (category == "不安") {
-                        emo = "unstable";
-                        let content = `
-                        <div class="me-20 position-relative emoTableAdd">
-                            <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>
-                            <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                        </div>`;
-                        strUnstable+=content;
-                    } else if (category == "驚訝") {
-                        emo = "amazed";
-                        let content = `
-                        <div class="me-20 position-relative emoTableAdd">
-                            <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>
-                            <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                        </div>`;
-                        strAmazed+=content;
-                    } else if (category == "低落") {
-                        emo = "sadness";
-                        let content = `
-                        <div class="me-20 position-relative emoTableAdd">
-                            <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>
-                            <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                        </div>`;
-                        strSadness+=content;
-                    } else if (category == "討厭") {
-                        emo = "hate";
-                        let content = `
-                        <div class="me-20 position-relative emoTableAdd">
-                            <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>
-                            <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                        </div>`;
-                        strHate+=content;
-                    } else if (category == "生氣") {
-                        emo = "anger";
-                        let content = `
-                        <div class="me-20 position-relative emoTableAdd">
-                            <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>
-                            <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                        </div>`;
-                        strAnger+=content;
-                    } else if (category == "其他") {
-                        emo = "others";
-                        let content = `
-                        <div class="me-20 position-relative emoTableAdd">
-                            <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${emoName}</button>
-                            <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                        </div>`;
-                        strOthers+=content;
-                    }
-                    buttonsHappy.innerHTML = strHappy;
-                    buttonsExpectation.innerHTML = strExpectation;
-                    buttonsRelived.innerHTML = strRelived;
-                    buttonsUnstable.innerHTML = strUnstable;
-                    buttonsAmazed.innerHTML = strAmazed;
-                    buttonsSadness.innerHTML = strSadness;
-                    buttonsHate.innerHTML = strHate;
-                    buttonsAnger.innerHTML = strAnger;
-                    buttonsOthers.innerHTML = strOthers;
-                })
-            }
-
-                // 大情緒卡 Modal
-                initModal();
-                function initModal() {
-                    let strModal = "";
-                    let emo;
-                    aryData.forEach(function(data, i){
-                        if(data.Category == "快樂") {
-                            emo = "happy";
-                        } else if (data.Category == "期待") {
-                            emo = "expectation";
-                        } else if (data.Category == "安心") {
-                            emo = "relived";
-                        } else if (data.Category == "不安") {
-                            emo = "unstable";
-                        } else if (data.Category == "驚訝") {
-                            emo = "amazed";
-                        } else if (data.Category == "低落") {
-                            emo = "sadness";
-                        } else if (data.Category == "討厭") {
-                            emo = "hate";
-                        } else if (data.Category == "生氣") {
-                            emo = "anger";
-                        } else if (data.Category == "其他") {
-                            emo = "others";
-                        }
-                        
-                        let content = `
-                            <li>
-                                <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
-                                        <div class="modal-content bg-${emo} my-36">
-                                            <div class="modal-body d-sm-flex justify-content-between align-items-center position-relative">
-                                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-xl" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                                                <div class="box-bigCard-text">
-                                                    <div class="d-flex d-md-none w-100 justify-content-center">
-                                                        <div class="d-sm-none box-bigCard-img mb-8">
-                                                            <img class="w-100" src="./upload/${data.ID}.svg" alt="${data.Name}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
-                                                        <h2>${data.Name}</h2>
-                                                    </div>
-                                                    <div class="mb-16">
-                                                        <h3 class="mb-4">意思：</h3>
-                                                        <p>${data.Description}</p>
-                                                    </div>
-                                                    <div>
-                                                        <h3 class="mb-4">例句：</h3>
-                                                        <p>${data.Example}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-none d-sm-block box-bigCard-img">
-                                                    <img class="w-100" src="./upload/${data.ID}.svg" alt="${data.Name}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>`;
-                        strModal+=content;
-                    })
+                    buttonsHappy.innerHTML = strTableHappy;
+                    buttonsExpectation.innerHTML = strTableExpectation;
+                    buttonsRelived.innerHTML = strTableRelived;
+                    buttonsUnstable.innerHTML = strTableUnstable;
+                    buttonsAmazed.innerHTML = strTableAmazed;
+                    buttonsSadness.innerHTML = strTableSadness;
+                    buttonsHate.innerHTML = strTableHate;
+                    buttonsAnger.innerHTML = strTableAnger;
+                    buttonsOthers.innerHTML = strTableOthers;
                     listModal.innerHTML = strModal;
                 }
 
@@ -1752,9 +1720,25 @@
                         }
                     })
                 })
-
             })
 
+            // 防止頁面移轉
+            window.onbeforeunload = function () {
+                return "Are you really sure?";
+            }
+            const myEmoCardsHolder = document.querySelector('#myEmoCardsHolder');
+            myEmoCardsHolder.addEventListener('click', function(e){
+                window.onbeforeunload = false;
+            })
+            const btnTitles = document.querySelectorAll('#btnTitle');
+            btnTitles.forEach(function(title, i){
+                title.addEventListener("click", function(){
+                    window.onbeforeunload = false;
+                })
+            })
+            modalResultLink.addEventListener("click", function(){
+                window.onbeforeunload = false;
+            })
         </script>
     </body>
 </html>
