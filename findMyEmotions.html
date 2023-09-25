@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script type="module" crossorigin src="/wavemocards/assets/main-53ce6bfa.js"></script>
-    <link rel="stylesheet" href="/wavemocards/assets/main-2af72cda.css">
+    <script type="module" crossorigin src="/wavemocards/assets/main-7c511c4c.js"></script>
+    <link rel="stylesheet" href="/wavemocards/assets/main-70ca0eec.css">
   </head>
   <body>
     <header class="header h-logined fixed-top">
@@ -56,7 +56,7 @@
                 <a href="findMyEmotions.html" class="px-4 py-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="選擇情緒卡與紀錄情緒">探索情緒</a>
             </li>
             <li class="ms-16">
-                <a href="myRecords.html" class="px-4 py-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="觀看我的情緒紀錄與分析">我的紀錄</a>
+                <a href="myRecords.html" class="px-4 py-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="觀看我的紀錄與分析">我的紀錄</a>
             </li>
             <!-- <li class="ms-16">
                 <a href="sharedByOthers.html" class="px-4 py-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="觀看他人分享的情緒紀錄">他人的分享</a> -->
@@ -98,9 +98,9 @@
             
             <!-- 分類探索 -->
             <div class="d-md-none mt-md-24 d-flex justify-content-center">
-              <a class="w-75 mt-8 mb-4 px-56 py-24 btn-find d-flex justify-content-center align-items-center rounded-pill text-nowrap" href="findEmoCards.html">
+              <button type="button" class="w-75 mt-8 mb-4 px-56 py-24 btn-find d-flex justify-content-center align-items-center rounded-pill text-nowrap fw-bold" id="btnStart">
                 開始探索
-              </a>
+              </button>
             </div>
             <div class="col-md-4 pt-36 d-flex flex-column align-items-center">
               <!-- <a class="d-block mt-8 mb-4 px-56 py-40 btn-find d-flex justify-content-between align-items-center rounded-pill" href="findEmoClassifiedExpand.html">
@@ -116,9 +116,9 @@
               
             </div>
             <div class="d-none d-md-flex mt-24 justify-content-center">
-              <a class="w-75 mt-8 mb-4 px-56 py-24 btn-find d-flex justify-content-center align-items-center rounded-pill" href="findEmoCards.html">
+              <button type="button" class="w-75 mt-8 mb-4 px-56 py-24 btn-find d-flex justify-content-center align-items-center rounded-pill fw-bold" id="btnStart">
                 開始探索
-              </a>
+              </button>
             </div>
           </div>
           <!-- 圖片引用來源 -->
@@ -149,7 +149,7 @@
                 <ul>
                     <li class="mb-8">
                         <a class="d-lg-flex justify-content-between" href="https://www.linkedin.com/in/shu-ping-yu-238655268/"  target="_blank">
-                            <span>Product Manager</span>
+                            <span>Project Manager</span>
                             <span class="mt-4 d-block text-end">Shu-Ping Yu</span>
                         </a>
                     </li>
@@ -183,6 +183,12 @@
                             <span class="mt-4 d-block text-end">Leon Wu</span>
                         </a>
                     </li>
+                    <li class="mb-8">
+                        <a class="d-lg-flex justify-content-between" href="https://www.linkedin.com/in/techleon/" target="_blank">
+                            <span>System Designer</span>
+                            <span class="mt-4 d-block text-end">Leon Wu</span>
+                        </a>
+                    </li>
                     <li>
                         <a class="d-lg-flex justify-content-between" href="https://a8607125167.wixsite.com/mysite/about"  target="_blank">
                             <span>Illustrator</span>
@@ -211,4 +217,13 @@
 
 <!-- axios -->
 <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>  </body>
+  <script>
+    const btnStarts = document.querySelectorAll('#btnStart');
+    btnStarts.forEach(function(btnStart, i){
+      btnStart.addEventListener("click", function(){
+        localStorage.removeItem("addedCards");
+        location.href = "findEmoCards.html";
+      })
+    })
+  </script>
 </html>
