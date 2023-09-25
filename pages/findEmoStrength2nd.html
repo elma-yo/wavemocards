@@ -54,155 +54,147 @@
                         <span>第二次</span>
                     </h2>
                     <div class="nav-btn d-flex justify-content-end">
-                        <a class="btn btn-outline-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="findEmoAction.html">上一步</a>
-            <form action="#" method="post">
-                        <button type="submit" class="ms-16 btn btn-main c-btn text-nowrap d-flex justify-content-center align-items-center" id="btnSave"><span class="ms-4">儲存紀錄</span></button>
+                        <!-- <a class="btn btn-outline-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="findEmoAction.html">上一步</a> -->
+                        <button type="button" class="ms-16 px-md-24 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 text-nowrap d-flex justify-content-center align-items-center" id="btnBack">上一步</button>
+                        <button type="submit" class="ms-16 px-md-24 btn btn-main c-btn text-nowrap d-flex justify-content-center align-items-center" id="btnSave">儲存紀錄</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container pb-112">
             <ul  class="ms-4 mt-12 mb-36 px-12 px-sm-0 text-gray-550">
                 <li class="mb-4 text-gray-550 fs-7">
-                    親愛的ＯＯ，在靜下來覺察與記錄自己的情緒故事後，不知道你現在的情緒還好嗎？
+                    親愛的ＯＯ，在覺察與記錄情緒故事後，不知道你現在的情緒還好嗎？
                 </li>
                 <li class="mb-40 text-main fs-7 fw-500">
                     邀請你再次深呼吸，並問問心中的自己，現在的情緒強度分別如何呢？<span class="text-gray-550 fs-8 fw-400">（ 1分代表最為微弱，5分代表最為強烈 ）</span>
                 </li>
             </ul>
 
-            <!-- 尚未設定form action內容 -->
-            <form action="#" method="">
-                <!-- 1 card & point -->
-                <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
-                    <!-- card -->
-                    <button type="button" class="class-card mb-md-0 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation01">
-                        <p>期&nbsp;待</p>
-                        <div class="img-box">
-                            <img src="https://wavemocards.com/frontend/upload/02-expectation/expaction01-expect.svg" alt="期待">
-                        </div>
-                    </button>
-                    <!-- point -->
-                    <div class="box-strength d-flex justify-content-between align-items-center">
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point01" value="1">
-                            <label for="1stEmo01Point01" class="form-label text-strength ">
-                                1
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point02" value="2">
-                            <label for="1stEmo01Point02" class="form-label text-strength ">
-                                2
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point03" value="3">
-                            <label for="1stEmo01Point03" class="form-label text-strength ">
-                                3
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point04" value="4">
-                            <label for="1stEmo01Point04" class="form-label text-strength ">
-                                4
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point05" value="5">
-                            <label for="1stEmo01Point05" class="form-label text-strength ">
-                                5
-                            </label>
-                        </div>
+            <div id="strengthArea"></div>
+            <!-- 1 card & point -->
+            <!-- <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
+                <button type="button" class="class-card mb-md-0 bg-expectation link-gray-900 class-card-expectation" data-bs-toggle="modal" data-bs-target="#expectation01">
+                    <p>期&nbsp;待</p>
+                    <div class="img-box">
+                        <img src="https://wavemocards.com/frontend/upload/02-expectation/expaction01-expect.svg" alt="期待">
+                    </div>
+                </button>
+                <div class="box-strength d-flex justify-content-between align-items-center">
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point01" value="1">
+                        <label for="1stEmo01Point01" class="form-label text-strength ">
+                            1
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point02" value="2">
+                        <label for="1stEmo01Point02" class="form-label text-strength ">
+                            2
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point03" value="3">
+                        <label for="1stEmo01Point03" class="form-label text-strength ">
+                            3
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point04" value="4">
+                        <label for="1stEmo01Point04" class="form-label text-strength ">
+                            4
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st01" id="1stEmo01Point05" value="5">
+                        <label for="1stEmo01Point05" class="form-label text-strength ">
+                            5
+                        </label>
                     </div>
                 </div>
-                <!-- 2 card & point -->
-                <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
-                    <!-- card -->
-                    <button type="button" class="class-card mb-md-0 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy05">
-                        <p>興&nbsp;奮</p>
-                        <div class="img-box">
-                            <img src="https://wavemocards.com/frontend/upload/01-happy/happy05-excited.svg" alt="興奮">
-                        </div>
-                    </button>
-                    <!-- point -->
-                    <div class="box-strength d-flex justify-content-between align-items-center">
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point01" value="1">
-                            <label for="1stEmo02Point01" class="form-label text-strength ">
-                                1
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point02" value="2">
-                            <label for="1stEmo02Point02" class="form-label text-strength ">
-                                2
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point03" value="3">
-                            <label for="1stEmo02Point03" class="form-label text-strength ">
-                                3
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point04" value="4">
-                            <label for="1stEmo02Point04" class="form-label text-strength ">
-                                4
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point05" value="5">
-                            <label for="1stEmo02Point05" class="form-label text-strength ">
-                                5
-                            </label>
-                        </div>
+            </div> -->
+            <!-- 2 card & point -->
+            <!-- <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
+                <button type="button" class="class-card mb-md-0 bg-happy link-gray-900 class-card-happy" data-bs-toggle="modal" data-bs-target="#happy05">
+                    <p>興&nbsp;奮</p>
+                    <div class="img-box">
+                        <img src="https://wavemocards.com/frontend/upload/01-happy/happy05-excited.svg" alt="興奮">
+                    </div>
+                </button>
+                <div class="box-strength d-flex justify-content-between align-items-center">
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point01" value="1">
+                        <label for="1stEmo02Point01" class="form-label text-strength ">
+                            1
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point02" value="2">
+                        <label for="1stEmo02Point02" class="form-label text-strength ">
+                            2
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point03" value="3">
+                        <label for="1stEmo02Point03" class="form-label text-strength ">
+                            3
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point04" value="4">
+                        <label for="1stEmo02Point04" class="form-label text-strength ">
+                            4
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st02" id="1stEmo02Point05" value="5">
+                        <label for="1stEmo02Point05" class="form-label text-strength ">
+                            5
+                        </label>
                     </div>
                 </div>
-                <!-- 3 card & point -->
-                <div class="mb-72 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
-                    <!-- card -->
-                    <button type="button" class="class-card mb-md-0 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable02">
-                        <p>擔&nbsp;心</p>
-                        <div class="img-box">
-                            <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable02-worry.svg" alt="擔心">
-                        </div>
-                    </button>
-                    <!-- point -->
-                    <div class="box-strength d-flex justify-content-between align-items-center">
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point01" value="1">
-                            <label for="1stEmo03Point01" class="form-label text-strength ">
-                                1
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point02" value="2">
-                            <label for="1stEmo03Point02" class="form-label text-strength ">
-                                2
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point03" value="3">
-                            <label for="1stEmo03Point03" class="form-label text-strength ">
-                                3
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point04" value="4">
-                            <label for="1stEmo03Point04" class="form-label text-strength ">
-                                4
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point05" value="5">
-                            <label for="1stEmo03Point05" class="form-label text-strength ">
-                                5
-                            </label>
-                        </div>
+            </div> -->
+            <!-- 3 card & point -->
+            <!-- <div class="mb-72 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
+                <button type="button" class="class-card mb-md-0 bg-unstable link-gray-900 class-card-unstable" data-bs-toggle="modal" data-bs-target="#unstable02">
+                    <p>擔&nbsp;心</p>
+                    <div class="img-box">
+                        <img src="https://wavemocards.com/frontend/upload/04-unstable/unstable02-worry.svg" alt="擔心">
+                    </div>
+                </button>
+                <div class="box-strength d-flex justify-content-between align-items-center">
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point01" value="1">
+                        <label for="1stEmo03Point01" class="form-label text-strength ">
+                            1
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point02" value="2">
+                        <label for="1stEmo03Point02" class="form-label text-strength ">
+                            2
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point03" value="3">
+                        <label for="1stEmo03Point03" class="form-label text-strength ">
+                            3
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point04" value="4">
+                        <label for="1stEmo03Point04" class="form-label text-strength ">
+                            4
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" class="d-none" name="emoStrength1st03" id="1stEmo03Point05" value="5">
+                        <label for="1stEmo03Point05" class="form-label text-strength ">
+                            5
+                        </label>
                     </div>
                 </div>
-            </form>
+            </div> -->
         </div>
     </main>
 
@@ -211,13 +203,334 @@
     <%- include('./layout/footer'); -%>
     <%- include('./layout/modalEmoCards'); -%>
 
+    <!-- modalEmoCards -->
+    <ul class="listModal">
+        <li></li>
+    </ul>
+
+    <!-- 確定完成 Modal -->
+    <div class="modal fade" id="modalMakeSure" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4">
+                <div class="modal-body d-flex flex-column align-items-center px-48 pt-24 pb-16">
+                    <p id="modalMakeSureTitle" class="mb-12 fs-3 fw-bold text-main">確定完成了嗎？</p>
+                    <div id="modalMakeSureText1" class="mt-4 fs-7 text-gray-700">
+                        <p>點擊「 確定完成 」後，將會儲存您的紀錄，並且<span class="text-main">無法再返回到此頁面</span>。</p>
+                        <p class="mt-4">若想再繼續編輯的話，請點擊「 返回 」</p>
+                    </div>
+                    <div style="width: 45%;">
+                        <img class="w-100 pt-24 pb-2" src="../assets/images/sureToSave.svg" alt="img" id="modalMakeSureImg">
+                    </div>
+                    <span class="text-gray-400 fs-11">Illustration by <a class="link-gray-400" href="https://blush.design/artists/RyUTVuP8G4QeAAEEQgug/pablo-stanley">Pablo Stanley</a> from <a class="link-gray-400" href="https://blush.design/">blush design</a></span>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" id="modalResultClose" class="me-16 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 px-24 py-8 fs-6" data-bs-dismiss="modal">返回</button>
+                    <button type="button" id="modalResultSure" class="btn btn-main c-btn px-24 py-8 link-white fs-6 rounded-pill">確定完成</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 儲存成功/失敗 Modal -->
+    <div class="modal fade" id="modalSaveResult" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4">
+                <div class="modal-body d-flex flex-column align-items-center px-48 pt-24 pb-16">
+                    <p id="modalSaveResultTitle" class="mb-12 fs-3 fw-bold">儲存成功</p>
+                    <div id="modalSaveResultErrMsg" class="d-none mt-4 fs-7 text-gray-700">
+                        <p>很抱歉，儲存紀錄失敗，請確認您的網路狀態，並重新點擊「儲存紀錄」。</p>
+                        <p>若無法排除問題，請來信 <a class="link-pink" href="mailto:info@wavemocards.com">與我們聯繫</a>。</p>
+                    </div>
+                    <div style="width: 45%;">
+                        <img class="w-100 pt-24 pb-2" src="../assets/images/addCardSuccess.svg" alt="img" id="modalSaveResultImg">
+                    </div>
+                    <span class="text-gray-400 fs-11">Illustration by <a class="link-gray-400" href="https://blush.design/artists/RyUTVuP8G4QeAAEEQgug/pablo-stanley">Pablo Stanley</a> from <a class="link-gray-400" href="https://blush.design/">blush design</a></span>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" id="modalSaveResultClose" class="d-none btn btn-pink c-btn c-btn-pink px-24 py-8 link-white fs-6 rounded-pill" data-bs-dismiss="modal">我知道了</button>
+                    <a href="findEmoThanks.html" id="modalResultLink" class="btn btn-main c-btn px-24 py-8 link-white fs-6 rounded-pill">前往最後一個步驟</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <%- include('./layout/baseJs'); -%>
     <script>
+        const btnBack = document.querySelector('#btnBack');
         const btnSave = document.querySelector('#btnSave');
+        const strengthArea =document.querySelector('#strengthArea');
+        const listModal = document.querySelector('.listModal');
+        // 儲存 Modal
+        const modalResultSure = document.querySelector('#modalResultSure');
+        const modalSaveResultTitle = document.querySelector('#modalSaveResultTitle');
+        const modalSaveResultErrMsg = document.querySelector('#modalSaveResultErrMsg');
+        const modalSaveResultImg = document.querySelector('#modalSaveResultImg');
+        const modalSaveResultClose = document.querySelector('#modalSaveResultClose');
+        const modalResultLink = document.querySelector('#modalResultLink');
+        // 取得local storage 資料
+        let storageData;
+        let storageCards;
+        let getAddedCards = localStorage.getItem("addedCards");
+        storageData=JSON.parse(getAddedCards);
+        storageCards=storageData[0].cards;
 
-        btnSave.addEventListener('click', function(){
-            event.preventDefault();  // 之後要將這個刪除，之後的流程「出現儲存成功/失敗的訊息框，並在點擊確認後連結到下一頁」
-            location.href="./findEmoThanks.html";
+        // 將卡片資料印到版面上
+        axios.get("https://api.wavemocards.com/emotions?require=cards")
+        .then(function(response){
+            let aryData = Object.values(response.data);
+            let strCards = "";
+            let strModal = "";
+            let emo;
+            initCardsAndModals();
+            function initCardsAndModals(){
+                storageCards.forEach(function(card, i){
+                    let category = aryData[card.ID-1].Category;
+                    if(category == "快樂") {
+                        emo = "happy";
+                    } else if (category == "期待") {
+                        emo = "expectation";
+                    } else if (category == "安心") {
+                        emo = "relived";
+                    } else if (category == "不安") {
+                        emo = "unstable";
+                    } else if (category == "驚訝") {
+                        emo = "amazed";
+                    } else if (category == "低落") {
+                        emo = "sadness";
+                    } else if (category == "討厭") {
+                        emo = "hate";
+                    } else if (category == "生氣") {
+                        emo = "anger";
+                    } else if (category == "其他") {
+                        emo = "others";
+                    }
+
+                    if(card.Name.length>2){
+                        let contentCards = `
+                            <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
+                                <button type="button" class="class-card mb-md-0 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                    <p>${card.Name}</p>
+                                    <div class="img-box">
+                                        <img src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                    </div>
+                                </button>
+                                <div class="box-strength d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <input type="radio" class="d-none" name="${card.ID}" id="1stEmo${card.ID}Point01" value="1">
+                                        <label for="2edEmo${card.ID}Point01" class="form-label text-strength" id="label">
+                                            1
+                                            <div class="d-none">${card.ID}</div>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="d-none" name="${card.ID}" id="2edEmo${card.ID}Point02" value="2">
+                                        <label for="2edEmo${card.ID}Point02" class="form-label text-strength" id="label">
+                                            2
+                                            <div class="d-none">${card.ID}</div>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="d-none" name="${card.ID}" id="2edEmo${card.ID}Point03" value="3">
+                                        <label for="2edEmo${card.ID}Point03" class="form-label text-strength" id="label">
+                                            3
+                                            <div class="d-none">${card.ID}</div>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="d-none" name="${card.ID}" id="2edEmo${card.ID}Point04" value="4">
+                                        <label for="2edEmo${card.ID}Point04" class="form-label text-strength" id="label">
+                                            4
+                                            <div class="d-none">${card.ID}</div>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="d-none" name="${card.ID}" id="2edEmo${card.ID}Point05" value="5">
+                                        <label for="2edEmo${card.ID}Point05" class="form-label text-strength" id="label">
+                                            5
+                                            <div class="d-none">${card.ID}</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>`;
+                        strCards+=contentCards;
+                    } else {
+                        let contentCards = `
+                            <div class="mb-40 d-flex flex-column flex-md-row justify-content-md-between align-items-center">
+                                <button type="button" class="class-card mb-md-0 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                    <p>${card.Name[0]}&nbsp;${card.Name[1]}</p>
+                                    <div class="img-box">
+                                        <img src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                    </div>
+                                </button>
+                                <div class="box-strength d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <input type="radio" class="d-none" name="${card.ID}" id="2edEmo${card.ID}Point01" value="1">
+                                        <label for="2edEmo${card.ID}Point01" class="form-label text-strength" id="label">
+                                            1
+                                            <div class="d-none">${card.ID}</div>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="d-none" name="${card.ID}" id="2edEmo${card.ID}Point02" value="2">
+                                        <label for="2edEmo${card.ID}Point02" class="form-label text-strength" id="label">
+                                            2
+                                            <div class="d-none">${card.ID}</div>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="d-none" name="${card.ID}" id="2edEmo${card.ID}Point03" value="3">
+                                        <label for="2edEmo${card.ID}Point03" class="form-label text-strength" id="label">
+                                            3
+                                            <div class="d-none">${card.ID}</div>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="d-none" name="${card.ID}" id="2edEmo${card.ID}Point04" value="4">
+                                        <label for="2edEmo${card.ID}Point04" class="form-label text-strength" id="label">
+                                            4
+                                            <div class="d-none">${card.ID}</div>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="d-none" name="${card.ID}" id="2edEmo${card.ID}Point05" value="5">
+                                        <label for="2edEmo${card.ID}Point05" class="form-label text-strength" id="label">
+                                            5
+                                            <div class="d-none">${card.ID}</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>`;
+                        strCards+=contentCards;
+                    }
+                    strengthArea.innerHTML = strCards;
+                    let modalContent = `
+                        <li>
+                            <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                                    <div class="modal-content bg-${emo} my-36">
+                                        <div class="modal-body d-sm-flex justify-content-between align-items-center position-relative">
+                                            <div class="box-bigCard-text">
+                                                <div class="d-flex d-md-none w-100 justify-content-center">
+                                                    <div class="d-sm-none box-bigCard-img mb-8">
+                                                        <img class="w-100" src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                                    </div>
+                                                </div>
+                                                <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
+                                                    <h2>${card.Name}</h2>
+                                                </div>
+                                                <div class="mb-16">
+                                                    <h3 class="mb-4">意思：</h3>
+                                                    <p>${card.Description}</p>
+                                                </div>
+                                                <div>
+                                                    <h3 class="mb-4">例句：</h3>
+                                                    <p>${card.Example}</p>
+                                                </div>
+                                            </div>
+                                            <div class="d-none d-sm-block box-bigCard-img">
+                                                <img class="w-100" src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>`;
+                    strModal+=modalContent;
+                    listModal.innerHTML = strModal;
+                })
+            }
+            // 監聽 label 被點擊事件，並記錄所選擇的情緒強度
+            const labels = document.querySelectorAll('#label');
+            labels.forEach(function(label, i){
+                label.addEventListener("click", function(){
+                    let cardId = label.childNodes[1].textContent;
+                    let value = label.childNodes[0].textContent.trim();
+                    storageCards.forEach(function(card, index){
+                        if(cardId == card.ID) {
+                            card.strength2 = value;
+                        }
+                    })
+                })
+            })
+
+            // 確認 有無 strength2 的資料
+            let strength2Values = [];
+            storageCards.forEach(function(card, i){
+                //  如果有 strength2 的資料的話，將該資料的 卡片id 與 strength2的數值 寫入 strength2Values
+                if(card.strength2!=undefined){
+                    let data = {};
+                    data.cardId = card.ID;
+                    data.strength2 = card.strength2;
+                    strength2Values.push(data);
+                }
+            })
+            // 如果有 strength2 的資料的話，顯示被選的資料
+            if(strength2Values.length>0){
+                strength2Values.forEach(function(value, i){
+                    labels.forEach(function(label, i){
+                        // 如果該 label 的 id 與 strength2 的卡片id相同的話
+                        if(label.childNodes[1].textContent == value.cardId) {
+                            // 如果該 label 的數值 與 strength2 的數值相同的話，此 label 被點擊（顯示checked的狀態）
+                            if(label.childNodes[0].textContent.trim() == value.strength2){
+                                label.click();
+                            }
+                        }
+                    })
+                })
+            }
+
+            // 點擊上一步時，將資料寫入local storage中
+            btnBack.addEventListener("click", function(){
+                storageData[0].cards=storageCards;
+                let stringAddedCard = JSON.stringify(storageData);
+                localStorage.setItem("addedCards", stringAddedCard);
+                location.href = "findEmoAction.html";
+            })
+
+            // 點擊下一步時，確認是要送出，並將更新後的資料寫入localStorage
+            btnSave.addEventListener("click", function(){
+                // 將資料 轉為 string 資料，並將 aryAddedCards 存入 localStorage 中
+                storageData[0].cards=storageCards;
+                let stringAddedCard = JSON.stringify(storageData);
+                localStorage.setItem("addedCards", stringAddedCard);
+                // 確認是否要送出資料，若想再修改請點返回編輯，反之則送出
+                btnSave.setAttribute("data-bs-toggle", "modal");
+                btnSave.setAttribute("data-bs-target", "#modalMakeSure");
+                btnSave.click();
+                // 點擊 確定儲存 後的動作
+                modalResultSure.addEventListener("click", function(){
+                    // 確認資料是否儲存成功（與後端確認）
+                    let saveResult = true;
+                        // post 資料給後端
+                        // get 資料儲存成功or失敗
+                    if(saveResult==false){
+                        modalSaveResultTitle.classList.add("text-pink");
+                        modalSaveResultTitle.classList.remove("text-main");
+                        modalSaveResultTitle.textContent = "儲存失敗";
+                        modalSaveResultErrMsg.classList.remove("d-none");
+                        modalSaveResultImg.src = "../assets/images/addCardFail.svg";
+                        modalSaveResultClose.classList.remove("d-none");
+                        modalResultLink.classList.add("d-none");
+                        modalResultSure.setAttribute("data-bs-toggle", "modal");
+                        modalResultSure.setAttribute("data-bs-target", "#modalSaveResult");
+                        modalResultSure.click();
+                    } else {
+                        localStorage.removeItem("addedCards");
+                        modalSaveResultTitle.classList.add("text-main");
+                        modalSaveResultTitle.classList.remove("text-pink");
+                        modalSaveResultTitle.textContent = "儲存成功";
+                        modalSaveResultErrMsg.classList.add("d-none");
+                        modalSaveResultImg.src = "../assets/images/addCardSuccess.svg";
+                        modalSaveResultClose.classList.add("d-none");
+                        modalResultLink.classList.remove("d-none");
+                        modalResultSure.setAttribute("data-bs-toggle", "modal");
+                        modalResultSure.setAttribute("data-bs-target", "#modalSaveResult");
+                        modalResultSure.click();
+                    }
+                    // location.href = "findEmoBackground.html";
+                })
+            })
+            
         })
     </script>
   </body>

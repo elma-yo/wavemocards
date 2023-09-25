@@ -56,6 +56,7 @@
                     </h2>
                     <div class="nav-btn d-flex justify-content-end">
                         <!-- <a class="btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 text-nowrap d-flex justify-content-center align-items-center" href="myEmoCardsHolder.html">上一步</a> -->
+                        <button type="button" class="ms-16 px-md-24 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 text-nowrap d-flex justify-content-center align-items-center" id="btnBack">上一步</button>
                         <button type="button" class="ms-16 px-md-24 btn btn-main c-btn text-nowrap d-flex justify-content-center align-items-center" id="btnNext">下一步
                         </button>
                     </div>
@@ -224,7 +225,7 @@
                     <span class="text-gray-400 fs-11">Illustration by <a class="link-gray-400" href="https://blush.design/artists/RyUTVuP8G4QeAAEEQgug/pablo-stanley">Pablo Stanley</a> from <a class="link-gray-400" href="https://blush.design/">blush design</a></span>
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" id="modalNextErrClose" class="btn btn-pink c-btn px-24 py-8 link-white fs-6 rounded-pill" data-bs-dismiss="modal">我知道了</button>
+                    <button type="button" id="modalNextErrClose" class="btn btn-pink c-btn c-btn-pink px-24 py-8 link-white fs-6 rounded-pill" data-bs-dismiss="modal">我知道了</button>
                 </div>
             </div>
         </div>
@@ -232,6 +233,7 @@
 
     <%- include('./layout/baseJs'); -%>
     <script>
+        const btnBack = document.querySelector('#btnBack');
         const btnNext = document.querySelector('#btnNext');
         const strengthArea =document.querySelector('#strengthArea');
         const listModal = document.querySelector('.listModal');
@@ -418,6 +420,40 @@
                         }
                     })
                 })
+            })
+
+            // 確認 有無 strength2 的資料
+            let strength1Values = [];
+            storageCards.forEach(function(card, i){
+                //  如果有 strength2 的資料的話，將該資料的 卡片id 與 strength2的數值 寫入 strength1Values
+                if(card.strength1!=undefined){
+                    let data = {};
+                    data.cardId = card.ID;
+                    data.strength1 = card.strength1;
+                    strength1Values.push(data);
+                }
+            })
+            // 如果有 strength1 的資料的話，顯示被選的資料
+            if(strength1Values.length>0){
+                strength1Values.forEach(function(value, i){
+                    labels.forEach(function(label, i){
+                        // 如果該 label 的 id 與 strength2 的卡片id相同的話
+                        if(label.childNodes[1].textContent == value.cardId) {
+                            // 如果該 label 的數值 與 strength2 的數值相同的話，此 label 被點擊（顯示checked的狀態）
+                            if(label.childNodes[0].textContent.trim() == value.strength1){
+                                label.click();
+                            }
+                        }
+                    })
+                })
+            }
+            
+            // 點擊上一步時，將資料寫入local storage中
+            btnBack.addEventListener("click", function(){
+                storageData[0].cards=storageCards;
+                let stringAddedCard = JSON.stringify(storageData);
+                localStorage.setItem("addedCards", stringAddedCard);
+                location.href = "myEmoCardsHolder.html";
             })
             // 確認是否都已選填，並將更新後的資料寫入localStorage
             let fail=true;

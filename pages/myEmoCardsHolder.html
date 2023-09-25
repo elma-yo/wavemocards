@@ -55,8 +55,7 @@
                                 <span class="d-none d-sm-block">回到情緒卡</span>
                                 <span class="d-sm-none">上一步</span>
                             </a>
-                            <button type="button" class="ms-16 px-md-24 btn btn-main c-btn text-nowrap d-flex justify-content-center align-items-center" id="btnNext">下一步
-                            </button>
+                            <button type="button" class="ms-16 px-md-24 btn btn-main c-btn text-nowrap d-flex justify-content-center align-items-center" id="btnNext">下一步</button>
                         </div>
                     </div>
                 </div>
@@ -180,160 +179,161 @@
             if(getAddedCards!=null){
                 storageData=JSON.parse(getAddedCards);
                 storageCards=storageData[0].cards;
+            } else {
+                storageData = [{cards:[]}];
+                storageCards = storageData[0].cards;
+            }
+            axios.get("https://api.wavemocards.com/emotions?require=cards")
+            .then(function(response){
+                let aryData = Object.values(response.data); // 轉成「陣列」
+                // cards 卡片列
+                let strCards = "";
+                let strModal = "";
+                let emo;
+                initCardsAndModals();
+                function initCardsAndModals(){
+                    storageCards.forEach(function(card, i){
+                        let category = aryData[card.ID-1].Category;
+                        if(category == "快樂") {
+                            emo = "happy";
+                        } else if (category == "期待") {
+                            emo = "expectation";
+                        } else if (category == "安心") {
+                            emo = "relived";
+                        } else if (category == "不安") {
+                            emo = "unstable";
+                        } else if (category == "驚訝") {
+                            emo = "amazed";
+                        } else if (category == "低落") {
+                            emo = "sadness";
+                        } else if (category == "討厭") {
+                            emo = "hate";
+                        } else if (category == "生氣") {
+                            emo = "anger";
+                        } else if (category == "其他") {
+                            emo = "others";
+                        }
 
-                axios.get("https://api.wavemocards.com/emotions?require=cards")
-                .then(function(response){
-                    let aryData = Object.values(response.data); // 轉成「陣列」
-                    // cards 卡片列
-                    let strCards = "";
-                    let strModal = "";
-                    let emo;
-                    initCardsAndModals();
-                    function initCardsAndModals(){
-                        storageCards.forEach(function(card, i){
-                            let category = aryData[card.ID-1].Category;
-                            if(category == "快樂") {
-                                emo = "happy";
-                            } else if (category == "期待") {
-                                emo = "expectation";
-                            } else if (category == "安心") {
-                                emo = "relived";
-                            } else if (category == "不安") {
-                                emo = "unstable";
-                            } else if (category == "驚訝") {
-                                emo = "amazed";
-                            } else if (category == "低落") {
-                                emo = "sadness";
-                            } else if (category == "討厭") {
-                                emo = "hate";
-                            } else if (category == "生氣") {
-                                emo = "anger";
-                            } else if (category == "其他") {
-                                emo = "others";
-                            }
-    
-                            if(card.Name.length>2){
-                                let contentCards = `
-                                <div class="position-relative me-36 mb-20" id="cardBox"">
+                        if(card.Name.length>2){
+                            let contentCards = `
+                            <div class="position-relative me-36 mb-20" id="cardBox"">
+                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-delete-card-m" id="btnDelete" data-bs-toggle="modal" data-bs-target="#modalDelete"><div class="d-none">${card.ID}</div></button>
+                                <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                    <p>${card.Name}</p>
+                                    <div class="img-box">
+                                        <img src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                    </div>
+                                </button>
+                            </div>`;
+                            strCards+=contentCards;
+                        } else {
+                            let contentCards = `
+                                <div class="position-relative me-36 mb-20" id="cardBox">
                                     <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-delete-card-m" id="btnDelete" data-bs-toggle="modal" data-bs-target="#modalDelete"><div class="d-none">${card.ID}</div></button>
                                     <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                        <p>${card.Name}</p>
+                                        <p>${card.Name[0]}&nbsp;${card.Name[1]}</p>
                                         <div class="img-box">
                                             <img src="./upload/${card.ID}.svg" alt="${card.Name}">
                                         </div>
                                     </button>
                                 </div>`;
-                                strCards+=contentCards;
-                            } else {
-                                let contentCards = `
-                                    <div class="position-relative me-36 mb-20" id="cardBox">
-                                        <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-delete-card-m" id="btnDelete" data-bs-toggle="modal" data-bs-target="#modalDelete"><div class="d-none">${card.ID}</div></button>
-                                        <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                            <p>${card.Name[0]}&nbsp;${card.Name[1]}</p>
-                                            <div class="img-box">
-                                                <img src="./upload/${card.ID}.svg" alt="${card.Name}">
-                                            </div>
-                                        </button>
-                                    </div>`;
-                                strCards+=contentCards;
-                            }
-                            cardsList.innerHTML = strCards;
-                            let modalContent = `
-                                <li>
-                                    <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
-                                            <div class="modal-content bg-${emo} my-36">
-                                                <div class="modal-body d-sm-flex justify-content-between align-items-center position-relative">
-                                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-delete-card-xl" id="btnDelete" data-bs-toggle="modal" data-bs-target="#modalDelete"><div class="d-none">${card.ID}</div></button>
-                                                    <div class="box-bigCard-text">
-                                                        <div class="d-flex d-md-none w-100 justify-content-center">
-                                                            <div class="d-sm-none box-bigCard-img mb-8">
-                                                                <img class="w-100" src="./upload/${card.ID}.svg" alt="${card.Name}">
-                                                            </div>
-                                                        </div>
-                                                        <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
-                                                            <h2>${card.Name}</h2>
-                                                        </div>
-                                                        <div class="mb-16">
-                                                            <h3 class="mb-4">意思：</h3>
-                                                            <p>${card.Description}</p>
-                                                        </div>
-                                                        <div>
-                                                            <h3 class="mb-4">例句：</h3>
-                                                            <p>${card.Example}</p>
+                            strCards+=contentCards;
+                        }
+                        cardsList.innerHTML = strCards;
+                        let modalContent = `
+                            <li>
+                                <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                                        <div class="modal-content bg-${emo} my-36">
+                                            <div class="modal-body d-sm-flex justify-content-between align-items-center position-relative">
+                                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-delete-card-xl" id="btnDelete" data-bs-toggle="modal" data-bs-target="#modalDelete"><div class="d-none">${card.ID}</div></button>
+                                                <div class="box-bigCard-text">
+                                                    <div class="d-flex d-md-none w-100 justify-content-center">
+                                                        <div class="d-sm-none box-bigCard-img mb-8">
+                                                            <img class="w-100" src="./upload/${card.ID}.svg" alt="${card.Name}">
                                                         </div>
                                                     </div>
-                                                    <div class="d-none d-sm-block box-bigCard-img">
-                                                        <img class="w-100" src="./upload/${card.ID}.svg" alt="${card.Name}">
+                                                    <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
+                                                        <h2>${card.Name}</h2>
                                                     </div>
+                                                    <div class="mb-16">
+                                                        <h3 class="mb-4">意思：</h3>
+                                                        <p>${card.Description}</p>
+                                                    </div>
+                                                    <div>
+                                                        <h3 class="mb-4">例句：</h3>
+                                                        <p>${card.Example}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-sm-block box-bigCard-img">
+                                                    <img class="w-100" src="./upload/${card.ID}.svg" alt="${card.Name}">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </li>`;
-                            strModal+=modalContent;
-                            listModal.innerHTML = strModal;
-                        })
-                    }
-                    // 建立 初始卡片數量
-                    cardsNum = storageCards.length;
-                    // 監聽 x按鈕，被點擊後 刪除該卡（先跳出刪除確認視窗，再跳出刪除成功）
-                    const btnDeletes = document.querySelectorAll('#btnDelete');
-                    const cardBoxes = document.querySelectorAll('#cardBox');
-                    
-                    btnDeletes.forEach(function(btnDelete, i){
-                        let id = btnDelete.textContent;
-                        btnDelete.addEventListener("click", function(){
-                            // Modal 確認是否要刪除
-                            // 確認 -> 刪除 -> 處理 storageCards 資料，並傳新寫入 localStorage
-                            modalDeleteSure.addEventListener("click", function(){
-                                storageCards.splice(i, 1);
-                                cardsNum = storageCards.length;
-                                // 存入 localStorage 中
-                                storageData[0].cards=storageCards;
-                                // 將資料 轉為 string 資料
-                                let stringAddedCard = JSON.stringify(storageData);
-                                // 將資料存到 storageData 中
-                                localStorage.setItem("addedCards", stringAddedCard);
-                                // 完成資料處理，關閉Modal
-                                modalDeleteClose.click();
-                                cardBoxes.forEach(function(cardBox, index){
-                                    let cardId = cardBox.childNodes[1].textContent;
-                                    if (id == cardId) {
-                                        cardBox.classList.add("d-none");
-                                    }
-                                })
-                            })
-                            // 取消 -> close modal
-                        })
+                                </div>
+                            </li>`;
+                        strModal+=modalContent;
+                        listModal.innerHTML = strModal;
                     })
-                    // 確認卡片張數是否 >0 <=3
-                    btnNext.addEventListener("click", function(){
-                        console.log(storageData);
-                        if( cardsNum==0 ){
-                            modalNextErrTitle.textContent="卡片數量不足";
-                            modalNextErrText1.classList.remove('d-none');
-                            modalNextErrText2.classList.add('d-none');
-                            btnNext.setAttribute("data-bs-toggle", "modal");
-                            btnNext.setAttribute("data-bs-target", "#modalNextErr");
-                            btnNext.click();
-                        } else if( cardsNum>3 ) {
-                            modalNextErrTitle.textContent="卡片數量過多";
-                            modalNextErrText1.classList.add('d-none');
-                            modalNextErrText2.classList.remove('d-none');
-                            btnNext.setAttribute("data-bs-toggle", "modal");
-                            btnNext.setAttribute("data-bs-target", "#modalNextErr");
-                            btnNext.click();
-                        } else {
-                            // 將資料 轉為 string 資料，並將 aryAddedCards 存入 localStorage 中
+                }
+                // 建立 初始卡片數量
+                cardsNum = storageCards.length;
+                // 監聽 x按鈕，被點擊後 刪除該卡（先跳出刪除確認視窗，再跳出刪除成功）
+                const btnDeletes = document.querySelectorAll('#btnDelete');
+                const cardBoxes = document.querySelectorAll('#cardBox');
+                
+                btnDeletes.forEach(function(btnDelete, i){
+                    let id = btnDelete.textContent;
+                    btnDelete.addEventListener("click", function(){
+                        // Modal 確認是否要刪除
+                        // 確認 -> 刪除 -> 處理 storageCards 資料，並傳新寫入 localStorage
+                        modalDeleteSure.addEventListener("click", function(){
+                            storageCards.splice(i, 1);
+                            cardsNum = storageCards.length;
+                            // 存入 localStorage 中
+                            storageData[0].cards=storageCards;
+                            // 將資料 轉為 string 資料
                             let stringAddedCard = JSON.stringify(storageData);
+                            // 將資料存到 storageData 中
                             localStorage.setItem("addedCards", stringAddedCard);
-                            location.href = "findEmoStrength1st.html";
-                        }
+                            // 完成資料處理，關閉Modal
+                            modalDeleteClose.click();
+                            cardBoxes.forEach(function(cardBox, index){
+                                let cardId = cardBox.childNodes[1].textContent;
+                                if (id == cardId) {
+                                    cardBox.classList.add("d-none");
+                                }
+                            })
+                        })
+                        // 取消 -> close modal
                     })
                 })
-            
-            }
+                
+                // 確認卡片張數是否 >0 <=3
+                btnNext.addEventListener("click", function(){
+                    if( cardsNum==0 ){
+                        modalNextErrTitle.textContent="卡片數量不足";
+                        modalNextErrText1.classList.remove('d-none');
+                        modalNextErrText2.classList.add('d-none');
+                        btnNext.setAttribute("data-bs-toggle", "modal");
+                        btnNext.setAttribute("data-bs-target", "#modalNextErr");
+                        btnNext.click();
+                    } else if( cardsNum>3 ) {
+                        modalNextErrTitle.textContent="卡片數量過多";
+                        modalNextErrText1.classList.add('d-none');
+                        modalNextErrText2.classList.remove('d-none');
+                        btnNext.setAttribute("data-bs-toggle", "modal");
+                        btnNext.setAttribute("data-bs-target", "#modalNextErr");
+                        btnNext.click();
+                    } else {
+                        // 將資料 轉為 string 資料，並將 aryAddedCards 存入 localStorage 中
+                        let stringAddedCard = JSON.stringify(storageData);
+                        localStorage.setItem("addedCards", stringAddedCard);
+                        location.href = "findEmoStrength1st.html";
+                    }
+                })
+            })
         </script>
     </body>
 </html>

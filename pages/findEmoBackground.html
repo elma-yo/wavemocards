@@ -56,6 +56,7 @@
                     </h2>
                     <div class="nav-btn d-flex justify-content-end">
                         <!-- <a class="btn btn-outline-main c-btn text-nowrap d-flex justify-content-center align-items-center" href="findEmoStrength1st.html">上一步</a> -->
+                        <button type="button" class="ms-16 px-md-24 btn btn-outline-main-tint01 c-btn c-btn-outline-main-tint01 text-nowrap d-flex justify-content-center align-items-center" id="btnBack">上一步</button>
                         <button type="button" class="ms-16 px-md-24 btn btn-main c-btn text-nowrap d-flex justify-content-center align-items-center" id="btnNext">下一步
                         </button>
                     </div>
@@ -109,19 +110,25 @@
     <%- include('./layout/baseJs'); -%>
     <script type="text/javascript" src="../assets/js/textarea.js"></script>
     <script>
+        const btnBack = document.querySelector('#btnBack');
         const btnNext = document.querySelector('#btnNext');
         const WhatHappenedLabel = document.querySelector('#WhatHappenedLabel');
         const whatHappened = document.querySelector('#whatHappened');
+        
         // 取得local storage 資料
         let storageData;
         let storageCards;
         let getAddedCards = localStorage.getItem("addedCards");
         storageData=JSON.parse(getAddedCards);
         storageCards=storageData[0].cards;
+
         // 確認 有無 whatHappened 的資料，有的話寫入textarea
-        if(storageData[1].whatHappened!=""){
-            whatHappened.value=storageData[1].whatHappened;
+        if(storageData.length>1){
+            if(storageData[1].whatHappened!=""||storageData[1].whatHappened!=undefined){
+                whatHappened.value=storageData[1].whatHappened;
+            }
         }
+
         // 將情緒名詞寫入文句中
         axios.get("https://api.wavemocards.com/emotions?require=cards")
         .then(function(response){
@@ -151,7 +158,7 @@
             } else {
                 strLabel = `
                 <p class="mb-8 text-main fw-500 fs-6">
-                    邀請你輕輕地闔上雙眼，在吸氣與吐氣之間，慢慢地回想，在感受到「<span class="px-2">${cardNames[0]}</span>、<span class="px-2">${cardNames[1]}</span>、<span class="px-2">${cardNames[2]}</span> 」的情緒之前，發生了什麼事情呢？
+                    邀請你輕輕地闔上雙眼，在吸氣與吐氣之間，慢慢地回想，在感受到「<span class="px-2">${cardNames[0]}</span>、<span class="px-2">${cardNames[1]}</span>、<span class="px-2">${cardNames[2]}</span>」的情緒之前，發生了什麼事情呢？
                 </p>
                 <p class="text-gray-550 fs-7">
                     請在下欄中，試著寫下你覺得可能是讓你有這些情緒的原因或是事情、背景故事等。
@@ -159,8 +166,19 @@
             }
             WhatHappenedLabel.innerHTML = strLabel;
         })
+        // 點擊上一步時，將資料寫入local storage中
+        btnBack.addEventListener("click", function(){
+            let value = whatHappened.value;
+            if(storageData[1]==undefined){
+                storageData.push({whatHappened:value});
+            } else {
+                storageData[1].whatHappened=value;
+            }
+            let stringAddedCard = JSON.stringify(storageData);
+            localStorage.setItem("addedCards", stringAddedCard);
+            location.href = "findEmoStrength1st.html";
+        })
         // 點擊下一步時，將資料寫入 local storage中
-
         btnNext.addEventListener("click", function(){
             let value = whatHappened.value;
             if(storageData[1]==undefined){
@@ -172,7 +190,6 @@
             localStorage.setItem("addedCards", stringAddedCard);
             location.href = "findEmoAction.html";
         })
-        // 取得 textarea 資料
         
     </script>
   </body>
