@@ -22,7 +22,7 @@
                 <a class="btn btn-outline-main c-btn" href="emoCardsClassified.html">返回</a>
             </div>
         </div>
-        <div class="d-flex flex-wrap justify-content-center justify-content-md-start mb-72" id="expectationCards">
+        <div class="d-flex flex-wrap justify-content-center justify-content-md-start mt-48 mb-72" id="expectationCards">
         </div>
       </div>
     </main>
@@ -38,41 +38,82 @@
 
     <%- include('./layout/baseJs'); -%>
     <script>
-      // let imgExpectation01 = "https://wavemocards.com/frontend/upload/02-expectation/expaction01-expect.svg";
-      // let imgExpectation02 = "https://wavemocards.com/frontend/upload/02-expectation/expaction02-confidence.svg";
-      // let imgExpectation03 = "https://wavemocards.com/frontend/upload/02-expectation/expaction03-interested.svg";
-      // let imgExpectation04 = "https://wavemocards.com/frontend/upload/02-expectation/expaction04-desire.svg";
-
-      const expectationCards = document.querySelector('#expectationCards');
+      const cards = document.querySelector('#expectationCards');
       const listModal = document.querySelector('.list');
 
-      axios.get("https://api.wavemocards.com/emotions?require=cards")
+      axios.get("https://api.wavemocards.com/emoinfo/cards/")
       .then(function(response){
         let aryData = Object.values(response.data); // 轉成「陣列」
-        let aryIds = Object.keys(response.data); // 資料庫中的各卡片 id (0~64)
-
-        for(let i=0; i<aryData.length; i++){
-          aryData[i].id= aryIds[i];
-        }
 
         initCards()
         function initCards() {
-          let strCardsExpectation = "";
+          let strCards = "";
+          let strModal = "";
           let emo;
           aryData.forEach(function(data, i){
-            if(data.Category == "期待"){
+            let dataName = data.name;
+            let dataId = data.ID;
+            let dataDescription = data.description;
+            let dataExample = data.example;
+            if(data.category == "期待"){
                 emo = "expectation";
-                let contentCards = `
-                <button type="button" class="class-card me-16 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                <p>${data.Name[0]}&nbsp;${data.Name[1]}</p>
-                <div class="img-box">
-                    <img src="./upload/${data.id}.svg" alt="${data.Name}">
-                </div>
-                </button>`;
-                strCardsExpectation+=contentCards;
+                if(dataName.length>2){
+                    let contentCards = `
+                      <button type="button" class="class-card me-24 mb-24 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                          <p>${dataName}</p>
+                          <div class="img-box">
+                              <img src="./upload/${dataId}.svg" alt="${dataName}">
+                          </div>
+                      </button>`;
+                    strCards+=contentCards;
+                } else {
+                    let contentCards = `
+                        <button type="button" class="class-card me-24 mb-24 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                            <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                            <div class="img-box">
+                                <img src="./upload/${dataId}.svg" alt="${dataName}">
+                            </div>
+                        </button>`;
+                    strCards+=contentCards;
+                }
+
+                let contentModal = `
+                    <li>
+                        <div class="modal fade px-32" id="emo${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered c-modal-xl-card">
+                                <div class="modal-content bg-${emo} my-36">
+                                    <div class="modal-body d-sm-flex justify-content-between align-items-center position-relative">
+                                        <div class="box-bigCard-text">
+                                            <div class="d-flex d-md-none w-100 justify-content-center">
+                                                <div class="d-sm-none box-bigCard-img mb-8">
+                                                    <img class="w-100" src="./upload/${dataId}.svg" alt="${dataName}">
+                                                </div>
+                                            </div>
+                                            <div class="title w-100 mb-20 d-flex justify-content-center justify-content-sm-between  align-items-end">
+                                                <h2>${dataName}</h2>
+                                            </div>
+                                            <div class="mb-16">
+                                                <h3 class="mb-4">意思：</h3>
+                                                <p>${dataDescription}</p>
+                                            </div>
+                                            <div>
+                                                <h3 class="mb-4">例句：</h3>
+                                                <p>${dataExample}</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-none d-sm-block box-bigCard-img">
+                                            <img class="w-100" src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>`;
+                strModal+=contentModal;
             }
-            expectationCards.innerHTML = strCardsExpectation;
-          })
+        })
+        cards.innerHTML = strCards;
+        listModal.innerHTML = strModal;
         }
 
         initModal();

@@ -1348,6 +1348,17 @@
             // Big Cards
             const listModal = document.querySelector('.listModal');
 
+            // 建立已被加入卡片的 id array
+            let getAddedCards = localStorage.getItem("addedCards");
+            let aryAddedId = [];
+            if(getAddedCards!=null){
+                let storageData=JSON.parse(getAddedCards); // 將 string 資料轉為 array 資料
+                let storageCards=storageData[0].cards;
+                storageCards.forEach(function(card, index){
+                    aryAddedId.push(card.ID);
+                })
+            }
+
             // 卡片加入成功/失敗 Modal
             const modalResult = document.querySelector('#modalResult');
             const modalResultTitle = document.querySelector('#modalResultTitle');
@@ -1360,8 +1371,16 @@
             axios.get("https://api.wavemocards.com/emoinfo/cards/")
             .then(function(response){
                 let aryData = Object.values(response.data); // 轉成「陣列」
+                // 將已經被加入的卡片，寫入 added屬性 並為 true
+                aryData.forEach(function(data, i){
+                    aryAddedId.forEach(function(id, e){
+                        if (id==data.ID){
+                            data.added = true;
+                        }
+                    })
+                })
 
-                // 展開卡
+                // 展開卡 & 大卡
                 initCards()
                 function initCards() {
                     let strCardsHappy = "";
@@ -1389,61 +1408,103 @@
                         let dataId = data.ID;
                         let dataDescription = data.description;
                         let dataExample = data.example;
+                        
                         if(data.category == "快樂"){
                             emo = "happy";
-                            let contentCards = `
-                            <div class="position-relative me-28">
-                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
-                                <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                    <p>${dataName[0]}&nbsp;${dataName[1]}</p>
-                                    <div class="img-box">
-                                        <img src="./upload/${dataId}.svg" alt="${dataName}">
-                                    </div>
-                                </button>
-                            </div>`;
-                            strCardsHappy+=contentCards;
-
-                            let contentEmoTable = `
-                                <div class="me-20 position-relative emoTableAdd">
-                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
-                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
-                                </div>`;
-                            strTableHappy+=contentEmoTable;
-                        } 
-                        else if(data.category == "期待"){
-                            emo = "expectation";
-                            if(dataName.length>2){
+                            if(data.added==true){
                                 let contentCards = `
                                 <div class="position-relative me-28">
-                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
-                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                        <p>${dataName}</p>
-                                        <div class="img-box">
-                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
-                                        </div>
-                                    </button>
-                                </div>`;
-                                strCardsExpectation+=contentCards;
-
-                                let contentEmoTable = `
-                                <div class="me-20 position-relative emoTableAdd">
-                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
-                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
-                                </div>`;
-                                strTableExpectation+=contentEmoTable;
-                            } else {
-                                let contentCards = `
-                                <div class="position-relative me-28">
-                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
-                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo} opacity-50" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
                                         <p>${dataName[0]}&nbsp;${dataName[1]}</p>
                                         <div class="img-box">
                                             <img src="./upload/${dataId}.svg" alt="${dataName}">
                                         </div>
+                                        <div class="d-none">${dataId}</div>
                                     </button>
                                 </div>`;
-                                strCardsExpectation+=contentCards;
-
+                                strCardsHappy+=contentCards;
+                            let contentEmoTable = `
+                                <div class="me-20 position-relative emoTableAdd">
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap opacity-25" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                </div>`;
+                            strTableHappy+=contentEmoTable;
+                            } else {
+                                let contentCards = `
+                                <div class="position-relative me-28">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                        <div class="d-none">${dataId}</div>
+                                    </button>
+                                </div>`;
+                                strCardsHappy+=contentCards;
+                                let contentEmoTable = `
+                                    <div class="me-20 position-relative emoTableAdd">
+                                        <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                        <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    </div>`;
+                                strTableHappy+=contentEmoTable;
+                            }
+                        } else if(data.category == "期待"){
+                            emo = "expectation";
+                            if(data.added==true){
+                                if(dataName.length>2){
+                                    let contentCards = `
+                                    <div class="position-relative me-28">
+                                        <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo} opacity-50" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                            <p>${dataName}</p>
+                                            <div class="img-box">
+                                                <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                            </div>
+                                        </button>
+                                    </div>`;
+                                    strCardsExpectation+=contentCards;
+                                } else {
+                                    let contentCards = `
+                                    <div class="position-relative me-28">
+                                        <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo} opacity-50" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                            <p>${dataName}</p>
+                                            <div class="img-box">
+                                                <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                            </div>
+                                        </button>
+                                    </div>`;
+                                    strCardsExpectation+=contentCards;
+                                }
+                                let contentEmoTable = `
+                                    <div class="me-20 position-relative emoTableAdd">
+                                        <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap opacity-25" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                    </div>`;
+                                strTableExpectation+=contentEmoTable;
+                            } else {
+                                if(dataName.length>2){
+                                    let contentCards = `
+                                    <div class="position-relative me-28">
+                                        <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                        <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                            <p>${dataName}</p>
+                                            <div class="img-box">
+                                                <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                            </div>
+                                        </button>
+                                    </div>`;
+                                    strCardsExpectation+=contentCards;
+                                } else {
+                                    let contentCards = `
+                                    <div class="position-relative me-28">
+                                        <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                        <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                            <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                            <div class="img-box">
+                                                <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                            </div>
+                                        </button>
+                                    </div>`;
+                                    strCardsExpectation+=contentCards;
+                                }
                                 let contentEmoTable = `
                                     <div class="me-20 position-relative emoTableAdd">
                                         <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
@@ -1453,150 +1514,277 @@
                             }
                         } else if(data.category == "安心"){
                             emo = "relived";
-                            let contentCards = `
+                            if(data.added==true){
+                                let contentCards = `
                                 <div class="position-relative me-28">
-                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
-                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo} opacity-50" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
                                         <p>${dataName[0]}&nbsp;${dataName[1]}</p>
                                         <div class="img-box">
                                             <img src="./upload/${dataId}.svg" alt="${dataName}">
                                         </div>
+                                        <div class="d-none">${dataId}</div>
                                     </button>
                                 </div>`;
-                            strCardsRelived+=contentCards;
-
-                            let contentEmoTable = `
+                                strCardsRelived+=contentCards;
+                                let contentEmoTable = `
                                 <div class="me-20 position-relative emoTableAdd">
-                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
-                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap opacity-25" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
                                 </div>`;
-                            strTableRelived+=contentEmoTable;
-
+                                strTableRelived+=contentEmoTable;
+                            } else {
+                                let contentCards = `
+                                <div class="position-relative me-28">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                        <div class="d-none">${dataId}</div>
+                                    </button>
+                                </div>`;
+                                strCardsRelived+=contentCards;
+                                let contentEmoTable = `
+                                    <div class="me-20 position-relative emoTableAdd">
+                                        <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                        <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    </div>`;
+                                strTableRelived+=contentEmoTable;
+                            }
                         } else if(data.category == "不安"){
                             emo = "unstable";
-                            let contentCards = `
+                            if(data.added==true){
+                                let contentCards = `
                                 <div class="position-relative me-28">
-                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
-                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo} opacity-50" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
                                         <p>${dataName[0]}&nbsp;${dataName[1]}</p>
                                         <div class="img-box">
                                             <img src="./upload/${dataId}.svg" alt="${dataName}">
                                         </div>
+                                        <div class="d-none">${dataId}</div>
                                     </button>
                                 </div>`;
-                            strCardsUnstable+=contentCards;
-
-                            let contentEmoTable = `
+                                strCardsUnstable+=contentCards;
+                                let contentEmoTable = `
                                 <div class="me-20 position-relative emoTableAdd">
-                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
-                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap opacity-25" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
                                 </div>`;
-                            strTableUnstable+=contentEmoTable;
-
+                                strTableUnstable+=contentEmoTable;
+                            } else {
+                                let contentCards = `
+                                <div class="position-relative me-28">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                        <div class="d-none">${dataId}</div>
+                                    </button>
+                                </div>`;
+                                strCardsUnstable+=contentCards;
+                                let contentEmoTable = `
+                                    <div class="me-20 position-relative emoTableAdd">
+                                        <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                        <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    </div>`;
+                                strTableUnstable+=contentEmoTable;
+                            }
                         } else if(data.category == "驚訝"){
                             emo = "amazed";
-                            let contentCards = `
-                            <div class="position-relative me-28">
-                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
-                                <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                    <p>${dataName[0]}&nbsp;${dataName[1]}</p>
-                                    <div class="img-box">
-                                        <img src="./upload/${dataId}.svg" alt="${dataName}">
-                                    </div>
-                                </button>
-                            </div>`;
-                            strCardsAmazed+=contentCards;
-
-                            let contentEmoTable = `
-                                <div class="me-20 position-relative emoTableAdd">
-                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
-                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                            if(data.added==true){
+                                let contentCards = `
+                                <div class="position-relative me-28">
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo} opacity-50" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                        <div class="d-none">${dataId}</div>
+                                    </button>
                                 </div>`;
-                            strTableAmazed+=contentEmoTable;
-
+                                strCardsAmazed+=contentCards;
+                                let contentEmoTable = `
+                                <div class="me-20 position-relative emoTableAdd">
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap opacity-25" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                </div>`;
+                                strTableAmazed+=contentEmoTable;
+                            } else {
+                                let contentCards = `
+                                <div class="position-relative me-28">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                        <div class="d-none">${dataId}</div>
+                                    </button>
+                                </div>`;
+                                strCardsAmazed+=contentCards;
+                                let contentEmoTable = `
+                                    <div class="me-20 position-relative emoTableAdd">
+                                        <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                        <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    </div>`;
+                                strTableAmazed+=contentEmoTable;
+                            }
                         } else if(data.category == "低落"){
                             emo = "sadness";
-                            let contentCards = `
-                            <div class="position-relative me-28">
-                                <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
-                                <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
-                                    <p>${dataName[0]}&nbsp;${dataName[1]}</p>
-                                    <div class="img-box">
-                                        <img src="./upload/${dataId}.svg" alt="${dataName}">
-                                    </div>
-                                </button>
-                            </div>`;
-                            strCardsSadness+=contentCards;
-
-                            let contentEmoTable = `
-                                <div class="me-20 position-relative emoTableAdd">
-                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
-                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                            if(data.added==true){
+                                let contentCards = `
+                                <div class="position-relative me-28">
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo} opacity-50" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                        <div class="d-none">${dataId}</div>
+                                    </button>
                                 </div>`;
-                            strTableSadness+=contentEmoTable;
-
+                                strCardsSadness+=contentCards;
+                                let contentEmoTable = `
+                                <div class="me-20 position-relative emoTableAdd">
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap opacity-25" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                </div>`;
+                                strTableSadness+=contentEmoTable;
+                            } else {
+                                let contentCards = `
+                                <div class="position-relative me-28">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                        <div class="d-none">${dataId}</div>
+                                    </button>
+                                </div>`;
+                                strCardsSadness+=contentCards;
+                                let contentEmoTable = `
+                                    <div class="me-20 position-relative emoTableAdd">
+                                        <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                        <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    </div>`;
+                                strTableSadness+=contentEmoTable;
+                            }
                         } else if(data.category == "討厭"){
                             emo = "hate";
-                            let contentCards = `
+                            if(data.added==true){
+                                let contentCards = `
                                 <div class="position-relative me-28">
-                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
-                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo} opacity-50" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
                                         <p>${dataName[0]}&nbsp;${dataName[1]}</p>
                                         <div class="img-box">
                                             <img src="./upload/${dataId}.svg" alt="${dataName}">
                                         </div>
+                                        <div class="d-none">${dataId}</div>
                                     </button>
                                 </div>`;
-                            strCardsHate+=contentCards;
-
-                            let contentEmoTable = `
+                                strCardsHate+=contentCards;
+                                let contentEmoTable = `
                                 <div class="me-20 position-relative emoTableAdd">
-                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
-                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap opacity-25" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
                                 </div>`;
-                            strTableHate+=contentEmoTable;
-
+                                strTableHate+=contentEmoTable;
+                            } else {
+                                let contentCards = `
+                                <div class="position-relative me-28">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                        <div class="d-none">${dataId}</div>
+                                    </button>
+                                </div>`;
+                                strCardsHate+=contentCards;
+                                let contentEmoTable = `
+                                    <div class="me-20 position-relative emoTableAdd">
+                                        <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                        <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    </div>`;
+                                strTableHate+=contentEmoTable;
+                            }
                         } else if(data.category == "生氣"){
                             emo = "anger";
-                            let contentCards = `
+                            if(data.added==true){
+                                let contentCards = `
                                 <div class="position-relative me-28">
-                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
-                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo} opacity-50" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
                                         <p>${dataName[0]}&nbsp;${dataName[1]}</p>
                                         <div class="img-box">
                                             <img src="./upload/${dataId}.svg" alt="${dataName}">
                                         </div>
+                                        <div class="d-none">${dataId}</div>
                                     </button>
                                 </div>`;
-                            strCardsAnger+=contentCards;
-
-                            let contentEmoTable = `
+                                strCardsAnger+=contentCards;
+                                let contentEmoTable = `
                                 <div class="me-20 position-relative emoTableAdd">
-                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
-                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap opacity-25" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
                                 </div>`;
-                            strTableAnger+=contentEmoTable;
-
+                                strTableAnger+=contentEmoTable;
+                            } else {
+                                let contentCards = `
+                                <div class="position-relative me-28">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                        <div class="d-none">${dataId}</div>
+                                    </button>
+                                </div>`;
+                                strCardsAnger+=contentCards;
+                                let contentEmoTable = `
+                                    <div class="me-20 position-relative emoTableAdd">
+                                        <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                        <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    </div>`;
+                                strTableAnger+=contentEmoTable;
+                            }
                         } else if(data.category == "其他"){
                             emo = "others";
-                            let contentCards = `
+                            if(data.added==true){
+                                let contentCards = `
                                 <div class="position-relative me-28">
-                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
-                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}">
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo} opacity-50" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
                                         <p>${dataName[0]}&nbsp;${dataName[1]}</p>
                                         <div class="img-box">
                                             <img src="./upload/${dataId}.svg" alt="${dataName}">
                                         </div>
+                                        <div class="d-none">${dataId}</div>
                                     </button>
                                 </div>`;
-                            strCardsOthers+=contentCards;
-
-                            let contentEmoTable = `
+                                strCardsOthers+=contentCards;
+                                let contentEmoTable = `
                                 <div class="me-20 position-relative emoTableAdd">
-                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
-                                    <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap opacity-25" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
                                 </div>`;
-                            strTableOthers+=contentEmoTable;
+                                strTableOthers+=contentEmoTable;
+                            } else {
+                                let contentCards = `
+                                <div class="position-relative me-28">
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${data.ID}</div></button>
+                                    <button type="button" class="class-card mb-12 bg-${emo} link-gray-900 class-card-${emo}" data-bs-toggle="modal" data-bs-target="#emo${i}" id="emoCard">
+                                        <p>${dataName[0]}&nbsp;${dataName[1]}</p>
+                                        <div class="img-box">
+                                            <img src="./upload/${dataId}.svg" alt="${dataName}">
+                                        </div>
+                                        <div class="d-none">${dataId}</div>
+                                    </button>
+                                </div>`;
+                                strCardsOthers+=contentCards;
+                                let contentEmoTable = `
+                                    <div class="me-20 position-relative emoTableAdd">
+                                        <button type="button" class="btn btn-emoTable btn-${emo} opacity-${emo} text-nowrap" data-bs-toggle="modal" data-bs-target="#emo${i}">${dataName}</button>
+                                        <button type="button" class="btn-emoTableAdd position-absolute top-0 start-100 translate-middle rounded-circle border-0 btn-add-card-m" id="btnAdd"><div class="d-none">${dataId}</div></button>
+                                    </div>`;
+                                strTableOthers+=contentEmoTable;
+                            }
                         }
 
                         let contentModel = `
@@ -1654,18 +1842,24 @@
                     buttonsOthers.innerHTML = strTableOthers;
                     listModal.innerHTML = strModal;
                 }
+                // 取得所有卡片的id （先試happy cards）
+                const emoCards = document.querySelectorAll('#emoCard');
+                let emoCardId = [];
+                emoCards.forEach(function(card, i){
+                    emoCardId.push(card.childNodes[5].textContent);
+                })
 
                 // 點擊卡片+按鈕事件
                 const btnAdds = document.querySelectorAll('#btnAdd');
                 // 跑回圈 加上監聽事件
                 btnAdds.forEach(function(btnAdd, index){
                     btnAdd.addEventListener("click", function(){
-                        // 取得該張卡片的 id
+                        // 取得被點擊卡片的 id
                         let id = btnAdd.textContent;
-                        // 取得該張卡片的 資料
+                        // 取得被點擊卡片的 資料
                         let cardInfo = aryData[id-1];
 
-                        // 取得 localStorage stringAddedCards 的資料
+                        // 取得 localStorage 最新 storageData 的資料
                         let storageData; // local storage 全部的資料
                         let storageCards; // 存放 local storage 中的 card 資料
                         let getAddedCards = localStorage.getItem("addedCards");
@@ -1675,10 +1869,10 @@
                             storageCards=storageData[0].cards;
                             // 檢查此卡片是否已被放入 localStorage
                             storageCards.forEach(function(card, index){
-                            if(cardInfo.ID==card.ID){
-                                hadThisCard = true;
-                            }
-                        })
+                                if(cardInfo.ID==card.ID){
+                                    hadThisCard = true;
+                                }
+                            })
                         } else {
                             // storageCards 尚未被定義，因此 定義成array格式，後續才能將卡片資料新增進入array中
                             storageData=[{cards:[]}];
